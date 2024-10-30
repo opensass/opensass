@@ -13,6 +13,7 @@ use dioxus::prelude::*;
 pub fn Header() -> Element {
     rsx! {
         header {
+            id: "home",
             class: "bg-white py-28 md:py-32 flex justify-center",
             div {
                 class: "flex flex-col md:flex-row items-center",
