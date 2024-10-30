@@ -6,6 +6,7 @@ pub(crate) mod nav_links;
 use crate::components::navbar::auth_btns::AuthButtons;
 use crate::components::navbar::logo::Logo;
 use crate::components::navbar::nav_links::NavLinks;
+use crate::router::Route;
 use dioxus::prelude::*;
 
 #[component]
@@ -46,5 +47,6 @@ pub fn NavBar() -> Element {
                 AuthButtons { is_vertical: true }
             }
         }
+            Outlet::<Route> {}
     }
 }
