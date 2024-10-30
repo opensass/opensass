@@ -1,0 +1,28 @@
+.active-underline {
+    position: relative;
+    color: #000;
+}
+
+.active-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+  .animate-bounce {
+    animation: vertical-bounce 2s ease-in-out infinite;
+  }
+  @keyframes vertical-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
