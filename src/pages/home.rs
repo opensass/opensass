@@ -1,3 +1,4 @@
+use crate::components::faq::Faq;
 use crate::components::features::Features;
 use crate::components::hero::Hero;
 use crate::components::team::Team;
@@ -35,6 +36,7 @@ pub fn Home() -> Element {
             Hero {}
             Features {}
             Testimonial {}
+            Faq {}
             Team {}
 
             if !visible() {
