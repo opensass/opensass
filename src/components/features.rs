@@ -48,7 +48,7 @@ pub fn Features() -> Element {
     ];
 
     rsx! {
-        section { id: "features", class: "bg-white py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center",
+        section { id: "features", class: "bg-gray-100 py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center",
             div { class: "max-w-[1312px] mx-auto",
                 Header {
                     title: "Discover the Open SASS Community",
