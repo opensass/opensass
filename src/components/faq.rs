@@ -8,7 +8,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn Faq() -> Element {
     rsx! {
-        section { class: "py-16 bg-gray-100 min-h-screen flex items-center justify-center",
+        section { id: "faq",class: "py-16 bg-gray-100 min-h-screen flex items-center justify-center",
             div { class: "container mx-auto px-4",
                 Header {
                     title: "Got Questions?",

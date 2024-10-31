@@ -1,6 +1,7 @@
 use crate::components::faq::Faq;
 use crate::components::features::Features;
 use crate::components::hero::Hero;
+use crate::components::roadmap::Roadmap;
 use crate::components::team::Team;
 use crate::components::testimonial::Testimonial;
 use dioxus::prelude::*;
@@ -35,8 +36,9 @@ pub fn Home() -> Element {
             onmounted: move |cx| header_element.set(Some(cx.data())),
             Hero {}
             Features {}
-            Testimonial {}
+            Roadmap {}
             Faq {}
+            Testimonial {}
             Team {}
 
             if !visible() {
