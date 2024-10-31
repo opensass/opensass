@@ -4,8 +4,8 @@ use dioxus::prelude::*;
 #[derive(PartialEq, Clone)]
 enum NavLink {
     HomePage,
-    Services,
     Features,
+    Testimonial,
     Blog,
 }
 
@@ -24,7 +24,7 @@ pub fn NavLinks() -> Element {
     let nav_links = vec![
         (NavLink::HomePage, "#home", "Home"),
         (NavLink::Features, "#features", "Features"),
-        (NavLink::Services, "#services", "Services"),
+        (NavLink::Testimonial, "#testimonial", "Testimonial"),
         (NavLink::Blog, "#blog", "Blog"),
     ];
 

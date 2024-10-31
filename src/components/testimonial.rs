@@ -2,6 +2,7 @@ pub(crate) mod author;
 pub(crate) mod card;
 pub(crate) mod rating;
 
+use crate::components::common::header::Header;
 use crate::components::testimonial::card::TestimonialCard;
 use dioxus::prelude::*;
 
@@ -78,7 +79,11 @@ pub fn Testimonial() -> Element {
     };
 
     rsx! {
-        div { class: "flex items-center justify-center space-x-4 mt-10",
+        section { id: "testimonial", class: "flex flex-col items-center justify-center min-h-screen space-x-4 mt-10",
+            Header {
+                title: "What Our Users Are Saying",
+                subtitle: "Discover how Open Sass has transformed the way developers connect and create, through the voices of our vibrant community."
+            }
             div { class: "flex items-center space-x-2",
                 button { onclick: move |_| go_left(), "⬅️" }
                 TestimonialCard { testimonial: testimonials[current_index()].clone() }

@@ -10,11 +10,11 @@ use crate::router::Route;
 use dioxus::prelude::*;
 
 #[component]
-pub fn Header() -> Element {
+pub fn Hero() -> Element {
     rsx! {
         header {
             id: "home",
-            class: "bg-white py-28 md:py-32 flex justify-center",
+            class: "min-h-screen bg-white py-28 md:py-32 flex justify-center",
             div {
                 class: "flex flex-col md:flex-row items-center",
                 div {

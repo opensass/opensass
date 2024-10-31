@@ -1,9 +1,8 @@
 pub(crate) mod grid;
-pub(crate) mod header;
 pub(crate) mod item;
 
+use crate::components::common::header::Header;
 use crate::components::features::grid::Grid;
-use crate::components::features::header::Header;
 use dioxus::prelude::*;
 
 #[derive(Props, Clone, PartialEq)]
@@ -49,9 +48,12 @@ pub fn Features() -> Element {
     ];
 
     rsx! {
-        section { id: "features", class: "bg-white py-28 px-16 md:px-4 font-roboto flex justify-center",
+        section { id: "features", class: "bg-white py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center",
             div { class: "max-w-[1312px] mx-auto",
-                Header {}
+                Header {
+                    title: "Discover the Open SASS Community",
+                    subtitle: "Join a dynamic community of open-source Rust developers leveraging SASS to create and innovate together."
+                }
                 Grid { features: features }
             }
         }
