@@ -18,7 +18,8 @@ pub fn NavBar() -> Element {
     };
 
     rsx! {
-        nav { class: "bg-white w-full max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4 relative",
+        nav { class: "fixed bg-white w-full max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4 relative",
+
             Logo {}
 
             button {
