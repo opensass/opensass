@@ -1,9 +1,11 @@
 use crate::components::faq::Faq;
 use crate::components::features::Features;
+use crate::components::footer::Footer;
 use crate::components::hero::Hero;
 use crate::components::roadmap::Roadmap;
 use crate::components::team::Team;
 use crate::components::testimonial::Testimonial;
+
 use dioxus::prelude::*;
 use gloo::events::EventListener;
 use gloo::utils::window;
@@ -40,6 +42,7 @@ pub fn Home() -> Element {
             Faq {}
             Testimonial {}
             Team {}
+            Footer {}
 
             if !visible() {
                 div {

@@ -30,7 +30,7 @@ pub fn Team() -> Element {
     }];
 
     rsx! {
-        section { class: "bg-gray-100 py-16 flex items-center justify-center min-h-screen",
+        section { id: "team", class: "bg-gray-100 py-16 flex items-center justify-center min-h-screen",
             div { class: "container mx-auto px-4",
                 div { class: "flex flex-col items-center",
                     div { class: "w-full mb-12",
