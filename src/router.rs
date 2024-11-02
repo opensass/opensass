@@ -2,6 +2,8 @@ use crate::components::navbar::dropdown::Dropdown;
 use crate::components::navbar::NavBar;
 use crate::pages::blog::Blog;
 use crate::pages::home::Home;
+use crate::pages::login::Login;
+use crate::pages::register::Register;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -20,6 +22,10 @@ pub enum Route {
     PageNotFound { route: Vec<String> },
     #[route("/blog/:id")]
     Blog { id: i32 },
+    #[route("/signup")]
+    Register {},
+    #[route("/login")]
+    Login {},
 }
 #[component]
 fn PageNotFound(route: Vec<String>) -> Element {
