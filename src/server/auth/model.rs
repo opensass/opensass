@@ -1,4 +1,4 @@
-use bson::{oid::ObjectId, serde_helpers};
+use bson::{oid::ObjectId, serde_helpers::chrono_datetime_as_bson_datetime};
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
 
@@ -13,15 +13,9 @@ pub struct User {
     pub role: String,
     pub photo: String,
     pub verified: bool,
-    #[serde(
-        with = "serde_helpers::chrono_datetime_as_bson_datetime",
-        rename = "createdAt"
-    )]
+    #[serde(with = "chrono_datetime_as_bson_datetime", rename = "createdAt")]
     pub created_at: DateTime<Utc>,
-    #[serde(
-        with = "serde_helpers::chrono_datetime_as_bson_datetime",
-        rename = "updatedAt"
-    )]
+    #[serde(with = "chrono_datetime_as_bson_datetime", rename = "updatedAt")]
     pub updated_at: DateTime<Utc>,
 }
 

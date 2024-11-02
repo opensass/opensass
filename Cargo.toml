@@ -19,7 +19,7 @@ mongodb = { version = "3.1.0", optional = true }
 dotenv = { version = "0.15.0", optional = true }
 chrono = { version = "0.4.38", features = ["serde"] }
 bson = { version = "2.13.0", features = ["chrono-0_4"] }
-futures-util = { version = "0.3.31", optional = true }
+futures-util = { version = "0.3.31" }
 jsonwebtoken = { version = "9.3.0", optional = true }
 argon2 = { version = "0.5.3", optional = true }
 uuid = { version = "1.11.0", optional = true }
@@ -32,7 +32,7 @@ regex = "1.11.1"
 
 [features]
 default = []
-server = ["dioxus/axum", "tokio", "mongodb", "dotenv", "futures-util", "jsonwebtoken", "argon2", "uuid", "rand", "axum-extra", "rand_core"]
+server = ["dioxus/axum", "tokio", "mongodb", "dotenv", "jsonwebtoken", "argon2", "uuid", "rand", "axum-extra", "rand_core"]
 web = ["dioxus/web"]
 axum-extra = ["dep:axum-extra"]
 
