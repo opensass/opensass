@@ -1,5 +1,5 @@
-use crate::components::server::auth::controller::login_user;
-use crate::components::server::auth::response::LoginUserSchema;
+use crate::server::auth::controller::login_user;
+use crate::server::auth::response::LoginUserSchema;
 use dioxus::prelude::*;
 use regex::Regex;
 

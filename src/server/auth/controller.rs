@@ -6,14 +6,15 @@ use chrono::prelude::*;
 use chrono::Duration;
 use dioxus::prelude::*;
 
-use crate::components::server::auth::model::{TokenClaims, User};
-use crate::components::server::auth::response::{
-    AuthResponse, LoginUserSchema, RegisterUserSchema, SuccessResponse, UserResponse,
+use crate::server::auth::model::{TokenClaims, User};
+use crate::server::auth::response::{
+    AuthResponse, LoginUserSchema, RegisterUserSchema, UserResponse,
 };
+use crate::server::common::response::SuccessResponse;
 
 #[cfg(feature = "server")]
 use {
-    crate::components::db::get_client,
+    crate::db::get_client,
     argon2::{password_hash::SaltString, Argon2, PasswordHash, PasswordHasher, PasswordVerifier},
     axum_extra::extract::cookie::{Cookie, SameSite},
     jsonwebtoken::{encode, DecodingKey, EncodingKey, Header, Validation},
@@ -167,7 +168,7 @@ async fn about_me(token: String) -> Result<SuccessResponse<UserResponse>, Server
 }
 
 #[server]
-async fn auth(token: String) -> Result<User, ServerFnError> {
+pub async fn auth(token: String) -> Result<User, ServerFnError> {
     let client = get_client().await;
     let db =
         client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set."));

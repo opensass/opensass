@@ -1,12 +1,9 @@
 pub(crate) mod common;
-#[cfg(feature = "server")]
-pub(crate) mod db;
 pub(crate) mod faq;
 pub(crate) mod features;
 pub(crate) mod footer;
 pub(crate) mod hero;
 pub(crate) mod navbar;
 pub(crate) mod roadmap;
-pub(crate) mod server;
 pub(crate) mod team;
 pub(crate) mod testimonial;

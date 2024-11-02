@@ -1,4 +1,4 @@
-use crate::components::server::auth::model::User;
+use crate::server::auth::model::User;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -12,18 +12,6 @@ pub struct RegisterUserSchema {
 pub struct LoginUserSchema {
     pub email: String,
     pub password: String,
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct SuccessResponse<T> {
-    pub status: String,
-    pub data: T,
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct ErrorResponse {
-    pub status: String,
-    pub message: String,
 }
 
 #[derive(Deserialize, Serialize, Debug)]

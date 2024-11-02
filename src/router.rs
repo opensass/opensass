@@ -1,6 +1,8 @@
 use crate::components::navbar::dropdown::Dropdown;
 use crate::components::navbar::NavBar;
 use crate::pages::blog::Blog;
+use crate::pages::blogs::Blogs;
+use crate::pages::create_blog::CreateBlog;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::register::Register;
@@ -26,6 +28,10 @@ pub enum Route {
     Register {},
     #[route("/login")]
     Login {},
+    #[route("/blogs")]
+    Blogs {},
+    #[route("/blogs/create")]
+    CreateBlog {},
 }
 #[component]
 fn PageNotFound(route: Vec<String>) -> Element {
