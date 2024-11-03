@@ -1,4 +1,4 @@
-use crate::server::post::model::Post;
+use crate::server::post::model::{Category, Post};
 use bson::oid::ObjectId;
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
@@ -35,4 +35,14 @@ pub struct GetPostResponse {
     pub user: ObjectId,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CategoriesResponse {
+    pub categories: Vec<Category>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct TrendingPostsResponse {
+    pub posts: Vec<Post>,
 }

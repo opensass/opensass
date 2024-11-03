@@ -24,13 +24,15 @@ pub enum Route {
     PageNotFound { route: Vec<String> },
     #[route("/blog/:id")]
     Blog { id: i32 },
-    #[route("/signup")]
+    #[route("/admin/signup")]
     Register {},
-    #[route("/login")]
+    #[route("/admin/login")]
     Login {},
+    // #[layout(NavBar)]
     #[route("/blogs")]
     Blogs {},
-    #[route("/blogs/create")]
+    // #[end_layout]
+    #[route("/admin/create")]
     CreateBlog {},
 }
 #[component]

@@ -1,3 +1,4 @@
+use crate::components::blog::Blog;
 use crate::components::faq::Faq;
 use crate::components::features::Features;
 use crate::components::footer::Footer;
@@ -42,6 +43,7 @@ pub fn Home() -> Element {
             Faq {}
             Testimonial {}
             Team {}
+            Blog {}
             Footer {}
 
             if !visible() {

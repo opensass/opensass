@@ -3,7 +3,6 @@ use crate::server::auth::response::LoginUserSchema;
 use crate::server::post::controller::create_post;
 use crate::server::post::request::CreatePostRequest;
 use dioxus::prelude::*;
-use dioxus_logger::tracing;
 use regex::Regex;
 
 fn extract_token(cookie_str: &str) -> Option<String> {

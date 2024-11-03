@@ -1,7 +1,9 @@
 use crate::server::common::response::SuccessResponse;
 use crate::server::post::model::{Category, Post};
 use crate::server::post::request::{CreatePostRequest, GetSinglePostRequest};
-use crate::server::post::response::{GetPostResponse, PostResponse, PostsResponse};
+use crate::server::post::response::{
+    CategoriesResponse, GetPostResponse, PostResponse, PostsResponse, TrendingPostsResponse,
+};
 use bson::{doc, oid::ObjectId};
 use chrono::prelude::*;
 use dioxus::prelude::*;
@@ -10,10 +12,49 @@ use futures_util::TryStreamExt;
 use {crate::db::get_client, crate::server::auth::controller::auth};
 
 #[server]
+pub async fn get_categories() -> Result<SuccessResponse<CategoriesResponse>, ServerFnError> {
+    let client = get_client().await;
+    let db =
+        client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
+    let category_collection = db.collection::<Category>("categories");
+
+    let categories_cursor = category_collection.find(doc! {}).await?;
+    let categories: Vec<Category> = categories_cursor.try_collect().await?;
+
+    Ok(SuccessResponse {
+        status: "success".into(),
+        data: CategoriesResponse { categories },
+    })
+}
+
+#[server]
+pub async fn get_trending_posts() -> Result<SuccessResponse<TrendingPostsResponse>, ServerFnError> {
+    let client = get_client().await;
+    let db =
+        client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
+    let post_collection = db.collection::<Post>("posts");
+
+    let filter = doc! {};
+    let sort = doc! { "views": -1 };
+
+    let trending_cursor = post_collection.find(filter).sort(sort).limit(4).await?;
+
+    let trending_posts: Vec<Post> = trending_cursor.try_collect().await?;
+
+    Ok(SuccessResponse {
+        status: "success".into(),
+        data: TrendingPostsResponse {
+            posts: trending_posts,
+        },
+    })
+}
+
+#[server]
 pub async fn get_posts(
     page: u64,
     limit: u64,
     cat: Option<String>,
+    query: Option<String>,
 ) -> Result<SuccessResponse<PostsResponse>, ServerFnError> {
     let client = get_client().await;
     let db =
@@ -23,8 +64,20 @@ pub async fn get_posts(
     let skip = limit * (page - 1);
 
     let mut filter = doc! {};
+
     if let Some(category) = cat {
         filter.insert("categorySlug", category);
+    }
+
+    if let Some(search_query) = query {
+        // MongoDB partial matching, case-insensitive
+        filter.insert(
+            "$or",
+            vec![
+                doc! { "title": { "$regex": &search_query, "$options": "i" } },
+                doc! { "desc": { "$regex": &search_query, "$options": "i" } },
+            ],
+        );
     }
 
     let post_cursor = post_collection
