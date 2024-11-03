@@ -23,7 +23,7 @@ pub enum Route {
     #[route("/:..route")]
     PageNotFound { route: Vec<String> },
     #[route("/blog/:id")]
-    Blog { id: i32 },
+    Blog { id: String },
     #[route("/admin/signup")]
     Register {},
     #[route("/admin/login")]
