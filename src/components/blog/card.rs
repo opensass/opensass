@@ -44,9 +44,9 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
                     "{props.title}"
                 }
 
-                p {
+                div {
                     class: "text-gray-600 text-sm",
-                    "{props.desc.chars().take(30).collect::<String>()}..."
+                    dangerous_inner_html: "{props.desc.chars().take(30).collect::<String>()}...",
                 }
 
                 div {
@@ -97,9 +97,9 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                     class: "text-2xl font-bold text-white",
                     "{props.title}"
                 }
-                p {
+                div {
                     class: "text-gray-400",
-                    "{props.desc.chars().take(20).collect::<String>()}..."
+                    dangerous_inner_html: "{props.desc.chars().take(30).collect::<String>()}...",
                 }
                 div {
                     class: "flex justify-between items-center text-gray-500 text-sm mt-4",

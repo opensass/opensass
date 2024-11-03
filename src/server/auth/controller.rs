@@ -194,3 +194,23 @@ pub async fn auth(token: String) -> Result<User, ServerFnError> {
 
     Ok(user)
 }
+
+#[server]
+pub async fn get_user_info(user_id: ObjectId) -> Result<SuccessResponse<User>, ServerFnError> {
+    let client = get_client().await;
+    let db =
+        client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
+    let user_collection = db.collection::<User>("users");
+
+    let filter = doc! { "_id": user_id };
+    let user = user_collection
+        .find_one(filter)
+        .await
+        .map_err(|_| ServerFnError::new("Error fetching user data"))?
+        .ok_or(ServerFnError::new("User not found"))?;
+
+    Ok(SuccessResponse {
+        status: "success".into(),
+        data: user,
+    })
+}

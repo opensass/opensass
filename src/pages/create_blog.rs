@@ -135,7 +135,7 @@ pub fn CreateBlog() -> Element {
     };
 
     rsx! {
-        div { class: "flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-8",
+        div { class: "flex flex-col items-center justify-center min-h-screen bg-gray-600 text-white p-8",
             h1 { class: "text-3xl font-bold mb-8", "Create New Post" }
 
             div { class: "w-full max-w-lg bg-gray-800 p-8 rounded-lg shadow-lg",
