@@ -1,7 +1,15 @@
+use crate::server::auth::controller::about_me;
 use crate::server::auth::controller::login_user;
 use crate::server::auth::response::LoginUserSchema;
 use dioxus::prelude::*;
+use gloo::storage::SessionStorage;
+use gloo::storage::Storage;
 use regex::Regex;
+
+fn extract_token(cookie_str: &str) -> Option<String> {
+    let re = Regex::new(r"token=([^;]+)").unwrap();
+    re.captures(cookie_str).map(|caps| caps[1].to_string())
+}
 
 #[component]
 pub fn Login() -> Element {
@@ -36,6 +44,26 @@ pub fn Login() -> Element {
         password_valid.set(validate_password(&value));
     };
 
+    // TODO: Use protected routes instead!
+    use_effect(move || {
+        spawn(async move {
+            let token: String = SessionStorage::get("jwt").unwrap_or_default();
+            if !token.is_empty() {
+                match about_me(token.clone()).await {
+                    Ok(data) => {
+                        let user = data.data.user;
+                        if user.role == "admin" {
+                            navigator.push("/admin");
+                        }
+                    }
+                    Err(e) => {
+                        error_message.set(Some(e.to_string()));
+                    }
+                }
+            }
+        });
+    });
+
     let handle_login = move |_| {
         let email = email().clone();
         let password = password().clone();
@@ -47,11 +75,29 @@ pub fn Login() -> Element {
             return;
         }
 
+        // TODO: use axum middleware to set cookie in request header
         spawn(async move {
             match login_user(LoginUserSchema { email, password }).await {
-                Ok(_) => {
-                    navigator.push("/blogs");
-                }
+                Ok(data) => match extract_token(&data.data.token) {
+                    Some(token) => match about_me(token.clone()).await {
+                        Ok(data) => {
+                            let user = data.data.user;
+                            if user.role == "admin" {
+                                SessionStorage::set("jwt", token.clone())
+                                    .expect("Failed to store JWT in session storage");
+                                navigator.push("/admin");
+                            } else {
+                                error_message.set(Some(
+                                    "Nice Try! But, only admin is allowed to log in!".to_string(),
+                                ));
+                            }
+                        }
+                        Err(e) => {
+                            error_message.set(Some(e.to_string()));
+                        }
+                    },
+                    None => println!("Token not found"),
+                },
                 Err(e) => {
                     error_message.set(Some(e.to_string()));
                 }
@@ -112,7 +158,7 @@ pub fn Login() -> Element {
 
                 p { class: "w-full text-center mt-4",
                     span { class: "text-base text-gray-800", "Don't have an account? " }
-                    a { class: "text-base text-blue-600 hover:underline", href: "/signup", "Register" }
+                    a { class: "text-base text-blue-600 hover:underline", href: "/admin/signup", "Register" }
                 }
             }
         }

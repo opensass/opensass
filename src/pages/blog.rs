@@ -1,4 +1,3 @@
-use crate::router::Route;
 use crate::server::auth::controller::get_user_info;
 use crate::server::auth::model::User;
 use crate::server::post::controller::get_single_post;

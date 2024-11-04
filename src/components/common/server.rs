@@ -3,6 +3,8 @@ use crate::server::post::controller::get_posts;
 use crate::server::post::controller::get_trending_posts;
 use crate::server::post::model::Category;
 use crate::server::post::model::Post;
+use crate::server::subscriber::controller::get_subs;
+use crate::server::subscriber::model::Subscriber;
 use dioxus::prelude::*;
 use dioxus_logger::tracing;
 
@@ -10,6 +12,7 @@ pub static BLOGS: GlobalSignal<Vec<Post>> = GlobalSignal::new(Vec::new);
 pub static TOTAL_POSTS: GlobalSignal<u64> = GlobalSignal::new(|| 0);
 pub static TRENDING_POSTS: GlobalSignal<Vec<Post>> = GlobalSignal::new(Vec::new);
 pub static CATEGORIES: GlobalSignal<Vec<Category>> = GlobalSignal::new(Vec::new);
+pub static SUBSCRIBERS: GlobalSignal<Vec<Subscriber>> = GlobalSignal::new(Vec::new);
 
 pub async fn fetch_and_store_posts(
     page: u64,
@@ -39,5 +42,15 @@ pub async fn fetch_and_store_posts(
             *CATEGORIES.write() = categories_response.data.categories;
         }
         Err(err) => tracing::error!("Failed to fetch categories: {err}"),
+    }
+}
+
+pub async fn fetch_and_store_subs() {
+    match get_subs().await {
+        Ok(response) => {
+            let subs = response.data.subscribers;
+            *SUBSCRIBERS.write() = subs;
+        }
+        Err(err) => tracing::error!("Failed to fetch subs: {err}"),
     }
 }
