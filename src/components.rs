@@ -8,3 +8,4 @@ pub(crate) mod navbar;
 pub(crate) mod roadmap;
 pub(crate) mod team;
 pub(crate) mod testimonial;
+pub(crate) mod admin;

@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+
 use crate::server::common::response::SuccessResponse;
 use crate::server::post::model::{Category, Post};
 use crate::server::post::request::{CreatePostRequest, GetSinglePostRequest};

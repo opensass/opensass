@@ -131,7 +131,7 @@ pub fn Register() -> Element {
 
                 p { class: "w-full text-center mt-4",
                     span { class: "text-base text-gray-800", "Already have an account? " }
-                    a { class: "text-base text-blue-600 hover:underline", href: "/login", "Log In" }
+                    a { class: "text-base text-blue-600 hover:underline", href: "/admin/login", "Log In" }
                 }
             }
         }

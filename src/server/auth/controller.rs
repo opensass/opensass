@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+
 use std::env;
 use std::str::FromStr;
 
@@ -137,7 +139,7 @@ async fn logout() -> Result<SuccessResponse<AuthResponse>, ServerFnError> {
 }
 
 #[server]
-async fn about_me(token: String) -> Result<SuccessResponse<UserResponse>, ServerFnError> {
+pub async fn about_me(token: String) -> Result<SuccessResponse<UserResponse>, ServerFnError> {
     let client = get_client().await;
     let db =
         client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set."));
