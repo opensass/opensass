@@ -6,6 +6,7 @@ use crate::pages::blogs::Blogs;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::register::Register;
+use crate::pages::donate::Donate;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -58,6 +59,8 @@ pub enum Route {
     // })]
     #[route("/admin")]
     AdminPanel {},
+    #[route("/donate")]
+    Donate {},
     // #[end_guard]
 }
 
