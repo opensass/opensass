@@ -1,12 +1,13 @@
 use crate::components::navbar::dropdown::Dropdown;
 use crate::components::navbar::NavBar;
 use crate::pages::admin::AdminPanel;
+use crate::pages::aibook::AIBook;
 use crate::pages::blog::Blog;
 use crate::pages::blogs::Blogs;
+use crate::pages::donate::Donate;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::register::Register;
-use crate::pages::donate::Donate;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -61,6 +62,8 @@ pub enum Route {
     AdminPanel {},
     #[route("/donate")]
     Donate {},
+    #[route("/aibook")]
+    AIBook {},
     // #[end_guard]
 }
 

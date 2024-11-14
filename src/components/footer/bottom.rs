@@ -12,9 +12,10 @@ pub fn Bottom() -> Element {
                     class: "text-sm text-gray-500",
                     "© 2024. Designed by ",
                     a {
-                        href: "https://github.com/wiseaidev",
+                        href: "https://github.com/opensass",
+                        target: "_blank",
                         class: "text-white hover:text-gray-400 transition-colors",
-                        "Mahmoud Harmouch"
+                        "Open SASS"
                     }
                 },
                 SocialLinks {},

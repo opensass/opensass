@@ -28,14 +28,6 @@ pub fn RoadmapItemCard(roadmap_item: RoadmapItem) -> Element {
                     RoadmapStatus::Inactive => "text-gray-400 border-gray-300",
                 }),
                 div {
-                    class: "flex justify-center mb-4",
-                    img {
-                        src: "./down_arrow.svg",
-                        alt: "roadmap-icon",
-                        class: "w-8 h-8",
-                    }
-                }
-                div {
                     class: "text-left",
                     h6 { class: "text-lg font-semibold", "{roadmap_item.date}" }
                     ul {

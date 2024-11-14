@@ -5,7 +5,7 @@ pub fn Logo() -> Element {
     rsx! {
         div { class: "flex items-center",
             img {
-                src: "./server-icon.jpg",
+                src: "./logo.webp",
                 alt: "Open SASS Logo",
                 class: "w-16 h-16 object-contain"
             }

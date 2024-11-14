@@ -15,7 +15,7 @@ pub struct TeamMember {
 #[component]
 pub fn TeamCard(member: TeamMember) -> Element {
     rsx! {
-        div { class: "group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-gray-200 transition-all duration-300 hover:-translate-y-2 shadow-lg transform hover:scale-105",
+        div { class: "text-white group relative bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 shadow-lg transform hover:scale-105",
             div { class: "relative w-full h-64 overflow-hidden",
                 img { class: "absolute inset-0 w-full h-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100", src: "{member.image}", alt: "{member.name}" }
                 div { class: "absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30" }

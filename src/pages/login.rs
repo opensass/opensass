@@ -13,7 +13,6 @@ fn extract_token(cookie_str: &str) -> Option<String> {
 
 #[component]
 pub fn Login() -> Element {
-    // TODO: split into multiple comps
     let navigator = use_navigator();
 
     let mut email = use_signal(|| "".to_string());
@@ -44,7 +43,6 @@ pub fn Login() -> Element {
         password_valid.set(validate_password(&value));
     };
 
-    // TODO: Use protected routes instead!
     use_effect(move || {
         spawn(async move {
             let token: String = SessionStorage::get("jwt").unwrap_or_default();
@@ -75,7 +73,6 @@ pub fn Login() -> Element {
             return;
         }
 
-        // TODO: use axum middleware to set cookie in request header
         spawn(async move {
             match login_user(LoginUserSchema { email, password }).await {
                 Ok(data) => match extract_token(&data.data.token) {
@@ -141,7 +138,6 @@ pub fn Login() -> Element {
                         button {
                             class: "absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600",
                             onclick: move |_| show_password.set(!show_password()),
-                            // TODO: Use dioxus free icons crate
                             i { class: format!("fa {}", if show_password() { "fa-eye" } else { "fa-eye-slash" }) }
                         }
                     }

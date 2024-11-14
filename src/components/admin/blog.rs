@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
-use crate::components::common::server::BLOGS;
 use crate::components::common::server::fetch_and_store_posts;
+use crate::components::common::server::BLOGS;
+use dioxus::prelude::*;
 
 #[component]
 pub fn BlogList() -> Element {

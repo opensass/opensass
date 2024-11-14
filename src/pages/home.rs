@@ -3,6 +3,7 @@ use crate::components::faq::Faq;
 use crate::components::features::Features;
 use crate::components::footer::Footer;
 use crate::components::hero::Hero;
+use crate::components::project::Projects;
 use crate::components::roadmap::Roadmap;
 use crate::components::team::Team;
 use crate::components::testimonial::Testimonial;
@@ -39,6 +40,7 @@ pub fn Home() -> Element {
             onmounted: move |cx| header_element.set(Some(cx.data())),
             Hero {}
             Features {}
+            Projects {}
             Roadmap {}
             Faq {}
             Testimonial {}

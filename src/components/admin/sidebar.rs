@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::components::admin::link::SidebarLink;
+use dioxus::prelude::*;
 
 #[derive(PartialEq, Clone)]
 pub enum Tab {

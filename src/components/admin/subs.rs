@@ -1,13 +1,12 @@
-use dioxus::prelude::*;
-use crate::components::common::server::SUBSCRIBERS;
 use crate::components::common::server::fetch_and_store_subs;
+use crate::components::common::server::SUBSCRIBERS;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Subscriptions() -> Element {
     let subs = SUBSCRIBERS.read();
 
-    let _resource =
-        use_resource(|| async move { fetch_and_store_subs().await });
+    let _resource = use_resource(|| async move { fetch_and_store_subs().await });
 
     rsx! {
         table { class: "min-w-full bg-white text-center",
