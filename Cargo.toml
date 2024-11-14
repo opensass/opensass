@@ -8,11 +8,7 @@ edition = "2021"
 
 [dependencies]
 serde = { version = "1.0.197", features = ["derive"] }
-
 dioxus = { version = "0.5", features = ["fullstack", "router", "html"] }
-
-# Debug
-dioxus-logger = "0.5.1"
 gloo = { version = "0.11.0", features = ["storage"] }
 tokio = { version = "1.41.0", optional = true }
 mongodb = { version = "3.1.0", optional = true }
@@ -29,6 +25,10 @@ rand_core = { version = "0.6.4", features = ["std"], optional = true }
 anyhow = "1.0.92"
 time = "0.3.36"
 regex = "1.11.1"
+dioxus-free-icons = { version = "0.8.6", features = ["font-awesome-regular", "font-awesome-brands", "font-awesome-solid"] }
+
+# Debug
+dioxus-logger = "0.5.1"
 
 [features]
 default = []

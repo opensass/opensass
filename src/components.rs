@@ -1,3 +1,4 @@
+pub(crate) mod admin;
 pub(crate) mod blog;
 pub(crate) mod common;
 pub(crate) mod faq;
@@ -5,7 +6,7 @@ pub(crate) mod features;
 pub(crate) mod footer;
 pub(crate) mod hero;
 pub(crate) mod navbar;
+pub(crate) mod project;
 pub(crate) mod roadmap;
 pub(crate) mod team;
 pub(crate) mod testimonial;
-pub(crate) mod admin;

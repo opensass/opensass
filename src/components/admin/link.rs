@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::components::admin::sidebar::Tab;
+use dioxus::prelude::*;
 
 #[derive(Props, Clone, PartialEq)]
 pub struct SidebarLinkProps {

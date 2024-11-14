@@ -17,7 +17,7 @@ pub fn Grid(props: FeatureGridProps) -> Element {
                     class: "border border-black shadow-md p-6 rounded-lg bg-white cursor-pointer hover:bg-gray-100 hover:shadow-lg transition-all duration-300",
 
                     FeatureItem {
-                        icon: feature.icon,
+                        icon: feature.icon.clone(),
                         title: feature.title,
                         description: feature.description,
                     }

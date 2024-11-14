@@ -5,6 +5,8 @@ pub(crate) mod rating;
 use crate::components::common::header::Header;
 use crate::components::testimonial::card::TestimonialCard;
 use dioxus::prelude::*;
+use dioxus_free_icons::icons::fa_regular_icons::FaStar;
+use dioxus_free_icons::Icon;
 
 #[derive(Props, Clone, PartialEq)]
 pub struct TestimonialData {
@@ -13,7 +15,7 @@ pub struct TestimonialData {
     author_title: &'static str,
     author_image: &'static str,
     company_logo: &'static str,
-    star_images: Vec<&'static str>,
+    star_images: Vec<Element>,
 }
 
 #[component]
@@ -23,43 +25,37 @@ pub fn Testimonial() -> Element {
             quote: "I thought writing software in Rust was hard until I found Open SASS. Now I can build apps faster than I can compile! Bravo!",
             author_name: "Linus Torvalds",
             author_title: "Creator of Linux",
-            author_image: "./down_arrow.svg",
-            company_logo: "./down_arrow.svg",
-            star_images: vec![
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-            ],
+            author_image: "./linus.webp",
+            company_logo: "./linux.webp",
+            star_images: vec![rsx! {Icon {
+                width: 30,
+                height: 30,
+                icon: FaStar,
+            }}; 5],
         },
         TestimonialData {
             quote: "I tried to jailbreak my own SaaS framework but ended up creating a black hole. Open SASS actually makes it easy to launch a product!",
             author_name: "George Hotz",
             author_title: "Hacker Extraordinaire",
-            author_image: "./down_arrow.svg",
-            company_logo: "./down_arrow.svg",
-            star_images: vec![
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-            ],
+            author_image: "./geohotz.webp",
+            company_logo: "./comma.webp",
+            star_images: vec![rsx! {Icon {
+                width: 30,
+                height: 30,
+                icon: FaStar,
+            }}; 5],
         },
         TestimonialData {
             quote: "I’ve launched rockets and electric cars, but nothing has been as easy as building with Open SASS. Rust is now my first favorite language!",
             author_name: "Elon Musk",
             author_title: "CEO, SpaceX & Tesla",
-            author_image: "./down_arrow.svg",
-            company_logo: "./down_arrow.svg",
-            star_images: vec![
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-                "./down_arrow.svg",
-            ],
+            author_image: "./elon.webp",
+            company_logo: "./spacex.webp",
+            star_images: vec![rsx! {Icon {
+                width: 30,
+                height: 30,
+                icon: FaStar,
+            }}; 5],
         },
     ];
 

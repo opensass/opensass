@@ -31,7 +31,7 @@ pub fn Header() -> Element {
             // TODO: move it to a separate navbar comp and use a router outlet
             nav { class: "bg-gray-800  w-full flex justify-between items-center p-6 shadow-md",
                 div { class: "text-2xl font-bold flex items-center",
-                    img { src: "./server-icon.jpg", alt: "Logo", class: "h-16 mr-2" }
+                    img { src: "./logo.webp", alt: "Logo", class: "h-16 mr-2" }
                     span { "Open SASS" }
                 }
                 Link {

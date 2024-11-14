@@ -15,8 +15,10 @@ pub fn AuthButtons(props: AuthButtonsProps) -> Element {
 
     rsx! {
         div { class: "{button_class}",
-            button {
+            a {
                 class: "border border-black px-5 py-2 text-lg hover:bg-gray-100",
+                href: "https://discord.gg/dGCPR6bq",
+                target: "_blank",
                 "Join"
             }
             Link {
