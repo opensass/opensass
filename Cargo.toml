@@ -26,14 +26,17 @@ anyhow = "1.0.92"
 time = "0.3.36"
 regex = "1.11.1"
 dioxus-free-icons = { version = "0.8.6", features = ["font-awesome-regular", "font-awesome-brands", "font-awesome-solid"] }
+tower-http = { version = "0.6.1", features = ["cors"], optional = true }
+dioxus-web = { version = "0.5.6", features = ["hydrate"], optional = true }
+axum = { version = "0.7.7", optional = true }
 
 # Debug
 dioxus-logger = "0.5.1"
 
 [features]
 default = []
-server = ["dioxus/axum", "tokio", "mongodb", "jsonwebtoken", "argon2", "uuid", "rand", "axum-extra", "rand_core"]
-web = ["dioxus/web"]
+server = ["dioxus/axum", "tokio", "mongodb", "jsonwebtoken", "argon2", "uuid", "rand", "axum-extra", "rand_core", "axum", "tower-http"]
+web = ["dioxus/web", "dioxus-web"]
 axum-extra = ["dep:axum-extra"]
 
 [profile.release]

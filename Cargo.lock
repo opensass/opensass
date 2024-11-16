@@ -804,7 +804,7 @@ dependencies = [
  "tokio-stream",
  "tokio-util",
  "tower 0.4.13",
- "tower-http",
+ "tower-http 0.5.2",
  "tower-layer",
  "tracing",
  "tracing-futures",
@@ -2372,12 +2372,14 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "argon2",
+ "axum",
  "axum-extra",
  "bson",
  "chrono",
  "dioxus",
  "dioxus-free-icons",
  "dioxus-logger",
+ "dioxus-web",
  "dotenv",
  "futures-util",
  "gloo 0.11.0",
@@ -2389,6 +2391,7 @@ dependencies = [
  "serde",
  "time",
  "tokio",
+ "tower-http 0.6.1",
  "uuid",
 ]
 
@@ -3459,6 +3462,20 @@ dependencies = [
  "tower-layer",
  "tower-service",
  "tracing",
+]
+
+[[package]]
+name = "tower-http"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8437150ab6bbc8c5f0f519e3d5ed4aa883a83dd4cdd3d1b21f9482936046cb97"
+dependencies = [
+ "bitflags 2.6.0",
+ "bytes",
+ "http 1.1.0",
+ "pin-project-lite",
+ "tower-layer",
+ "tower-service",
 ]
 
 [[package]]
