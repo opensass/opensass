@@ -24,6 +24,12 @@ pub fn Blog(id: String) -> Element {
         }
     });
 
+    let mut read_time = 0.;
+    if post().is_some() {
+        read_time = (post().unwrap().desc.len() as f64 / 7000.0).max(1.0);
+    }
+    let format_time = format!("{:.2}", read_time);
+
     rsx! {
         div {
             class: "bg-gray-900 min-h-screen text-white",
@@ -67,7 +73,9 @@ pub fn Blog(id: String) -> Element {
                                     span { class: "font-semibold text-lg", "{user.name}" }
                                     span {
                                         class: "text-gray-400 text-sm",
-                                        "{post.created_at.format(\"%B %d, %Y\")} · {post.desc.len() / 7000} min read"
+                                        // TODO: Determine the correct formula for calculating the read time.
+                                        // Currently, this is a hardcoded approximate value that seems to work.
+                                        "{post.created_at.format(\"%B %d, %Y\")} · {format_time} min read"
                                     }
                                 }
                             }
