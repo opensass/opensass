@@ -1,7 +1,7 @@
 #![allow(unused_imports)]
 
 use crate::server::common::response::SuccessResponse;
-use crate::server::post::model::{Category, Post};
+use crate::server::post::model::{Category, Comment, Post};
 use crate::server::post::request::{CreatePostRequest, GetSinglePostRequest};
 use crate::server::post::response::{
     CategoriesResponse, GetPostResponse, PostResponse, PostsResponse, TrendingPostsResponse,
@@ -200,4 +200,77 @@ pub async fn get_single_post(
             updated_at: updated_post.updated_at,
         },
     })
+}
+
+#[server]
+pub async fn get_comments(post_id: String) -> Result<Vec<Comment>, ServerFnError> {
+    let client = get_client().await;
+    let db =
+        client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
+    let comment_collection = db.collection::<Comment>("comments");
+
+    let post_collection = db.collection::<Post>("posts");
+
+    let filter = doc! { "slug": &post_id };
+
+    let post = post_collection
+        .find_one(filter)
+        .await
+        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?
+        .ok_or(ServerFnError::new("Post not found"))?;
+
+    let filter = doc! { "post": post.id };
+
+    let comment_cursor = comment_collection
+        .find(filter)
+        .sort(doc! { "createdAt": -1 })
+        .await?;
+    let comments: Vec<Comment> = comment_cursor.try_collect().await?;
+
+    Ok(comments)
+}
+
+#[server]
+pub async fn create_comment(
+    post_id: String,
+    username: String,
+    user_email: String,
+    pic: Option<String>,
+    content: String,
+) -> Result<Comment, ServerFnError> {
+    if username.trim().is_empty() || user_email.trim().is_empty() || content.trim().is_empty() {
+        return Err(ServerFnError::new(
+            "All fields except picture are required.",
+        ));
+    }
+
+    let client = get_client().await;
+    let db =
+        client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
+
+    let post_collection = db.collection::<Post>("posts");
+
+    let filter = doc! { "slug": &post_id };
+
+    let post = post_collection
+        .find_one(filter)
+        .await
+        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?
+        .ok_or(ServerFnError::new("Post not found"))?;
+
+    let comment_collection = db.collection::<Comment>("comments");
+
+    let new_comment = Comment {
+        id: ObjectId::new(),
+        post: post.id,
+        username,
+        user_email,
+        pic: pic.unwrap_or_else(|| "https://via.placeholder.com/50".to_string()),
+        content,
+        created_at: Utc::now(),
+        updated_at: Utc::now(),
+    };
+
+    comment_collection.insert_one(new_comment.clone()).await?;
+    Ok(new_comment)
 }

@@ -1,3 +1,4 @@
+use crate::components::comments::CommentsSection;
 use crate::server::auth::controller::get_user_info;
 use crate::server::auth::model::User;
 use crate::server::post::controller::get_single_post;
@@ -8,6 +9,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn Blog(id: String) -> Element {
     let mut post = use_signal(|| None::<GetPostResponse>);
+    let post_id = id.clone();
     let mut user_info = use_signal(|| None::<User>);
 
     let _resource = use_resource(move || {
@@ -100,6 +102,7 @@ pub fn Blog(id: String) -> Element {
                     } else {
                         p { class: "text-gray-400 italic text-center", "Loading post content..." }
                     }
+                    CommentsSection { post_id }
                 }
             }
         }
