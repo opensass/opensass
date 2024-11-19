@@ -37,7 +37,6 @@ dioxus-logger = "0.5.1"
 default = []
 server = ["dioxus/axum", "tokio", "mongodb", "jsonwebtoken", "argon2", "uuid", "rand", "axum-extra", "rand_core", "axum", "tower-http"]
 web = ["dioxus/web", "dioxus-web"]
-axum-extra = ["dep:axum-extra"]
 
 [profile.release]
 opt-level = "z"

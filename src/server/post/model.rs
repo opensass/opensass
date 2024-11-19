@@ -42,13 +42,13 @@ pub struct Post {
 pub struct Comment {
     #[serde(rename = "_id")]
     pub id: ObjectId,
-    pub desc: String,
+    pub post: ObjectId,
+    // Allow anonymous users to comment, no relation with Users table
+    pub username: String,
     #[serde(rename = "userEmail")]
     pub user_email: String,
-    pub user: ObjectId,
-    #[serde(rename = "postSlug")]
-    pub post_slug: String,
-    pub post: ObjectId,
+    pub pic: String,
+    pub content: String,
     #[serde(with = "chrono_datetime_as_bson_datetime", rename = "createdAt")]
     pub created_at: DateTime<Utc>,
     #[serde(with = "chrono_datetime_as_bson_datetime", rename = "updatedAt")]

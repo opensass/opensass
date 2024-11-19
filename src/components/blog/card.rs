@@ -13,10 +13,15 @@ pub struct BlogCardProps {
 
 #[component]
 pub fn BlogHomeCard(props: BlogCardProps) -> Element {
-    let formatted_date = DateTime::parse_from_rfc3339(&props.created_at)
-        .unwrap_or_else(|_| Utc::now().into())
+    let formatted_date = props
+        .created_at
+        .parse::<DateTime<Utc>>()
+        .expect("Invalid date format")
         .format("%b %d, %Y")
         .to_string();
+
+    let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
+    let format_time = format!("{:.2}", read_time);
 
     rsx! {
         a {
@@ -51,7 +56,9 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
 
                 div {
                     class: "text-gray-500 text-xs mt-2",
-                    "{formatted_date} • 3 min read"
+                    // TODO: Determine the correct formula for calculating the read time.
+                    // Currently, this is a hardcoded approximate value that seems to work.
+                    "{formatted_date} · {format_time} min read"
                 }
 
                 a {
@@ -66,10 +73,15 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
 
 #[component]
 pub fn BlogCard(props: BlogCardProps) -> Element {
-    let formatted_date = DateTime::parse_from_rfc3339(&props.created_at)
-        .unwrap_or_else(|_| Utc::now().into())
+    let formatted_date = props
+        .created_at
+        .parse::<DateTime<Utc>>()
+        .expect("Invalid date format")
         .format("%b %d, %Y")
         .to_string();
+
+    let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
+    let format_time = format!("{:.2}", read_time);
 
     rsx! {
         a {
@@ -104,7 +116,9 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                 div {
                     class: "flex justify-between items-center text-gray-500 text-sm mt-4",
                     span {
-                        "{formatted_date} • 3 min read"
+                        // TODO: Determine the correct formula for calculating the read time.
+                        // Currently, this is a hardcoded approximate value that seems to work.
+                        "{formatted_date} · {format_time} min read"
                     }
                     div {
                         class: "flex gap-2",
