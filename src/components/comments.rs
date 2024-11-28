@@ -91,7 +91,7 @@ pub fn CommentsSection(post_id: String) -> Element {
                         img { class: "w-10 h-10 rounded-full mr-4", src: "{comment.pic}", alt: "Profile Picture" }
                         div {
                             p { class: "font-semibold", "@{comment.username}" }
-                            p { class: "text-sm", "{comment.created_at.format(\"%b %d, %Y\").to_string()}" }
+                            p { class: "text-sm", "{comment.created_at.format(\"%b %d, %Y\")}" }
                             p { class: "mt-1", "{comment.content}" }
                         }
                     }

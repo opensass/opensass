@@ -9,14 +9,12 @@ use dioxus::prelude::*;
 #[component]
 pub fn Blog(id: String) -> Element {
     let mut post = use_signal(|| None::<GetPostResponse>);
-    let post_id = id.clone();
+    let post_id = use_signal(|| Some(id));
     let mut user_info = use_signal(|| None::<User>);
 
-    let _resource = use_resource(move || {
-        let value = id.clone();
-
-        async move {
-            if let Ok(response) = get_single_post(GetSinglePostRequest { slug: value }).await {
+    let _resource = use_resource(move || async move {
+        if let Some(post_id) = post_id() {
+            if let Ok(response) = get_single_post(GetSinglePostRequest { slug: post_id }).await {
                 post.set(Some(response.data.clone()));
 
                 if let Ok(user_response) = get_user_info(response.data.user).await {
@@ -102,7 +100,9 @@ pub fn Blog(id: String) -> Element {
                     } else {
                         p { class: "text-gray-400 italic text-center", "Loading post content..." }
                     }
-                    CommentsSection { post_id }
+                    if let Some(post_id) = post_id() {
+                        CommentsSection { post_id: post_id }
+                    }
                 }
             }
         }
