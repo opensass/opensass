@@ -5,6 +5,7 @@ use dioxus::prelude::*;
 enum NavLink {
     HomePage,
     Features,
+    Projects,
     Roadmap,
     Faq,
     Testimonial,
@@ -27,6 +28,7 @@ pub fn NavLinks() -> Element {
     let nav_links = vec![
         (NavLink::HomePage, "#home", "Home"),
         (NavLink::Features, "#features", "Features"),
+        (NavLink::Projects, "#projects", "Projects"),
         (NavLink::Roadmap, "#roadmap", "Roadmap"),
         (NavLink::Faq, "#faq", "Faq"),
         (NavLink::Testimonial, "#testimonial", "Testimonial"),

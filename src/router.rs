@@ -8,6 +8,7 @@ use crate::pages::donate::Donate;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::register::Register;
+use crate::pages::tripper::Tripper;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -64,6 +65,8 @@ pub enum Route {
     Donate {},
     #[route("/aibook")]
     AIBook {},
+    #[route("/tripper")]
+    Tripper {},
     // #[end_guard]
 }
 

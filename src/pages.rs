@@ -6,3 +6,4 @@ pub(crate) mod donate;
 pub(crate) mod home;
 pub(crate) mod login;
 pub(crate) mod register;
+pub(crate) mod tripper;

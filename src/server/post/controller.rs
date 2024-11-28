@@ -216,18 +216,25 @@ pub async fn get_comments(post_id: String) -> Result<Vec<Comment>, ServerFnError
     let post = post_collection
         .find_one(filter)
         .await
-        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?
-        .ok_or(ServerFnError::new("Post not found"))?;
+        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?;
 
-    let filter = doc! { "post": post.id };
+    if let Some(post) = post {
+        let filter = doc! { "post": post.id };
 
-    let comment_cursor = comment_collection
-        .find(filter)
-        .sort(doc! { "createdAt": -1 })
-        .await?;
-    let comments: Vec<Comment> = comment_cursor.try_collect().await?;
+        let comment_cursor = comment_collection
+            .find(filter)
+            .sort(doc! { "createdAt": -1 })
+            .await
+            .map_err(|_| ServerFnError::new("Failed to fetch comments"))?;
 
-    Ok(comments)
+        let comments: Vec<Comment> = comment_cursor
+            .try_collect()
+            .await
+            .map_err(|_| ServerFnError::new("Error while processing comments"))?;
+        Ok(comments)
+    } else {
+        Err(ServerFnError::new("Post not found"))
+    }
 }
 
 #[server]

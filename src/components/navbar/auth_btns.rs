@@ -17,7 +17,7 @@ pub fn AuthButtons(props: AuthButtonsProps) -> Element {
         div { class: "{button_class}",
             a {
                 class: "border border-black px-5 py-2 text-lg hover:bg-gray-100",
-                href: "https://discord.gg/dGCPR6bq",
+                href: "https://discord.gg/b5JbvHW5nv",
                 target: "_blank",
                 "Join"
             }
