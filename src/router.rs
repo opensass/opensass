@@ -7,6 +7,7 @@ use crate::pages::blogs::Blogs;
 use crate::pages::donate::Donate;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
+use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
 use crate::pages::tripper::Tripper;
 use dioxus::prelude::*;
@@ -67,6 +68,8 @@ pub enum Route {
     AIBook {},
     #[route("/tripper")]
     Tripper {},
+    #[route("/nanoog")]
+    NanoOG {},
     // #[end_guard]
 }
 
