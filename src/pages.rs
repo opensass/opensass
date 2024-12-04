@@ -5,5 +5,6 @@ pub(crate) mod blogs;
 pub(crate) mod donate;
 pub(crate) mod home;
 pub(crate) mod login;
+pub(crate) mod nanoog;
 pub(crate) mod register;
 pub(crate) mod tripper;

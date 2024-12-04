@@ -21,6 +21,13 @@ pub fn Projects() -> Element {
             tech_stack: vec!["Rust", "Dioxus", "MongoDB", "AWS Bedrock", "Unsplash API"],
             image: "https://github.com/user-attachments/assets/28dc576c-40b6-4548-a0ee-3390eda988f0",
         },
+        Project {
+            title: "Nano OG: AI-Generated Open Graph Images",
+            description: "Create stunning OG images for your websites with Gemini Nano AI, tailored for seamless integration.",
+            link: Some("/nanoog"),
+            tech_stack: vec!["Rust", "Dioxus", "Gemini Nano AI"],
+            image: "https://github.com/user-attachments/assets/a9888b6e-c3b5-4e5e-a041-67ca1498137e",
+        },
     ];
 
     rsx! {
