@@ -24,7 +24,7 @@
 1. Install [`Dioxus CLI`](https://dioxuslabs.com/learn/0.5/getting_started):
 
    ```bash
-   cargo install dioxus-cli
+   cargo install dioxus-cli@0.5.6
    ```
 
 ## 🚀 Building and Running

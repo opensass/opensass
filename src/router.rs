@@ -10,6 +10,7 @@ use crate::pages::login::Login;
 use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
 use crate::pages::tripper::Tripper;
+use crate::pages::soulchain::SoulChain;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -62,6 +63,7 @@ pub enum Route {
     // })]
     #[route("/admin")]
     AdminPanel {},
+    // #[end_guard]
     #[route("/donate")]
     Donate {},
     #[route("/aibook")]
@@ -70,7 +72,8 @@ pub enum Route {
     Tripper {},
     #[route("/nanoog")]
     NanoOG {},
-    // #[end_guard]
+    #[route("/soulchain.pdf")]
+    SoulChain {},
 }
 
 #[component]
