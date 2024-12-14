@@ -8,3 +8,4 @@ pub(crate) mod login;
 pub(crate) mod nanoog;
 pub(crate) mod register;
 pub(crate) mod tripper;
+pub(crate) mod soulchain;
