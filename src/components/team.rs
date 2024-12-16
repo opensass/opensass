@@ -5,39 +5,37 @@ use crate::components::team::card::TeamCard;
 use crate::components::team::card::TeamMember;
 use crate::components::team::social_links::SocialLink;
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::fa_brands_icons::{FaGithub, FaLinkedin, FaTwitter};
-use dioxus_free_icons::Icon;
 
 #[component]
 pub fn Team() -> Element {
     let team_members = vec![TeamMember {
         name: "Mahmoud Harmouch",
         position: "Full Stack Rust Developer",
-        image: "/team_1.webp",
+        image: asset!("/assets/team_1.webp"),
         link: "https://www.github.com/wiseaidev",
         social_links: vec![
             SocialLink {
                 link: "https://www.linkedin.com/in/mahmoud-harmouch",
-                icon: rsx! {Icon {
+                icon: rsx! {i {
                     width: 30,
                     height: 30,
-                    icon: FaLinkedin,
+                    class: "fa-brands fa-linkedin",
                 }},
             },
             SocialLink {
                 link: "https://www.x.com/wiseaidev",
-                icon: rsx! {Icon {
+                icon: rsx! {i {
                     width: 30,
                     height: 30,
-                    icon: FaTwitter,
+                    class: "fa-brands fa-x-twitter",
                 }},
             },
             SocialLink {
                 link: "https://www.github.com/wiseaidev",
-                icon: rsx! {Icon {
+                icon: rsx! {i {
                     width: 30,
                     height: 30,
-                    icon: FaGithub,
+                    class: "fa-brands fa-github",
                 }},
             },
         ],

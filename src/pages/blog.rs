@@ -7,22 +7,22 @@ use crate::server::post::response::GetPostResponse;
 use dioxus::prelude::*;
 
 #[component]
-pub fn Blog(id: String) -> Element {
+pub fn Blog() -> Element {
     let mut post = use_signal(|| None::<GetPostResponse>);
-    let post_id = use_signal(|| Some(id));
+    let post_id = use_signal(|| Some(1));
     let mut user_info = use_signal(|| None::<User>);
 
-    let _resource = use_resource(move || async move {
-        if let Some(post_id) = post_id() {
-            if let Ok(response) = get_single_post(GetSinglePostRequest { slug: post_id }).await {
-                post.set(Some(response.data.clone()));
+    // let _resource = use_resource(move || async move {
+    //     if let Some(post_id) = post_id() {
+    //         if let Ok(response) = get_single_post(GetSinglePostRequest { slug: post_id }).await {
+    //             post.set(Some(response.data.clone()));
 
-                if let Ok(user_response) = get_user_info(response.data.user).await {
-                    user_info.set(Some(user_response.data));
-                }
-            }
-        }
-    });
+    //             if let Ok(user_response) = get_user_info(response.data.user).await {
+    //                 user_info.set(Some(user_response.data));
+    //             }
+    //         }
+    //     }
+    // });
 
     let mut read_time = 0.;
     if post().is_some() {

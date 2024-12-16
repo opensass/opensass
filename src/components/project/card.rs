@@ -1,6 +1,4 @@
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::fa_solid_icons::FaGlobe;
-use dioxus_free_icons::Icon;
 
 #[derive(Clone, Props, PartialEq)]
 pub struct Project {
@@ -39,8 +37,8 @@ pub fn ProjectCard(project: Project) -> Element {
                         href: "{link}",
                         target: "_blank",
                         class: "flex items-center text-blue-500 hover:text-blue-700 text-sm font-semibold",
-                        "Learn more "
-                        Icon { icon: FaGlobe }
+                        "Learn more ",
+                        i { class: "fa-solid fa-globe" }
                     }
                 }
             }

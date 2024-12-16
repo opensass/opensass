@@ -1,3 +1,4 @@
+use crate::blog::router_blog::BookRoute as BlogRoute;
 use crate::components::blog::card::BlogCard;
 use crate::components::blog::header::Header;
 use crate::components::common::server::fetch_and_store_posts;
@@ -6,6 +7,7 @@ use crate::components::common::server::CATEGORIES;
 use crate::components::common::server::TOTAL_POSTS;
 use crate::components::common::server::TRENDING_POSTS;
 use crate::components::footer::Footer;
+use crate::router::Route;
 
 use dioxus::prelude::*;
 
@@ -50,19 +52,8 @@ pub fn Blogs() -> Element {
                     }
                     div {
                         class: "my-8 flex flex-col gap-8",
-                        if blogs.is_empty() {
-                            p { class: "text-gray-400", "No posts available." }
-                        } else {
-                            for post in blogs.iter() {
-                                BlogCard {
-                                    title: post.title.clone(),
-                                    desc: post.desc.clone(),
-                                    img: post.img.clone(),
-                                    created_at: post.created_at.clone(),
-                                    category: post.category_slug.clone(),
-                                    slug: post.slug.clone(),
-                                }
-                            }
+                        for route in BlogRoute::static_routes().into_iter().rev() {
+                            BlogPostItem { route }
                         }
                     }
 
@@ -183,6 +174,45 @@ pub fn Blogs() -> Element {
                 }
             }
             Footer {}
+        }
+    }
+}
+pub(crate) fn ArrowRight() -> Element {
+    rsx! {
+        svg {
+            class: "w-4 h-4 ml-1",
+            stroke_linejoin: "round",
+            stroke: "currentColor",
+            fill: "none",
+            view_box: "0 0 24 24",
+            stroke_width: "2",
+            stroke_linecap: "round",
+            path { d: "M5 12h14M12 5l7 7-7 7" }
+        }
+    }
+}
+#[component]
+fn BlogPostItem(route: BlogRoute) -> Element {
+    let raw_title = &route.page().title;
+
+    if raw_title.contains("[draft]") {
+        return rsx! {};
+    }
+
+    let items = raw_title.splitn(7, " |---| ").collect::<Vec<_>>();
+    let [title, category, slug, date, description, img, ..] = items.as_slice() else {
+        panic!("Invalid post structure:");
+    };
+
+    rsx! {
+        BlogCard {
+            title: title,
+            desc: description,
+            route: route,
+            img: Some(img.to_string()),
+            created_at: date,
+            category: category,
+            slug: slug,
         }
     }
 }

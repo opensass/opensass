@@ -1,3 +1,4 @@
+use crate::blog::router_blog;
 use crate::components::navbar::dropdown::Dropdown;
 use crate::components::navbar::NavBar;
 use crate::pages::admin::AdminPanel;
@@ -9,8 +10,9 @@ use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
-use crate::pages::tripper::Tripper;
 use crate::pages::soulchain::SoulChain;
+use crate::pages::tripper::Tripper;
+
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -25,10 +27,10 @@ pub enum Route {
     #[end_layout]
     #[end_nest]
     #[end_layout]
-    #[route("/:..route")]
-    PageNotFound { route: Vec<String> },
-    #[route("/blog/:id")]
-    Blog { id: String },
+    // #[route("/:..route")]
+    // PageNotFound { route: Vec<String> },
+    // #[route("/blog/:id")]
+    // ,
     #[route("/admin/signup")]
     Register {},
     #[route("/admin/login")]
@@ -74,6 +76,13 @@ pub enum Route {
     NanoOG {},
     #[route("/soulchain.pdf")]
     SoulChain {},
+    // #[layout(Blog)]
+    #[redirect("/", || Route::BlogPost { child: router_blog::BookRoute::AnnouncingOpensass {} })]
+    #[child("/blogs")]
+    BlogPost { child: router_blog::BookRoute },
+    // #[end_layout]
+    #[route("/:..route")]
+    PageNotFound { route: Vec<String> },
 }
 
 #[component]
@@ -87,4 +96,12 @@ fn PageNotFound(route: Vec<String>) -> Element {
 #[component]
 fn DropdownItem(name: String) -> Element {
     rsx! {}
+}
+
+#[server(endpoint = "static_routes")]
+async fn static_routes() -> Result<Vec<String>, ServerFnError> {
+    Ok(Route::static_routes()
+        .into_iter()
+        .map(|route| route.to_string())
+        .collect::<Vec<_>>())
 }
