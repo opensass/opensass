@@ -33,12 +33,13 @@ watch_path = ["src", "assets"]
 style = [
    # Include from public_dir.
    "./main.css",
-   # online cdn. TODO: Use Railwind and file a feature request to add `post_cmd` in this toml file
-   "https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+   # online cdn. TODO: Use Railwind
+   "https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css",
 ]
 
 # Javascript code file
 script = [
+   "https://kit.fontawesome.com/62e08d355c.js"
 ]
 
 [web.resource.dev]

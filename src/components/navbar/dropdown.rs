@@ -1,7 +1,5 @@
 use crate::router::Route;
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::fa_solid_icons::FaArrowDown;
-use dioxus_free_icons::Icon;
 
 #[component]
 pub fn Dropdown() -> Element {
@@ -13,18 +11,21 @@ pub fn Dropdown() -> Element {
                 name: "team".into(),
             },
             "Team",
+            "fa-solid fa-people-group",
         ),
         (
             Route::DropdownItem {
                 name: "testimonials".into(),
             },
             "Testimonials",
+            "fa-solid fa-person",
         ),
         (
             Route::DropdownItem {
                 name: "mission".into(),
             },
             "Our Mission",
+            "fa-solid fa-person-circle-question",
         ),
     ];
 
@@ -36,10 +37,10 @@ pub fn Dropdown() -> Element {
                 "About Us"
                 div {
                     class: "w-6 h-6",
-                    Icon {
+                    i {
                         width: 30,
                         height: 30,
-                        icon: FaArrowDown,
+                        class: "fa-solid fa-arrow-down",
                     }
                 }
             }
@@ -48,15 +49,15 @@ pub fn Dropdown() -> Element {
                 div {
                     class: "absolute top-full left-0 bg-white border border-gray-300 mt-2 py-2 shadow-lg w-48",
 
-                    for (to, label) in dropdown_items {
+                    for (to, label, icon) in dropdown_items {
                         div {
                             class: "flex items-start gap-2 p-2",
 
-                            // img {
-                            //     src: "./down_arrow.svg",
-                            //     alt: "Icon",
-                            //     class: "w-6 h-6"
-                            // }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: icon,
+                            }
 
                             div {
                                 Link {

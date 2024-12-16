@@ -12,9 +12,21 @@ fn main() {
 
     #[cfg(feature = "web")]
     {
-        let config = dioxus_web::Config::new().hydrate(true);
+        LaunchBuilder::new()
+            .with_cfg(server_only! {
+                let mut cfg = ServeConfig::builder();
 
-        LaunchBuilder::new().with_cfg(config).launch(App);
+                if !cfg!(debug_assertions) {
+                    cfg = cfg.incremental(
+                        IncrementalRendererConfig::new()
+                            .static_dir(static_dir())
+                            .clear_cache(false)
+                    );
+                }
+
+                cfg.build().expect("Unable to build ServeConfig")
+            })
+            .launch(App);
     }
 
     #[cfg(feature = "server")]
@@ -57,12 +69,9 @@ fn main() {
                 let app = Router::new()
                     .layer(cors)
                     .layer(Extension(state))
-                    .serve_dioxus_application(ServeConfig::builder().build(), || {
-                        VirtualDom::new(App)
-                    })
-                    .await;
+                    .serve_dioxus_application(ServeConfig::new().unwrap(), App);
 
-                let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 3000));
+                let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 9999));
                 let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
 
                 axum::serve(listener, app.into_make_service())
@@ -76,4 +85,12 @@ fn App() -> Element {
     rsx! {
         Router::<Route> {}
     }
+}
+
+fn static_dir() -> std::path::PathBuf {
+    std::env::current_exe()
+        .unwrap()
+        .parent()
+        .unwrap()
+        .join("public")
 }

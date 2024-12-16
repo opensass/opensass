@@ -1,8 +1,11 @@
+use crate::blog::router_blog::BookRoute as BlogRoute;
+use crate::pages::blogs::ArrowRight;
+use crate::router::Route;
 use chrono::prelude::*;
 use dioxus::prelude::*;
 
 #[derive(Props, Clone, PartialEq, Debug)]
-pub struct BlogCardProps {
+pub struct BlogHomeCardProps {
     pub title: String,
     pub desc: String,
     pub img: Option<String>,
@@ -11,14 +14,25 @@ pub struct BlogCardProps {
     pub slug: String,
 }
 
+#[derive(Props, Clone, PartialEq, Debug)]
+pub struct BlogCardProps {
+    pub title: String,
+    pub route: BlogRoute,
+    pub desc: String,
+    pub img: Option<String>,
+    pub created_at: String,
+    pub category: String,
+    pub slug: String,
+}
+
 #[component]
-pub fn BlogHomeCard(props: BlogCardProps) -> Element {
-    let formatted_date = props
-        .created_at
-        .parse::<DateTime<Utc>>()
-        .expect("Invalid date format")
-        .format("%b %d, %Y")
-        .to_string();
+pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
+    // let formatted_date = props
+    //     .created_at
+    //     .parse::<DateTime<Utc>>()
+    //     .expect("Invalid date format")
+    //     .format("%b %d, %Y")
+    //     .to_string();
 
     let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
     let format_time = format!("{:.2}", read_time);
@@ -58,7 +72,7 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
                     class: "text-gray-500 text-xs mt-2",
                     // TODO: Determine the correct formula for calculating the read time.
                     // Currently, this is a hardcoded approximate value that seems to work.
-                    "{formatted_date} · {format_time} min read"
+                    "{props.created_at} · {format_time} min read"
                 }
 
                 a {
@@ -73,19 +87,18 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
 
 #[component]
 pub fn BlogCard(props: BlogCardProps) -> Element {
-    let formatted_date = props
-        .created_at
-        .parse::<DateTime<Utc>>()
-        .expect("Invalid date format")
-        .format("%b %d, %Y")
-        .to_string();
+    // let formatted_date = props
+    //     .created_at
+    //     .parse::<DateTime<Utc>>()
+    //     .expect("Invalid date format")
+    //     .format("%b %d, %Y")
+    //     .to_string();
 
     let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
     let format_time = format!("{:.2}", read_time);
 
     rsx! {
-        a {
-            href: "/blog/{props.slug}",
+        div {
             class: "flex flex-col md:flex-row gap-4 p-6 bg-gray-900 border border-gray-700 rounded-lg hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105",
             if let Some(img_url) = &props.img {
                 div {
@@ -118,25 +131,42 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                     span {
                         // TODO: Determine the correct formula for calculating the read time.
                         // Currently, this is a hardcoded approximate value that seems to work.
-                        "{formatted_date} · {format_time} min read"
+                        "{props.created_at} · {format_time} min read"
+                    }
+                    Link {
+                        class: "text-indigo-500 inline-flex items-center mt-4",
+                        to: Route::BlogPost { child: props.route },
+                        "Read more"
+                        ArrowRight {}
                     }
                     div {
                         class: "flex gap-2",
-                        // TODO: Replace with dioxus free icons crate
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fab fa-facebook" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "fa-brands fa-facebook"
+                            }
                         }
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fab fa-twitter" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "fa-brands fa-x-twitter"
+                            }
                         }
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fas fa-link" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "fa-brands fa-linkedin"
+                            }
                         }
                     }
                 }
