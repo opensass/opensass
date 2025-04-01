@@ -71,7 +71,7 @@ fn main() {
                     .layer(Extension(state))
                     .serve_dioxus_application(ServeConfig::new().unwrap(), App);
 
-                let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 9999));
+                let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 3000));
                 let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
 
                 axum::serve(listener, app.into_make_service())

@@ -406,10 +406,10 @@ pub fn IntroducingXAi() -> dioxus::prelude::Element {
             }
         }
         p {
-            em { "© 2024 Open SASS" }
+            em { "© 2024 Open SASS | Built with ❤\u{fe0f} by and for the Rust community." }
         }
     }
 }
 
-use crate::components::blog::code::CodeBlock;
 use dioxus::prelude::*;
+use crate::components::blog::code::CodeBlock;
