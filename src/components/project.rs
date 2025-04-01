@@ -8,6 +8,13 @@ use dioxus::prelude::*;
 pub fn Projects() -> Element {
     let projects = vec![
         Project {
+            title: "ELDFLOW: Effortless ELD Logging & AI Insights",
+            description: "Automate your ELD logs, track trips, and get AI-powered summaries. All in one platform.",
+            link: Some("/eldflow"),
+            tech_stack: vec!["Rust", "Dioxus", "Axum", "MongoDB", "Gemini AI", "Unsplash API", "Google Maps", "ELD"],
+            image: "https://github.com/user-attachments/assets/9c29885f-f4ca-4b04-a7dd-cc64ffcf04b9",
+        },
+        Project {
             title: "AIBook: AI-Powered Book Generation Platform",
             description: "A robust and scalable platform enabling users to generate complete books using Gemini AI models.",
             link: Some("/aibook"),
