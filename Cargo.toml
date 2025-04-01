@@ -29,6 +29,7 @@ dioxus-free-icons = { version = "0.8.6", features = ["font-awesome-regular", "fo
 tower-http = { version = "0.6.1", features = ["cors"], optional = true }
 dioxus-web = { version = "0.5.6", features = ["hydrate"], optional = true }
 axum = { version = "0.7.7", optional = true }
+getrandom = { version = "=0.2.15" }
 
 # Debug
 dioxus-logger = "0.5.1"
@@ -46,3 +47,13 @@ codegen-units = 1
 panic = "abort"
 strip = true
 incremental = false
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
