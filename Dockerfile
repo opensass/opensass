@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     git
 RUN cargo install cargo-chef
-RUN cargo install dioxus-cli@0.5.6
+RUN cargo install dioxus-cli@0.5.6 --locked --no-default-features
 WORKDIR /app
 
 # copy in source files, cd into target create and prepare recipe
