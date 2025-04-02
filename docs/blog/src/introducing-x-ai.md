@@ -105,4 +105,4 @@ We're excited to promote a vibrant community of developers around this project. 
 - [GitHub Repository](https://github.com/opensass/x-ai)
 - [Join the Conversation on Discord](https://discord.gg/b5JbvHW5nv)
 
-_© 2024 Open SASS | Built with ❤️ by and for the Rust community._
+_© 2025 Open SASS | Built with ❤️ by and for the Rust community._

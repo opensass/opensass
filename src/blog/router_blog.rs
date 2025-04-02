@@ -14,6 +14,10 @@ pub enum BookRoute {
     AnnouncingOpensass {},
     #[route("/introducing-x-ai")]
     IntroducingXAi {},
+    #[route("/aibook-v002-release")]
+    AibookV002Release {},
+    #[route("/tripper-v001-release")]
+    TripperV001Release {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -26,6 +30,8 @@ impl BookRoute {
         match self {
             BookRoute::AnnouncingOpensass {} => use_mdbook::mdbook_shared::PageId(0usize),
             BookRoute::IntroducingXAi {} => use_mdbook::mdbook_shared::PageId(1usize),
+            BookRoute::AibookV002Release {} => use_mdbook::mdbook_shared::PageId(2usize),
+            BookRoute::TripperV001Release {} => use_mdbook::mdbook_shared::PageId(3usize),
         }
     }
 }
@@ -43,7 +49,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 0usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: "Announcing Open SASS 🚀 |---| announcement |---| announcing-open-sass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        title: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
                             .to_string(),
                         url: BookRoute::AnnouncingOpensass {},
                         segments: vec![],
@@ -93,7 +99,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 1usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: "✨ Introducing X-AI: A Blazingly Fast 🚀 𝕏-AI Rusty CLI, TUI and SDK. |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93"
+                        title: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93"
                             .to_string(),
                         url: BookRoute::IntroducingXAi {},
                         segments: vec![],
@@ -153,13 +159,117 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::IntroducingXAi {},
             ::use_mdbook::mdbook_shared::PageId(1usize),
         );
+        pages
+            .push((
+                2usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff"
+                            .to_string(),
+                        url: BookRoute::AibookV002Release {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 AIBook v0.0.2 Release - Stripe Integration"
+                                    .to_string(),
+                                id: "🚀-aibook-v0.0.2-release---stripe-integration"
+                                    .to_string(),
+                                level: 1usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔗 Quick Links".to_string(),
+                                id: "🔗-quick-links".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🆕 What's New in v0.0.2".to_string(),
+                                id: "🆕-what's-new-in-v0.0.2".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📖 Why Stripe?".to_string(),
+                                id: "📖-why-stripe?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Why This Matters".to_string(),
+                                id: "⚙\u{fe0f}-why-this-matters".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌍 Explore More".to_string(),
+                                id: "🌍-explore-more".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(2usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::AibookV002Release {},
+            ::use_mdbook::mdbook_shared::PageId(2usize),
+        );
+        pages
+            .push((
+                3usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487"
+                            .to_string(),
+                        url: BookRoute::TripperV001Release {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "✈\u{fe0f} Introducing Tripper: Revolutionizing Travel Planning"
+                                    .to_string(),
+                                id: "✈\u{fe0f}-introducing-tripper:-revolutionizing-travel-planning"
+                                    .to_string(),
+                                level: 1usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔗 Quick Links".to_string(),
+                                id: "🔗-quick-links".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🆕 What is Tripper?".to_string(),
+                                id: "🆕-what-is-tripper?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "✨ Key Features".to_string(),
+                                id: "✨-key-features".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌍 Why Tripper Matters".to_string(),
+                                id: "🌍-why-tripper-matters".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌎 Explore More".to_string(),
+                                id: "🌎-explore-more".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(3usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::TripperV001Release {},
+            ::use_mdbook::mdbook_shared::PageId(3usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
                 prefix_chapters: vec![],
                 numbered_chapters: vec![
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: "Announcing Open SASS 🚀 |---| announcement |---| announcing-open-sass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        name: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
                             .to_string(),
                         location: Some(BookRoute::AnnouncingOpensass {}),
                         number: Some(
@@ -168,11 +278,29 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: "✨ Introducing X-AI: A Blazingly Fast 🚀 𝕏-AI Rusty CLI, TUI and SDK. |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93"
+                        name: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93"
                             .to_string(),
                         location: Some(BookRoute::IntroducingXAi {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![2u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff"
+                            .to_string(),
+                        location: Some(BookRoute::AibookV002Release {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![3u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487"
+                            .to_string(),
+                        location: Some(BookRoute::TripperV001Release {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![4u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -283,7 +411,7 @@ pub fn AnnouncingOpensass() -> dioxus::prelude::Element {
             a { href: "https://discord.gg/b5JbvHW5nv", "Join Our Discord" }
         }
         p {
-            em { "© 2024 Open SASS | Built with ❤\u{fe0f} by and for the Rust community." }
+            em { "© 2025 Open SASS | Built with ❤\u{fe0f} by and for the Rust community." }
         }
     }
 }
@@ -406,10 +534,226 @@ pub fn IntroducingXAi() -> dioxus::prelude::Element {
             }
         }
         p {
+            em { "© 2025 Open SASS | Built with ❤\u{fe0f} by and for the Rust community." }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn AibookV002Release() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        h1 { id: "-aibook-v002-release---stripe-integration",
+            a {
+                href: "#-aibook-v002-release---stripe-integration",
+                class: "header",
+                "🚀 AIBook v0.0.2 Release - Stripe Integration"
+            }
+        }
+        p {
+            "Welcome back to our blog! We are excited to announce the release of "
+            strong { "AIBook v0.0.2" }
+            ", now with "
+            strong { "Stripe payment integration!" }
+            " 🎉"
+        }
+        h2 { id: "-quick-links",
+            a { href: "#-quick-links", class: "header", "🔗 Quick Links" }
+        }
+        ul {
+            li {
+                a { href: "https://aibook-8syx.onrender.com/#pricing",
+                    strong { "Try AIBook v0.0.2 Now" }
+                }
+            }
+            li {
+                a { href: "https://github.com/opensass/aibook",
+                    strong { "GitHub Repository" }
+                }
+            }
+            li {
+                a { href: "https://discord.gg/b5JbvHW5nv",
+                    strong { "Join Our Community on Discord" }
+                }
+            }
+        }
+        h2 { id: "-whats-new-in-v002",
+            a { href: "#-whats-new-in-v002", class: "header", "🆕 What's New in v0.0.2" }
+        }
+        ul {
+            li {
+                strong { "Stripe Payments" }
+                ": Easily integrate Stripe into your Rust apps to accept payments for your AI features."
+            }
+            li {
+                strong { "Perfect for SaaS Projects" }
+                ": Monetize your AI-driven apps with just a few lines of code!"
+            }
+        }
+        h2 { id: "-why-stripe",
+            a { href: "#-why-stripe", class: "header", "📖 Why Stripe?" }
+        }
+        p {
+            "Stripe is trusted by millions of businesses for secure, scalable, and flexible payment processing."
+            strong { "Rust" }
+            " apps like "
+            strong { "AIBook" }
+            "."
+        }
+        h2 { id: "-why-this-matters",
+            a { href: "#-why-this-matters", class: "header", "⚙\u{fe0f} Why This Matters" }
+        }
+        p {
+            "Rust is rapidly becoming the "
+            strong { "go-to language" }
+            " for modern SaaS, secure apps, and AI-driven projects."
+            strong { "Open SASS" }
+            ", we're empowering "
+            strong { "Rust developers" }
+            " to create robust, monetizable tools with ease."
+        }
+        h2 { id: "-explore-more",
+            a { href: "#-explore-more", class: "header", "🌍 Explore More" }
+        }
+        p { "Stay connected and explore more:" }
+        ul {
+            li {
+                a { href: "https://aibook-8syx.onrender.com/#pricing",
+                    strong { "Pricing Page" }
+                }
+            }
+            li {
+                a { href: "https://github.com/opensass/aibook",
+                    strong { "GitHub Repo" }
+                }
+            }
+            li {
+                a { href: "https://discord.gg/b5JbvHW5nv",
+                    strong { "Join Our Discord Community" }
+                }
+            }
+        }
+        p {
             em { "© 2024 Open SASS | Built with ❤\u{fe0f} by and for the Rust community." }
         }
     }
 }
+#[component(no_case_check)]
+pub fn TripperV001Release() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        h1 { id: "-introducing-tripper-revolutionizing-travel-planning",
+            a {
+                href: "#-introducing-tripper-revolutionizing-travel-planning",
+                class: "header",
+                "✈\u{fe0f} Introducing Tripper: Revolutionizing Travel Planning"
+            }
+        }
+        p { "Your Smart Travel Companion for Effortless Trip Planning" }
+        h2 { id: "-quick-links",
+            a { href: "#-quick-links", class: "header", "🔗 Quick Links" }
+        }
+        ul {
+            li {
+                a { href: "https://opensass.org/tripper",
+                    strong { "Explore Tripper" }
+                }
+            }
+            li {
+                a { href: "https://github.com/opensass/tripper",
+                    strong { "GitHub Repository" }
+                }
+            }
+            li {
+                a { href: "https://discord.gg/b5JbvHW5nv",
+                    strong { "Join Our Community on Discord" }
+                }
+            }
+        }
+        h2 { id: "-what-is-tripper",
+            a { href: "#-what-is-tripper", class: "header", "🆕 What is Tripper?" }
+        }
+        p {
+            strong { "Tripper" }
+            " is a groundbreaking platform that takes the hassle out of travel planning."
+            strong { "intelligent features" }
+            " and "
+            strong { "sleek design" }
+            ", it ensures that every journey is "
+            strong { "personalized, organized, and inspiring" }
+            "."
+        }
+        h2 { id: "-key-features",
+            a { href: "#-key-features", class: "header", "✨ Key Features" }
+        }
+        ul {
+            li {
+                strong { "AI-Powered Itineraries" }
+                ": Automatically generate detailed plans tailored to your preferences."
+            }
+            li {
+                strong { "Stunning Visuals" }
+                ": Explore destinations with breathtaking images powered by the "
+                strong { "Unsplash API" }
+                "."
+            }
+            li {
+                strong { "Secure and Fast" }
+                ": Built with cutting-edge technologies like "
+                strong { "Rust, Dioxus, and AWS Bedrock" }
+                " for a seamless experience."
+            }
+            li {
+                strong { "Community Collaboration (WIP)" }
+                ": Share and discover ideas with a vibrant community of travel enthusiasts."
+            }
+        }
+        h2 { id: "-why-tripper-matters",
+            a { href: "#-why-tripper-matters", class: "header", "🌍 Why Tripper Matters" }
+        }
+        p {
+            "In a world where "
+            strong { "travel planning can be overwhelming" }
+            ", Tripper provides a "
+            strong { "stress-free, AI-enhanced" }
+            " experience."
+            strong { "joy of exploration rather than logistics" }
+            "."
+        }
+        p {
+            "Whether you're a "
+            strong { "solo traveler" }
+            " or "
+            strong { "planning with friends and family" }
+            ", "
+            strong { "Tripper makes it easy to create unforgettable adventures" }
+            "."
+        }
+        h2 { id: "-explore-more",
+            a { href: "#-explore-more", class: "header", "🌎 Explore More" }
+        }
+        p { "Stay connected and explore more:" }
+        ul {
+            li {
+                a { href: "https://opensass.org/tripper",
+                    strong { "Visit Tripper" }
+                }
+            }
+            li {
+                a { href: "https://github.com/opensass/tripper",
+                    strong { "GitHub Repo" }
+                }
+            }
+            li {
+                a { href: "https://discord.gg/b5JbvHW5nv",
+                    strong { "Join Our Community on Discord" }
+                }
+            }
+        }
+        p {
+            em { "© 2024 Open SASS | Built with ❤\u{fe0f} by and for travel enthusiasts." }
+        }
+    }
+}
 
-use dioxus::prelude::*;
 use crate::components::blog::code::CodeBlock;
+use dioxus::prelude::*;

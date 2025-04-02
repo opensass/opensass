@@ -209,32 +209,19 @@ pub async fn get_comments(post_id: String) -> Result<Vec<Comment>, ServerFnError
         client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
     let comment_collection = db.collection::<Comment>("comments");
 
-    let post_collection = db.collection::<Post>("posts");
+    let filter = doc! { "post": post_id };
 
-    let filter = doc! { "slug": &post_id };
-
-    let post = post_collection
-        .find_one(filter)
+    let comment_cursor = comment_collection
+        .find(filter)
+        .sort(doc! { "createdAt": -1 })
         .await
-        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?;
+        .map_err(|_| ServerFnError::new("Failed to fetch comments"))?;
+    let comments: Vec<Comment> = comment_cursor
+        .try_collect()
+        .await
+        .map_err(|_| ServerFnError::new("Error while processing comments"))?;
 
-    if let Some(post) = post {
-        let filter = doc! { "post": post.id };
-
-        let comment_cursor = comment_collection
-            .find(filter)
-            .sort(doc! { "createdAt": -1 })
-            .await
-            .map_err(|_| ServerFnError::new("Failed to fetch comments"))?;
-
-        let comments: Vec<Comment> = comment_cursor
-            .try_collect()
-            .await
-            .map_err(|_| ServerFnError::new("Error while processing comments"))?;
-        Ok(comments)
-    } else {
-        Err(ServerFnError::new("Post not found"))
-    }
+    Ok(comments)
 }
 
 #[server]
@@ -255,21 +242,11 @@ pub async fn create_comment(
     let db =
         client.database(&std::env::var("MONGODB_DB_NAME").expect("MONGODB_DB_NAME must be set"));
 
-    let post_collection = db.collection::<Post>("posts");
-
-    let filter = doc! { "slug": &post_id };
-
-    let post = post_collection
-        .find_one(filter)
-        .await
-        .map_err(|_| ServerFnError::new("Something went wrong while fetching the post"))?
-        .ok_or(ServerFnError::new("Post not found"))?;
-
     let comment_collection = db.collection::<Comment>("comments");
 
     let new_comment = Comment {
         id: ObjectId::new(),
-        post: post.id,
+        post: post_id,
         username,
         user_email,
         pic: pic.unwrap_or_else(|| "https://via.placeholder.com/50".to_string()),

@@ -31,4 +31,4 @@ Open SASS is **100% open-source**. All templates are written in Rust, and our tr
 
 [Visit Open SASS](https://opensass.org) | [Join Our Discord](https://discord.gg/b5JbvHW5nv)
 
-_© 2024 Open SASS | Built with ❤️ by and for the Rust community._
+_© 2025 Open SASS | Built with ❤️ by and for the Rust community._

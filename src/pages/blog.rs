@@ -1,5 +1,8 @@
+use crate::blog::router_blog::BookRoute as BlogRoute;
+use crate::components::blog::header::BlogHeader;
 use crate::components::comments::CommentsSection;
-use crate::server::auth::controller::get_user_info;
+use crate::components::footer::Footer;
+use crate::router::Route;
 use crate::server::auth::model::User;
 use crate::server::post::controller::get_single_post;
 use crate::server::post::request::GetSinglePostRequest;
@@ -8,94 +11,111 @@ use dioxus::prelude::*;
 
 #[component]
 pub fn Blog() -> Element {
-    let mut post = use_signal(|| None::<GetPostResponse>);
-    let post_id = use_signal(|| Some(1));
-    let mut user_info = use_signal(|| None::<User>);
+    let path: Route = use_route();
+    let slug_from_url: String = path
+        .to_string()
+        .rsplitn(2, '/')
+        .next()
+        .unwrap_or("")
+        .to_string();
+    let mut blog_info = use_signal(|| None::<(String, String, String, String, String, String)>);
+    let mut post_id = use_signal(|| None);
 
-    // let _resource = use_resource(move || async move {
-    //     if let Some(post_id) = post_id() {
-    //         if let Ok(response) = get_single_post(GetSinglePostRequest { slug: post_id }).await {
-    //             post.set(Some(response.data.clone()));
+    let blog_post = BlogRoute::static_routes().into_iter().rev().find(|route| {
+        let raw_title = &route.page().title;
 
-    //             if let Ok(user_response) = get_user_info(response.data.user).await {
-    //                 user_info.set(Some(user_response.data));
-    //             }
-    //         }
-    //     }
-    // });
+        if raw_title.contains("[draft]") {
+            return false;
+        }
 
-    let mut read_time = 0.;
-    if post().is_some() {
-        read_time = (post().unwrap().desc.len() as f64 / 7000.0).max(1.0);
+        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
+            return false;
+        };
+
+        slug == &slug_from_url
+    });
+    if let Some(route) = blog_post {
+        let raw_title = &route.page().title;
+        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
+            return Ok(Default::default());
+        };
+
+        blog_info.set(Some((
+            title.to_string(),
+            category.to_string(),
+            slug.to_string(),
+            date.to_string(),
+            description.to_string(),
+            img.to_string(),
+        )));
+        post_id.set(Some(id.to_string()));
+    } else {
+        blog_info.set(None);
     }
-    let format_time = format!("{:.2}", read_time);
 
     rsx! {
         div {
             class: "bg-gray-900 min-h-screen text-white",
-
+            BlogHeader {}
             div {
                 class: "container mx-auto flex flex-row p-4 gap-6 justify-center items-start",
 
                 div {
                     class: "flex flex-col items-center text-gray-400 space-y-4 md:mr-8",
+
                     button {
                         class: "hover:text-red-500",
-                        "❤️"
+                        i { class: "fas fa-heart" }
                     }
+
                     button {
                         class: "hover:text-blue-500",
-                        "💬"
+                        i { class: "fas fa-comment" }
                     }
+
                     button {
                         class: "hover:text-yellow-500",
-                        "..."
+                        i { class: "fas fa-ellipsis-h" }
                     }
                 }
 
                 div {
-                    class: "flex-1 max-w-2xl",
+                    class: "flex-1 max-w-3xl",
 
-                    if let Some(post) = post() {
-                        if let Some(img_url) = &post.img {
-                            img { src: "{img_url}", class: "w-full h-64 md:h-80 object-cover rounded-lg mb-6" }
-                        }
+                    if let Some(post) = blog_info() {
+                        img { src: "{post.5}", class: "w-full h-64 md:h-80 object-cover rounded-lg mb-6" }
 
-                        if let Some(user) = user_info() {
+                        div {
+                            class: "flex items-center mb-4 space-x-4",
+                            img {
+                                src: "https://avatars.githubusercontent.com/u/62179149?s=400&u=be78b13411b4e94aac03546fcbc9fb611afc473c&v=4",
+                                class: "w-12 h-12 rounded-full"
+                            }
                             div {
-                                class: "flex items-center mb-4 space-x-4",
-                                img {
-                                    src: "{user.photo}",
-                                    class: "w-12 h-12 rounded-full"
-                                }
-                                div {
-                                    class: "flex flex-col",
-                                    span { class: "font-semibold text-lg", "{user.name}" }
-                                    span {
-                                        class: "text-gray-400 text-sm",
-                                        // TODO: Determine the correct formula for calculating the read time.
-                                        // Currently, this is a hardcoded approximate value that seems to work.
-                                        "{post.created_at.format(\"%B %d, %Y\")} · {format_time} min read"
-                                    }
+                                class: "flex flex-col",
+                                span { class: "font-semibold text-lg", "Mahmoud Harmouch" }
+                                span {
+                                    class: "text-gray-400 text-sm",
+                                    "{post.3} · 2 min read"
                                 }
                             }
-                        } else {
-                            p { class: "text-gray-400 italic", "Loading author information..." }
                         }
 
                         h1 {
                             class: "text-3xl md:text-4xl font-bold mb-4 text-center md:text-left",
-                            "{post.title}"
+                            "{post.0}"
                         }
 
                         span {
                             class: "text-sm text-gray-500 mb-4 block text-center md:text-left",
-                            "#{post.category_slug}"
+                            "#{post.2}"
                         }
 
                         div {
-                            class: "text-lg text-gray-300 leading-relaxed",
-                            dangerous_inner_html: "{post.desc}",
+                            class: "no-tailwind",
+                            Outlet::<Route> {}
                         }
                     } else {
                         p { class: "text-gray-400 italic text-center", "Loading post content..." }
@@ -105,6 +125,7 @@ pub fn Blog() -> Element {
                     }
                 }
             }
+            Footer {}
         }
     }
 }

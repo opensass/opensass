@@ -2,12 +2,9 @@ use crate::blog::router_blog::BookRoute as BlogRoute;
 use crate::components::blog::card::BlogCard;
 use crate::components::blog::header::Header;
 use crate::components::common::server::fetch_and_store_posts;
-use crate::components::common::server::BLOGS;
-use crate::components::common::server::CATEGORIES;
-use crate::components::common::server::TOTAL_POSTS;
-use crate::components::common::server::TRENDING_POSTS;
 use crate::components::footer::Footer;
 use crate::router::Route;
+use std::collections::HashSet;
 
 use dioxus::prelude::*;
 
@@ -18,22 +15,40 @@ pub fn Blogs() -> Element {
     let mut search_query = use_signal(|| String::new());
     let posts_per_page = 4;
 
-    // TODO: This can cause infinite rerender, fix it.
-    let _resource = use_resource(use_reactive(
-        (&page(), &cat(), &search_query()),
-        move |(page, cat, search_query)| async move {
-            fetch_and_store_posts(page, cat, search_query, posts_per_page).await
-        },
-    ));
+    let mut filtered_posts = use_signal(move || {
+        BlogRoute::static_routes()
+            .into_iter()
+            .rev()
+            .filter(|route| {
+                let title = route.page().title.to_lowercase();
+                let query = search_query().to_lowercase();
+                title.contains(&query)
+            })
+            .collect::<Vec<_>>()
+    });
 
-    let blogs = BLOGS.read();
-    let trending_posts = TRENDING_POSTS.read();
-    let categories = CATEGORIES.read();
-    let total_posts = TOTAL_POSTS.read();
-    let total_pages = (*total_posts / posts_per_page as u64).max(1) + 1;
+    let total_posts = BlogRoute::static_routes().len() as u64;
+    let total_pages = (total_posts / posts_per_page as u64).max(1) + 1;
 
     let has_prev = page() > 1;
-    let has_next = page() * posts_per_page < *total_posts;
+    let has_next = page() * posts_per_page < total_posts;
+
+    let mut post_data = vec![];
+
+    for route in BlogRoute::static_routes().into_iter().rev() {
+        let raw_title = &route.page().title;
+
+        if raw_title.contains("[draft]") {
+            continue;
+        }
+
+        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let [_, title, _, slug, _, _, img, ..] = items.as_slice() else {
+            continue;
+        };
+
+        post_data.push((title.to_string(), slug.to_string(), img.to_string()));
+    }
 
     rsx! {
         div {
@@ -52,7 +67,7 @@ pub fn Blogs() -> Element {
                     }
                     div {
                         class: "my-8 flex flex-col gap-8",
-                        for route in BlogRoute::static_routes().into_iter().rev() {
+                        for route in filtered_posts() {
                             BlogPostItem { route }
                         }
                     }
@@ -97,30 +112,7 @@ pub fn Blogs() -> Element {
 
                         div {
                             class: "grid grid-cols-2 gap-4",
-
-                            for category in (*categories).clone() {
-                                button {
-                                    class: "flex flex-col items-center rounded-lg p-4 hover:bg-gray-800 transition text-gray-300 hover:text-white",
-                                    onclick: move |_| { cat.set(Some(category.slug.clone())); page.set(1); },
-
-                                    if let Some(img_url) = category.img.clone() {
-                                        img {
-                                            src: img_url,
-                                            alt: category.title.clone(),
-                                            class: "w-12 h-12 rounded-full mb-2",
-                                        }
-                                    } else {
-                                        div {
-                                            class: "w-12 h-12 rounded-full bg-gray-600 mb-2",
-                                        }
-                                    }
-
-                                    span {
-                                        class: "text-lg font-medium",
-                                        "{category.title}"
-                                    }
-                                }
-                            }
+                            CategoriesList {cat, page}
                         }
                     }
 
@@ -131,7 +123,21 @@ pub fn Blogs() -> Element {
                             class: "w-full p-2 rounded-lg text-black",
                             placeholder: "Search...",
                             value: "{search_query()}",
-                            oninput: move |e| search_query.set(e.value().clone())
+                            oninput: move |e| {
+                                search_query.set(e.value().clone());
+                                let query = search_query().to_lowercase();
+
+                                let posts = BlogRoute::static_routes()
+                                    .into_iter()
+                                    .rev()
+                                    .filter(|route| {
+                                        let title = route.page().title.to_lowercase();
+                                        title.contains(&query)
+                                    })
+                                    .collect::<Vec<_>>();
+
+                                filtered_posts.set(posts);
+                            }
                         }
                     }
 
@@ -141,33 +147,33 @@ pub fn Blogs() -> Element {
                             "Trending"
                         }
 
-                        for post in trending_posts.iter() {
-                            a {
-                                href: "/blog/{post.slug}",
-                                class: "hover:bg-gray-800 rounded-lg p-4 flex items-start gap-4 mb-4 p-4",
+                        for post in post_data {
+                                a {
+                                    href: "/blog/{post.1}",
+                                    class: "hover:bg-gray-800 rounded-lg p-4 flex items-start gap-4 mb-4 p-4",
 
-                                img {
-                                    src: "{post.img.as_deref().unwrap_or(\"/default-thumbnail.jpg\")}",
-                                    alt: "{post.title}",
-                                    class: "w-16 h-16 object-cover rounded-md"
-                                }
-
-                                div {
-                                    class: "flex flex-col",
-
-                                    span {
-                                        class: "text-base font-semibold text-white hover:underline leading-tight",
-                                        "{post.title}"
+                                    img {
+                                        src: "{post.2}",
+                                        alt: "{post.0}",
+                                        class: "w-16 h-16 object-cover rounded-md"
                                     }
 
                                     div {
-                                        class: "text-xs text-gray-400 mt-1",
+                                        class: "flex flex-col",
+
                                         span {
-                                            "{post.created_at.format(\"%b %d %Y\")} · {post.views} Views"
+                                            class: "text-base font-semibold text-white hover:underline leading-tight",
+                                            "{post.0}"
                                         }
+
+                                        // div {
+                                        //     class: "text-xs text-gray-400 mt-1",
+                                        //     span {
+                                        //         "{post.created_at.format(\"%b %d %Y\")} · {post.views} Views"
+                                        //     }
+                                        // }
                                     }
                                 }
-                            }
                         }
                     }
 
@@ -177,6 +183,49 @@ pub fn Blogs() -> Element {
         }
     }
 }
+
+#[component]
+fn CategoriesList(cat: Signal<Option<String>>, page: Signal<u64>) -> Element {
+    let mut unique_categories = HashSet::new();
+    let mut category_items = vec![];
+
+    for route in BlogRoute::static_routes().into_iter().rev() {
+        let raw_title = &route.page().title;
+
+        if raw_title.contains("[draft]") {
+            continue;
+        }
+
+        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let [_, _, category, ..] = items.as_slice() else {
+            continue;
+        };
+
+        let category = category.to_string();
+
+        if unique_categories.insert(category.clone()) {
+            category_items.push(category);
+        }
+    }
+
+    rsx! { for item in category_items {
+
+        button {
+            class: "flex flex-col items-center rounded-lg p-4 hover:bg-gray-800 transition text-gray-300 hover:text-white",
+            onclick: move |_| { cat.set(Some(item.clone())); page.set(1); },
+
+            div {
+                class: "w-12 h-12 rounded-full bg-gray-600 mb-2",
+            }
+
+            span {
+                class: "text-lg font-medium",
+                "{item}"
+            }
+        }
+    } }
+}
+
 pub(crate) fn ArrowRight() -> Element {
     rsx! {
         svg {
@@ -191,6 +240,7 @@ pub(crate) fn ArrowRight() -> Element {
         }
     }
 }
+
 #[component]
 fn BlogPostItem(route: BlogRoute) -> Element {
     let raw_title = &route.page().title;
@@ -199,8 +249,8 @@ fn BlogPostItem(route: BlogRoute) -> Element {
         return rsx! {};
     }
 
-    let items = raw_title.splitn(7, " |---| ").collect::<Vec<_>>();
-    let [title, category, slug, date, description, img, ..] = items.as_slice() else {
+    let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+    let [_, title, category, slug, date, description, img, ..] = items.as_slice() else {
         panic!("Invalid post structure:");
     };
 

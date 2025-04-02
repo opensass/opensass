@@ -38,7 +38,7 @@ pub fn ProjectCard(project: Project) -> Element {
                         target: "_blank",
                         class: "flex items-center text-blue-500 hover:text-blue-700 text-sm font-semibold",
                         "Learn more ",
-                        i { class: "fa-solid fa-globe" }
+                        i { class: "ml-2 text-md fa-solid fa-globe" }
                     }
                 }
             }

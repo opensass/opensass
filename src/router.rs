@@ -78,8 +78,10 @@ pub enum Route {
     SoulChain {},
     // #[layout(Blog)]
     #[redirect("/", || Route::BlogPost { child: router_blog::BookRoute::AnnouncingOpensass {} })]
+    #[layout(Blog)]
     #[child("/blogs")]
     BlogPost { child: router_blog::BookRoute },
+    #[end_layout]
     // #[end_layout]
     #[route("/:..route")]
     PageNotFound { route: Vec<String> },

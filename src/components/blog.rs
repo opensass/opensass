@@ -2,29 +2,17 @@ pub(crate) mod card;
 pub(crate) mod code;
 pub(crate) mod header;
 
+use crate::blog::router_blog::BookRoute as BlogRoute;
 use crate::components::blog::card::BlogHomeCard;
 use crate::components::common::header::Header;
 use crate::components::common::server::fetch_and_store_posts;
-use crate::components::common::server::BLOGS;
-use crate::components::common::server::CATEGORIES;
+use std::collections::HashSet;
 
 use dioxus::prelude::*;
 
 #[component]
 pub fn Blog() -> Element {
     let mut cat = use_signal(|| None::<String>);
-    let page = use_signal(|| 1);
-    let posts_per_page = 3;
-
-    let blogs = BLOGS.read();
-    let categories = CATEGORIES.read();
-
-    let _resource = use_resource(use_reactive(
-        (&page(), &cat()),
-        move |(page, cat)| async move {
-            fetch_and_store_posts(page, cat, "".to_string(), posts_per_page).await
-        },
-    ));
 
     rsx! {
         section {
@@ -43,29 +31,13 @@ pub fn Blog() -> Element {
                     onclick: move |_| cat.set(None),
                     "All"
                 }
-
-                for category in (*categories).clone() {
-                    button {
-                        class: format!("px-4 py-2 rounded-lg {}",
-                            if Some(category.slug.clone()) == cat() { "bg-black text-white" } else { "bg-gray-200 text-black" }),
-                        onclick: move |_| cat.set(Some(category.slug.clone())),
-                        "{category.title}"
-                    }
-                }
+                CategoriesList { cat }
             }
 
             div {
                 class: "mb-8 grid grid-cols-1 md:grid-cols-3 gap-6",
-
-                for post in blogs.iter().take(posts_per_page.try_into().unwrap()) {
-                    BlogHomeCard {
-                        title: post.title.clone(),
-                        desc: post.desc.clone(),
-                        img: post.img.clone(),
-                        created_at: post.created_at.clone(),
-                        category: post.category_slug.clone(),
-                        slug: post.slug.clone(),
-                    }
+                for route in BlogRoute::static_routes().into_iter().rev().take(3) {
+                    BlogHomePostItem { route, cat }
                 }
             }
             Link {
@@ -75,4 +47,79 @@ pub fn Blog() -> Element {
             }
         }
     }
+}
+
+#[component]
+fn CategoriesList(cat: Signal<Option<String>>) -> Element {
+    let mut unique_categories = HashSet::new();
+    let mut category_items = vec![];
+
+    for route in BlogRoute::static_routes().into_iter().rev() {
+        let raw_title = &route.page().title;
+
+        if raw_title.contains("[draft]") {
+            continue;
+        }
+
+        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let [_, _, category, ..] = items.as_slice() else {
+            continue;
+        };
+
+        let category = category.to_string();
+
+        if unique_categories.insert(category.clone()) {
+            category_items.push(category);
+        }
+    }
+
+    rsx! { for item in category_items {
+    button {
+        class: format!("px-4 py-2 rounded-lg {}",
+            if Some(item.clone()) == cat() { "bg-black text-white" } else { "bg-gray-200 text-black" }),
+        onclick: move |_| cat.set(Some(item.clone())),
+        "{item}"
+    } } }
+}
+
+#[component]
+fn BlogHomePostItem(route: BlogRoute, cat: Signal<Option<String>>) -> Element {
+    let raw_title = &route.page().title;
+
+    if raw_title.contains("[draft]") {
+        return rsx! {};
+    }
+
+    let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+    let [_, title, category, slug, date, description, img, ..] = items.as_slice() else {
+        panic!("Invalid post structure:");
+    };
+
+    if Some(category.to_string()) == cat() {
+        return rsx! {
+            BlogHomeCard {
+                title: title,
+                desc: description,
+                route: route,
+                img: Some(img.to_string()),
+                created_at: date,
+                category: category,
+                slug: slug,
+            }
+        };
+    }
+    if cat().is_none() {
+        return rsx! {
+            BlogHomeCard {
+                title: title,
+                desc: description,
+                route: route,
+                img: Some(img.to_string()),
+                created_at: date,
+                category: category,
+                slug: slug,
+            }
+        };
+    }
+    rsx! {}
 }

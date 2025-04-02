@@ -5,6 +5,8 @@ use dioxus_logger::tracing;
 use dotenv::dotenv;
 use open_sass::router::Route;
 
+const MAIN_CSS: Asset = asset!("/assets/main.css");
+
 fn main() {
     dotenv().ok();
     dioxus_logger::init(tracing::Level::INFO).expect("failed to init logger");
@@ -55,15 +57,7 @@ fn main() {
 
                 let cors = CorsLayer::new()
                     .allow_origin(Any)
-                    // TODO
-                    // .allow_origin("http://0.0.0.0:3000".parse::<HeaderValue>().unwrap())
-                    // .allow_origin(
-                    //     "https://generativelanguage.googleapis.com"
-                    //         .parse::<HeaderValue>()
-                    //         .unwrap(),
-                    // )
                     .allow_methods([Method::GET, Method::POST, Method::PATCH, Method::DELETE])
-                    // .allow_credentials(true)
                     .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE]);
 
                 let app = Router::new()
@@ -83,6 +77,9 @@ fn main() {
 
 fn App() -> Element {
     rsx! {
+        document::Link { rel: "stylesheet", href: MAIN_CSS }
+        document::Link { rel: "stylesheet", href: "https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" }
+        document::Script { src: "https://kit.fontawesome.com/62e08d355c.js" }
         Router::<Route> {}
     }
 }

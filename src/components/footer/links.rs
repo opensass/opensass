@@ -45,17 +45,17 @@ pub fn SocialLinks() -> Element {
             SocialIcon { href: "https://www.linkedin.com/in/opensass", icon: rsx! {i {
                 width: 30,
                 height: 30,
-                class: "fa-brands fa-linkedin",
+                class: "text-xl fa-brands fa-linkedin",
             }} },
             SocialIcon { href: "https://www.x.com/opensassorg", icon: rsx! {i {
                 width: 30,
                 height: 30,
-                class: "fa-brands fa-x-twitter",
+                class: "text-xl fa-brands fa-x-twitter",
             }} },
             SocialIcon { href: "https://www.github.com/opensass", icon: rsx! {i {
                 width: 30,
                 height: 30,
-                class: "fa-brands fa-github",
+                class: "text-xl fa-brands fa-github",
             }} },
         }
     }

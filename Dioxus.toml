@@ -30,17 +30,10 @@ watch_path = ["src", "assets"]
 [web.resource]
 
 # CSS style file
-style = [
-   # Include from public_dir.
-   "./main.css",
-   # online cdn. TODO: Use Railwind
-   "https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css",
-]
+style = []
 
 # Javascript code file
-script = [
-   "https://kit.fontawesome.com/62e08d355c.js"
-]
+script = []
 
 [web.resource.dev]
 

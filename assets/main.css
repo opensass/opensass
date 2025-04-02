@@ -15,3 +15,111 @@
 	transform-origin: bottom left;
 	transition: transform 0.3s ease-in-out;
 }
+.no-tailwind h1,
+.no-tailwind h2,
+.no-tailwind h3,
+.no-tailwind h4,
+.no-tailwind h5,
+.no-tailwind h6 {
+	font-size: revert;
+	font-weight: revert;
+	margin: revert;
+	padding: revert;
+	color: revert;
+	display: revert;
+}
+
+.no-tailwind p {
+	font-size: revert;
+	margin: 1em 0;
+	padding: revert;
+	color: revert;
+	display: revert;
+	line-height: revert;
+}
+
+.no-tailwind ul,
+.no-tailwind ol {
+	margin: 1em 0;
+	padding-left: 40px;
+	list-style: revert;
+	display: revert;
+}
+
+.no-tailwind li {
+	margin-bottom: 0.5em;
+	padding: revert;
+	display: list-item;
+}
+
+.no-tailwind a {
+	color: white;
+	text-decoration: none;
+	cursor: revert;
+	font-size: inherit;
+}
+
+.no-tailwind strong {
+	font-weight: bold;
+}
+
+.no-tailwind em {
+	font-style: italic;
+}
+
+.no-tailwind blockquote {
+	margin: 1em 0;
+	padding-left: 20px;
+	border-left: 4px solid gray;
+}
+
+.no-tailwind code {
+	font-family: monospace;
+	background-color: #f4f4f4;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+
+.no-tailwind pre {
+	font-family: monospace;
+	background: #f4f4f4;
+	padding: 1em;
+	white-space: pre-wrap;
+	overflow: auto;
+}
+
+.no-tailwind img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.no-tailwind table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+}
+
+.no-tailwind th,
+.no-tailwind td {
+	border: 1px solid gray;
+	padding: 8px;
+	text-align: left;
+}
+
+.no-tailwind hr {
+	border: 0;
+	border-top: 1px solid gray;
+	margin: 1em 0;
+}
+
+.no-tailwind input,
+.no-tailwind textarea,
+.no-tailwind button {
+	font-size: revert;
+	border: revert;
+	padding: revert;
+	margin: revert;
+	color: revert;
+	background: revert;
+}

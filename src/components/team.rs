@@ -17,25 +17,19 @@ pub fn Team() -> Element {
             SocialLink {
                 link: "https://www.linkedin.com/in/mahmoud-harmouch",
                 icon: rsx! {i {
-                    width: 30,
-                    height: 30,
-                    class: "fa-brands fa-linkedin",
+                    class: "text-2xl fa-brands fa-linkedin",
                 }},
             },
             SocialLink {
                 link: "https://www.x.com/wiseaidev",
                 icon: rsx! {i {
-                    width: 30,
-                    height: 30,
-                    class: "fa-brands fa-x-twitter",
+                    class: "text-2xl fa-brands fa-x-twitter",
                 }},
             },
             SocialLink {
                 link: "https://www.github.com/wiseaidev",
                 icon: rsx! {i {
-                    width: 30,
-                    height: 30,
-                    class: "fa-brands fa-github",
+                    class: "text-2xl fa-brands fa-github",
                 }},
             },
         ],
