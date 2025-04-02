@@ -91,7 +91,9 @@ pub fn Blog() -> Element {
                             class: "flex items-center mb-4 space-x-4",
                             img {
                                 src: "https://avatars.githubusercontent.com/u/62179149?s=400&u=be78b13411b4e94aac03546fcbc9fb611afc473c&v=4",
-                                class: "w-12 h-12 rounded-full"
+                                class: "w-12 h-12 rounded-full",
+                                loading: "lazy",
+
                             }
                             div {
                                 class: "flex flex-col",

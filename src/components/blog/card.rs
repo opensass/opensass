@@ -39,7 +39,9 @@ pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
                 img {
                     src: "{img_url}",
                     alt: "{props.title}",
-                    class: "w-full h-48 object-cover"
+                    class: "w-full h-48 object-cover",
+                    loading: "lazy",
+
                 }
             }
 
@@ -93,7 +95,9 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                     img {
                         src: "{img_url}",
                         alt: "{props.title}",
-                        class: "object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                        class: "object-cover w-full h-full transition-transform duration-300 hover:scale-110",
+                        loading: "lazy",
+
                     }
                 }
             }

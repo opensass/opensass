@@ -101,7 +101,13 @@ pub fn AdminPanel() -> Element {
                 div { class: "flex justify-between items-center border-b pb-4 mb-6 shadow-sm",
                     h1 { class: "text-3xl font-semibold text-gray-800", "Admin Panel" }
                     div { class: "w-10 h-10 rounded-full overflow-hidden border-2 border-gray-500 shadow-lg",
-                        img { src: "path_to_profile_image", class: "w-full h-full object-cover", alt: "Profile Picture" }
+                        img {
+                            src: "path_to_profile_image",
+                            class: "w-full h-full object-cover",
+                            alt: "Profile Picture",
+                            loading: "lazy",
+
+                        }
                     }
                 }
 

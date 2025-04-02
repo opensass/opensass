@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://opensass.org/</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Dynamic Pages -->
+  <url>
+    <loc>https://opensass.org/eldflow</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/aibook</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/tripper</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/nanoog</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://opensass.org/blogs/tripper-v001-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/aibook-v002-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/introducing-x-ai</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/about</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/contact</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+</urlset>

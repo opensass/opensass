@@ -90,7 +90,12 @@ pub fn CommentsSection(post_id: String) -> Element {
             div { class: "space-y-4",
                 for comment in comments.iter() {
                     div { class: "p-4 rounded shadow flex",
-                        img { class: "w-10 h-10 rounded-full mr-4", src: "{comment.pic}", alt: "Profile Picture" }
+                        img {
+                            class: "w-10 h-10 rounded-full mr-4",
+                            src: "{comment.pic}",
+                            alt: "Profile Picture",
+                            loading: "lazy",
+                        }
                         div {
                             p { class: "font-semibold", "@{comment.username}" }
                             p { class: "text-sm", "{comment.created_at.format(\"%b %d, %Y\")}" }

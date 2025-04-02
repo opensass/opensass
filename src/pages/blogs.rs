@@ -155,7 +155,9 @@ pub fn Blogs() -> Element {
                                     img {
                                         src: "{post.2}",
                                         alt: "{post.0}",
-                                        class: "w-16 h-16 object-cover rounded-md"
+                                        class: "w-16 h-16 object-cover rounded-md",
+                                        loading: "lazy",
+
                                     }
 
                                     div {
