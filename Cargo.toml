@@ -27,7 +27,7 @@ time = "0.3.36"
 regex = "1.11.1"
 tower-http = { version = "0.6.2", features = ["cors"], optional = true }
 dioxus-web = { version = "0.6.3", features = ["hydrate"], optional = true }
-axum = { version = "0.7.7", optional = true }
+axum = { version = "0.8.3", optional = true }
 use-mdbook = { git = "https://github.com/dioxuslabs/include_mdbook", branch = "jk/build-gen" }
 
 # Debug
