@@ -25,10 +25,14 @@ FROM debian:bookworm-slim AS runtime
 RUN apt-get update && apt install -y openssl
 RUN apt-get install ca-certificates
 WORKDIR /app
-COPY --from=builder /app/target/dx/open-sass/release/web /user/local/bin
+COPY --from=builder /app/target/dx/open-sass/release/web /usr/local/bin/web
+
+# Make binary executable
+RUN chmod +x /usr/local/bin/web/server
+
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 443
 
-ENTRYPOINT ["/user/local/bin/web/server"]
+ENTRYPOINT ["/usr/local/bin/web/server"]
 
