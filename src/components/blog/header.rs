@@ -31,7 +31,7 @@ pub fn Header() -> Element {
             // TODO: move it to a separate navbar comp and use a router outlet
             nav { class: "bg-gray-800  w-full flex justify-between items-center p-6 shadow-md",
                 div { class: "text-2xl font-bold flex items-center",
-                    img { src: "./logo.webp", alt: "Logo", class: "h-16 mr-2" }
+                    img { src: asset!("/assets/logo.webp"), alt: "Logo", class: "h-16 mr-2" }
                     span { "Open SASS" }
                 }
                 Link {
@@ -70,6 +70,25 @@ pub fn Header() -> Element {
                     if let Some(message) = feedback_message() {
                         p { class: "text-gray-700 mt-4", "{message}" }
                     }
+                }
+            }
+        }
+    }
+}
+
+#[component]
+pub fn BlogHeader() -> Element {
+    rsx! {
+        div { class: "text-white flex flex-col items-center",
+            nav { class: "bg-gray-800  w-full flex justify-between items-center p-6 shadow-md",
+                div { class: "text-2xl font-bold flex items-center",
+                    img { src: asset!("/assets/logo.webp"), alt: "Logo", class: "h-16 mr-2" }
+                    span { "Open SASS" }
+                }
+                Link {
+                    to: "/blogs",
+                    class: "text-white bg-gray-700 rounded-lg hover:bg-white hover:text-black  px-4 py-2",
+                    "Go Back →"
                 }
             }
         }

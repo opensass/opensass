@@ -4,13 +4,6 @@ pub(crate) mod item;
 use crate::components::common::header::Header;
 use crate::components::features::grid::Grid;
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::fa_solid_icons::FaBook;
-use dioxus_free_icons::icons::fa_solid_icons::FaBookBible;
-use dioxus_free_icons::icons::fa_solid_icons::FaDiagramProject;
-use dioxus_free_icons::icons::fa_solid_icons::FaHeadset;
-use dioxus_free_icons::icons::fa_solid_icons::FaKeyboard;
-use dioxus_free_icons::icons::fa_solid_icons::FaPeopleGroup;
-use dioxus_free_icons::Icon;
 
 #[derive(Props, Clone, PartialEq)]
 struct Feature {
@@ -23,55 +16,55 @@ struct Feature {
 pub fn Features() -> Element {
     let features = vec![
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaHeadset,
+                class: "text-4xl fa-solid fa-headset",
             }},
             title: "Seamless Integration with Wasm Frameworks",
             description: "Easily integrate SASS components within your wasm app, leveraging the power of a robust back-end for your full-stack applications.",
         },
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaBookBible,
+                class: "text-4xl fa-solid fa-book-bible",
             }},
             title: "Extensive Template Library",
             description: "Access a rich library of pre-built templates designed to kickstart your SASS projects and streamline your development process.",
         },
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaDiagramProject,
+                class: "text-4xl fa-solid fa-diagram-project",
             }},
             title: "Customizable Components",
             description: "Utilize flexible and customizable components that adapt to your project needs, making SASS development efficient and enjoyable.",
         },
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaKeyboard,
+                class: "text-4xl fa-solid fa-keyboard",
             }},
             title: "Community-Driven Development",
             description: "Join a passionate community of developers sharing insights, resources, and support to elevate your SASS projects in Rust.",
         },
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaBook,
+                class: "text-4xl fa-solid fa-book",
             }},
             title: "Comprehensive Documentation",
             description: "Explore detailed documentation and guides that help you navigate through SASS development, ensuring a smooth learning curve.",
         },
         Feature {
-            icon: rsx! {Icon {
+            icon: rsx! {i {
                 width: 30,
                 height: 30,
-                icon: FaPeopleGroup,
+                class: "text-4xl fa-solid fa-people-group",
             }},
             title: "Collaborative Tools for Teams",
             description: "Leverage built-in tools for team collaboration, making it easier to work on projects together while maintaining code integrity.",

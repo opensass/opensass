@@ -7,7 +7,7 @@ use dioxus::prelude::*;
 pub struct TeamMember {
     pub name: &'static str,
     pub position: &'static str,
-    pub image: &'static str,
+    pub image: Asset,
     pub link: &'static str,
     pub social_links: Vec<SocialLink>,
 }

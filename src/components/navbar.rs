@@ -49,6 +49,6 @@ pub fn NavBar() -> Element {
                 AuthButtons { is_vertical: true }
             }
         }
-            Outlet::<Route> {}
+        Outlet::<Route> {}
     }
 }

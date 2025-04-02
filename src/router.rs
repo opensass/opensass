@@ -1,3 +1,4 @@
+use crate::blog::router_blog;
 use crate::components::navbar::dropdown::Dropdown;
 use crate::components::navbar::NavBar;
 use crate::pages::admin::AdminPanel;
@@ -26,10 +27,10 @@ pub enum Route {
     #[end_layout]
     #[end_nest]
     #[end_layout]
-    #[route("/:..route")]
-    PageNotFound { route: Vec<String> },
-    #[route("/blog/:id")]
-    Blog { id: String },
+    // #[route("/:..route")]
+    // PageNotFound { route: Vec<String> },
+    // #[route("/blog/:id")]
+    // ,
     #[route("/admin/signup")]
     Register {},
     #[route("/admin/login")]
@@ -77,6 +78,15 @@ pub enum Route {
     ELDFlow {},
     #[route("/soulchain.pdf")]
     SoulChain {},
+    // #[layout(Blog)]
+    #[redirect("/", || Route::BlogPost { child: router_blog::BookRoute::AnnouncingOpensass {} })]
+    #[layout(Blog)]
+    #[child("/blogs")]
+    BlogPost { child: router_blog::BookRoute },
+    #[end_layout]
+    // #[end_layout]
+    #[route("/:..route")]
+    PageNotFound { route: Vec<String> },
 }
 
 #[component]
@@ -90,4 +100,12 @@ fn PageNotFound(route: Vec<String>) -> Element {
 #[component]
 fn DropdownItem(name: String) -> Element {
     rsx! {}
+}
+
+#[server(endpoint = "static_routes")]
+async fn static_routes() -> Result<Vec<String>, ServerFnError> {
+    Ok(Route::static_routes()
+        .into_iter()
+        .map(|route| route.to_string())
+        .collect::<Vec<_>>())
 }

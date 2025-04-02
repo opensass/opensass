@@ -13,7 +13,7 @@ use dioxus::prelude::*;
 pub fn Roadmap() -> Element {
     let roadmap_data = vec![
         RoadmapItem {
-            date: "November 10, 2024",
+            date: "2025 Q1",
             items: vec![
                 "Initial release with full Dioxus support",
                 "Enable seamless integration of Dioxus components",
@@ -22,7 +22,7 @@ pub fn Roadmap() -> Element {
             status: RoadmapStatus::Active,
         },
         RoadmapItem {
-            date: "December 10, 2024",
+            date: "2025 Q2",
             items: vec![
                 "Expand support to include Yew framework",
                 "Develop compatibility tools to help Yew developers transition projects to Open SASS",
@@ -31,7 +31,7 @@ pub fn Roadmap() -> Element {
             status: RoadmapStatus::Inactive,
         },
         RoadmapItem {
-            date: "January 10, 2025",
+            date: "2025 Q3",
             items: vec![
                 "Introduce support for Leptos framework",
                 "Integrate optimized Leptos components and templates for Open SASS",

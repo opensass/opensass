@@ -1,9 +1,24 @@
+use crate::blog::router_blog::BookRoute as BlogRoute;
+use crate::pages::blogs::ArrowRight;
+use crate::router::Route;
 use chrono::prelude::*;
 use dioxus::prelude::*;
 
 #[derive(Props, Clone, PartialEq, Debug)]
+pub struct BlogHomeCardProps {
+    pub title: String,
+    pub route: BlogRoute,
+    pub desc: String,
+    pub img: Option<String>,
+    pub created_at: String,
+    pub category: String,
+    pub slug: String,
+}
+
+#[derive(Props, Clone, PartialEq, Debug)]
 pub struct BlogCardProps {
     pub title: String,
+    pub route: BlogRoute,
     pub desc: String,
     pub img: Option<String>,
     pub created_at: String,
@@ -12,20 +27,12 @@ pub struct BlogCardProps {
 }
 
 #[component]
-pub fn BlogHomeCard(props: BlogCardProps) -> Element {
-    let formatted_date = props
-        .created_at
-        .parse::<DateTime<Utc>>()
-        .expect("Invalid date format")
-        .format("%b %d, %Y")
-        .to_string();
-
+pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
     let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
     let format_time = format!("{:.2}", read_time);
 
     rsx! {
-        a {
-            href: "/blog/{props.slug}",
+        div {
             class: "flex flex-col border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105",
 
             if let Some(img_url) = &props.img {
@@ -50,21 +57,22 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
                 }
 
                 div {
-                    class: "text-gray-600 text-sm",
-                    dangerous_inner_html: "{props.desc.chars().take(30).collect::<String>()}...",
+                    class: "justify-between flex",
+                    span {
+                        class: "text-gray-400",
+                        "{props.desc.chars().take(30).collect::<String>()}...",
+                    }
+                    Link {
+                        class: "text-blue-500 inline-flex items-center",
+                        to: Route::BlogPost { child: props.route },
+                        "Read more"
+                        ArrowRight {}
+                    }
                 }
 
                 div {
                     class: "text-gray-500 text-xs mt-2",
-                    // TODO: Determine the correct formula for calculating the read time.
-                    // Currently, this is a hardcoded approximate value that seems to work.
-                    "{formatted_date} · {format_time} min read"
-                }
-
-                a {
-                    href: "/blog/{props.slug}",
-                    class: "text-blue-500 hover:underline mt-4",
-                    "Read more →"
+                    "{props.created_at} · {format_time} min read"
                 }
             }
         }
@@ -73,19 +81,11 @@ pub fn BlogHomeCard(props: BlogCardProps) -> Element {
 
 #[component]
 pub fn BlogCard(props: BlogCardProps) -> Element {
-    let formatted_date = props
-        .created_at
-        .parse::<DateTime<Utc>>()
-        .expect("Invalid date format")
-        .format("%b %d, %Y")
-        .to_string();
-
     let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
     let format_time = format!("{:.2}", read_time);
 
     rsx! {
-        a {
-            href: "/blog/{props.slug}",
+        div {
             class: "flex flex-col md:flex-row gap-4 p-6 bg-gray-900 border border-gray-700 rounded-lg hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105",
             if let Some(img_url) = &props.img {
                 div {
@@ -110,33 +110,51 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                     "{props.title}"
                 }
                 div {
-                    class: "text-gray-400",
-                    dangerous_inner_html: "{props.desc.chars().take(30).collect::<String>()}...",
+                    class: "justify-between flex",
+                    span {
+                        class: "text-gray-400",
+                        "{props.desc.chars().take(70).collect::<String>()}...",
+                    }
+                    Link {
+                        class: "text-indigo-500 inline-flex items-center",
+                        to: Route::BlogPost { child: props.route },
+                        "Read more"
+                        ArrowRight {}
+                    }
                 }
                 div {
-                    class: "flex justify-between items-center text-gray-500 text-sm mt-4",
+                    class: "flex justify-between items-center text-gray-500 text-sm",
                     span {
-                        // TODO: Determine the correct formula for calculating the read time.
-                        // Currently, this is a hardcoded approximate value that seems to work.
-                        "{formatted_date} · {format_time} min read"
+                        "{props.created_at} · {format_time} min read"
                     }
                     div {
                         class: "flex gap-2",
-                        // TODO: Replace with dioxus free icons crate
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fab fa-facebook" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "text-xl fa-brands fa-facebook"
+                            }
                         }
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fab fa-twitter" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "text-xl fa-brands fa-x-twitter"
+                            }
                         }
                         a {
                             href: "#",
                             class: "text-gray-500 hover:text-white transition duration-200",
-                            i { class: "fas fa-link" }
+                            i {
+                                width: 30,
+                                height: 30,
+                                class: "text-xl fa-brands fa-linkedin"
+                            }
                         }
                     }
                 }

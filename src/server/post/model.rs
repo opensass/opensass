@@ -42,7 +42,7 @@ pub struct Post {
 pub struct Comment {
     #[serde(rename = "_id")]
     pub id: ObjectId,
-    pub post: ObjectId,
+    pub post: String,
     // Allow anonymous users to comment, no relation with Users table
     pub username: String,
     #[serde(rename = "userEmail")]

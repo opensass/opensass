@@ -1,3 +1,4 @@
+pub(crate) mod blog;
 pub(crate) mod components;
 #[cfg(feature = "server")]
 pub mod db;

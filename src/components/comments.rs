@@ -8,7 +8,7 @@ pub fn CommentsSection(post_id: String) -> Element {
     let mut user_email = use_signal(|| "".to_string());
     let mut pic = use_signal(|| "".to_string());
     let mut content = use_signal(|| "".to_string());
-    let mut error_message = use_signal(|| None::<String>);
+    let mut error_message = use_signal(|| Some("asffsa".to_string()));
     let mut success_message = use_signal(|| None::<String>);
     let post_id = use_signal(|| post_id);
 
@@ -40,13 +40,15 @@ pub fn CommentsSection(post_id: String) -> Element {
                     content.set("".to_string());
                     success_message.set(Some("Comment added successfully.".to_string()));
                 }
-                Err(_) => error_message.set(Some("Failed to add comment.".to_string())),
+                Err(err) => {
+                    error_message.set(Some(format!("Failed to add comment. {}", err).to_string()))
+                }
             }
         });
     };
 
     rsx! {
-        div { class: "max-w-2xl mx-auto p-4 rounded-lg shadow",
+        div { class: "max-w-3xl mx-auto mt-2 rounded-lg shadow",
             h2 { class: "text-xl font-semibold mb-4", "Comments" }
 
             div { class: "text-gray-800 mb-6",
@@ -79,7 +81,7 @@ pub fn CommentsSection(post_id: String) -> Element {
                     oninput: move |e| content.set(e.value())
                 }
                 button {
-                    class: "bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition",
+                    class: "text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition",
                     onclick: submit_comment,
                     "Comment"
                 }
