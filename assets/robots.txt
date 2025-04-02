@@ -1,1 +1,1 @@
-Sitemap: https://opensass.org/sitemap.xml
+Sitemap: https://opensass.org/assets/sitemap.xml
