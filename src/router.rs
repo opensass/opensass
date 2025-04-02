@@ -6,13 +6,13 @@ use crate::pages::aibook::AIBook;
 use crate::pages::blog::Blog;
 use crate::pages::blogs::Blogs;
 use crate::pages::donate::Donate;
+use crate::pages::eldflow::ELDFlow;
 use crate::pages::home::Home;
 use crate::pages::login::Login;
 use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
 use crate::pages::soulchain::SoulChain;
 use crate::pages::tripper::Tripper;
-
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -74,6 +74,8 @@ pub enum Route {
     Tripper {},
     #[route("/nanoog")]
     NanoOG {},
+    #[route("/eldflow")]
+    ELDFlow {},
     #[route("/soulchain.pdf")]
     SoulChain {},
     // #[layout(Blog)]

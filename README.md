@@ -35,6 +35,15 @@
  git clone https://github.com/opensass/opensass
  ```
 
+## Downgrade Crates:
+
+   ```bash
+   cargo update half --precise 2.4.0
+   cargo update litemap --precise 0.7.4
+   cargo update zerofrom --precise 0.1.5
+   cargo update base64ct --precise 1.6.0
+   ```
+
 1. Run the client:
 
  ```sh
