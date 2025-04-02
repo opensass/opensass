@@ -7,7 +7,9 @@ pub fn Logo() -> Element {
             img {
                 src: asset!("/assets/logo.webp"),
                 alt: "Open SASS Logo",
-                class: "w-16 h-16 object-contain"
+                class: "w-16 h-16 object-contain",
+                loading: "lazy",
+
             }
         }
     }

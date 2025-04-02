@@ -16,7 +16,9 @@ pub fn ProjectCard(project: Project) -> Element {
             img {
                 src: "{project.image}",
                 alt: "{project.title} image",
-                class: "w-full h-48 object-cover"
+                class: "w-full h-48 object-cover",
+                loading: "lazy",
+
             }
 
             div { class: "p-6",
