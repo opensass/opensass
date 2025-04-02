@@ -17,37 +17,34 @@
 
 1. Install [`rustup`](https://www.rust-lang.org/tools/install):
 
- ```bash
- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
- ```
+   ```sh
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
 
-1. Install [`Dioxus CLI`](https://dioxuslabs.com/learn/0.5/getting_started):
+1. Install [`Dioxus CLI`](https://dioxuslabs.com/learn/0.6/getting_started):
 
- ```bash
- cargo install dioxus-cli@0.5.6
- ```
+   ```sh
+   cargo install dioxus-cli
+   ```
 
 ## 🚀 Building and Running
 
 1. Fork/Clone the GitHub repository.
 
- ```bash
- git clone https://github.com/opensass/opensass
- ```
-
-## Downgrade Crates:
-
-   ```bash
-   cargo update half --precise 2.4.0
-   cargo update litemap --precise 0.7.4
-   cargo update zerofrom --precise 0.1.5
-   cargo update base64ct --precise 1.6.0
+   ```sh
+   git clone https://github.com/opensass/opensass
    ```
 
-1. Run the client:
+1. SSG The Blogs.
 
- ```sh
- dx serve --port 3000
- ```
+   ```sh
+   PORT=3000 dx build --ssg
+   ```
+
+1. Run The Client.
+
+   ```sh
+   dx serve
+   ```
 
 Navigate to http://localhost:3000 to explore the landing page.
