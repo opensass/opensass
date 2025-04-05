@@ -1,11 +1,11 @@
 use dioxus::prelude::*;
 
 #[component]
-pub fn Description() -> Element {
+pub fn HeroDescription() -> Element {
     rsx! {
         p {
-            class: "text-lg md:text-xl text-black mb-8 leading-relaxed",
-            "Join the Rust SASS community and explore enhanced tools, projects, and collaboration spaces."
+            class: "text-gray-600 text-base leading-relaxed",
+            "OpenSass gives you everything you need to create, deploy, and scale full-stack applications using Rust and WebAssembly. Developer-friendly tools, production-ready out of the box."
         }
     }
 }
