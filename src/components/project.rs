@@ -12,7 +12,7 @@ pub fn Projects() -> Element {
             description: "Automate your ELD logs, track trips, and get AI-powered summaries. All in one platform.",
             link: Some("/eldflow"),
             tech_stack: vec!["Rust", "Dioxus", "Axum", "MongoDB", "Gemini AI", "Unsplash API", "Google Maps", "ELD"],
-            image: "https://github.com/user-attachments/assets/9c29885f-f4ca-4b04-a7dd-cc64ffcf04b9",
+            image: "/assets/eldflow.gif",
         },
         Project {
             title: "AIBook: AI-Powered Book Generation Platform",

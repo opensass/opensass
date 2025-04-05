@@ -109,7 +109,6 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: "https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" }
         document::Script { src: "https://kit.fontawesome.com/62e08d355c.js", defer: true }
-
         Router::<Route> {}
     }
 }

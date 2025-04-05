@@ -123,3 +123,51 @@
 	color: revert;
 	background: revert;
 }
+
+@keyframes rotate {
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+.avatars-container {
+	position: relative;
+	flex: 1;
+	border-radius: 50%;
+	backdrop-filter: blur(4px);
+	background: #ffffff;
+	padding: 1px;
+	background: transparent;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.avatars-container:before {
+	content: "";
+	background-image: conic-gradient(rgb(0, 0, 0) 40deg, rgb(36, 29, 29) 20deg);
+	height: 150%;
+	width: 150%;
+	position: absolute;
+	left: -50%;
+	top: -50%;
+	animation: rotate 5s infinite linear;
+}
+
+.avatars-container-inner {
+	position: relative;
+	flex: 1;
+	border-radius: 50%;
+	background: #ffffff;
+	display: grid;
+	place-items: center;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	color: #fff;
+}
+
+.avatars-container-inner > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
