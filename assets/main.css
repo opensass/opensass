@@ -75,7 +75,7 @@
 
 .no-tailwind code {
 	font-family: monospace;
-	background-color: #f4f4f4;
+	background-color: #000;
 	padding: 2px 4px;
 	border-radius: 4px;
 }
