@@ -42,7 +42,7 @@ pub fn SocialLinks() -> Element {
     rsx! {
         ul {
             class: "flex space-x-4",
-            SocialIcon { href: "https://www.linkedin.com/in/opensass", icon: rsx! {i {
+            SocialIcon { href: "https://www.linkedin.com/company/opensass", icon: rsx! {i {
                 width: 30,
                 height: 30,
                 class: "text-xl fa-brands fa-linkedin",
