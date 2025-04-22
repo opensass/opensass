@@ -19,7 +19,7 @@ pub fn Blog() -> Element {
         .unwrap_or("")
         .to_string();
     let mut blog_info = use_signal(|| None::<(String, String, String, String, String, String)>);
-    let mut post_id = use_signal(|| None);
+    let mut post_id = use_signal(|| Some(1));
 
     let blog_post = BlogRoute::static_routes().into_iter().rev().find(|route| {
         let raw_title = &route.page().title;
@@ -50,7 +50,9 @@ pub fn Blog() -> Element {
             description.to_string(),
             img.to_string(),
         )));
-        post_id.set(Some(id.to_string()));
+        if let Ok(parsed_id) = id.parse::<i32>() {
+            post_id.set(Some(parsed_id));
+        }
     } else {
         blog_info.set(None);
     }
@@ -61,25 +63,6 @@ pub fn Blog() -> Element {
             BlogHeader {}
             div {
                 class: "container mx-auto flex flex-row p-4 gap-6 justify-center items-start",
-
-                div {
-                    class: "flex flex-col items-center text-gray-400 space-y-4 md:mr-8",
-
-                    button {
-                        class: "hover:text-red-500",
-                        i { class: "fas fa-heart" }
-                    }
-
-                    button {
-                        class: "hover:text-blue-500",
-                        i { class: "fas fa-comment" }
-                    }
-
-                    button {
-                        class: "hover:text-yellow-500",
-                        i { class: "fas fa-ellipsis-h" }
-                    }
-                }
 
                 div {
                     class: "flex-1 max-w-3xl",
