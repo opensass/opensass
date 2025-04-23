@@ -18,10 +18,12 @@ pub enum BookRoute {
     AibookV002Release {},
     #[route("/tripper-v001-release")]
     TripperV001Release {},
-    #[route("/beyond-typeScript")]
-    BeyondTypeScript {},
+    #[route("/beyond-typescript")]
+    BeyondTypescript {},
     #[route("/rust-is-god-101")]
     RustIsGod101 {},
+    #[route("/opensass-vs-shadcn")]
+    OpensassVsShadcn {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -36,8 +38,9 @@ impl BookRoute {
             BookRoute::IntroducingXAi {} => use_mdbook::mdbook_shared::PageId(1usize),
             BookRoute::AibookV002Release {} => use_mdbook::mdbook_shared::PageId(2usize),
             BookRoute::TripperV001Release {} => use_mdbook::mdbook_shared::PageId(3usize),
-            BookRoute::BeyondTypeScript {} => use_mdbook::mdbook_shared::PageId(4usize),
+            BookRoute::BeyondTypescript {} => use_mdbook::mdbook_shared::PageId(4usize),
             BookRoute::RustIsGod101 {} => use_mdbook::mdbook_shared::PageId(5usize),
+            BookRoute::OpensassVsShadcn {} => use_mdbook::mdbook_shared::PageId(6usize),
         }
     }
 }
@@ -274,9 +277,9 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 4usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typeScript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        title: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
                             .to_string(),
-                        url: BookRoute::BeyondTypeScript {},
+                        url: BookRoute::BeyondTypescript {},
                         segments: vec![],
                         sections: vec![
                             ::use_mdbook::mdbook_shared::Section {
@@ -380,7 +383,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 },
             ));
         page_id_mapping.insert(
-            BookRoute::BeyondTypeScript {},
+            BookRoute::BeyondTypescript {},
             ::use_mdbook::mdbook_shared::PageId(4usize),
         );
         pages
@@ -553,6 +556,46 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::RustIsGod101 {},
             ::use_mdbook::mdbook_shared::PageId(5usize),
         );
+        pages
+            .push((
+                6usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                            .to_string(),
+                        url: BookRoute::OpensassVsShadcn {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Framework and Styling Agnosticism".to_string(),
+                                id: "framework-and-styling-agnosticism".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Performance".to_string(),
+                                id: "performance".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Customization and Extensibility".to_string(),
+                                id: "customization-and-extensibility".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Conclusion".to_string(),
+                                id: "conclusion".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(6usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::OpensassVsShadcn {},
+            ::use_mdbook::mdbook_shared::PageId(6usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -595,9 +638,9 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typeScript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        name: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
                             .to_string(),
-                        location: Some(BookRoute::BeyondTypeScript {}),
+                        location: Some(BookRoute::BeyondTypescript {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![5u32]),
                         ),
@@ -609,6 +652,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::RustIsGod101 {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![6u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                            .to_string(),
+                        location: Some(BookRoute::OpensassVsShadcn {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![7u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -1063,7 +1115,7 @@ pub fn TripperV001Release() -> dioxus::prelude::Element {
     }
 }
 #[component(no_case_check)]
-pub fn BeyondTypeScript() -> dioxus::prelude::Element {
+pub fn BeyondTypescript() -> dioxus::prelude::Element {
     use dioxus::prelude::*;
     rsx! {
         p {
@@ -1207,7 +1259,7 @@ pub fn BeyondTypeScript() -> dioxus::prelude::Element {
         }
         p { "Let's take another look at our previous Rust example:" }
         CodeBlock {
-            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">struct </span><span style=\"color:#f8f8f2;\">User {{\n</span><span style=\"color:#f8f8f2;\">    name: String,\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">get_user</span><span style=\"color:#f8f8f2;\">() -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">i32 </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ff80f4;\">123\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">main</span><span style=\"color:#f8f8f2;\">() {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> user: User </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">get_user</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Output\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// error[E0308]: mismatched types\n</span><span style=\"color:#8c8c8c;\">//   --&gt; src/main.rs:10:22\n</span><span style=\"color:#8c8c8c;\">//    |\n</span><span style=\"color:#8c8c8c;\">// 10 |     let user: User = get_user(); // error[E0308]: mismatched types\n</span><span style=\"color:#8c8c8c;\">//    |               ----   ^^^^^^^^^^ expected `User`, found `i32`\n</span><span style=\"color:#8c8c8c;\">//    |               |\n</span><span style=\"color:#8c8c8c;\">//    |               expected due to this\n</span><span style=\"color:#8c8c8c;\">// \n</span><span style=\"color:#8c8c8c;\">// For more information about this error, try `rustc --explain E0308`.\n</span><span style=\"color:#8c8c8c;\">// error: could not compile `playground` (bin &quot;playground&quot;) due to 1 previous error</span></pre>\n",
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">struct </span><span style=\"color:#f8f8f2;\">User {{\n</span><span style=\"color:#f8f8f2;\">    name: String,\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">get_user</span><span style=\"color:#f8f8f2;\">() -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">i32 </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ff80f4;\">123\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">main</span><span style=\"color:#f8f8f2;\">() {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> user: User </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">get_user</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Output\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// error[E0308]: mismatched types\n</span><span style=\"color:#8c8c8c;\">//   --&gt; src/main.rs:10:22\n</span><span style=\"color:#8c8c8c;\">//    |\n</span><span style=\"color:#8c8c8c;\">// 10 |     let user: User = get_user(); // error[E0308]: mismatched types\n</span><span style=\"color:#8c8c8c;\">//    |               ----   ^^^^^^^^^^ expected `User`, found `i32`\n</span><span style=\"color:#8c8c8c;\">//    |               |\n</span><span style=\"color:#8c8c8c;\">//    |               expected due to this\n</span><span style=\"color:#8c8c8c;\">//\n</span><span style=\"color:#8c8c8c;\">// For more information about this error, try `rustc --explain E0308`.\n</span><span style=\"color:#8c8c8c;\">// error: could not compile `playground` (bin &quot;playground&quot;) due to 1 previous error</span></pre>\n",
         }
         p {
             "Not only does it tell you the line, the variable, and the mismatch. It shows you exactly what to fix. This makes Rust a "
@@ -1367,7 +1419,7 @@ pub fn BeyondTypeScript() -> dioxus::prelude::Element {
             ", nothing warns you."
         }
         CodeBlock {
-            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">type </span><span style=\"color:#f8f8f2;\">Shape </span><span style=\"color:#f92672;\">= &#39;</span><span style=\"color:#f8f8f2;\">circle</span><span style=\"color:#f92672;\">&#39; | &#39;</span><span style=\"color:#f8f8f2;\">square</span><span style=\"color:#f92672;\">&#39; | &#39;</span><span style=\"color:#f8f8f2;\">triangle</span><span style=\"color:#f92672;\">&#39;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function calculateArea(shape: Shape, size: number): number {{\n</span><span style=\"color:#f8f8f2;\">  switch (shape) {{\n</span><span style=\"color:#f8f8f2;\">    case </span><span style=\"color:#f92672;\">&#39;</span><span style=\"color:#f8f8f2;\">circle</span><span style=\"color:#f92672;\">&#39;</span><span style=\"color:#f8f8f2;\">:\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">return</span><span style=\"color:#f8f8f2;\"> Math.</span><span style=\"color:#ff80f4;\">PI </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size;\n</span><span style=\"color:#f8f8f2;\">    case </span><span style=\"color:#f92672;\">&#39;</span><span style=\"color:#f8f8f2;\">square</span><span style=\"color:#f92672;\">&#39;</span><span style=\"color:#f8f8f2;\">:\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">return</span><span style=\"color:#f8f8f2;\"> size </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size;\n</span><span style=\"color:#f8f8f2;\">  }}\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#ff80f4;\">0</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">type </span><span style=\"color:#f8f8f2;\">Shape </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;circle&quot; </span><span style=\"color:#f92672;\">| </span><span style=\"color:#ffee99;\">&quot;square&quot; </span><span style=\"color:#f92672;\">| </span><span style=\"color:#ffee99;\">&quot;triangle&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function calculateArea(shape: Shape, size: number): number {{\n</span><span style=\"color:#f8f8f2;\">  switch (shape) {{\n</span><span style=\"color:#f8f8f2;\">    case </span><span style=\"color:#ffee99;\">&quot;circle&quot;</span><span style=\"color:#f8f8f2;\">:\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">return</span><span style=\"color:#f8f8f2;\"> Math.</span><span style=\"color:#ff80f4;\">PI </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size;\n</span><span style=\"color:#f8f8f2;\">    case </span><span style=\"color:#ffee99;\">&quot;square&quot;</span><span style=\"color:#f8f8f2;\">:\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">return</span><span style=\"color:#f8f8f2;\"> size </span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\"> size;\n</span><span style=\"color:#f8f8f2;\">  }}\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#ff80f4;\">0</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
         }
         p {
             "Rust's  "
@@ -1511,7 +1563,7 @@ pub fn BeyondTypeScript() -> dioxus::prelude::Element {
             }
         }
         blockquote {
-            p { "We're working tirelessly on making Rust development extremely easy for everyone." }
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
         }
         blockquote {
             p {
@@ -1520,8 +1572,10 @@ pub fn BeyondTypeScript() -> dioxus::prelude::Element {
                 "."
             }
         }
-        p {
-            "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+        blockquote {
+            p {
+                "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+            }
         }
         blockquote {
             p {
@@ -2615,6 +2669,244 @@ pub fn RustIsGod101() -> dioxus::prelude::Element {
         }
     }
 }
+#[component(no_case_check)]
+pub fn OpensassVsShadcn() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "When evaluating modern UI libraries, the market is flooded with impressive choices; But not all are built equal. "
+            strong { "Shadcn UI" }
+            " has earned a following among developers working primarily within the React + Tailwind + Radix ecosystem. However, its design philosophy is inherently narrow. It forces teams into a predefined stack, leaving little room for freedom, modularity, or framework independence. That's where "
+            strong { "Open SASS" }
+            " comes in, not just as an alternative, but as a next-generation solution built for a truly agnostic, performant, and future-ready development experience. Let's explore why "
+            strong { "Open SASS" }
+            " doesn't just compete; It "
+            strong { "obliterates" }
+            " Shadcn UI on every front."
+        }
+        h2 { id: "framework-and-styling-agnosticism",
+            a { href: "#framework-and-styling-agnosticism", class: "header",
+                "Framework and Styling Agnosticism"
+            }
+        }
+        p {
+            "One of the most obvious limitations of "
+            strong { "Shadcn UI" }
+            " is that it is "
+            em { "hardwired" }
+            " into the React ecosystem. You can't use it without installing and depending on "
+            strong { "React" }
+            ", "
+            strong { "Radix UI" }
+            ", "
+            strong { "Lucide React" }
+            ", and "
+            strong { "Tailwind CSS" }
+            ". This is fine if you're working on a Next.js project and never plan to leave that bubble. But what happens when you're building with "
+            strong { "Vue" }
+            ", "
+            strong { "Svelte" }
+            " or even a native desktop interface? You're out of luck. Although there are unofficial ShadCN components available for each of these frameworks, they are maintained by the community rather than the core team. Shadcn simply does not operate outside of React."
+        }
+        p {
+            "To see how tightly Shadcn is bound to its stack, try installing a simple Accordion component with the following command:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">npx shadcn</span><span style=\"color:#f92672;\">@</span><span style=\"color:#f8f8f2;\">latest add accordion</span></pre>\n" }
+        p { "The generated component looks like this:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#ffee99;\">&quot;use client&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">import </span><span style=\"color:#f92672;\">* as</span><span style=\"color:#f8f8f2;\"> React from </span><span style=\"color:#ffee99;\">&quot;react&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">import </span><span style=\"color:#f92672;\">* as</span><span style=\"color:#f8f8f2;\"> AccordionPrimitive from </span><span style=\"color:#ffee99;\">&quot;@radix-ui/react-accordion&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">import {{ ChevronDownIcon }} from </span><span style=\"color:#ffee99;\">&quot;lucide-react&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">import {{ cn }} from </span><span style=\"color:#ffee99;\">&quot;@/lib/utils&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function Accordion({{\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props\n</span><span style=\"color:#f8f8f2;\">}}: React.ComponentProps&lt;typeof AccordionPrimitive</span><span style=\"background-color:#f92672;color:#f8f8f0;\">.</span><span style=\"color:#f8f8f2;\">Root</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#f8f8f2;\">&lt;AccordionPrimitive</span><span style=\"background-color:#f92672;color:#f8f8f0;\">.</span><span style=\"color:#f8f8f2;\">Root data</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">slot</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;accordion&quot; </span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props}} </span><span style=\"color:#f92672;\">/&gt;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function AccordionItem({{\n</span><span style=\"color:#f8f8f2;\">  className,\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props\n</span><span style=\"color:#f8f8f2;\">}}: React.ComponentProps&lt;typeof AccordionPrimitive</span><span style=\"background-color:#f92672;color:#f8f8f0;\">.</span><span style=\"color:#f8f8f2;\">Item</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Item\n</span><span style=\"color:#f8f8f2;\">      data</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">slot</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;accordion-item&quot;\n</span><span style=\"color:#f8f8f2;\">      className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#66d9ef;\">cn</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;border-b last:border-b-0&quot;</span><span style=\"color:#f8f8f2;\">, className)}}\n</span><span style=\"color:#f8f8f2;\">      {{</span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props}}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">  );\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function AccordionTrigger({{\n</span><span style=\"color:#f8f8f2;\">  className,\n</span><span style=\"color:#f8f8f2;\">  children,\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props\n</span><span style=\"color:#f8f8f2;\">}}: React.ComponentProps&lt;typeof AccordionPrimitive</span><span style=\"background-color:#f92672;color:#f8f8f0;\">.</span><span style=\"color:#f8f8f2;\">Trigger</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Header className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;flex&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Trigger\n</span><span style=\"color:#f8f8f2;\">        data</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">slot</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;accordion-trigger&quot;\n</span><span style=\"color:#f8f8f2;\">        className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#66d9ef;\">cn</span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">          </span><span style=\"color:#ffee99;\">&quot;focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">          className\n</span><span style=\"color:#f8f8f2;\">        )}}\n</span><span style=\"color:#f8f8f2;\">        {{</span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props}}\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        {{children}}\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">ChevronDownIcon className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Trigger</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">  );\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">function AccordionContent({{\n</span><span style=\"color:#f8f8f2;\">  className,\n</span><span style=\"color:#f8f8f2;\">  children,\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props\n</span><span style=\"color:#f8f8f2;\">}}: React.ComponentProps&lt;typeof AccordionPrimitive</span><span style=\"background-color:#f92672;color:#f8f8f0;\">.</span><span style=\"color:#f8f8f2;\">Content</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">  </span><span style=\"color:#f92672;\">return </span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Content\n</span><span style=\"color:#f8f8f2;\">      data</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">slot</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;accordion-content&quot;\n</span><span style=\"color:#f8f8f2;\">      className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm&quot;\n</span><span style=\"color:#f8f8f2;\">      {{</span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">props}}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">      </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">div className</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#66d9ef;\">cn</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;pt-0 pb-4&quot;</span><span style=\"color:#f8f8f2;\">, className)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{children}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">div</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">AccordionPrimitive.Content</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">  );\n</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">export {{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }};</span></pre>\n",
+        }
+        p {
+            "This code is riddled with dependencies:  "
+            code { "@radix-ui/react-accordion" }
+            ",  "
+            code { "lucide-react" }
+            ", Tailwind utilities, and React's own component system. Want to use it in a Vue app? Too bad. Trying to reuse it in a Yew project written in Rust? Forget about it. You're locked in, hard."
+        }
+        p {
+            "In contrast, "
+            strong { "Open SASS" }
+            " components are the very definition of "
+            em { "framework-agnostic" }
+            ". Each component in Open SASS is shipped in multiple flavors, tailored to the platform you're using. Want to use the Accordion in "
+            strong { "Yew" }
+            "? Run, after installing the "
+            a { href: "https://crates.io/crates/opensass", "Open SASS CLI" }
+            ":"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew</span></pre>\n" }
+        p {
+            "This fetches only the Rust/Yew-compatible source code with no extra fluff, no unnecessary dependencies, and no styling assumptions. Here's an excerpt of what you get:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        p {
+            "No framework or CSS library is forced on you. Use "
+            strong { "Tailwind" }
+            ", "
+            strong { "Bootstrap" }
+            ", "
+            strong { "Vanilla CSS" }
+            ", or "
+            strong { "inline styles" }
+            "; Open SASS doesn't care. The component is just logic and structure, not opinionated about how you present it. Want to switch from Yew to Dioxus? Easy:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs dio</span></pre>\n" }
+        p {
+            "This modularity empowers teams to build components once and reuse them across frontend frameworks, native apps, and even WebAssembly runtimes. This kind of adaptability is simply "
+            strong { "unachievable" }
+            " with Shadcn UI."
+        }
+        h2 { id: "performance",
+            a { href: "#performance", class: "header", "Performance" }
+        }
+        p {
+            "In software, speed isn't everything; But when tooling begins to slow down your workflow, it becomes a bottleneck. Shadcn UI relies on a Node.js-based CLI to fetch and generate components. That means it needs to spawn a Node process, resolve dependencies, and scaffold code in a relatively bloated JavaScript environment."
+        }
+        p { "Here's what happens when you run Shadcn's CLI:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">❯ time npx shadcn</span><span style=\"color:#f92672;\">@</span><span style=\"color:#f8f8f2;\">latest add accordion\n</span><span style=\"color:#ff80f4;\">5.93</span><span style=\"color:#f8f8f2;\">s user </span><span style=\"color:#ff80f4;\">2.22</span><span style=\"color:#f8f8f2;\">s system </span><span style=\"color:#ff80f4;\">93</span><span style=\"color:#f92672;\">%</span><span style=\"color:#f8f8f2;\"> cpu</span></pre>\n" }
+        p {
+            "Almost "
+            strong { "6 seconds" }
+            " to add a single component. That may not sound like much on its own, but in large projects or CI/CD pipelines, those seconds "
+            strong { "add up" }
+            "."
+        }
+        p {
+            "Now compare that to "
+            strong { "Open SASS" }
+            ":"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">❯ time os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew\n</span><span style=\"color:#ff80f4;\">0.17</span><span style=\"color:#f8f8f2;\">s user </span><span style=\"color:#ff80f4;\">0.02</span><span style=\"color:#f8f8f2;\">s system </span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f92672;\">%</span><span style=\"color:#f8f8f2;\"> cpu</span></pre>\n" }
+        p {
+            strong { "Under 0.2 seconds" }
+            " of actual user time. That's roughly "
+            strong { "60x faster" }
+            ". The reason? Open SASS is built using "
+            strong { "native Rust" }
+            ", compiled ahead-of-time to a single binary, and it makes blazing fast HTTP requests directly to "
+            code { "crates.io" }
+            ". There's no JavaScript runtime bloat, no npm resolution latency, and no unnecessary complexity."
+        }
+        p {
+            "This level of performance doesn't just make your dev life smoother; It scales beautifully in automated systems, remote dev containers, CI/CD pipelines, and embedded developer tooling. It's the kind of raw speed you feel instantly, and once you've experienced it, you'll never want to go back to a sluggish Node-based CLI."
+        }
+        h2 { id: "customization-and-extensibility",
+            a { href: "#customization-and-extensibility", class: "header",
+                "Customization and Extensibility"
+            }
+        }
+        p {
+            "Shadcn UI gives you a component that looks nice; "
+            strong { "If" }
+            " you stay inside its carefully crafted box. It assumes you want Tailwind. It assumes you want React. It assumes you want Radix. If you try to diverge, maybe to add some accessibility behavior that Radix doesn't support out-of-the-box; You'll find yourself fighting the abstraction more than working with it."
+        }
+        p {
+            "Let's say you want to change the accordion animation or use a different icon system in Shadcn. You're diving into a web of dependencies like  "
+            code { "@radix-ui/react-accordion" }
+            ", needing to override Radix's animations, swap Lucide icons, and massage Tailwind classes around React's className hell."
+        }
+        p {
+            "Open SASS, on the other hand, is "
+            strong { "fully declarative and extensible" }
+            ". You can:"
+        }
+        ul {
+            li {
+                "Customize animation speed with a "
+                code { "duration" }
+                " prop"
+            }
+            li {
+                "Inject callbacks ("
+                code { "will_open" }
+                ", "
+                code { "did_open" }
+                ", "
+                code { "will_close" }
+                ", "
+                code { "did_close" }
+                ")"
+            }
+            li { "Apply your own ARIA logic" }
+            li { "Use class-based or style-based theming" }
+            li {
+                "Extend components like "
+                code { "Item" }
+                ", "
+                code { "Button" }
+                ", or "
+                code { "List" }
+                " with your own elements"
+            }
+        }
+        p {
+            "No wrappers. No monkey patching. No awkward re-exports. Just clean, readable components, documented in detail, with no styling or framework assumptions. You're the boss."
+        }
+        p {
+            "Want a bootstrap-themed accordion with your own icons and custom transition logic? You don't have to hack around someone else's component; You build directly with Open SASS:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        p { "No layers of indirection. No theme providers. Just clean code." }
+        h2 { id: "conclusion",
+            a { href: "#conclusion", class: "header", "Conclusion" }
+        }
+        p {
+            "In every measurable way, "
+            strong { "portability" }
+            ", "
+            strong { "performance" }
+            ", "
+            strong { "customization" }
+            ", "
+            strong { "extensibility" }
+            ", and "
+            strong { "cross-platform support" }
+            ", "
+            strong { "Open SASS" }
+            " obliterates "
+            strong { "Shadcn UI" }
+            ". Shadcn is a slick choice if you're building "
+            em { "yet another" }
+            " Tailwind/React site. But the moment you need to step outside that bubble, whether it's for performance, flexibility, native development, or Rust integration, Shadcn breaks. Open SASS thrives."
+        }
+        p {
+            "Open SASS isn't just an alternative, it's the "
+            strong { "future" }
+            " of component libraries. Cross-framework. Cross-language (TODO). Ultra-fast. Infinitely extensible."
+        }
+        p { "If you want freedom, speed, and true composability; Open SASS isn't just better." }
+        p { "It's on a whole other level." }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p {
+                "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+            }
+        }
+        blockquote {
+            p {
+                "Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now."
+            }
+        }
+    }
+}
 
-use dioxus::prelude::*;
 use crate::components::blog::code::CodeBlock;
+use dioxus::prelude::*;
