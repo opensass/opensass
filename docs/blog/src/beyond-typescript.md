@@ -6,7 +6,7 @@ Today, we break the matrix. We're not going for what's easy. We're going for wha
 
 Let's cook.
 
-## 1. Rust Doesn't Need ORMs Because It *Is* the Data Model
+## 1. Rust Doesn't Need ORMs Because It _Is_ the Data Model
 
 Let's talk databases. In TypeScript, if you want to interact with a database safely and cleanly, you're often forced to use an ORM like [Prisma](https://www.prisma.io/) ([They dropped Rust for TypeScript. We're not mad, just disappointed.](https://www.prisma.io/blog/from-rust-to-typescript-a-new-chapter-for-prisma-orm)), or [TypeORM](https://typeorm.io). These ORMs generate types based on your schema, or vice versa. Sounds good in theory. But in reality, you're juggling SQL migrations, type generation, inconsistent runtime checks, and you're praying to the gods of `npx` every time you need to change a column name.
 
@@ -58,11 +58,11 @@ let collection = db.collection::<User>("users");
 collection.insert_one(new_user).await?;
 ```
 
-You're still using MongoDB - a famously schemaless, ultra-flexible NoSQL database - but with Rust, **your schema is no longer optional**. It's enforced. It's structured. It's *safe*. Your compiler will scream before you ever send malformed data to your database.
+You're still using MongoDB - a famously schemaless, ultra-flexible NoSQL database - but with Rust, **your schema is no longer optional**. It's enforced. It's structured. It's _safe_. Your compiler will scream before you ever send malformed data to your database.
 
 Meanwhile, in TypeScript? You'll define a Prisma schema, wait for it to regenerate types, run a migration, and then cross your fingers that the app doesn't crash on an optional field because some foreign key constraint failed silently.
 
-## 2. Rust's Type System Actually *Prevents* Bugs. TypeScript's Just Says "Good Luck".
+## 2. Rust's Type System Actually _Prevents_ Bugs. TypeScript's Just Says "Good Luck".
 
 Let's stop calling TypeScript "safe." It's NOT. TypeScript is like a guard dog that barks loudly... but is chained up and can't actually stop intruders. You can tell TypeScript, "this should be a string", and then immediately say, "but I'm going to treat it like an `any` anyway". The compiler lets you do that. The code runs. The bug lives.
 
@@ -94,11 +94,11 @@ fn main() {
 }
 ```
 
-That's the beauty. Rust *stops* you before disaster. TypeScript lets you slide down the hill and then says, "Oopsie doopsie".
+That's the beauty. Rust _stops_ you before disaster. TypeScript lets you slide down the hill and then says, "Oopsie doopsie".
 
-And if you want *really* rich type systems? Rust has traits, generics, enums with data, pattern matching, and more. TypeScript dreams of that kind of power but settles for `Partial<T>` and `Record<string, T>` hacks.
+And if you want _really_ rich type systems? Rust has traits, generics, enums with data, pattern matching, and more. TypeScript dreams of that kind of power but settles for `Partial<T>` and `Record<string, T>` hacks.
 
-## 3. Rust Does *Real* Concurrency. TypeScript Just Juggles Tasks.
+## 3. Rust Does _Real_ Concurrency. TypeScript Just Juggles Tasks.
 
 JavaScript's concurrency model is basically: one thread + hope. It's like a waiter taking 20 orders at once and telling customers, "I'll get to you eventually". It works for small apps and frontend tasks. But for serious backends, real-time apps, or high-performance systems? It's a liability.
 
@@ -143,7 +143,7 @@ async function main() {
 
 That looks clean, but it all runs on the same thread. Under pressure, it's going to choke. Rust's runtime is optimized for massive loads and deep concurrency, and it won't leave dangling promises in the dark.
 
-## 4. Rust's Compiler *Teaches* You. TypeScript Just Complains.
+## 4. Rust's Compiler _Teaches_ You. TypeScript Just Complains.
 
 Let's talk compiler errors. In TypeScript, errors are vague. They're short. They make you question your life choices. Rust's compiler, on the other hand, is like a wise elder, it doesn't just reject your code, it tells you **why**, where, how to fix it, and sometimes even what you probably meant.
 
@@ -171,12 +171,12 @@ fn main() {
 //    |               ----   ^^^^^^^^^^ expected `User`, found `i32`
 //    |               |
 //    |               expected due to this
-// 
+//
 // For more information about this error, try `rustc --explain E0308`.
 // error: could not compile `playground` (bin "playground") due to 1 previous error
 ```
 
-Not only does it tell you the line, the variable, and the mismatch. It shows you exactly what to fix. This makes Rust a *learning experience*. It's hard at first, but over time it levels you up.
+Not only does it tell you the line, the variable, and the mismatch. It shows you exactly what to fix. This makes Rust a _learning experience_. It's hard at first, but over time it levels you up.
 
 In TypeScript, you'll often encounter:
 
@@ -209,7 +209,7 @@ No leak. No GC. No surprises. You write the code, and Rust ensures memory is rel
 
 Let's talk about dev setup. With TypeScript, the typical project setup requires **Node**, **npm/yarn/pnpm**, **tsconfig.json**, **eslint**, **prettier**, **Jest**, **ts-node**, **webpack or Vite**, and maybe a dozen other tools just to get a basic dev environment running. That's before you even write a single line of code. Every time you start a new project, you basically have to rebuild the wheel. You Google "best tsconfig", copy-paste some Stack Overflow answer, and cross your fingers. And once you get it running, there's still a weekly stream of broken dependencies and config nightmares.
 
-Rust? It gives you *everything* you need with one tool: `cargo`. You install Rust using [rustup](https://rustup.rs/), and suddenly you have a compiler (`rustc`), a package manager (`cargo`), a formatter (`rustfmt`), a linter (`clippy`), a test runner, a doc generator, and a build tool. All built-in. No plugins, no config chaos. You type `cargo new my_proj`, and you're coding. That's it.
+Rust? It gives you _everything_ you need with one tool: `cargo`. You install Rust using [rustup](https://rustup.rs/), and suddenly you have a compiler (`rustc`), a package manager (`cargo`), a formatter (`rustfmt`), a linter (`clippy`), a test runner, a doc generator, and a build tool. All built-in. No plugins, no config chaos. You type `cargo new my_proj`, and you're coding. That's it.
 
 ### Want to format your code? Deal!
 
@@ -273,13 +273,13 @@ This is type-safe, explicit, and predictable. You can use combinators like `.map
 TypeScript has something called union types, like `type Shape = 'circle' | 'square' | 'triangle'`. It's better than plain JS, sure. But they're **flat**. You can't associate meaningful data with each variant cleanly. You have to use additional structures or type guards. And if you forget one case in a `switch`, nothing warns you.
 
 ```ts
-type Shape = 'circle' | 'square' | 'triangle';
+type Shape = "circle" | "square" | "triangle";
 
 function calculateArea(shape: Shape, size: number): number {
   switch (shape) {
-    case 'circle':
+    case "circle":
       return Math.PI * size * size;
-    case 'square':
+    case "square":
       return size * size;
   }
   return 0;
@@ -405,10 +405,10 @@ We're not saying TypeScript is bad. We're saying **Rust solves problems TypeScri
 
 > **We are Open SASS, babe!**.
 
-> We're working tirelessly on making Rust development extremely easy for everyone.
+> We're working tirelessly on making Rust web development extremely easy for everyone.
 
 > If you made it this far, it would be nice if you could [join us on Discord](https://discord.gg/b5JbvHW5nv).
 
-Together, let's move the web beyond JavaScript, and into something that actually compiles.
+> Together, let's move the web beyond JavaScript, and into something that actually compiles.
 
 > Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now.
