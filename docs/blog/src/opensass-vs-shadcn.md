@@ -14,7 +14,7 @@ npx shadcn@latest add accordion
 
 The generated component looks like this:
 
-```tsx
+```js
 "use client";
 
 import * as React from "react";
@@ -88,7 +88,7 @@ This code is riddled with dependencies: `@radix-ui/react-accordion`, `lucide-rea
 In contrast, **Open SASS** components are the very definition of _framework-agnostic_. Each component in Open SASS is shipped in multiple flavors, tailored to the platform you're using. Want to use the Accordion in **Yew**? Run, after installing the [Open SASS CLI](https://crates.io/crates/opensass):
 
 ```sh
-os add accordion accordion-rs yew
+os add accordion-rs yew
 ```
 
 This fetches only the Rust/Yew-compatible source code with no extra fluff, no unnecessary dependencies, and no styling assumptions. Here's an excerpt of what you get:
@@ -327,7 +327,7 @@ pub fn List(props: &ListProps) -> Html {
 No framework or CSS library is forced on you. Use **Tailwind**, **Bootstrap**, **Vanilla CSS**, or **inline styles**; Open SASS doesn't care. The component is just logic and structure, not opinionated about how you present it. Want to switch from Yew to Dioxus? Easy:
 
 ```sh
-os add accordion accordion-rs dio
+os add accordion-rs dio
 ```
 
 This modularity empowers teams to build components once and reuse them across frontend frameworks, native apps, and even WebAssembly runtimes. This kind of adaptability is simply **unachievable** with Shadcn UI.
@@ -348,7 +348,7 @@ Almost **6 seconds** to add a single component. That may not sound like much on 
 Now compare that to **Open SASS**:
 
 ```sh
-❯ time os add accordion accordion-rs yew
+❯ time os add accordion-rs yew
 0.17s user 0.02s system 6% cpu
 ```
 

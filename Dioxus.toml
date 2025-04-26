@@ -7,9 +7,6 @@ name = "open-sass"
 # web, desktop, fullstack
 default_platform = "fullstack"
 
-# `build` & `serve` dist path
-out_dir = "dist"
-
 # resource (assets) file folder
 asset_dir = "assets"
 
