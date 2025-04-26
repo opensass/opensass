@@ -12,12 +12,13 @@ pub fn CommentsSection(post_id: String) -> Element {
     let mut success_message = use_signal(|| None::<String>);
     let post_id = use_signal(|| post_id);
 
-    let _resource = use_resource(move || async move {
+    let _resource = use_server_future(move || async move {
         match get_comments(post_id()).await {
             Ok(fetched_comments) => comments.set(fetched_comments),
             Err(_) => eprintln!("Failed to fetch comments."),
         }
-    });
+    })?()
+    .unwrap();
 
     let submit_comment = move |_| {
         spawn(async move {

@@ -149,7 +149,7 @@ pub fn Blogs() -> Element {
 
                         for post in post_data {
                                 a {
-                                    href: "/blog/{post.1}",
+                                    href: "/blogs/{post.1}",
                                     class: "hover:bg-gray-800 rounded-lg p-4 flex items-start gap-4 mb-4 p-4",
 
                                     img {

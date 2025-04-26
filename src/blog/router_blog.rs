@@ -24,6 +24,8 @@ pub enum BookRoute {
     RustIsGod101 {},
     #[route("/opensass-vs-shadcn")]
     OpensassVsShadcn {},
+    #[route("/image-rs-release")]
+    ImageRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -41,6 +43,7 @@ impl BookRoute {
             BookRoute::BeyondTypescript {} => use_mdbook::mdbook_shared::PageId(4usize),
             BookRoute::RustIsGod101 {} => use_mdbook::mdbook_shared::PageId(5usize),
             BookRoute::OpensassVsShadcn {} => use_mdbook::mdbook_shared::PageId(6usize),
+            BookRoute::ImageRsRelease {} => use_mdbook::mdbook_shared::PageId(7usize),
         }
     }
 }
@@ -561,7 +564,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 6usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        title: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0"
                             .to_string(),
                         url: BookRoute::OpensassVsShadcn {},
                         segments: vec![],
@@ -595,6 +598,61 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
         page_id_mapping.insert(
             BookRoute::OpensassVsShadcn {},
             ::use_mdbook::mdbook_shared::PageId(6usize),
+        );
+        pages
+            .push((
+                7usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| blog |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        url: BookRoute::ImageRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📸 What Is Image RS?".to_string(),
+                                id: "📸-what-is-image-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Why You'll Love Image RS".to_string(),
+                                id: "🚀-why-you'll-love-image-rs".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔥 Quick Yew Setup".to_string(),
+                                id: "🔥-quick-yew-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧩 Features That Set It Apart".to_string(),
+                                id: "🧩-features-that-set-it-apart".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Full Control with Props".to_string(),
+                                id: "⚙\u{fe0f}-full-control-with-props".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎯 Real-World Examples".to_string(),
+                                id: "🎯-real-world-examples".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💡 Final Thoughts".to_string(),
+                                id: "💡-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(7usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::ImageRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(7usize),
         );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
@@ -656,11 +714,20 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa"
+                        name: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0"
                             .to_string(),
                         location: Some(BookRoute::OpensassVsShadcn {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![7u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| blog |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        location: Some(BookRoute::ImageRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![8u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -2737,7 +2804,7 @@ pub fn OpensassVsShadcn() -> dioxus::prelude::Element {
             a { href: "https://crates.io/crates/opensass", "Open SASS CLI" }
             ":"
         }
-        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew</span></pre>\n" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew</span></pre>\n" }
         p {
             "This fetches only the Rust/Yew-compatible source code with no extra fluff, no unnecessary dependencies, and no styling assumptions. Here's an excerpt of what you get:"
         }
@@ -2753,7 +2820,7 @@ pub fn OpensassVsShadcn() -> dioxus::prelude::Element {
             strong { "inline styles" }
             "; Open SASS doesn't care. The component is just logic and structure, not opinionated about how you present it. Want to switch from Yew to Dioxus? Easy:"
         }
-        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs dio</span></pre>\n" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">os add accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs dio</span></pre>\n" }
         p {
             "This modularity empowers teams to build components once and reuse them across frontend frameworks, native apps, and even WebAssembly runtimes. This kind of adaptability is simply "
             strong { "unachievable" }
@@ -2779,7 +2846,7 @@ pub fn OpensassVsShadcn() -> dioxus::prelude::Element {
             strong { "Open SASS" }
             ":"
         }
-        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">❯ time os add accordion accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew\n</span><span style=\"color:#ff80f4;\">0.17</span><span style=\"color:#f8f8f2;\">s user </span><span style=\"color:#ff80f4;\">0.02</span><span style=\"color:#f8f8f2;\">s system </span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f92672;\">%</span><span style=\"color:#f8f8f2;\"> cpu</span></pre>\n" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">❯ time os add accordion</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs yew\n</span><span style=\"color:#ff80f4;\">0.17</span><span style=\"color:#f8f8f2;\">s user </span><span style=\"color:#ff80f4;\">0.02</span><span style=\"color:#f8f8f2;\">s system </span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f92672;\">%</span><span style=\"color:#f8f8f2;\"> cpu</span></pre>\n" }
         p {
             strong { "Under 0.2 seconds" }
             " of actual user time. That's roughly "
@@ -2907,6 +2974,272 @@ pub fn OpensassVsShadcn() -> dioxus::prelude::Element {
         }
     }
 }
+#[component(no_case_check)]
+pub fn ImageRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "When it comes to building lightning-fast, highly interactive WASM apps, the devil's in the details, and images are a "
+            strong { "huge" }
+            " part of that. Traditionally, working with images in Yew, Dioxus, or Leptos has been... well, clunky. Limited flexibility, poor accessibility, bad loading UX, you name it."
+        }
+        p {
+            "That's why we're excited to announce "
+            a { href: "https://github.com/opensass/image-rs",
+                strong { "Image RS" }
+            }
+            ", a "
+            strong { "next-gen" }
+            " image component designed from the ground up for "
+            strong { "WASM-based" }
+            " frameworks. Not just another helper, but a fully-loaded, highly-optimized solution that "
+            strong { "removes" }
+            " the bottlenecks we as developers usually run into when dealing with images."
+        }
+        p {
+            "Let's explore why "
+            strong { "Image RS" }
+            " doesn't just meet your needs, it "
+            strong { "exceeds" }
+            " them 🚀."
+        }
+        h2 { id: "-what-is-image-rs",
+            a { href: "#-what-is-image-rs", class: "header", "📸 What Is Image RS?" }
+        }
+        p {
+            strong { "Image RS" }
+            " is a "
+            strong { "highly optimized" }
+            ", "
+            strong { "feature-rich" }
+            " image component crafted specifically for the new wave of "
+            strong { "Rust-powered frontend frameworks" }
+            " like "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            "."
+        }
+        p {
+            "It's "
+            strong { "fast" }
+            " (thanks to smart lazy loading and "
+            code { "IntersectionObserver" }
+            "), "
+            strong { "flexible" }
+            " (supporting a range of layouts and styles), and "
+            strong { "accessible" }
+            " (full ARIA support baked in). Basically, it's everything you ever wanted from an image component, but for the WASM era."
+        }
+        h2 { id: "-why-youll-love-image-rs",
+            a { href: "#-why-youll-love-image-rs", class: "header", "🚀 Why You'll Love Image RS" }
+        }
+        p {
+            "Other image components in the wild are either too basic, too bloated, or too locked into specific frameworks. "
+            strong { "Image RS" }
+            " gives you "
+            strong { "the best of all worlds" }
+            ", right out of the box:"
+        }
+        ul {
+            li {
+                strong { "Performance Obsessed" }
+                ": Lazy loading, blur placeholders, async decoding, all built-in and tuned for maximum speed."
+            }
+            li {
+                strong { "Layout Freedom" }
+                ": Fixed, Intrinsic, Responsive, Fill, Stretch, ScaleDown, pick whatever fits your design best."
+            }
+            li {
+                strong { "Fully Accessible" }
+                ": ARIA labels, roles, dynamic states, it's all handled properly."
+            }
+            li {
+                strong { "Interactive Events" }
+                ": Get callbacks for success or failure, build smarter, more resilient apps."
+            }
+            li {
+                strong { "Visual Candy" }
+                ": Blur-up placeholders, fallback images, quality settings, gorgeous UX without extra work."
+            }
+        }
+        h2 { id: "-quick-yew-setup",
+            a { href: "#-quick-yew-setup", class: "header", "🔥 Quick Yew Setup" }
+        }
+        p { "Getting started? It's a breeze." }
+        p {
+            "Add  "
+            code { "image-rs" }
+            " to your project:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add image</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        p { "Import it in your app:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">image_rs::yew::Image;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">image_rs::Layout;</span></pre>\n" }
+        p { "Use it:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image\n</span><span style=\"color:#f8f8f2;\">            src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/images/photo.jpg&quot;\n</span><span style=\"color:#f8f8f2;\">            alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;A beautiful view&quot;\n</span><span style=\"color:#f8f8f2;\">            width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;800&quot;\n</span><span style=\"color:#f8f8f2;\">            height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;600&quot;\n</span><span style=\"color:#f8f8f2;\">            layout</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Layout::Responsive}}\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            strong { "That's it." }
+            " Blazing fast images, minimal setup."
+        }
+        h2 { id: "-features-that-set-it-apart",
+            a { href: "#-features-that-set-it-apart", class: "header",
+                "🧩 Features That Set It Apart"
+            }
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "What It Means for You" }
+            }
+            tr {
+                th { "Lazy Loading" }
+                th { "Only loads images when needed, faster pages" }
+            }
+            tr {
+                th { "Blur Placeholder" }
+                th { "Smooth loading experience with visual cues" }
+            }
+            tr {
+                th { "ARIA Accessibility" }
+                th { "Inclusive, accessible apps without extra code" }
+            }
+            tr {
+                th { "Layouts" }
+                th { "Responsive, Fixed, Stretch, and more" }
+            }
+            tr {
+                th { "Event Hooks" }
+                th { "Handle load success, failure, and retries" }
+            }
+            tr {
+                th { "Fallback Images" }
+                th { "No more broken image icons" }
+            }
+            tr {
+                th { "Custom Styling" }
+                th { "Tailor it exactly to your needs" }
+            }
+        }
+        h2 { id: "-full-control-with-props",
+            a { href: "#-full-control-with-props", class: "header",
+                "⚙\u{fe0f} Full Control with Props"
+            }
+        }
+        p {
+            "Need more fine-grained control?"
+            strong { "Image RS" }
+            " exposes a full suite of props, including:"
+        }
+        ul {
+            li {
+                code { "src" }
+                ", "
+                code { "alt" }
+                ", "
+                code { "width" }
+                ", "
+                code { "height" }
+            }
+            li {
+                code { "fallback_src" }
+                ", "
+                code { "placeholder" }
+                ", "
+                code { "priority" }
+            }
+            li {
+                code { "layout" }
+                ", "
+                code { "object_fit" }
+                ", "
+                code { "object_position" }
+            }
+            li {
+                code { "on_loading_complete" }
+                ", "
+                code { "on_error" }
+            }
+            li {
+                "Accessibility props like "
+                code { "aria_labelledby" }
+                ", "
+                code { "aria_hidden" }
+                ", "
+                code { "aria_current" }
+                ", etc."
+            }
+        }
+        p {
+            strong { "Customization?" }
+            " ✅"
+        }
+        p {
+            strong { "Flexibility?" }
+            " ✅"
+        }
+        p {
+            strong { "Developer happiness?" }
+            " ✅"
+        }
+        h2 { id: "-real-world-examples",
+            a { href: "#-real-world-examples", class: "header", "🎯 Real-World Examples" }
+        }
+        p {
+            "Want to see it in action? Here are some real snippets you can find on "
+            a { href: "https://image-rs.netlify.app", "the live demo" }
+            ":"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Simple image\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/300x200&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Basic Image&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Responsive layout\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/600x400&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Responsive Layout&quot;</span><span style=\"color:#f8f8f2;\"> layout</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Layout::Responsive}} width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;600&quot;</span><span style=\"color:#f8f8f2;\"> height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;400&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Blur-up placeholder\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/600x400&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Blurred Image&quot;</span><span style=\"color:#f8f8f2;\"> layout</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Layout::Responsive}} width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;600&quot;</span><span style=\"color:#f8f8f2;\"> height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;400&quot;</span><span style=\"color:#f8f8f2;\"> placeholder</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;blur&quot;</span><span style=\"color:#f8f8f2;\"> blur_data_url</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/10x10&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Priority loading\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/400x300&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Priority Image&quot;</span><span style=\"color:#f8f8f2;\"> priority</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Custom object fit and position\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image\n</span><span style=\"color:#f8f8f2;\">    src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://placehold.co/600x400&quot;\n</span><span style=\"color:#f8f8f2;\">    alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Cover Fit&quot;\n</span><span style=\"color:#f8f8f2;\">    layout</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Layout::Responsive}}\n</span><span style=\"color:#f8f8f2;\">    width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;600&quot;\n</span><span style=\"color:#f8f8f2;\">    height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;400&quot;\n</span><span style=\"color:#f8f8f2;\">    object_fit</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{ObjectFit::Cover}}\n</span><span style=\"color:#f8f8f2;\">    object_position</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Position::TopRight}}\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p {
+            "Yes, you can do "
+            strong { "a lot" }
+            " with it, and still keep your codebase super clean."
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💡 Final Thoughts" }
+        }
+        p {
+            "When you're building modern, performant WASM apps, you need your images to keep up, not slow you down."
+        }
+        p {
+            strong { "Image RS" }
+            " is lightweight, battle-tested, accessibility-first, and packed with features that make real-world web development easier, smoother, and more scalable."
+        }
+        p {
+            "If you're ready to stop fighting your image components and start shipping polished, professional apps, "
+            strong { "Image RS" }
+            " is here 🖼\u{fe0f}."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
 
-use crate::components::blog::code::CodeBlock;
 use dioxus::prelude::*;
+use crate::components::blog::code::CodeBlock;
