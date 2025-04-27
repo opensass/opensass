@@ -111,6 +111,8 @@ We actually **measured** everything using **Lighthouse**, and the results speak 
 | Performance Score | 100        | 100     |
 | Memory Usage      | 8 MB       | 8 MB    |
 
+![Yew Image RS](https://github.com/user-attachments/assets/703d6623-c2b9-46a7-81fb-01c56dd13466)
+
 At small sizes, both are lightning-fast. You won't notice much difference if you are only loading a few images. Both are **perfectly smooth and reliable** here.
 
 ### When Loading 10,000 Images (huge scale)
@@ -120,6 +122,11 @@ At small sizes, both are lightning-fast. You won't notice much difference if you
 | Performance Score    | 64          | ❌ (FAILED)    |
 | Memory Usage         | 78 MB       | 83 MB          |
 | Scrolling Smoothness | Very Smooth | Laggy Disaster |
+
+![Yew Image RS](https://github.com/user-attachments/assets/acb106b0-8c1c-47c7-ae75-605f2f6a8cfb)
+![Image RS Memory Usage](https://github.com/user-attachments/assets/38b053ed-22af-48fc-a52c-617860fe33d3)
+![Next JS Image Memory Usage](https://github.com/user-attachments/assets/88580a9a-0036-4782-8d40-a98faa63e789)
+![Next JS Image Lighthouse score failed](https://github.com/user-attachments/assets/beecbee3-f021-4572-bd1d-6515de0e8f15)
 
 Once we crank up the scale, the story changes:
 

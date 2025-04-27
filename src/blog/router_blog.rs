@@ -662,7 +662,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 8usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                        title: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1"
                             .to_string(),
                         url: BookRoute::ImageRsVsNextJsImage {},
                         segments: vec![],
@@ -832,7 +832,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                        name: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1"
                             .to_string(),
                         location: Some(BookRoute::ImageRsVsNextJsImage {}),
                         number: Some(
@@ -3713,6 +3713,13 @@ pub fn ImageRsVsNextJsImage() -> dioxus::prelude::Element {
             }
         }
         p {
+            img {
+                src: "https://github.com/user-attachments/assets/703d6623-c2b9-46a7-81fb-01c56dd13466",
+                alt: "Yew Image RS",
+                title: "",
+            }
+        }
+        p {
             "At small sizes, both are lightning-fast. You won't notice much difference if you are only loading a few images. Both are "
             strong { "perfectly smooth and reliable" }
             " here."
@@ -3744,6 +3751,28 @@ pub fn ImageRsVsNextJsImage() -> dioxus::prelude::Element {
                 th { "Scrolling Smoothness" }
                 th { "Very Smooth" }
                 th { "Laggy Disaster" }
+            }
+        }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/acb106b0-8c1c-47c7-ae75-605f2f6a8cfb",
+                alt: "Yew Image RS",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/38b053ed-22af-48fc-a52c-617860fe33d3",
+                alt: "Image RS Memory Usage",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/88580a9a-0036-4782-8d40-a98faa63e789",
+                alt: "Next JS Image Memory Usage",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/beecbee3-f021-4572-bd1d-6515de0e8f15",
+                alt: "Next JS Image Lighthouse score failed",
+                title: "",
             }
         }
         p { "Once we crank up the scale, the story changes:" }
