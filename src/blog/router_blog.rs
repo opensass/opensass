@@ -26,6 +26,8 @@ pub enum BookRoute {
     OpensassVsShadcn {},
     #[route("/image-rs-release")]
     ImageRsRelease {},
+    #[route("/image-rs-vs-next-js-image")]
+    ImageRsVsNextJsImage {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -44,6 +46,7 @@ impl BookRoute {
             BookRoute::RustIsGod101 {} => use_mdbook::mdbook_shared::PageId(5usize),
             BookRoute::OpensassVsShadcn {} => use_mdbook::mdbook_shared::PageId(6usize),
             BookRoute::ImageRsRelease {} => use_mdbook::mdbook_shared::PageId(7usize),
+            BookRoute::ImageRsVsNextJsImage {} => use_mdbook::mdbook_shared::PageId(8usize),
         }
     }
 }
@@ -654,6 +657,103 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::ImageRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(7usize),
         );
+        pages
+            .push((
+                8usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        url: BookRoute::ImageRsVsNextJsImage {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚔\u{fe0f} Who Are The Competitors?".to_string(),
+                                id: "⚔\u{fe0f}-who-are-the-competitors?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🥊 Next.js Image".to_string(),
+                                id: "🥊-next.js-image".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🥊 Image RS".to_string(),
+                                id: "🥊-image-rs".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 Why Image RS Wins".to_string(),
+                                id: "🧠-why-image-rs-wins".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Native Rust + Wasm vs JavaScript".to_string(),
+                                id: "native-rust-+-wasm-vs-javascript".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Built-in Image Optimization: Both Are Good (Kind Of)"
+                                    .to_string(),
+                                id: "built-in-image-optimization:-both-are-good-(kind-of)"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Fine-Grained DOM Control: WASM Takes the Crown"
+                                    .to_string(),
+                                id: "fine-grained-dom-control:-wasm-takes-the-crown"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "JS/Wasm Payload Size: Both Keep It Tight"
+                                    .to_string(),
+                                id: "js/wasm-payload-size:-both-keep-it-tight".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📈 Real Benchmark Time.".to_string(),
+                                id: "📈-real-benchmark-time.".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "When Loading 10 Images (small scale)".to_string(),
+                                id: "when-loading-10-images-(small-scale)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "When Loading 10,000 Images (huge scale)"
+                                    .to_string(),
+                                id: "when-loading-10,000-images-(huge-scale)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧪 Why Wasm + Rust Crushes JS + React"
+                                    .to_string(),
+                                id: "🧪-why-wasm-+-rust-crushes-js-+-react".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎯 The Verdict".to_string(),
+                                id: "🎯-the-verdict".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Final Thoughts".to_string(),
+                                id: "🚀-final-thoughts".to_string(),
+                                level: 1usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(8usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::ImageRsVsNextJsImage {},
+            ::use_mdbook::mdbook_shared::PageId(8usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -728,6 +828,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::ImageRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![8u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        location: Some(BookRoute::ImageRsVsNextJsImage {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![9u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -3237,6 +3346,554 @@ pub fn ImageRsRelease() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn ImageRsVsNextJsImage() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hello, amazing developer! 👋" }
+        }
+        p {
+            "Today we are going to talk about something that may seem small at first glance, but is actually "
+            strong { "super duper important" }
+            " for building fast, reliable, and professional websites: "
+            strong { "image components" }
+            "."
+        }
+        p {
+            "And not just any image components, we're putting "
+            strong { "Next.js's Native Image" }
+            " head-to-head against the newer, shinier, Rust-powered "
+            strong { "Image RS" }
+            "."
+        }
+        p {
+            "You might think, \"How different could two image components really be?\". Well, sit tight, because the difference is not just big, it's "
+            strong { "game-changing" }
+            " when you actually dig under the surface."
+        }
+        p {
+            "This post will explain, in simple words, "
+            strong { "why Image RS completely wins" }
+            ", with "
+            strong { "real facts" }
+            ", "
+            strong { "benchmarks" }
+            ", and a few "
+            strong { "good laughs" }
+            " along the way."
+        }
+        p { "Let's get started!" }
+        h2 { id: "-who-are-the-competitors",
+            a { href: "#-who-are-the-competitors", class: "header",
+                "⚔\u{fe0f} Who Are The Competitors?"
+            }
+        }
+        h3 { id: "-nextjs-image",
+            a { href: "#-nextjs-image", class: "header", "🥊 Next.js Image" }
+        }
+        p {
+            a { href: "https://nextjs.org/docs/pages/api-reference/components/image",
+                "Next.js Image"
+            }
+            " is part of the popular React-based Next.js framework. It's been around for a while and is trusted by thousands of developers across the world. It does a good job of "
+            strong { "optimizing images automatically" }
+            ", helping with "
+            strong { "SEO" }
+            ", and "
+            strong { "improving page loading speed" }
+            " by lazy-loading images. It's very good when you are already working in a JavaScript and React environment, and it makes handling images much easier than doing it manually. It's reliable, it's solid, butt, at the end of the day, it is still "
+            strong { "limited by JavaScript" }
+            " and its natural problems (we'll talk about that later on)."
+        }
+        h3 { id: "-image-rs",
+            a { href: "#-image-rs", class: "header", "🥊 Image RS" }
+        }
+        p {
+            a { href: "https://github.com/opensass/image-rs", "Image RS" }
+            " is something "
+            strong { "special" }
+            ". It's a brand-new image component built specifically for "
+            strong { "Rust-based frontend frameworks" }
+            " like Yew, Dioxus, and Leptos. It runs inside the browser "
+            strong { "through WebAssembly (Wasm)" }
+            ", meaning it's written in "
+            strong { "Rust" }
+            ", then compiled into "
+            strong { "blazing fast binary code" }
+            " that the browser can run directly."
+        }
+        p {
+            "That means you are not using slow JavaScript, you are using the "
+            strong { "godly power of Rust" }
+            ", the language famous for being blazingly fast, reliable, and efficient. With Image RS, you don't just get a component that looks good, you get "
+            strong { "raw, unmatched performance" }
+            ", "
+            strong { "fine-grained control" }
+            " over how the image behaves, and "
+            strong { "less memory usage" }
+            "."
+        }
+        p { "It's like upgrading from a scooter (Next.js Image) to a rocket ship (Image RS)." }
+        h2 { id: "-why-image-rs-wins",
+            a { href: "#-why-image-rs-wins", class: "header", "🧠 Why Image RS Wins" }
+        }
+        p {
+            "Let's break it down point by point. You'll see "
+            strong { "exactly why" }
+            " Rust + Wasm is a total game-changer."
+        }
+        h3 { id: "native-rust--wasm-vs-javascript",
+            a { href: "#native-rust--wasm-vs-javascript", class: "header",
+                "Native Rust + Wasm vs JavaScript"
+            }
+        }
+        p { "First, let's talk about how the two components are built." }
+        ul {
+            li {
+                strong { "Next.js Image" }
+                " runs inside the browser using "
+                strong { "JavaScript" }
+                ", the traditional way websites have worked for years."
+            }
+            li {
+                strong { "Image RS" }
+                " runs using "
+                strong { "WebAssembly (Wasm)" }
+                " compiled from "
+                strong { "Rust" }
+                ", meaning it acts much closer to how native applications behave."
+            }
+        }
+        p { "This matters a lot." }
+        p {
+            "JavaScript is a "
+            strong { "dynamic" }
+            ", "
+            strong { "garbage-collected" }
+            " language, full of garbage. It's flexible, but it has a lot of overhead. Every time you load new images, update the DOM, or interact with elements, JavaScript engines need to "
+            strong { "manage memory dynamically" }
+            ", which sometimes leads to "
+            strong { "random performance issues" }
+            ", also known as "
+            a { href: "https://developer.mozilla.org/en-US/docs/Glossary/Jank",
+                strong { "jank" }
+            }
+            "."
+        }
+        p {
+            "Meanwhile, Wasm is "
+            strong { "strict" }
+            " and "
+            strong { "predictable" }
+            ". Rust code running inside Wasm "
+            strong { "manages memory very efficiently" }
+            " and doesn't need a garbage collector. This means "
+            strong { "no random pauses" }
+            ", "
+            strong { "no unexpected memory bloats" }
+            ", and "
+            strong { "super stable performance" }
+            ", even under heavy loads."
+        }
+        p {
+            "When your app grows, and you start loading hundreds or thousands of images, this difference "
+            strong { "becomes massive" }
+            "."
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Image RS" }
+                th { "Next.js Image" }
+            }
+            tr {
+                th { "Native Rust+Wasm" }
+                th { "✅" }
+                th { "❌" }
+            }
+        }
+        p {
+            "✅ "
+            strong { "Clear Advantage: Image RS" }
+        }
+        h3 { id: "built-in-image-optimization-both-are-good-kind-of",
+            a {
+                href: "#built-in-image-optimization-both-are-good-kind-of",
+                class: "header",
+                "Built-in Image Optimization: Both Are Good (Kind Of)"
+            }
+        }
+        p {
+            "Here, both "
+            strong { "Next.js Image" }
+            " and "
+            strong { "Image RS" }
+            " have strong features. They both offer:"
+        }
+        ul {
+            li {
+                strong { "Automatic resizing" }
+                " of images depending on the screen size."
+            }
+            li {
+                strong { "Lazy loading" }
+                " images so they only appear when the user scrolls near them."
+            }
+            li {
+                strong { "Smart decoding" }
+                " of images in a way that doesn't block page rendering."
+            }
+            li {
+                strong { "Placeholder blurring" }
+                ", so users see a nice blur before the full image loads."
+            }
+        }
+        p {
+            "These features are "
+            strong { "must-haves" }
+            " today because they dramatically improve page speed and user experience. In this case, both components are "
+            strong { "equally great" }
+            " when it comes to basic optimizations."
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Image RS" }
+                th { "Next.js Image" }
+            }
+            tr {
+                th { "Built-in Image Optimization" }
+                th { "✅" }
+                th { "✅" }
+            }
+        }
+        p {
+            "🤝 "
+            strong { "Result: Tie" }
+        }
+        h3 { id: "fine-grained-dom-control-wasm-takes-the-crown",
+            a {
+                href: "#fine-grained-dom-control-wasm-takes-the-crown",
+                class: "header",
+                "Fine-Grained DOM Control: WASM Takes the Crown"
+            }
+        }
+        p {
+            "This is where "
+            strong { "Image RS" }
+            " starts pulling ahead strongly."
+        }
+        p {
+            "With Yew and Wasm, you have "
+            strong { "fine-grained control over every single DOM node" }
+            ". You can directly manipulate how each image behaves, how it loads, how it resizes, or how it triggers callbacks, all with the speed and safety of Rust."
+        }
+        p {
+            "Next.js Image, however, is tied deeply to "
+            strong { "React's virtual DOM" }
+            ". The virtual DOM is smart, but it's also a layer of abstraction that "
+            strong { "gets in the way" }
+            " when you need "
+            strong { "precise, large-scale updates" }
+            "."
+        }
+        p {
+            "If you need to load, say, "
+            strong { "10,000 images" }
+            ", Image RS can handle it "
+            strong { "smoothly and efficiently" }
+            " by updating the real DOM "
+            strong { "surgically" }
+            "."
+            strong { "very expensive" }
+            " and slow at this scale."
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Yew Image RS" }
+                th { "Next.js Image" }
+            }
+            tr {
+                th { "Fine-grained DOM Control" }
+                th { "✅" }
+                th { "❌" }
+            }
+        }
+        p {
+            "🏆 "
+            strong { "Clear Winner: Image RS" }
+        }
+        h3 { id: "jswasm-payload-size-both-keep-it-tight",
+            a {
+                href: "#jswasm-payload-size-both-keep-it-tight",
+                class: "header",
+                "JS/Wasm Payload Size: Both Keep It Tight"
+            }
+        }
+        p {
+            "One big concern in web development today is "
+            strong { "bundle size" }
+            ", you don't want users downloading megabytes of JavaScript just to open a simple page."
+        }
+        p {
+            "Luckily, both Next.js Image and Image RS are "
+            strong { "optimized for small payloads" }
+            ":"
+        }
+        ul {
+            li {
+                "Next.js uses "
+                a { href: "https://en.wikipedia.org/wiki/Tree_shaking", "tree-shaking" }
+                " and "
+                a { href: "https://developer.mozilla.org/en-US/docs/Glossary/Code_splitting",
+                    "code-splitting"
+                }
+                " to send only the code you need."
+            }
+            li {
+                "Yew compiles Rust code into "
+                strong { "tiny Wasm binaries" }
+                " that are often "
+                strong { "smaller than equivalent JavaScript" }
+                "."
+            }
+        }
+        p { "Either way, you're not going to overload your user's internet connection." }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Yew Image RS" }
+                th { "Next.js Image" }
+            }
+            tr {
+                th { "Smaller JS/Wasm Payload" }
+                th { "✅" }
+                th { "✅" }
+            }
+        }
+        p {
+            "🤝 "
+            strong { "Result: Tie" }
+        }
+        h2 { id: "-real-benchmark-time",
+            a { href: "#-real-benchmark-time", class: "header", "📈 Real Benchmark Time." }
+        }
+        p {
+            "We actually "
+            strong { "measured" }
+            " everything using "
+            strong { "Lighthouse" }
+            ", and the results speak for themselves."
+        }
+        h3 { id: "when-loading-10-images-small-scale",
+            a { href: "#when-loading-10-images-small-scale", class: "header",
+                "When Loading 10 Images (small scale)"
+            }
+        }
+        table {
+            thead {
+                th { "Metric" }
+                th { "Yew (Wasm)" }
+                th { "Next.js" }
+            }
+            tr {
+                th { "Performance Score" }
+                th { "100" }
+                th { "100" }
+            }
+            tr {
+                th { "Memory Usage" }
+                th { "8 MB" }
+                th { "8 MB" }
+            }
+        }
+        p {
+            "At small sizes, both are lightning-fast. You won't notice much difference if you are only loading a few images. Both are "
+            strong { "perfectly smooth and reliable" }
+            " here."
+        }
+        h3 { id: "when-loading-10000-images-huge-scale",
+            a {
+                href: "#when-loading-10000-images-huge-scale",
+                class: "header",
+                "When Loading 10,000 Images (huge scale)"
+            }
+        }
+        table {
+            thead {
+                th { "Metric" }
+                th { "Yew (Wasm)" }
+                th { "Next.js" }
+            }
+            tr {
+                th { "Performance Score" }
+                th { "64" }
+                th { "❌ (FAILED)" }
+            }
+            tr {
+                th { "Memory Usage" }
+                th { "78 MB" }
+                th { "83 MB" }
+            }
+            tr {
+                th { "Scrolling Smoothness" }
+                th { "Very Smooth" }
+                th { "Laggy Disaster" }
+            }
+        }
+        p { "Once we crank up the scale, the story changes:" }
+        ul {
+            li {
+                strong { "Image RS" }
+                " keeps its cool. Scrolling stays buttery smooth, memory usage is controlled, and the page is still responsive."
+            }
+            li {
+                strong { "Next.js Image" }
+                " completely falls apart. Lighthouse "
+                strong { "couldn't even finish auditing" }
+                " because the page became too slow and unresponsive."
+            }
+        }
+        p {
+            "✅ Image RS uses "
+            strong { "less memory" }
+            ", scrolls faster, and behaves like a professional athlete."
+        }
+        p {
+            "❌ Next.js Image "
+            strong { "lags" }
+            ", "
+            strong { "stutters" }
+            ", and "
+            strong { "breaks" }
+            " under the pressure."
+        }
+        h2 { id: "-why-wasm--rust-crushes-js--react",
+            a { href: "#-why-wasm--rust-crushes-js--react", class: "header",
+                "🧪 Why Wasm + Rust Crushes JS + React"
+            }
+        }
+        p {
+            strong { "Technical reason in simple words:" }
+        }
+        ul {
+            li {
+                "Rust gives "
+                strong { "tight, efficient control over memory" }
+                "."
+            }
+            li {
+                "Wasm allows "
+                strong { "direct execution" }
+                " without needing garbage collection."
+            }
+            li { "No surprise pauses, no random memory leaks, no hidden costs." }
+        }
+        p { "Meanwhile, JavaScript has to:" }
+        ul {
+            li { "Constantly check and clean up memory." }
+            li { "Handle garbage collection pauses unpredictably." }
+        }
+        p {
+            "That's why Rust+Wasm simply "
+            strong { "outperforms" }
+            " JavaScript at any serious scale."
+        }
+        h2 { id: "-the-verdict",
+            a { href: "#-the-verdict", class: "header", "🎯 The Verdict" }
+        }
+        table {
+            thead {
+                th { "Category" }
+                th { "Winner" }
+            }
+            tr {
+                th { "Native Performance" }
+                th { "Image RS" }
+            }
+            tr {
+                th { "Fine-grained Control" }
+                th { "Image RS" }
+            }
+            tr {
+                th { "Massive Scaling" }
+                th { "Image RS" }
+            }
+            tr {
+                th { "Developer Smugness" }
+                th { "Image RS" }
+            }
+        }
+        p {
+            "✅ If you care about "
+            strong { "speed" }
+            ", "
+            strong { "reliability" }
+            ", "
+            strong { "future-proof apps" }
+            ", and "
+            strong { "developer happiness" }
+            ", then "
+            strong { "Image RS" }
+            " is the clear winner."
+        }
+        p {
+            "✅ If you want your app to handle not just today's needs but tomorrow's massive data scales, "
+            strong { "Rust + Image RS" }
+            " is the way to go."
+        }
+        p {
+            "✅ If you want "
+            strong { "less pain, better performance, and cleaner code" }
+            ", the answer is simple."
+        }
+        h1 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "🚀 Final Thoughts" }
+        }
+        p {
+            "Next.js Image is good, for small apps where JavaScript's overhead doesn't show. But if you're dreaming big? If you're building "
+            strong { "modern apps that scale" }
+            "? If you want "
+            strong { "buttery-smooth UX" }
+            " no matter what? Then "
+            strong { "Image RS" }
+            " isn't just an option. It's the obvious next step."
+        }
+        p {
+            "So don't let your users suffer slow load times and laggy scrolling. "
+            strong { "Give them the Wasm experience they deserve." }
+            " 🚀"
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p {
+                "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+            }
+        }
+        blockquote {
+            p {
+                "Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now."
+            }
         }
     }
 }
