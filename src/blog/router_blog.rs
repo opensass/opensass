@@ -30,6 +30,8 @@ pub enum BookRoute {
     ImageRsVsNextJsImage {},
     #[route("/table-rs-release")]
     TableRsRelease {},
+    #[route("/tanstack-table-vs-table-rs")]
+    TanstackTableVsTableRs {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -50,6 +52,7 @@ impl BookRoute {
             BookRoute::ImageRsRelease {} => use_mdbook::mdbook_shared::PageId(7usize),
             BookRoute::ImageRsVsNextJsImage {} => use_mdbook::mdbook_shared::PageId(8usize),
             BookRoute::TableRsRelease {} => use_mdbook::mdbook_shared::PageId(9usize),
+            BookRoute::TanstackTableVsTableRs {} => use_mdbook::mdbook_shared::PageId(10usize),
         }
     }
 }
@@ -839,6 +842,81 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::TableRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(9usize),
         );
+        pages
+            .push((
+                10usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da"
+                            .to_string(),
+                        url: BookRoute::TanstackTableVsTableRs {
+                        },
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚔\u{fe0f} The Competitors: React vs WASM"
+                                    .to_string(),
+                                id: "⚔\u{fe0f}-the-competitors:-react-vs-wasm"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🟨 TanStack Table (React)".to_string(),
+                                id: "🟨-tanstack-table-(react)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🟩 Table RS (Yew + WASM)".to_string(),
+                                id: "🟩-table-rs-(yew-+-wasm)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📊 Benchmark: TanStack Table vs Table RS (1 Million Rows)"
+                                    .to_string(),
+                                id: "📊-benchmark:-tanstack-table-vs-table-rs-(1-million-rows)"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 Why TanStack Falls Apart".to_string(),
+                                id: "🧠-why-tanstack-falls-apart".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🦾 Why Table RS Rocks So Hard".to_string(),
+                                id: "🦾-why-table-rs-rocks-so-hard".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Real-World Experience".to_string(),
+                                id: "🚀-real-world-experience".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔥 Why WebAssembly Is the Future".to_string(),
+                                id: "🔥-why-webassembly-is-the-future".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📣 Final Verdict".to_string(),
+                                id: "📣-final-verdict".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "👋 Wrap-Up: JS Had a Good Run...".to_string(),
+                                id: "👋-wrap-up:-js-had-a-good-run...".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(10usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::TanstackTableVsTableRs {},
+            ::use_mdbook::mdbook_shared::PageId(10usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -931,6 +1009,16 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::TableRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![10u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da"
+                            .to_string(),
+                        location: Some(BookRoute::TanstackTableVsTableRs {
+                        }),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![11u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -4507,6 +4595,455 @@ pub fn TableRsRelease() -> dioxus::prelude::Element {
         }
         p {
             "It's fast, lightweight, thoughtfully designed, and extensible, ready for production use and just as happy in your side projects."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p {
+                "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+            }
+        }
+        blockquote {
+            p {
+                "Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn TanstackTableVsTableRs() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hello, humble bumble dev 👋!" }
+        }
+        p {
+            "Today we're going to explore something "
+            strong { "massive" }
+            ", both literally and figuratively: "
+            strong { "data tables with 1 million rows" }
+            "."
+        }
+        p {
+            "Yep, that's right. We're not talking about a handful of to-do items or a polite little contacts list. We're talking "
+            strong { "MILLIONS of rows" }
+            ", real-world, backend-fed, browser-rendered "
+            strong { "big boy data" }
+            "."
+        }
+        p { "And today, we're putting two contenders to the test:" }
+        ul {
+            li {
+                "🥊 "
+                strong { "TanStack Table" }
+                ", the battle-tested React data table library."
+            }
+            li {
+                "🥊 "
+                strong { "Table RS" }
+                ", the new WASM godly-powered table built with Rust + Yew."
+            }
+        }
+        p {
+            "You might think, \"Wait... a WASM table? How different could it really be?\". Oh, just hold my  "
+            code { "cargo build" }
+            ". Because what you're about to see is "
+            strong { "not just a difference, it's a generational leap" }
+            "."
+        }
+        p {
+            "Let's break it down, with "
+            strong { "real numbers" }
+            ", a little bit of "
+            strong { "sass" }
+            ", and a whole lot of "
+            strong { "truth" }
+            "."
+        }
+        h2 { id: "-the-competitors-react-vs-wasm",
+            a { href: "#-the-competitors-react-vs-wasm", class: "header",
+                "⚔\u{fe0f} The Competitors: React vs WASM"
+            }
+        }
+        h3 { id: "-tanstack-table-react",
+            a { href: "#-tanstack-table-react", class: "header", "🟨 TanStack Table (React)" }
+        }
+        p {
+            a { href: "https://tanstack.com/table/latest", "TanStack Table" }
+            " is a beloved data-table library in the React ecosystem. Works great in many apps. Strong community. Solid virtualized rendering support. But... it still lives and breathes JavaScript. And JavaScript, dear friends, "
+            strong { "struggles" }
+            " when things get "
+            strong { "huge" }
+            "."
+        }
+        h3 { id: "-table-rs-yew--wasm",
+            a { href: "#-table-rs-yew--wasm", class: "header", "🟩 Table RS (Yew + WASM)" }
+        }
+        p {
+            "A newcomer, built in Rust, compiled to WASM, running in the browser with "
+            strong { "near-native performance" }
+            ". No virtual DOM. No garbage collection. Just pure speed, stability, and zero apologies."
+        }
+        h2 { id: "-benchmark-tanstack-table-vs-table-rs-1-million-rows",
+            a {
+                href: "#-benchmark-tanstack-table-vs-table-rs-1-million-rows",
+                class: "header",
+                "📊 Benchmark: TanStack Table vs Table RS (1 Million Rows)"
+            }
+        }
+        table {
+            thead {
+                th { "Metric" }
+                th {
+                    strong { "TanStack Table (React)" }
+                    ""
+                }
+                th {
+                    strong { "Table RS (Yew + WASM)" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    strong { "Page Load Time (1M rows)" }
+                    ""
+                }
+                th { "~" }
+                th { "~" }
+            }
+            tr {
+                th {
+                    strong { "Memory Heap Usage" }
+                    ""
+                }
+                th { ">3 GB (heap overflow!)" }
+                th { "~" }
+            }
+            tr {
+                th {
+                    strong { "Initial Rendering" }
+                    ""
+                }
+                th { "Heavy blocking, slow DOM paint" }
+                th { "Efficient, lightweight rendering" }
+            }
+            tr {
+                th {
+                    strong { "Browser Responsiveness" }
+                    ""
+                }
+                th { "Laggy and delayed" }
+                th { "Smooth like butter" }
+            }
+            tr {
+                th {
+                    strong { "Sorting Performance" }
+                    ""
+                }
+                th { "2-4s for large columns" }
+                th { "Sub-1s 💨" }
+            }
+            tr {
+                th {
+                    strong { "Search Performance" }
+                    ""
+                }
+                th { "Acceptable, but sluggish" }
+                th { "Instant. Blink-and-it's-done" }
+            }
+            tr {
+                th {
+                    strong { "Lighthouse Performance Score" }
+                    ""
+                }
+                th { "49/100" }
+                th { "60/100 (with 1M rows!)" }
+            }
+            tr {
+                th {
+                    strong { "Scalability" }
+                    ""
+                }
+                th { "Hits JS memory limits fast" }
+                th { "Laughs in WebAssembly" }
+            }
+        }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/5cdf63a2-09de-403d-89d5-bad6cef53a29",
+                alt: "Screenshot",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/7e4f2d08-d5d1-49b8-ba9e-e4e6174313a3",
+                alt: "Screenshot",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/d116fe18-9a49-4520-a24b-8d1b1b37258c",
+                alt: "Screenshot",
+                title: "",
+            }
+            img {
+                src: "https://github.com/user-attachments/assets/afb55bbf-6a98-4794-a0a9-f7fefaa3707d",
+                alt: "Screenshot",
+                title: "",
+            }
+        }
+        p {
+            "Let's be real: that's "
+            strong { "not even close" }
+            ". And if you're thinking \"wait, maybe TanStack just needs some optimization\", let me gently stop you right there..."
+        }
+        h2 { id: "-why-tanstack-falls-apart",
+            a { href: "#-why-tanstack-falls-apart", class: "header",
+                "🧠 Why TanStack Falls Apart"
+            }
+        }
+        p {
+            "TanStack Table is amazing for "
+            strong { "normal" }
+            " data sets. But 1 million rows is where "
+            strong { "JavaScript's weaknesses explode" }
+            ":"
+        }
+        ul {
+            li {
+                "Memory consumption spikes to "
+                strong { "3GB+" }
+                " just to load data."
+            }
+            li {
+                "Sorting or filtering starts to "
+                strong { "choke the main thread" }
+                "."
+            }
+            li {
+                "React's reconciliation starts "
+                strong { "gasping for air" }
+                "."
+            }
+            li {
+                "Eventually: 💥 "
+                strong { "heap overflow errors" }
+                "."
+            }
+        }
+        p {
+            "You might even get "
+            strong { "browser crashes" }
+            " depending on the system. It's not TanStack's fault. It's the platform."
+        }
+        h2 { id: "-why-table-rs-rocks-so-hard",
+            a { href: "#-why-table-rs-rocks-so-hard", class: "header",
+                "🦾 Why Table RS Rocks So Hard"
+            }
+        }
+        p { "Table RS doesn't play around. It:" }
+        ul {
+            li {
+                "Loads 1 million rows with "
+                strong { "~" }
+                " memory."
+            }
+            li {
+                "Sorts and filters "
+                strong { "in milliseconds" }
+                "."
+            }
+            li { "Doesn't need hydration." }
+            li {
+                "Doesn't virtualize, it just renders what's needed, "
+                strong { "fast" }
+                "."
+            }
+            li {
+                "Compiles from Rust to Wasm = "
+                strong { "native god-like binary performance in your browser" }
+                "."
+            }
+        }
+        p {
+            "No garbage collection. No memory leaks. No jank. It's like putting a Formula 1 engine into your HTML table."
+        }
+        h2 { id: "-real-world-experience",
+            a { href: "#-real-world-experience", class: "header", "🚀 Real-World Experience" }
+        }
+        p { "When testing both, here's what we saw:" }
+        ul {
+            li {
+                strong { "TanStack Table" }
+                ": 10+ second initial load. Browser lags. Dev tools freeze. Heap overflow during build when enabling aggressive queries."
+            }
+            li {
+                strong { "Table RS" }
+                ": Loads in "
+                strong { "2 seconds flat" }
+                ". Page remains responsive. Sorts in less than 1s. Feels native."
+            }
+        }
+        p {
+            "Even "
+            strong { "Lighthouse" }
+            " agrees:"
+        }
+        table {
+            thead {
+                th { "Metric" }
+                th { "TanStack (React)" }
+                th { "Table RS (WASM)" }
+            }
+            tr {
+                th { "Performance Score" }
+                th { "49/100" }
+                th { "60/100" }
+            }
+            tr {
+                th { "Memory Stability" }
+                th { "❌" }
+                th { "✅" }
+            }
+            tr {
+                th { "First Contentful Paint" }
+                th { "4-5s" }
+                th { "~" }
+            }
+            tr {
+                th { "CPU Blocking Time" }
+                th { "🧱 Huge" }
+                th { "😌 Minimal" }
+            }
+        }
+        p {
+            "Remember, that's with "
+            strong { "1 million rows" }
+            ". Not 10. Not 100. "
+            strong { "A literal million" }
+            "."
+        }
+        h2 { id: "-why-webassembly-is-the-future",
+            a { href: "#-why-webassembly-is-the-future", class: "header",
+                "🔥 Why WebAssembly Is the Future"
+            }
+        }
+        p { "Let's put this simply:" }
+        ul {
+            li {
+                strong { "JavaScript" }
+                " is fine for interactive toys and CRUD apps."
+            }
+            li {
+                "But when you need to go "
+                strong { "beyond the limits of the VDOM" }
+                ", you need "
+                strong { "WASM" }
+                "."
+            }
+            li {
+                "Rust + Wasm "
+                strong { "compiles to tiny, fast, deterministic code" }
+                "."
+            }
+            li {
+                "It's not just fast, it's "
+                strong { "reliable" }
+                ", "
+                strong { "predictable" }
+                ", and "
+                strong { "insanely scalable" }
+                "."
+            }
+        }
+        p { "WASM doesn't guess. It doesn't garbage collect. It just runs." }
+        p {
+            "React and JS frameworks are incredible for most apps, but they hit the ceiling "
+            strong { "fast" }
+            " when you're dealing with real data at scale."
+        }
+        h2 { id: "-final-verdict",
+            a { href: "#-final-verdict", class: "header", "📣 Final Verdict" }
+        }
+        table {
+            thead {
+                th { "Category" }
+                th { "Winner" }
+            }
+            tr {
+                th { "Memory Efficiency" }
+                th { "Table RS" }
+            }
+            tr {
+                th { "Rendering Speed" }
+                th { "Table RS" }
+            }
+            tr {
+                th { "Browser Stability" }
+                th { "Table RS" }
+            }
+            tr {
+                th { "Sorting/Filtering" }
+                th { "Table RS" }
+            }
+            tr {
+                th { "Lighthouse Score" }
+                th { "Table RS" }
+            }
+            tr {
+                th { "Developer Vibes 😎" }
+                th { "Table RS" }
+            }
+        }
+        p {
+            "✅ If you're building a "
+            strong { "real-world, data-heavy frontend" }
+            ", and you care about:"
+        }
+        ul {
+            li { "Speed." }
+            li { "Memory." }
+            li { "Reliability." }
+            li { "And not making your users cry." }
+        }
+        p {
+            "Then "
+            strong { "Table RS with Yew + WASM" }
+            " isn't just a cool idea. It's "
+            strong { "the clear future" }
+            " of frontend performance."
+        }
+        h2 { id: "-wrap-up-js-had-a-good-run",
+            a { href: "#-wrap-up-js-had-a-good-run", class: "header",
+                "👋 Wrap-Up: JS Had a Good Run..."
+            }
+        }
+        p { "But it's time." }
+        p {
+            "The web is moving toward "
+            strong { "compiled, typed, high-performance apps" }
+            ". And WASM is the rocket fuel that's going to power it. Rust + WASM let you build "
+            strong { "massive-scale web apps" }
+            " with "
+            strong { "tiny, reliable performance footprints" }
+            ". That's not just good engineering. That's "
+            strong { "ethical development" }
+            ". You're saving your users from slow pages and broken tabs."
         }
         blockquote {
             p {
