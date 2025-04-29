@@ -28,6 +28,8 @@ pub enum BookRoute {
     ImageRsRelease {},
     #[route("/image-rs-vs-next-js-image")]
     ImageRsVsNextJsImage {},
+    #[route("/table-rs-release")]
+    TableRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -47,6 +49,7 @@ impl BookRoute {
             BookRoute::OpensassVsShadcn {} => use_mdbook::mdbook_shared::PageId(6usize),
             BookRoute::ImageRsRelease {} => use_mdbook::mdbook_shared::PageId(7usize),
             BookRoute::ImageRsVsNextJsImage {} => use_mdbook::mdbook_shared::PageId(8usize),
+            BookRoute::TableRsRelease {} => use_mdbook::mdbook_shared::PageId(9usize),
         }
     }
 }
@@ -754,6 +757,88 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::ImageRsVsNextJsImage {},
             ::use_mdbook::mdbook_shared::PageId(8usize),
         );
+        pages
+            .push((
+                9usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| blog |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        url: BookRoute::TableRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📦 What Is Table RS?".to_string(),
+                                id: "📦-what-is-table-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Why You'll Love Table RS".to_string(),
+                                id: "🚀-why-you'll-love-table-rs".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Quick Setup for Yew".to_string(),
+                                id: "⚙\u{fe0f}-quick-setup-for-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "1\u{fe0f}\u{20e3} Add the Dependency".to_string(),
+                                id: "1\u{fe0f}\u{20e3}-add-the-dependency".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "2\u{fe0f}\u{20e3} Import the Component".to_string(),
+                                id: "2\u{fe0f}\u{20e3}-import-the-component".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "3\u{fe0f}\u{20e3} Use It in Your Component"
+                                    .to_string(),
+                                id: "3\u{fe0f}\u{20e3}-use-it-in-your-component"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧩 Table RS Props Overview".to_string(),
+                                id: "🧩-table-rs-props-overview".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔑 Core Props".to_string(),
+                                id: "🔑-core-props".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧱 Column Definition".to_string(),
+                                id: "🧱-column-definition".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 Style/Classes Reference".to_string(),
+                                id: "🎨-style/classes-reference".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🤝 Built With Open SASS".to_string(),
+                                id: "🤝-built-with-open-sass".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎯 Final Thoughts".to_string(),
+                                id: "🎯-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(9usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::TableRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(9usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -837,6 +922,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::ImageRsVsNextJsImage {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![9u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| blog |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp"
+                            .to_string(),
+                        location: Some(BookRoute::TableRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![10u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -3923,6 +4017,525 @@ pub fn ImageRsVsNextJsImage() -> dioxus::prelude::Element {
             p {
                 "Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now."
             }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn TableRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "👋 Welcome" }
+        }
+        p {
+            "When you're building "
+            strong { "lightning-fast" }
+            ", "
+            strong { "interactive" }
+            ", and "
+            strong { "accessible" }
+            " WASM frontends with "
+            strong { "Yew" }
+            ", the little things can make a big difference, and "
+            strong { "tables" }
+            " are no exception."
+        }
+        p {
+            "Until now, building a rich data table in Rust meant reinventing the wheel, stitching together sorting logic, pagination UI, and URL state sync, all while wrestling with accessibility concerns and styling constraints."
+        }
+        p {
+            "That's why we're excited to introduce "
+            a { href: "https://github.com/opensass/table-rs",
+                strong { "Table RS" }
+            }
+            " 📊, a "
+            strong { "powerful" }
+            ", "
+            strong { "lightweight" }
+            ", and "
+            strong { "accessibility-first" }
+            " table component purpose-built for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            "."
+        }
+        p {
+            "Let's explore why "
+            strong { "Table RS" }
+            " isn't just another table, it's the one your Rust frontend deserves."
+        }
+        h2 { id: "-what-is-table-rs",
+            a { href: "#-what-is-table-rs", class: "header", "📦 What Is Table RS?" }
+        }
+        p {
+            strong { "Table RS" }
+            " is a modular, fully-featured data table component that brings together "
+            strong { "real-time search" }
+            ", "
+            strong { "column sorting" }
+            ", "
+            strong { "pagination" }
+            ", and "
+            strong { "style customization" }
+            ", all with built-in support for "
+            strong { "semantic markup" }
+            ", "
+            strong { "ARIA attributes" }
+            ", and "
+            strong { "URL synchronization" }
+            "."
+        }
+        p {
+            "Built specifically for "
+            strong { "WASM-based Rust frameworks" }
+            ", Table RS was designed with three key priorities:"
+        }
+        ul {
+            li {
+                strong { "Performance" }
+                " (don't block your app or over-render)."
+            }
+            li {
+                strong { "Accessibility" }
+                " (keyboard users and screen readers welcome)."
+            }
+            li {
+                strong { "Developer Ergonomics" }
+                " (composable, prop-driven API)."
+            }
+        }
+        p { "It's time to stop wrestling with HTML tables and start focusing on your app logic." }
+        h2 { id: "-why-youll-love-table-rs",
+            a { href: "#-why-youll-love-table-rs", class: "header", "🚀 Why You'll Love Table RS" }
+        }
+        p { "Table RS isn't just a helper, it's a solution. Here's what sets it apart:" }
+        ul {
+            li {
+                strong { "🔍 Built-in Search" }
+                ": Add a global search bar in one prop, no extra logic required. It even syncs with the URL ("
+                code { "?search=query" }
+                ") so users can share filtered views."
+            }
+            li {
+                strong { "⬆\u{fe0f} Sorting Support" }
+                ": Enable column-based sorting with accessible "
+                code { "aria-sort" }
+                " indicators for screen readers."
+            }
+            li {
+                strong { "📄 Pagination" }
+                ": Easily split data into pages, customize page size, and add intuitive nav controls."
+            }
+            li {
+                strong { "🧹 Debounced Inputs" }
+                ": Reduce unnecessary re-renders for better user experience and performance."
+            }
+            li {
+                strong { "🎨 Full Customization" }
+                ": Override class names and inline styles with ease."
+            }
+            li {
+                strong { "♿ Accessibility First" }
+                ": Proper roles, ARIA attributes, and semantic tags built-in by default."
+            }
+            li {
+                strong { "🛠 Zero Boilerplate" }
+                ": Focus on your data, not on wiring up handlers or rebuilding UI from scratch."
+            }
+        }
+        h2 { id: "-quick-setup-for-yew",
+            a { href: "#-quick-setup-for-yew", class: "header", "⚙\u{fe0f} Quick Setup for Yew" }
+        }
+        p {
+            "Setting up "
+            strong { "Table RS" }
+            " in your Yew app is easy and intuitive. Let's walk through it."
+        }
+        h3 { id: "1-add-the-dependency",
+            a { href: "#1-add-the-dependency", class: "header",
+                "1\u{fe0f}\u{20e3} Add the Dependency"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add table</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "2-import-the-component",
+            a { href: "#2-import-the-component", class: "header",
+                "2\u{fe0f}\u{20e3} Import the Component"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">table_rs::yew::table::Table;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">table_rs::yew::types::Column;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">maplit::hashmap;</span></pre>\n" }
+        h3 { id: "3-use-it-in-your-component",
+            a { href: "#3-use-it-in-your-component", class: "header",
+                "3\u{fe0f}\u{20e3} Use It in Your Component"
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> data </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">vec![\n</span><span style=\"color:#f8f8f2;\">        hashmap! {{ </span><span style=\"color:#ffee99;\">&quot;name&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;Ferris&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(), </span><span style=\"color:#ffee99;\">&quot;email&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;ferris@opensass.org&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">() }},\n</span><span style=\"color:#f8f8f2;\">        hashmap! {{ </span><span style=\"color:#ffee99;\">&quot;name&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;Ferros&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(), </span><span style=\"color:#ffee99;\">&quot;email&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;ferros@opensass.org&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">() }},\n</span><span style=\"color:#f8f8f2;\">        hashmap! {{ </span><span style=\"color:#ffee99;\">&quot;name&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;Crab&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(), </span><span style=\"color:#ffee99;\">&quot;email&quot; </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;crab@opensass.org&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">() }},\n</span><span style=\"color:#f8f8f2;\">    ];\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> columns </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">vec![\n</span><span style=\"color:#f8f8f2;\">        Column {{\n</span><span style=\"color:#f8f8f2;\">            id: </span><span style=\"color:#ffee99;\">&quot;name&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            header: </span><span style=\"color:#ffee99;\">&quot;Name&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            sortable: </span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">..</span><span style=\"font-style:italic;color:#66d9ef;\">Default</span><span style=\"color:#f8f8f2;\">::default()\n</span><span style=\"color:#f8f8f2;\">        }},\n</span><span style=\"color:#f8f8f2;\">        Column {{\n</span><span style=\"color:#f8f8f2;\">            id: </span><span style=\"color:#ffee99;\">&quot;email&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            header: </span><span style=\"color:#ffee99;\">&quot;Email&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            sortable: </span><span style=\"color:#ff80f4;\">false</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">..</span><span style=\"font-style:italic;color:#66d9ef;\">Default</span><span style=\"color:#f8f8f2;\">::default()\n</span><span style=\"color:#f8f8f2;\">        }},\n</span><span style=\"color:#f8f8f2;\">    ];\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Table data</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{data}} columns</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{columns}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "✅ That's it, your table is searchable, paginated, sortable, and accessible out of the box."
+        }
+        h2 { id: "-table-rs-props-overview",
+            a { href: "#-table-rs-props-overview", class: "header", "🧩 Table RS Props Overview" }
+        }
+        h3 { id: "-core-props",
+            a { href: "#-core-props", class: "header", "🔑 Core Props" }
+        }
+        table {
+            thead {
+                th { "Prop" }
+                th { "Type" }
+                th { "Description" }
+                th { "Default" }
+            }
+            tr {
+                th {
+                    code { "data" }
+                    ""
+                }
+                th {
+                    code { "Vec<HashMap<&'static str, String>>" }
+                    ""
+                }
+                th { "Row data, each row is a hashmap of column IDs." }
+                th {
+                    code { "[]" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "columns" }
+                    ""
+                }
+                th {
+                    code { "Vec<Column>" }
+                    ""
+                }
+                th { "Describes headers and behavior for each column." }
+                th {
+                    code { "[]" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "paginate" }
+                    ""
+                }
+                th {
+                    code { "bool" }
+                    ""
+                }
+                th { "Enables pagination controls." }
+                th {
+                    code { "false" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "page_size" }
+                    ""
+                }
+                th {
+                    code { "usize" }
+                    ""
+                }
+                th { "How many rows per page." }
+                th {
+                    code { "10" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "search" }
+                    ""
+                }
+                th {
+                    code { "bool" }
+                    ""
+                }
+                th { "Enables global search input." }
+                th {
+                    code { "false" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "loading" }
+                    ""
+                }
+                th {
+                    code { "bool" }
+                    ""
+                }
+                th { "Show a loading indicator." }
+                th {
+                    code { "false" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "classes" }
+                    ""
+                }
+                th {
+                    code { "TableClasses" }
+                    ""
+                }
+                th { "Customize class names." }
+                th { "Defaults" }
+            }
+            tr {
+                th {
+                    code { "styles" }
+                    ""
+                }
+                th {
+                    code { "HashMap<&'static str, &'static str>" }
+                    ""
+                }
+                th { "Add inline styles to table parts." }
+                th {
+                    code { "{{}}" }
+                    ""
+                }
+            }
+        }
+        h3 { id: "-column-definition",
+            a { href: "#-column-definition", class: "header", "🧱 Column Definition" }
+        }
+        table {
+            thead {
+                th { "Field" }
+                th { "Type" }
+                th { "Description" }
+                th { "Default" }
+            }
+            tr {
+                th {
+                    code { "id" }
+                    ""
+                }
+                th {
+                    code { "&'static str" }
+                    ""
+                }
+                th { "Matches the key in the row data." }
+                th {
+                    code { "\"\"" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "header" }
+                    ""
+                }
+                th {
+                    code { "&'static str" }
+                    ""
+                }
+                th { "Display name in the header." }
+                th {
+                    code { "\"\"" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "sortable" }
+                    ""
+                }
+                th {
+                    code { "bool" }
+                    ""
+                }
+                th { "Enables sorting for this column." }
+                th {
+                    code { "false" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "class" }
+                    ""
+                }
+                th {
+                    code { "Option<&'static str>" }
+                    ""
+                }
+                th { "Optional class name." }
+                th {
+                    code { "None" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    code { "style" }
+                    ""
+                }
+                th {
+                    code { "Option<&'static str>" }
+                    ""
+                }
+                th { "Optional inline styles." }
+                th {
+                    code { "None" }
+                    ""
+                }
+            }
+        }
+        h3 { id: "-styleclasses-reference",
+            a { href: "#-styleclasses-reference", class: "header", "🎨 Style/Classes Reference" }
+        }
+        table {
+            thead {
+                th { "Section" }
+                th { "CSS Class (default)" }
+                th { "Description" }
+            }
+            tr {
+                th {
+                    code { "container" }
+                    ""
+                }
+                th {
+                    code { "\"table-container\"" }
+                    ""
+                }
+                th { "Outer wrapper" }
+            }
+            tr {
+                th {
+                    code { "search_input" }
+                    ""
+                }
+                th {
+                    code { "\"search-input\"" }
+                    ""
+                }
+                th { "The input box for search" }
+            }
+            tr {
+                th {
+                    code { "table" }
+                    ""
+                }
+                th {
+                    code { "\"table\"" }
+                    ""
+                }
+                th {
+                    "The "
+                    code { "<table>" }
+                    " element"
+                }
+            }
+            tr {
+                th {
+                    code { "thead" }
+                    ""
+                }
+                th {
+                    code { "\"thead\"" }
+                    ""
+                }
+                th { "Header row section" }
+            }
+            tr {
+                th {
+                    code { "tbody" }
+                    ""
+                }
+                th {
+                    code { "\"tbody\"" }
+                    ""
+                }
+                th { "Body rows section" }
+            }
+            tr {
+                th {
+                    code { "pagination" }
+                    ""
+                }
+                th {
+                    code { "\"pagination-controls\"" }
+                    ""
+                }
+                th { "Pagination UI wrapper" }
+            }
+        }
+        h2 { id: "-built-with-open-sass",
+            a { href: "#-built-with-open-sass", class: "header", "🤝 Built With Open SASS" }
+        }
+        p {
+            "Table RS is proudly part of the "
+            a { href: "https://github.com/opensass/cli", "Open SASS" }
+            " ecosystem, where we build battle-tested UI primitives for Rust-powered frontends."
+        }
+        p {
+            "This project is "
+            strong { "open source" }
+            ", "
+            strong { "community-driven" }
+            ", and ready for contributions. Whether it's bug reports, feature ideas, or PRs, we'd love to hear from you."
+        }
+        p {
+            "👉 "
+            a { href: "https://github.com/opensass/table-rs", "GitHub Repo" }
+        }
+        p {
+            "👉 "
+            a { href: "https://table-rs.netlify.app", "Live Demo" }
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "🎯 Final Thoughts" }
+        }
+        p {
+            "If you've struggled with hand-rolling tables in Yew or wanted something more flexible than HTML templates, "
+            strong { "Table RS" }
+            " is built for you."
+        }
+        p {
+            "It's fast, lightweight, thoughtfully designed, and extensible, ready for production use and just as happy in your side projects."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p {
+                "Together, let's move the web beyond JavaScript, and into something that actually compiles."
+            }
+        }
+        blockquote {
+            p {
+                "Feel free to share this. Fork it. Turn it into a meme. Tattoo it on your CI pipeline. Tell your manager Rust is your spirit animal now."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋" }
         }
     }
 }
