@@ -32,6 +32,8 @@ pub enum BookRoute {
     TableRsRelease {},
     #[route("/tanstack-table-vs-table-rs")]
     TanstackTableVsTableRs {},
+    #[route("/navbar-release")]
+    NavbarRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -53,12 +55,13 @@ impl BookRoute {
             BookRoute::ImageRsVsNextJsImage {} => use_mdbook::mdbook_shared::PageId(8usize),
             BookRoute::TableRsRelease {} => use_mdbook::mdbook_shared::PageId(9usize),
             BookRoute::TanstackTableVsTableRs {} => use_mdbook::mdbook_shared::PageId(10usize),
+            BookRoute::NavbarRelease {} => use_mdbook::mdbook_shared::PageId(11usize),
         }
     }
 }
 impl Default for BookRoute {
     fn default() -> Self {
-        BookRoute::RustIsGod101 {}
+        BookRoute::NavbarRelease {}
     }
 }
 pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRoute>> =
@@ -917,6 +920,111 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::TanstackTableVsTableRs {},
             ::use_mdbook::mdbook_shared::PageId(10usize),
         );
+        pages
+            .push((
+                11usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| blog |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7"
+                            .to_string(),
+                        url: BookRoute::NavbarRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 What Is Navbar?".to_string(),
+                                id: "🚀-what-is-navbar?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚡\u{fe0f} Why You'll Love It".to_string(),
+                                id: "⚡\u{fe0f}-why-you'll-love-it".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧰 Quick Setup in Yew".to_string(),
+                                id: "🧰-quick-setup-in-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧩 Feature Breakdown".to_string(),
+                                id: "🧩-feature-breakdown".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧭 Logo & Menu".to_string(),
+                                id: "🧭-logo-&-menu".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔍 Search Input".to_string(),
+                                id: "🔍-search-input".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🍕 Mega Menu".to_string(),
+                                id: "🍕-mega-menu".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🙋 Profile Menu".to_string(),
+                                id: "🙋-profile-menu".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📱 Mobile Support".to_string(),
+                                id: "📱-mobile-support".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 Full Styling Control".to_string(),
+                                id: "🎨-full-styling-control".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💻 Developer Features".to_string(),
+                                id: "💻-developer-features".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎛\u{fe0f} Full Props Reference".to_string(),
+                                id: "🎛\u{fe0f}-full-props-reference".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧪 Real-World Scenarios".to_string(),
+                                id: "🧪-real-world-scenarios".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "A clean marketing navbar:".to_string(),
+                                id: "a-clean-marketing-navbar:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "A complex app dashboard navbar:".to_string(),
+                                id: "a-complex-app-dashboard-navbar:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "A styled, custom-themed navbar:".to_string(),
+                                id: "a-styled,-custom-themed-navbar:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💡 Final Thoughts".to_string(),
+                                id: "💡-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(11usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::NavbarRelease {},
+            ::use_mdbook::mdbook_shared::PageId(11usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1019,6 +1127,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         }),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![11u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| blog |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7"
+                            .to_string(),
+                        location: Some(BookRoute::NavbarRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![12u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -5073,6 +5190,341 @@ pub fn TanstackTableVsTableRs() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time 👋" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn NavbarRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p {
+                strong { "Welcome 👋!" }
+            }
+        }
+        p {
+            "If you've ever built a frontend app in "
+            strong { "Rust" }
+            ", you've probably realized one thing real quick: "
+            strong { "making a responsive, polished, and customizable navbar is surprisingly annoying" }
+            ". Between layout quirks, dropdown handling, mega menu hacks, and mobile toggles... things get out of hand fast."
+        }
+        p {
+            "That's why we're excited to introduce "
+            a { href: "https://crates.io/crates/navbar",
+                strong { "Navbar" }
+            }
+            ", a "
+            strong { "fully-featured" }
+            ", totally plug-and-play navigation component for "
+            strong { "WASM" }
+            " frameworks like Yew, Dioxus, and Leptos."
+        }
+        p {
+            "It's sleek, smart, responsive, and "
+            strong { "just works" }
+            ", whether you're building a startup dashboard or the next social media empire."
+        }
+        p {
+            "Let's take a bite into everything "
+            strong { "Navbar" }
+            " has to offer 🍟."
+        }
+        h2 { id: "-what-is-navbar",
+            a { href: "#-what-is-navbar", class: "header", "🚀 What Is Navbar?" }
+        }
+        p {
+            strong { "Navbar" }
+            " is a fully-configurable component built for the "
+            strong { "Yew" }
+            " framework that gives you:"
+        }
+        ul {
+            li { "A responsive layout with a mobile hamburger menu 🍔." }
+            li {
+                "Support for "
+                strong { "mega menus" }
+                ", "
+                strong { "dropdowns" }
+                ", and "
+                strong { "call-to-action buttons" }
+                "."
+            }
+            li {
+                "Full "
+                strong { "accessibility" }
+                ", "
+                strong { "custom styling" }
+                ", and "
+                strong { "state management" }
+                " baked in."
+            }
+            li {
+                "Easy integration with "
+                code { "state" }
+                ", "
+                code { "Callback" }
+                ", and other hooks."
+            }
+        }
+        p { "No JavaScript duct tape. No style hacks. Just clean, idiomatic Rust and WebAssembly." }
+        h2 { id: "-why-youll-love-it",
+            a { href: "#-why-youll-love-it", class: "header", "⚡\u{fe0f} Why You'll Love It" }
+        }
+        p {
+            "Most navbars feel like a chore. You paste in 200 lines of spaghetti HTML, try to wire up  "
+            code { "onclick" }
+            " logic, and still end up with a weird dropdown. "
+            strong { "Navbar" }
+            " takes care of "
+            strong { "all that" }
+            ". Out of the box, you get:"
+        }
+        ul {
+            li { "✅ Mobile-first responsiveness." }
+            li { "✅ Easy-to-add search bar." }
+            li { "✅ Mega menu support for large content." }
+            li { "✅ Profile dropdown menus." }
+            li {
+                "✅ Fully styleable with "
+                code { "class" }
+                " and "
+                code { "style" }
+                " props."
+            }
+            li { "✅ Event handling for resize, clicks, and toggles." }
+            li { "✅ 100% declarative API." }
+        }
+        h2 { id: "-quick-setup-in-yew",
+            a { href: "#-quick-setup-in-yew", class: "header", "🧰 Quick Setup in Yew" }
+        }
+        p { "Getting started is as easy as eating fries:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add navbar </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        p { "Then import and use it in your app:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">navbar::yew::{{Navbar, Menu}};\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Navbar\n</span><span style=\"color:#f8f8f2;\">            logo_src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/assets/logo.svg&quot;\n</span><span style=\"color:#f8f8f2;\">            logo_alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;My App&quot;\n</span><span style=\"color:#f8f8f2;\">            menus</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{vec![\n</span><span style=\"color:#f8f8f2;\">                Menu {{ id: </span><span style=\"color:#ff80f4;\">1</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/&quot;</span><span style=\"color:#f8f8f2;\">, name: </span><span style=\"color:#ffee99;\">&quot;Dashboard&quot;</span><span style=\"color:#f8f8f2;\">, icon_start: </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">, icon_end: </span><span style=\"font-style:italic;color:#66d9ef;\">None </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">                Menu {{ id: </span><span style=\"color:#ff80f4;\">2</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/reports&quot;</span><span style=\"color:#f8f8f2;\">, name: </span><span style=\"color:#ffee99;\">&quot;Reports&quot;</span><span style=\"color:#f8f8f2;\">, icon_start: </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">, icon_end: </span><span style=\"font-style:italic;color:#66d9ef;\">None </span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">            ]}}\n</span><span style=\"color:#f8f8f2;\">            button_text</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Sign Up&quot;\n</span><span style=\"color:#f8f8f2;\">            button_href</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/signup&quot;\n</span><span style=\"color:#f8f8f2;\">            show_search</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">            show_mega_menu</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">            show_profile_menu</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Boom 💥. You've got a fully interactive, responsive navbar." }
+        h2 { id: "-feature-breakdown",
+            a { href: "#-feature-breakdown", class: "header", "🧩 Feature Breakdown" }
+        }
+        p { "Let's talk toppings. Here's what comes with the Navbar combo meal:" }
+        h3 { id: "-logo--menu",
+            a { href: "#-logo--menu", class: "header", "🧭 Logo & Menu" }
+        }
+        p {
+            "Display your logo with alt text and optional link, and set up top-level navigation with  "
+            code { "Menu" }
+            " items."
+        }
+        h3 { id: "-search-input",
+            a { href: "#-search-input", class: "header", "🔍 Search Input" }
+        }
+        p {
+            "Need a search bar? Just flip  "
+            code { "show_search = true" }
+            " and you're done. You can even manage the input state with  "
+            code { "use_state" }
+            "."
+        }
+        h3 { id: "-mega-menu",
+            a { href: "#-mega-menu", class: "header", "🍕 Mega Menu" }
+        }
+        p {
+            "Have a ton of links? Turn on  "
+            code { "show_mega_menu" }
+            " and pass in  "
+            code { "mega_menu_items" }
+            ". It works with hover and auto-closes cleanly."
+        }
+        h3 { id: "-profile-menu",
+            a { href: "#-profile-menu", class: "header", "🙋 Profile Menu" }
+        }
+        p {
+            "Want a profile dropdown? Set  "
+            code { "show_profile_menu = true" }
+            " and provide  "
+            code { "dropdown_items" }
+            " + a profile image URL."
+        }
+        h3 { id: "-mobile-support",
+            a { href: "#-mobile-support", class: "header", "📱 Mobile Support" }
+        }
+        p {
+            "Below 768px, the navbar switches to mobile mode with a hamburger toggle. Menu opens as a vertical drawer, no extra config needed."
+        }
+        h3 { id: "-full-styling-control",
+            a { href: "#-full-styling-control", class: "header", "🎨 Full Styling Control" }
+        }
+        p {
+            "Every single part of the navbar, logo, menu, button, dropdown, etc., can be styled via  "
+            code { "class" }
+            " and  "
+            code { "style" }
+            " props. Go wild."
+        }
+        h2 { id: "-developer-features",
+            a { href: "#-developer-features", class: "header", "💻 Developer Features" }
+        }
+        p { "Here's where it gets extra juicy:" }
+        table {
+            thead {
+                th { "Feature" }
+                th { "What It Means for You" }
+            }
+            tr {
+                th {
+                    code { "use_state" }
+                    " & "
+                    code { "Callback" }
+                    ""
+                }
+                th { "Fully interactive toggles without boilerplate" }
+            }
+            tr {
+                th { "Auto-close dropdowns" }
+                th { "Click outside? Menus close automatically 🙌" }
+            }
+            tr {
+                th { "Resize listener" }
+                th { "Reacts to screen size changes, real-time responsiveness" }
+            }
+            tr {
+                th { "Conditional rendering" }
+                th { "Don't need a feature? Just don't enable the prop!" }
+            }
+            tr {
+                th { "Accessibility" }
+                th { "ARIA-compliant, screen-reader friendly" }
+            }
+            tr {
+                th { "Custom events" }
+                th {
+                    "Hook into "
+                    code { "oninput" }
+                    ", "
+                    code { "onclick" }
+                    ", and more"
+                }
+            }
+        }
+        p { "All of this wrapped in a clean component API that's easy to use." }
+        h2 { id: "-full-props-reference",
+            a { href: "#-full-props-reference", class: "header",
+                "🎛\u{fe0f} Full Props Reference"
+            }
+        }
+        p { "Too many props to list here, but here's a taste:" }
+        ul {
+            li {
+                code { "logo_src" }
+                ", "
+                code { "logo_alt" }
+                ", "
+                code { "logo_link" }
+            }
+            li {
+                code { "menus" }
+                ", "
+                code { "show_search" }
+                ", "
+                code { "search_placeholder" }
+            }
+            li {
+                code { "button_text" }
+                ", "
+                code { "button_href" }
+                ", "
+                code { "button_target" }
+            }
+            li {
+                code { "show_mega_menu" }
+                ", "
+                code { "mega_menu_items" }
+            }
+            li {
+                code { "show_profile_menu" }
+                ", "
+                code { "dropdown_items" }
+                ", "
+                code { "profile_image_url" }
+            }
+            li {
+                code { "navbar_style" }
+                ", "
+                code { "navbar_class" }
+                ", "
+                code { "container_style" }
+                ", "
+                code { "menu_item_class" }
+                ", etc."
+            }
+        }
+        p {
+            "Check the "
+            a { href: "https://docs.rs/navbar", "docs" }
+            " or "
+            a { href: "https://github.com/opensass/navbar/blob/ea46fa78290a311b16a91525a9fad2f88fc05e5f/src/yew.rs#L66",
+                "source"
+            }
+            " for all props and default values."
+        }
+        h2 { id: "-real-world-scenarios",
+            a { href: "#-real-world-scenarios", class: "header", "🧪 Real-World Scenarios" }
+        }
+        p { "Let's say you want:" }
+        h3 { id: "a-clean-marketing-navbar",
+            a { href: "#a-clean-marketing-navbar", class: "header", "A clean marketing navbar:" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Navbar\n</span><span style=\"color:#f8f8f2;\">    logo_src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/logo.svg&quot;\n</span><span style=\"color:#f8f8f2;\">    logo_alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;My Brand&quot;\n</span><span style=\"color:#f8f8f2;\">    menus</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{vec![\n</span><span style=\"color:#f8f8f2;\">        Menu {{ id: </span><span style=\"color:#ff80f4;\">1</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/&quot;</span><span style=\"color:#f8f8f2;\">, name: </span><span style=\"color:#ffee99;\">&quot;Home&quot;</span><span style=\"color:#f8f8f2;\">, icon_start: </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">, icon_end: </span><span style=\"font-style:italic;color:#66d9ef;\">None </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">        Menu {{ id: </span><span style=\"color:#ff80f4;\">2</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/features&quot;</span><span style=\"color:#f8f8f2;\">, name: </span><span style=\"color:#ffee99;\">&quot;Features&quot;</span><span style=\"color:#f8f8f2;\">, icon_start: </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">, icon_end: </span><span style=\"font-style:italic;color:#66d9ef;\">None </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">    ]}}\n</span><span style=\"color:#f8f8f2;\">    button_text</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Start Free Trial&quot;\n</span><span style=\"color:#f8f8f2;\">    button_href</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/signup&quot;\n</span><span style=\"color:#f8f8f2;\">    show_search</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">false\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        h3 { id: "a-complex-app-dashboard-navbar",
+            a { href: "#a-complex-app-dashboard-navbar", class: "header",
+                "A complex app dashboard navbar:"
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Navbar\n</span><span style=\"color:#f8f8f2;\">    logo_src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/logo.svg&quot;\n</span><span style=\"color:#f8f8f2;\">    logo_alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Dashboard&quot;\n</span><span style=\"color:#f8f8f2;\">    menus</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#f92672;\">...</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    show_search</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">    show_profile_menu</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">    dropdown_items</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{vec![\n</span><span style=\"color:#f8f8f2;\">        DropdownItem {{ text: </span><span style=\"color:#ffee99;\">&quot;Settings&quot;</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/settings&quot; </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">        DropdownItem {{ text: </span><span style=\"color:#ffee99;\">&quot;Logout&quot;</span><span style=\"color:#f8f8f2;\">, link: </span><span style=\"color:#ffee99;\">&quot;/logout&quot; </span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    ]}}\n</span><span style=\"color:#f8f8f2;\">    profile_image_url</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/user.png&quot;\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        h3 { id: "a-styled-custom-themed-navbar",
+            a { href: "#a-styled-custom-themed-navbar", class: "header",
+                "A styled, custom-themed navbar:"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Navbar\n</span><span style=\"color:#f8f8f2;\">    navbar_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;background: #0d1117; color: white;&quot;\n</span><span style=\"color:#f8f8f2;\">    button_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;background: #238636; border-radius: 4px;&quot;\n</span><span style=\"color:#f8f8f2;\">    search_input_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;border-radius: 4px; padding: 8px;&quot;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">...\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💡 Final Thoughts" }
+        }
+        p {
+            "Your navbar is your app's "
+            strong { "first impression" }
+            ", don't settle for a janky, fragile mess of divs. With "
+            strong { "Navbar" }
+            ", you can build a beautiful, responsive, fully accessible header in "
+            strong { "minutes" }
+            ", not hours. Whether it's a static marketing site or a complex SPA, it scales with you. Fast, customizable, idiomatic, and built "
+            strong { "for the modern WASM dev" }
+            "."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
         }
     }
 }
