@@ -7,8 +7,10 @@ pub fn BlogList() -> Element {
     let blogs = BLOGS.read();
 
     let _resource =
-    use_server_future(|| async move { fetch_and_store_posts(1, None, "".to_string(), 100).await })?()
-    .unwrap();
+        use_server_future(
+            || async move { fetch_and_store_posts(1, None, "".to_string(), 100).await },
+        )?()
+        .unwrap();
 
     rsx! {
         table { class: "min-w-full bg-white text-center",

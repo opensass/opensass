@@ -34,6 +34,8 @@ pub enum BookRoute {
     TanstackTableVsTableRs {},
     #[route("/navbar-release")]
     NavbarRelease {},
+    #[route("/sidebar-release")]
+    SidebarRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -56,6 +58,7 @@ impl BookRoute {
             BookRoute::TableRsRelease {} => use_mdbook::mdbook_shared::PageId(9usize),
             BookRoute::TanstackTableVsTableRs {} => use_mdbook::mdbook_shared::PageId(10usize),
             BookRoute::NavbarRelease {} => use_mdbook::mdbook_shared::PageId(11usize),
+            BookRoute::SidebarRelease {} => use_mdbook::mdbook_shared::PageId(12usize),
         }
     }
 }
@@ -1025,6 +1028,73 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::NavbarRelease {},
             ::use_mdbook::mdbook_shared::PageId(11usize),
         );
+        pages
+            .push((
+                12usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| blog |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48"
+                            .to_string(),
+                        url: BookRoute::SidebarRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🗃\u{fe0f} What Is Sidebar?".to_string(),
+                                id: "🗃\u{fe0f}-what-is-sidebar?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚡\u{fe0f} Why You'll Love It".to_string(),
+                                id: "⚡\u{fe0f}-why-you'll-love-it".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Quick Start with Yew".to_string(),
+                                id: "🚀-quick-start-with-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔍 What You Can Customize (Spoiler: Everything)"
+                                    .to_string(),
+                                id: "🔍-what-you-can-customize-(spoiler:-everything)"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧱 ".to_string(),
+                                id: "🧱".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📋 ".to_string(),
+                                id: "📋".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔽 ".to_string(),
+                                id: "🔽".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🙋 ".to_string(),
+                                id: "🙋".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💡 Final Thoughts".to_string(),
+                                id: "💡-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(12usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::SidebarRelease {},
+            ::use_mdbook::mdbook_shared::PageId(12usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1136,6 +1206,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::NavbarRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![12u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| blog |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48"
+                            .to_string(),
+                        location: Some(BookRoute::SidebarRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![13u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -5525,6 +5604,321 @@ pub fn NavbarRelease() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn SidebarRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p {
+                strong { "Welcome 👋!" }
+            }
+        }
+        p {
+            "If you've ever built a "
+            strong { "Rust-powered frontend" }
+            ", you've probably felt this pain: "
+            em {
+                "\"How the heck do I make a sidebar that doesn't look like it crawled out of the year 2001?\""
+            }
+        }
+        p {
+            "We get it. Collapsibles, user profiles, nested menus, custom styles... you need a PhD in CSS gymnastics and a minor in JavaScript contortionism just to get a halfway-decent result."
+        }
+        p {
+            strong { "That's so over, and we are so back!" }
+        }
+        p {
+            "Introducing "
+            a { href: "https://crates.io/crates/sidebar",
+                strong { "Sidebar" }
+            }
+            ", the "
+            strong { "ultimate plug-and-play sidebar component" }
+            " for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". It's clean, fast, accessible, and stupidly customizable. And yep, "
+            strong { "it just works" }
+            "."
+        }
+        p { "Let's open it up 🧰." }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/c583f235-17c3-496e-9689-35db043ebff3",
+                alt: "vibin",
+                title: "",
+            }
+        }
+        h2 { id: "-what-is-sidebar",
+            a { href: "#-what-is-sidebar", class: "header", "🗃\u{fe0f} What Is Sidebar?" }
+        }
+        p {
+            strong { "Sidebar" }
+            " is a "
+            strong { "fully modular" }
+            ", "
+            strong { "highly customizable" }
+            " sidebar component built specifically for "
+            strong { "WASM UI frameworks" }
+            ". It's designed to make your app feel like a well-polished dashboard without you rage-quitting halfway through."
+        }
+        p { "Here's what it gives you out of the box:" }
+        ul {
+            li { "✅ Collapsible layout with smooth toggle." }
+            li { "✅ Nested submenus (with disclosure arrows!)." }
+            li { "✅ Badges, icons, and dynamic styling." }
+            li { "✅ Built-in profile section with avatar + logout." }
+            li {
+                "✅ Full control via "
+                code { "props" }
+                ", "
+                code { "class" }
+                ", and "
+                code { "style" }
+                "."
+            }
+            li {
+                "✅ Idiomatic Rust state management with "
+                code { "UseStateHandle" }
+                "."
+            }
+            li {
+                "✅ Designed with "
+                strong { "accessibility" }
+                " in mind."
+            }
+        }
+        p {
+            "Whether you're building a SaaS dashboard, admin panel, or a hobby side project, "
+            strong { "Sidebar" }
+            " will save you hours of UI pain."
+        }
+        h2 { id: "-why-youll-love-it",
+            a { href: "#-why-youll-love-it", class: "header", "⚡\u{fe0f} Why You'll Love It" }
+        }
+        p { "Let's break it down:" }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Why it's awesome" }
+            }
+            tr {
+                th {
+                    strong { "Modular Components" }
+                    ""
+                }
+                th {
+                    "Use just what you need: "
+                    code { "Sidebar" }
+                    ", "
+                    code { "Menu" }
+                    ", "
+                    code { "MenuItem" }
+                    ", "
+                    code { "Submenu" }
+                    ", "
+                    code { "Profile" }
+                    ", or "
+                    code { "Logo" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    strong { "Composability" }
+                    ""
+                }
+                th { "Nest menus, add icons, toggle visibility—anything goes" }
+            }
+            tr {
+                th {
+                    strong { "Customization" }
+                    ""
+                }
+                th {
+                    "Every pixel is yours to style with "
+                    code { "props" }
+                    ", "
+                    code { "class" }
+                    ", or "
+                    code { "style" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    strong { "Built for Rust" }
+                    ""
+                }
+                th {
+                    "Idiomatic use of "
+                    code { "Callback" }
+                    ", "
+                    code { "UseStateHandle" }
+                    ", and "
+                    code { "Html" }
+                    ""
+                }
+            }
+            tr {
+                th {
+                    strong { "Responsive + Accessible" }
+                    ""
+                }
+                th { "Auto-collapses on mobile; plays nice with screen readers" }
+            }
+        }
+        p {
+            "And the cherry on top? "
+            strong { "It's built by Open SASS" }
+            ", a community on a mission to make Rust web development suck less."
+        }
+        h2 { id: "-quick-start-with-yew",
+            a { href: "#-quick-start-with-yew", class: "header", "🚀 Quick Start with Yew" }
+        }
+        p { "Getting up and running is easier than convincing Ferris to wear a bow tie." }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add sidebar </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        p { "Then plug it into your app:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        p {
+            "You now have a sleek, collapsible sidebar with dynamic state and profile logout handling 🎉."
+        }
+        h2 { id: "-what-you-can-customize-spoiler-everything",
+            a {
+                href: "#-what-you-can-customize-spoiler-everything",
+                class: "header",
+                "🔍 What You Can Customize (Spoiler: Everything)"
+            }
+        }
+        p { "Here's a taste of what you can tweak:" }
+        h3 { id: "",
+            a { href: "#", class: "header", "🧱 " }
+            code { "Sidebar" }
+            " Props"
+        }
+        ul {
+            li {
+                code { "style" }
+                ", "
+                code { "class" }
+                ": Tweak the outer container to match your brand."
+            }
+            li {
+                code { "user_name" }
+                ", "
+                code { "designation" }
+                ", "
+                code { "user_img" }
+                ": Show off your user's profile."
+            }
+            li {
+                code { "logo_img_url" }
+                ", "
+                code { "logo_href" }
+                ": Your logo, your link."
+            }
+            li {
+                code { "on_logout" }
+                ": Handle logout like a pro (or a script kiddie, no judgment)."
+            }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "📋 " }
+            code { "Menu" }
+            " & "
+            code { "MenuItem" }
+        }
+        ul {
+            li {
+                code { "sub_heading" }
+                ": Optional section labels."
+            }
+            li {
+                code { "href" }
+                ": Navigation links."
+            }
+            li {
+                code { "icon_html" }
+                ": Drop in custom SVGs or emojis (we love emojis, btw)."
+            }
+            li {
+                code { "selected" }
+                ": Use shared "
+                code { "UseStateHandle<String>" }
+                " for tracking."
+            }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "🔽 " }
+            code { "Submenu" }
+        }
+        ul {
+            li { "Supports deep nesting." }
+            li { "Expand/collapse toggle." }
+            li { "Styled with arrows because UI polish." }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "🙋 " }
+            code { "Profile" }
+        }
+        ul {
+            li { "Automatically hides when sidebar is collapsed." }
+            li { "Includes a logout button." }
+            li { "Fully styleable." }
+        }
+        p {
+            "All of this controlled with easy props like  "
+            code { "style" }
+            ",  "
+            code { "class" }
+            ", and  "
+            code { "Callback" }
+            "."
+        }
+        p {
+            "Below 768px? "
+            strong { "Sidebar auto-collapses" }
+            " into a sleek mobile-friendly mode. No JavaScript hacks. Just Rust and vibes."
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💡 Final Thoughts" }
+        }
+        p {
+            strong { "Stop wasting time rebuilding sidebars from scratch" }
+            ". Sidebar gives you everything you need, and nothing you don't, to ship polished, responsive, and composable UI components in your Rust WASM apps."
+        }
+        p { "So go ahead. Drop it in your app. Customize it. Hack it. Make it yours." }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/fb4e8b18-0310-4afd-a9e2-831a967fa952",
+                alt: "bye",
+                title: "",
+            }
         }
     }
 }
