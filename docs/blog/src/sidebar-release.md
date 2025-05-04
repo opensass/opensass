@@ -148,5 +148,3 @@ So go ahead. Drop it in your app. Customize it. Hack it. Make it yours.
 > If you made it this far, it would be nice if you could [join us on Discord](https://discord.gg/b5JbvHW5nv).
 
 > Till next time 👋!
-
-![bye](https://github.com/user-attachments/assets/fb4e8b18-0310-4afd-a9e2-831a967fa952)

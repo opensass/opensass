@@ -36,6 +36,8 @@ pub enum BookRoute {
     NavbarRelease {},
     #[route("/sidebar-release")]
     SidebarRelease {},
+    #[route("/keep-using-aws")]
+    KeepUsingAws {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -59,6 +61,7 @@ impl BookRoute {
             BookRoute::TanstackTableVsTableRs {} => use_mdbook::mdbook_shared::PageId(10usize),
             BookRoute::NavbarRelease {} => use_mdbook::mdbook_shared::PageId(11usize),
             BookRoute::SidebarRelease {} => use_mdbook::mdbook_shared::PageId(12usize),
+            BookRoute::KeepUsingAws {} => use_mdbook::mdbook_shared::PageId(13usize),
         }
     }
 }
@@ -1095,6 +1098,74 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::SidebarRelease {},
             ::use_mdbook::mdbook_shared::PageId(12usize),
         );
+        pages
+            .push((
+                13usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a"
+                            .to_string(),
+                        url: BookRoute::KeepUsingAws {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🛑 Stop Using AWS".to_string(),
+                                id: "🛑-stop-using-aws".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚂 Copying Netflix Architecture Is Silly"
+                                    .to_string(),
+                                id: "🚂-copying-netflix-architecture-is-silly"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Most Projects Die From Lack of Users, Not Overengineering"
+                                    .to_string(),
+                                id: "🚀-most-projects-die-from-lack-of-users,-not-overengineering"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔧 Just Use a VPS + Docker Compose".to_string(),
+                                id: "🔧-just-use-a-vps-+-docker-compose".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 AWS Is Too Complicated".to_string(),
+                                id: "🧠-aws-is-too-complicated".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "✅ When AWS Makes Sense: Always".to_string(),
+                                id: "✅-when-aws-makes-sense:-always".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🦀 Why You Should Use Rust for Everything, Everywhere, Always"
+                                    .to_string(),
+                                id: "🦀-why-you-should-use-rust-for-everything,-everywhere,-always"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔚 Final Thoughts: Your Stack Shouldn't Be a Toy"
+                                    .to_string(),
+                                id: "🔚-final-thoughts:-your-stack-shouldn't-be-a-toy"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(13usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::KeepUsingAws {},
+            ::use_mdbook::mdbook_shared::PageId(13usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1215,6 +1286,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::SidebarRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![13u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a"
+                            .to_string(),
+                        location: Some(BookRoute::KeepUsingAws {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![14u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -5913,12 +5993,394 @@ pub fn SidebarRelease() -> dioxus::prelude::Element {
         blockquote {
             p { "Till next time 👋!" }
         }
+    }
+}
+#[component(no_case_check)]
+pub fn KeepUsingAws() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hiya 👋!" }
+        }
         p {
-            img {
-                src: "https://github.com/user-attachments/assets/fb4e8b18-0310-4afd-a9e2-831a967fa952",
-                alt: "bye",
-                title: "",
+            em {
+                "So, it's Sunday, homeboy, and I usually escape debates and negative thoughts. But today, I was scouring "
+                a { href: "https://dev.to", "dev.to" }
+                " and stumbled across a post boldly titled "
+                a { href: "https://dev.to/code42cate/stop-using-aws-4eg",
+                    strong { "\"Stop Using AWS.\"" }
+                }
             }
+        }
+        p {
+            "It wasn't the first time I'd seen a call to drop Amazon Web Services for something \"simpler\", but this one hit a nerve, not because it was provocative, but because it misrepresents why AWS exists and what problems it solves. So, I decided to sit back, relax, and explain "
+            strong { "why you should absolutely keep using AWS" }
+            ", especially if you're serious about software, scalability, and sustainability."
+        }
+        h2 { id: "-stop-using-aws",
+            a { href: "#-stop-using-aws", class: "header", "🛑 Stop Using AWS" }
+        }
+        p {
+            "The post opens with a classic anecdote: a developer builds an MVP with all the AWS bells and whistles, Lambda, API Gateway, Cognito, S3, DynamoDB, and no one uses it. The conclusion? AWS was overkill."
+        }
+        p {
+            "But let's be honest: blaming AWS for a failed product is like blaming your tools when your idea doesn't land. "
+            strong {
+                "AWS didn't kill your startup. Lack of validation, poor UX, or zero marketing likely did"
+            }
+            ". Using a battle-tested infrastructure does not guarantee success, but avoiding it can definitely guarantee future pain."
+        }
+        p {
+            "AWS is "
+            strong { "not about scale today, it's about resilience tomorrow" }
+            ". You can start with one Lambda function and scale to millions of invocations without touching infrastructure again. The same service that powers your early prototype can grow into your production backbone. That's not overengineering, that's smart engineering."
+        }
+        h2 { id: "-copying-netflix-architecture-is-silly",
+            a {
+                href: "#-copying-netflix-architecture-is-silly",
+                class: "header",
+                "🚂 Copying Netflix Architecture Is Silly"
+            }
+        }
+        p {
+            "A key argument in the post is that copying architectures from giants like Netflix is absurd. But here's the thing: "
+            strong { "copying proven solutions is how engineering works" }
+            "."
+        }
+        p {
+            "Bridges don't get new designs for every crossing. Airplanes don't redesign wings every year. Engineers "
+            strong { "borrow from what works" }
+            ", because "
+            strong { "battle-tested architectures reduce risk and improve reliability" }
+            "."
+        }
+        p {
+            "The Netflix architecture may look complex, but many of its core principles, CI/CD, serverless scaling, stateless compute, IAM-based security, are just "
+            strong { "good defaults" }
+            " in AWS. These patterns exist not because they're cool, but because they "
+            strong { "work repeatedly under pressure" }
+            "."
+        }
+        p {
+            "Reusing success isn't a flaw, it's "
+            strong { "strategic acceleration" }
+            "."
+        }
+        h2 { id: "-most-projects-die-from-lack-of-users-not-overengineering",
+            a {
+                href: "#-most-projects-die-from-lack-of-users-not-overengineering",
+                class: "header",
+                "🚀 Most Projects Die From Lack of Users, Not Overengineering"
+            }
+        }
+        p {
+            "The post says most early-stage projects fail due to lack of users, not bad infrastructure. But that's not always true."
+        }
+        p {
+            "In reality, "
+            strong { "most promising projects die from a lack of marketing and financial support" }
+            ". As a solo founder currently building a competitive open source project, I can tell you firsthand: the only reason it's still alive is because the community likes it. Not because of my infrastructure. But if tomorrow it catches fire on Hacker News, I know AWS will keep it alive "
+            strong { "without migration, without panic, and without sysadmin duty" }
+            "."
+        }
+        p {
+            "And let's be real, "
+            strong { "bad infrastructure won't get you users, but it will lose them fast" }
+            ". Downtime, slow loading, broken auth, insecure APIs, these will kill user trust before your next commit. AWS lets you "
+            strong { "ship confidently" }
+            ", even with zero staff and zero budget."
+        }
+        h2 { id: "-just-use-a-vps--docker-compose",
+            a { href: "#-just-use-a-vps--docker-compose", class: "header",
+                "🔧 Just Use a VPS + Docker Compose"
+            }
+        }
+        p {
+            "Ah yes, the $5 VPS dream. The classic hacker manifesto. And while it's a romantic idea, "
+            strong { "it quickly collapses under real-world pressure" }
+            "."
+        }
+        ul {
+            li {
+                p { "Who patches your server?" }
+            }
+            li {
+                p { "Who restores it after a reboot?" }
+            }
+            li {
+                p { "Who handles DDoS protection?" }
+            }
+            li {
+                p { "Who backs up your database?" }
+            }
+            li {
+                p { "Who monitors CPU/memory spikes?" }
+            }
+            li {
+                p { "Who gives you rolling deployments?" }
+            }
+            li {
+                p { "Who gives you audit logs?" }
+            }
+            li {
+                p { "Who keeps your secrets safe?" }
+            }
+            li {
+                p { "Who helps during an outage?" }
+            }
+        }
+        p {
+            "When you deploy over SSH and  "
+            code { "docker compose up" }
+            ", "
+            strong { "you are your own SRE" }
+            ". That's fine for side projects. But if you're building anything real, anything you want to monetize, secure, or scale, "
+            strong { "you need more than a hobby code viber stack" }
+            "."
+        }
+        p {
+            "AWS takes these headaches away. You get backup, observability, IAM, autoscaling, and global distribution out of the box. No extra effort. No late-night pager duties."
+        }
+        h2 { id: "-aws-is-too-complicated",
+            a { href: "#-aws-is-too-complicated", class: "header", "🧠 AWS Is Too Complicated" }
+        }
+        p {
+            "Yes, AWS can feel complex. It has over 200 services. It has dozens of ways to deploy. It can be overwhelming. But so is the Linux kernel. So is Kubernetes. So is React, honestly."
+        }
+        p {
+            strong { "Complexity is not a flaw, lack of progressive learning is." }
+        }
+        p { "AWS is built for gradual discovery:" }
+        ul {
+            li {
+                p {
+                    "Start with "
+                    a { href: "https://aws.amazon.com/amplify/", "Amplify" }
+                    " or "
+                    a { href: "https://aws.amazon.com/lightsail/", "Lightsail" }
+                    "."
+                }
+            }
+            li {
+                p {
+                    "Move to "
+                    a { href: "https://aws.amazon.com/cdk/", "CDK" }
+                    " or "
+                    a { href: "https://aws.amazon.com/serverless/sam", "SAM" }
+                    "."
+                }
+            }
+            li {
+                p { "Add services as you go." }
+            }
+        }
+        p {
+            "The best part? You "
+            strong { "don't have to throw anything away" }
+            " when you grow. That's the opposite of overengineering. That's "
+            strong { "technical maturity baked into the platform" }
+            "."
+        }
+        p { "You can stay lean and still have optionality for years." }
+        h2 { id: "-when-aws-makes-sense-always",
+            a { href: "#-when-aws-makes-sense-always", class: "header",
+                "✅ When AWS Makes Sense: Always"
+            }
+        }
+        p {
+            "The post says AWS only makes sense in a few niche scenarios: job hunting, compliance, global scale. That's a narrow view."
+        }
+        p { "Here's when AWS actually makes sense:" }
+        ul {
+            li {
+                p { "You care about security and compliance from day one." }
+            }
+            li {
+                p { "You want an upgrade path without rewrite." }
+            }
+            li {
+                p { "You hate ops and want managed services." }
+            }
+            li {
+                p { "You care about observability and structured logs." }
+            }
+            li {
+                p { "You want global latency under 100ms." }
+            }
+            li {
+                p { "You want fine-grained access control." }
+            }
+            li {
+                p { "You want infra as code and rollback." }
+            }
+            li {
+                p {
+                    "You want your infra to "
+                    em { "just work" }
+                    "."
+                }
+            }
+        }
+        p {
+            "AWS isn't for everyone. But if you're serious about building something resilient, flexible, and long-lasting, "
+            strong { "it's one of the smartest tools you can use." }
+        }
+        h2 { id: "-why-you-should-use-rust-for-everything-everywhere-always",
+            a {
+                href: "#-why-you-should-use-rust-for-everything-everywhere-always",
+                class: "header",
+                "🦀 Why You Should Use Rust for Everything, Everywhere, Always"
+            }
+        }
+        p { "There's one more piece of the stack we haven't talked about: the programming language." }
+        p {
+            "If you're still choosing Node.js, Python, Ruby, or Go by default, it's time to stop and seriously consider "
+            strong { "Rust" }
+            ", not just as an option, but as your "
+            strong { "primary tool for all stacks" }
+            "."
+        }
+        p {
+            "Rust is not a trend. It is "
+            strong { "a revolution in software correctness, safety, and performance" }
+            ". The following are some of the reasons why using Rust across your entire stack, CLI tools, web backends, infrastructure tooling, and WebAssembly frontends, "
+            a { href: "https://github.com/opensass", "Open SASS" }
+            " btw "
+            strong { "is the most rational long-term bet you can make" }
+            ":"
+        }
+        ul {
+            li {
+                p {
+                    strong { "Memory Safety Without Garbage Collection:" }
+                    " Rust guarantees memory safety at compile time without a GC. You write code that's fast and safe, with zero runtime overhead. This means fewer production crashes, fewer bugs, less stress, and happier developers."
+                }
+            }
+            li {
+                p {
+                    strong { "Blazing Fast Performance:" }
+                    " Rust consistently outperforms languages like Python, Ruby, and even Go in compute-intensive tasks. It gives you C-level speed with a sane, modern syntax and tooling."
+                }
+            }
+            li {
+                p {
+                    strong { "First-Class WebAssembly Support:" }
+                    " You can compile Rust to WebAssembly and run it in the browser, or even server-side. This allows "
+                    strong { "one language to power both frontend and backend" }
+                    ", closing the full-stack loop."
+                }
+            }
+            li {
+                p {
+                    strong { "Ergonomic Dev Experience:" }
+                    " With tools like "
+                    code { "cargo" }
+                    ", "
+                    code { "rust-analyzer" }
+                    ", and strong compiler messages, Rust is not just fast, it's a "
+                    strong { "joy to work with" }
+                    " once you get the hang of it. The ecosystem is mature and growing rapidly."
+                }
+            }
+            li {
+                p {
+                    strong { "Concurrency Without Fear:" }
+                    " Rust's ownership model makes concurrent programming safer by default. You don't fear multithreading. You embrace it."
+                }
+            }
+            li {
+                p {
+                    strong { "Perfect for Cloud and Infrastructure:" }
+                    " Major tools like "
+                    a { href: "https://firecracker-microvm.github.io/",
+                        code { "firecracker" }
+                        " (AWS Lambda microVMs)"
+                    }
+                    ", "
+                    a { href: "https://deno.com/",
+                        code { "deno" }
+                    }
+                    ", and "
+                    a { href: "https://vector.dev",
+                        code { "vector.dev" }
+                    }
+                    " are all written in Rust. It's becoming the de facto language for "
+                    strong { "next-gen DevOps, cloud infra, and edge computing" }
+                    "."
+                }
+            }
+            li {
+                p {
+                    strong { "Low-Level Power, High-Level Syntax:" }
+                    " Need to write performant networking code? Cryptographic primitives? OS-level utilities? Rust does it all, and makes it readable and testable."
+                }
+            }
+            li {
+                p {
+                    strong { "Future-Proof Your Codebase:" }
+                    " Choosing Rust today is betting on stability, safety, and speed for the next 20 years. It's backed by major players, and already replacing legacy C/C++ in critical systems."
+                }
+            }
+        }
+        p {
+            "Imagine this: a single language that powers your server, builds your CLI, compiles to your frontend, runs your Lambda functions, writes your Terraform replacements, and lets you deploy blazingly fast binaries to any architecture."
+        }
+        p { "That's not just a dream stack." }
+        p {
+            "That's "
+            strong { "Rust." }
+        }
+        blockquote {
+            p {
+                "If you're already using AWS, adopting Rust makes even more sense. You can build ultra-efficient Lambda functions, optimize EC2 compute, write blazing-fast CLI tools, and reduce cold start times dramatically, all while writing safer code."
+            }
+        }
+        p {
+            "The world is slowly migrating to Rust, one subsystem at a time. The only question is: "
+            strong { "why not be early?" }
+        }
+        h2 { id: "-final-thoughts-your-stack-shouldnt-be-a-toy",
+            a {
+                href: "#-final-thoughts-your-stack-shouldnt-be-a-toy",
+                class: "header",
+                "🔚 Final Thoughts: Your Stack Shouldn't Be a Toy"
+            }
+        }
+        p {
+            "So no, you don't "
+            em { "need" }
+            " AWS. But dismissing it as overkill is shortsighted. A startup doesn't need a Formula 1 car, but it also shouldn't build a go-kart out of duct tape and optimism."
+        }
+        p {
+            "If your product succeeds, you'll wish you had AWS from the start. If it fails, it won't be because you used AWS. It'll be because no one wanted what you built. "
+            strong { "Don't blame your infrastructure for your idea's failure." }
+        }
+        p {
+            "Build lean. Build smart. But build with "
+            strong { "forward motion" }
+            "."
+        }
+        p {
+            strong { "AWS ain't your enemy. It's your parachute." }
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
         }
     }
 }
