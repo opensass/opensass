@@ -38,6 +38,8 @@ pub enum BookRoute {
     SidebarRelease {},
     #[route("/keep-using-aws")]
     KeepUsingAws {},
+    #[route("/skeleton-rs-release")]
+    SkeletonRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -62,6 +64,7 @@ impl BookRoute {
             BookRoute::NavbarRelease {} => use_mdbook::mdbook_shared::PageId(11usize),
             BookRoute::SidebarRelease {} => use_mdbook::mdbook_shared::PageId(12usize),
             BookRoute::KeepUsingAws {} => use_mdbook::mdbook_shared::PageId(13usize),
+            BookRoute::SkeletonRsRelease {} => use_mdbook::mdbook_shared::PageId(14usize),
         }
     }
 }
@@ -1166,6 +1169,101 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::KeepUsingAws {},
             ::use_mdbook::mdbook_shared::PageId(13usize),
         );
+        pages
+            .push((
+                14usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| blog |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b"
+                            .to_string(),
+                        url: BookRoute::SkeletonRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🦴 What Is Skeleton RS?".to_string(),
+                                id: "🦴-what-is-skeleton-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Built-in UX Goodness".to_string(),
+                                id: "built-in-ux-goodness".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Why You'll Love Skeleton RS".to_string(),
+                                id: "🚀-why-you'll-love-skeleton-rs".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚡ Quick Yew Setup".to_string(),
+                                id: "⚡-quick-yew-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "1. Add it to your dependencies".to_string(),
+                                id: "1.-add-it-to-your-dependencies".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "2. Import the component".to_string(),
+                                id: "2.-import-the-component".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "3. Drop it into your app".to_string(),
+                                id: "3.-drop-it-into-your-app".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧩 Features".to_string(),
+                                id: "🧩-features".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Full Control with Props".to_string(),
+                                id: "⚙\u{fe0f}-full-control-with-props".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧾 Text Loading Placeholder".to_string(),
+                                id: "🧾-text-loading-placeholder".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🟦 Avatar Circle".to_string(),
+                                id: "🟦-avatar-circle".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📦 Card Block".to_string(),
+                                id: "📦-card-block".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔁 With Child Content (Infer Size)".to_string(),
+                                id: "🔁-with-child-content-(infer-size)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🕵\u{fe0f} Animate Only When Visible".to_string(),
+                                id: "🕵\u{fe0f}-animate-only-when-visible".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💡 Final Thoughts".to_string(),
+                                id: "💡-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(14usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::SkeletonRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(14usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1295,6 +1393,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::KeepUsingAws {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![14u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| blog |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b"
+                            .to_string(),
+                        location: Some(BookRoute::SkeletonRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![15u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -6362,6 +6469,287 @@ pub fn KeepUsingAws() -> dioxus::prelude::Element {
         }
         p {
             strong { "AWS ain't your enemy. It's your parachute." }
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn SkeletonRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "When you're building blazingly fast WASM apps, there's one thing that silently makes or breaks the user experience: "
+            strong { "loading states" }
+            ". We've all been there, blank screens, layout jumps, etc. It's not just bad UX. It's "
+            em { "lost trust" }
+            "."
+        }
+        p {
+            "That's why we're excited today to introduce "
+            a { href: "https://crates.io/crates/skeleton-rs",
+                strong { "Skeleton RS" }
+            }
+            " , a "
+            strong { "highly-configurable" }
+            " skeleton loader built natively for "
+            strong { "Rust WASM frameworks" }
+            ", starting with full Yew support. Think of it as a smart placeholder for your content , one that speaks fluent WASM."
+        }
+        p {
+            "Let's unpack why "
+            strong { "Skeleton RS" }
+            " is your new best friend when it comes to loading UIs 🦴."
+        }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/a130f1fc-891b-4d3b-878c-84310acd5759",
+                alt: "sunglasses-glasses",
+                title: "",
+            }
+        }
+        h2 { id: "-what-is-skeleton-rs",
+            a { href: "#-what-is-skeleton-rs", class: "header", "🦴 What Is Skeleton RS?" }
+        }
+        p {
+            strong { "Skeleton RS" }
+            " is a high-performance skeleton loader component designed for frontend Rust frameworks like "
+            strong { "Yew" }
+            ". Whether you're fetching data, lazy-loading routes, or animating components into view, "
+            strong { "Skeleton RS" }
+            " gives you graceful, styled placeholders that blend into your design system "
+            em { "easily" }
+            "."
+        }
+        p { "No JavaScript hacks. No extra boilerplate. Just clean, declarative Rust 🦀." }
+        h3 { id: "built-in-ux-goodness",
+            a { href: "#built-in-ux-goodness", class: "header", "Built-in UX Goodness" }
+        }
+        ul {
+            li {
+                strong { "Pulse & Wave animations" }
+                " for that polished glow."
+            }
+            li {
+                strong { "Auto-sizing" }
+                " to match real content dimensions."
+            }
+            li {
+                strong { "Visibility-based animation triggers" }
+                " via "
+                code { "IntersectionObserver" }
+                "."
+            }
+            li {
+                strong { "Fine-grained control" }
+                " via props without sacrificing simplicity."
+            }
+        }
+        h2 { id: "-why-youll-love-skeleton-rs",
+            a { href: "#-why-youll-love-skeleton-rs", class: "header",
+                "🚀 Why You'll Love Skeleton RS"
+            }
+        }
+        blockquote {
+            p { "You're not just faking a loading state. You're designing a seamless experience." }
+        }
+        p {
+            "Skeleton RS isn't another \"spinner in disguise\". It's "
+            strong { "intentionally minimal" }
+            ", yet "
+            strong { "insanely flexible" }
+            ". Designed to look great out of the box, but gives you the controls when you need them."
+        }
+        p { "Here's why it stands out:" }
+        ul {
+            li {
+                "🔍 "
+                strong { "Context-Aware" }
+                ": Animate only when visible , save cycles, look smoother."
+            }
+            li {
+                "🎯 "
+                strong { "Responsive" }
+                ": Works with any layout, from dashboards to mobile-first views."
+            }
+            li {
+                "🧱 "
+                strong { "Composable" }
+                ": Use it with or without children, nest it, theme it, customize it."
+            }
+            li {
+                "🪶 "
+                strong { "Lightweight" }
+                ": No JS, no noise , pure Rust + WebAssembly."
+            }
+        }
+        p { "This isn't a loading hack , it's a design utility." }
+        h2 { id: "-quick-yew-setup",
+            a { href: "#-quick-yew-setup", class: "header", "⚡ Quick Yew Setup" }
+        }
+        p {
+            "Using Skeleton RS in your "
+            strong { "Yew" }
+            " project is dead simple:"
+        }
+        h3 { id: "1-add-it-to-your-dependencies",
+            a { href: "#1-add-it-to-your-dependencies", class: "header",
+                "1. Add it to your dependencies"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add skeleton</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "2-import-the-component",
+            a { href: "#2-import-the-component", class: "header", "2. Import the component" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">skeleton_rs::yew::Skeleton;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">skeleton_rs::Variant;</span></pre>\n" }
+        h3 { id: "3-drop-it-into-your-app",
+            a { href: "#3-drop-it-into-your-app", class: "header", "3. Drop it into your app" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton\n</span><span style=\"color:#f8f8f2;\">            variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Text}}\n</span><span style=\"color:#f8f8f2;\">            width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;100%&quot;\n</span><span style=\"color:#f8f8f2;\">            height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;1.2em&quot;\n</span><span style=\"color:#f8f8f2;\">            animate_on_visible</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Boom. Beautifully animated, accessible skeleton loaders, ready to roll." }
+        h2 { id: "-features",
+            a { href: "#-features", class: "header", "🧩 Features" }
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "What It Brings to Your App" }
+            }
+            tr {
+                th { "Variant Support" }
+                th {
+                    "Choose from "
+                    code { "Text" }
+                    ", "
+                    code { "Circle" }
+                    ", "
+                    code { "Rect" }
+                    ", and more"
+                }
+            }
+            tr {
+                th { "Visibility-Based Anim" }
+                th { "Trigger animations only when elements are visible" }
+            }
+            tr {
+                th { "Delay + Fallback UX" }
+                th {
+                    "Avoid flicker with "
+                    code { "delay_ms" }
+                    ", improve perceived speed"
+                }
+            }
+            tr {
+                th { "Responsive Design" }
+                th {
+                    "Enable "
+                    code { "responsive" }
+                    " for fluid layouts"
+                }
+            }
+            tr {
+                th { "Theming" }
+                th { "Seamlessly toggle between light and dark modes" }
+            }
+            tr {
+                th { "Full Custom Styling" }
+                th {
+                    "Add your own "
+                    code { "custom_style" }
+                    ", "
+                    code { "class" }
+                    ", or radius"
+                }
+            }
+        }
+        p { "This is UX design, not just developer convenience." }
+        h2 { id: "-full-control-with-props",
+            a { href: "#-full-control-with-props", class: "header",
+                "⚙\u{fe0f} Full Control with Props"
+            }
+        }
+        p { "Skeleton RS gives you all the toggles and knobs you need , without overengineering." }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton\n</span><span style=\"color:#f8f8f2;\">    variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Rect}}\n</span><span style=\"color:#f8f8f2;\">    width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;300px&quot;\n</span><span style=\"color:#f8f8f2;\">    height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;200px&quot;\n</span><span style=\"color:#f8f8f2;\">    border_radius</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;8px&quot;\n</span><span style=\"color:#f8f8f2;\">    animation</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Animation::Wave}}\n</span><span style=\"color:#f8f8f2;\">    show</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    delay_ms</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">300</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    theme</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Theme::Dark}}\n</span><span style=\"color:#f8f8f2;\">    responsive</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p {
+            "Want more? Use  "
+            code { "infer_size" }
+            " with children, tweak  "
+            code { "margin" }
+            ", plug into visibility with  "
+            code { "node_ref" }
+            ", and even animate on hover, focus, or click."
+        }
+        p { "Yes, it really is that powerful , and that simple." }
+        p {
+            "Let's say you're loading user cards or a product grid. Here's how you'd add meaningful skeletons "
+            em { "without" }
+            " breaking structure:"
+        }
+        h3 { id: "-text-loading-placeholder",
+            a { href: "#-text-loading-placeholder", class: "header",
+                "🧾 Text Loading Placeholder"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Text}} width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;80%&quot;</span><span style=\"color:#f8f8f2;\"> height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;1.1em&quot; </span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        h3 { id: "-avatar-circle",
+            a { href: "#-avatar-circle", class: "header", "🟦 Avatar Circle" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Circle}} width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;48px&quot;</span><span style=\"color:#f8f8f2;\"> height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;48px&quot; </span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        h3 { id: "-card-block",
+            a { href: "#-card-block", class: "header", "📦 Card Block" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton\n</span><span style=\"color:#f8f8f2;\">    variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Rect}}\n</span><span style=\"color:#f8f8f2;\">    width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;100%&quot;\n</span><span style=\"color:#f8f8f2;\">    height</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;150px&quot;\n</span><span style=\"color:#f8f8f2;\">    animation</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Animation::Pulse}}\n</span><span style=\"color:#f8f8f2;\">    border_radius</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;12px&quot;\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        h3 { id: "-with-child-content-infer-size",
+            a { href: "#-with-child-content-infer-size", class: "header",
+                "🔁 With Child Content (Infer Size)"
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton infer_size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">div class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;user-profile&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;@rustacean&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">div</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Skeleton</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        h3 { id: "-animate-only-when-visible",
+            a { href: "#-animate-only-when-visible", class: "header",
+                "🕵\u{fe0f} Animate Only When Visible"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Skeleton animate_on_visible</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        p { "All this, and no layout shifts. Just butter-smooth transitions that feel native." }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💡 Final Thoughts" }
+        }
+        p {
+            "Modern apps need modern loading states , not just a spinning icon and a prayer. Whether you're building admin dashboards, real-time UIs, or portfolio sites with WASM, "
+            strong { "Skeleton RS" }
+            " gives you the power to design with empathy."
+        }
+        p {
+            "It's not flashy. It's "
+            strong { "functional elegance" }
+            " , designed for today's Rust-native frontend."
         }
         blockquote {
             p {
