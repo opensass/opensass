@@ -40,6 +40,8 @@ pub enum BookRoute {
     KeepUsingAws {},
     #[route("/skeleton-rs-release")]
     SkeletonRsRelease {},
+    #[route("/theme-release")]
+    ThemeRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -65,12 +67,13 @@ impl BookRoute {
             BookRoute::SidebarRelease {} => use_mdbook::mdbook_shared::PageId(12usize),
             BookRoute::KeepUsingAws {} => use_mdbook::mdbook_shared::PageId(13usize),
             BookRoute::SkeletonRsRelease {} => use_mdbook::mdbook_shared::PageId(14usize),
+            BookRoute::ThemeRelease {} => use_mdbook::mdbook_shared::PageId(15usize),
         }
     }
 }
 impl Default for BookRoute {
     fn default() -> Self {
-        BookRoute::NavbarRelease {}
+        BookRoute::ThemeRelease {}
     }
 }
 pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRoute>> =
@@ -1264,6 +1267,81 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::SkeletonRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(14usize),
         );
+        pages
+            .push((
+                15usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 16 |---| 🎨 Infinite Theming with Theme |---| blog |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c"
+                            .to_string(),
+                        url: BookRoute::ThemeRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌈 What Is ".to_string(),
+                                id: "🌈-what-is".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚡ Quick Setup".to_string(),
+                                id: "⚡-quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "1. Add it to your ".to_string(),
+                                id: "1.-add-it-to-your".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "2. Import the magic".to_string(),
+                                id: "2.-import-the-magic".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "3. Wrap your app".to_string(),
+                                id: "3.-wrap-your-app".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 Add Your Own Themes".to_string(),
+                                id: "🎨-add-your-own-themes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 Theme Context Hook? Yes, please!".to_string(),
+                                id: "🧠-theme-context-hook?-yes,-please!".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧰 Tailwind, Meet Theme".to_string(),
+                                id: "🧰-tailwind,-meet-theme".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧪 Full Control with Props".to_string(),
+                                id: "🧪-full-control-with-props".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 Bonus Brainy Features".to_string(),
+                                id: "🧠-bonus-brainy-features".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Final Thoughts".to_string(),
+                                id: "🚀-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(15usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::ThemeRelease {},
+            ::use_mdbook::mdbook_shared::PageId(15usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1402,6 +1480,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::SkeletonRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![15u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 16 |---| 🎨 Infinite Theming with Theme |---| blog |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c"
+                            .to_string(),
+                        location: Some(BookRoute::ThemeRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![16u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -6769,6 +6856,240 @@ pub fn SkeletonRsRelease() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn ThemeRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hey Rustacean 👋!" }
+        }
+        p {
+            "Let's be real for a sec; Nothing kills a great user experience like an app that ignores your light/dark theme preference. One minute you're vibing in a chill dark mode, next minute: "
+            em { "BLINDING WHITE SCREEN" }
+        }
+        p { "We've all been there." }
+        p {
+            "That's why we're excited to introduce "
+            strong {
+                a { href: "https://crates.io/crates/theme",
+                    code { "Theme" }
+                }
+            }
+            ", a slick, flexible, no-nonsense theme manager for WASM apps. It handles light, dark, and everything in between (yes, "
+            em { "even custom solarized setups, you nerds" }
+            " 🌞🌚)."
+        }
+        p {
+            "It's the theming solution your app "
+            em { "deserves" }
+            ", easy to drop in, works out of the box, and plays nicely with Tailwind, DaisyUI, and your questionable late-night color choices."
+        }
+        p { "Let's take a look!" }
+        p {
+            img {
+                src: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmdocjNxd3Q1ZnhtenRjczl4ZXdzdmR1bzEyNGh6MXhsb3g2N3R3dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zZC2AqB84z7zFnlkbF/giphy.gif",
+                alt: "waku waku",
+                title: "",
+            }
+        }
+        h2 { id: "-what-is",
+            a { href: "#-what-is", class: "header", "🌈 What Is " }
+            code { "Theme" }
+            "?"
+        }
+        p {
+            code { "Theme" }
+            " is a "
+            strong { "simple, powerful" }
+            " component for managing theming in your WASM app. It does the hard work, like syncing across tabs, respecting system settings, and storing preferences, so you don't have to."
+        }
+        p {
+            "You just wrap your app with a  "
+            code { "ThemeProvider" }
+            ", and BOOM: instant style wizardry."
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">ThemeProvider default_theme</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Theme::System}}</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">App </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">ThemeProvider</span><span style=\"color:#f92672;\">&gt;</span></pre>\n" }
+        p {
+            "Yes, it even switches automatically between light and dark based on your OS settings. It's basically psychic."
+        }
+        h2 { id: "-quick-setup",
+            a { href: "#-quick-setup", class: "header", "⚡ Quick Setup" }
+        }
+        h3 { id: "1-add-it-to-your",
+            a { href: "#1-add-it-to-your", class: "header", "1. Add it to your " }
+            code { "Cargo.toml" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add theme </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "2-import-the-magic",
+            a { href: "#2-import-the-magic", class: "header", "2. Import the magic" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">theme::yew::ThemeProvider;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">theme::{{Theme, StorageType}};</span></pre>\n" }
+        h3 { id: "3-wrap-your-app",
+            a { href: "#3-wrap-your-app", class: "header", "3. Wrap your app" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">ThemeProvider\n</span><span style=\"color:#f8f8f2;\">    default_theme</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Theme::System}}\n</span><span style=\"color:#f8f8f2;\">    storage_type</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{StorageType::LocalStorage}}\n</span><span style=\"color:#f8f8f2;\">    storage_name</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;theme&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    custom_themes</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{my_themes}}\n</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">App </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">ThemeProvider</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p { "Congrats, your app is now self-aware and stylish." }
+        h2 { id: "-add-your-own-themes",
+            a { href: "#-add-your-own-themes", class: "header", "🎨 Add Your Own Themes" }
+        }
+        p { "Wanna roll your own vibes? You can define custom themes like so:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">custom_themes.</span><span style=\"color:#66d9ef;\">insert</span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;solarized&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">    Rc::new(CustomTheme {{\n</span><span style=\"color:#f8f8f2;\">        name: </span><span style=\"color:#ffee99;\">&quot;solarized&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">        base: </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        tokens: ColorTokens {{\n</span><span style=\"color:#f8f8f2;\">            primary: </span><span style=\"color:#ffee99;\">&quot;#268bd2&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">            secondary: </span><span style=\"color:#ffee99;\">&quot;#2aa198&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">            background: </span><span style=\"color:#ffee99;\">&quot;#fdf6e3&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">            text: </span><span style=\"color:#ffee99;\">&quot;#657b83&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">            error: </span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;#dc322f&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()),\n</span><span style=\"color:#f8f8f2;\">            warning: </span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;#cb4b16&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()),\n</span><span style=\"color:#f8f8f2;\">            success: </span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;#859900&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()),\n</span><span style=\"color:#f8f8f2;\">        }},\n</span><span style=\"color:#f8f8f2;\">    }}),\n</span><span style=\"color:#f8f8f2;\">);</span></pre>\n",
+        }
+        p { "This is not a drill, your brand colors can finally shine in full glory." }
+        h2 { id: "-theme-context-hook-yes-please",
+            a { href: "#-theme-context-hook-yes-please", class: "header",
+                "🧠 Theme Context Hook? Yes, please!"
+            }
+        }
+        p {
+            "Need to toggle themes from a button or keyboard shortcut? Use the  "
+            code { "use_theme()" }
+            " hook:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> ctx </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">use_theme</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> onclick </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> set_theme </span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\"> ctx.set_theme.</span><span style=\"color:#66d9ef;\">clone</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">    Callback::from(</span><span style=\"color:#f92672;\">move |_|</span><span style=\"color:#f8f8f2;\"> set_theme.</span><span style=\"color:#66d9ef;\">emit</span><span style=\"color:#f8f8f2;\">(Theme::Dark))\n</span><span style=\"color:#f8f8f2;\">}};</span></pre>\n",
+        }
+        blockquote {
+            p {
+                "🚨 Pro tip: You can also reset to system default or preview themes temporarily. No reloads. No drama."
+            }
+        }
+        h2 { id: "-tailwind-meet-theme",
+            a { href: "#-tailwind-meet-theme", class: "header", "🧰 Tailwind, Meet Theme" }
+        }
+        p {
+            "Working with Tailwind (v3 or below) or using DaisyUI?  "
+            code { "Theme" }
+            " sets:"
+        }
+        ul {
+            li {
+                code { "data-theme" }
+            }
+            li {
+                code { "class" }
+            }
+            li {
+                code { "color-scheme" }
+                " (on the root element)"
+            }
+        }
+        p { "Automatically. You don't even need to lift a tail... er, finger 🐶." }
+        p {
+            img {
+                src: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2IxaXFieTIwZXN1cXprODE0bXg2M29sNWxpeW5hMjV0MXFmNXUwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FWAcpJsFT9mvrv0e7a/giphy.gif",
+                alt: "heh",
+                title: "",
+            }
+        }
+        h2 { id: "-full-control-with-props",
+            a { href: "#-full-control-with-props", class: "header", "🧪 Full Control with Props" }
+        }
+        p {
+            "Locking in a theme? Adding runtime validation? Syncing across windows? There's a prop for all of it."
+        }
+        table {
+            thead {
+                th { "Prop" }
+                th { "What It Does" }
+            }
+            tr {
+                th {
+                    code { "default_theme" }
+                    ""
+                }
+                th { "Starts the app in light, dark, or system mode." }
+            }
+            tr {
+                th {
+                    code { "storage_type" }
+                    ""
+                }
+                th { "Local or session storage? You pick." }
+            }
+            tr {
+                th {
+                    code { "forced_theme" }
+                    ""
+                }
+                th { "Lock to a specific theme (great for demos or trolling coworkers)." }
+            }
+            tr {
+                th {
+                    code { "custom_themes" }
+                    ""
+                }
+                th { "Bring your own themes!." }
+            }
+            tr {
+                th {
+                    code { "reset_to_system" }
+                    ", "
+                    code { "apply_preview" }
+                    ", "
+                    code { "set_custom_theme" }
+                    ""
+                }
+                th { "Hooks for advanced control & UX magic." }
+            }
+        }
+        h2 { id: "-bonus-brainy-features",
+            a { href: "#-bonus-brainy-features", class: "header", "🧠 Bonus Brainy Features" }
+        }
+        ul {
+            li {
+                "⏱ "
+                strong { "Time-based fallback" }
+                ": No preference? Default to light during the day, dark at night."
+            }
+            li {
+                "🖇 "
+                strong { "Cross-tab syncing" }
+                ": Share themes across all open windows."
+            }
+            li {
+                "🪝 "
+                strong { "Hooks first" }
+                ": Easy to access and control the current theme in any component."
+            }
+            li {
+                "🧪 "
+                strong { "Custom validation" }
+                ": Every theme goes through a little quality check before being accepted."
+            }
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "🚀 Final Thoughts" }
+        }
+        p {
+            "Theming shouldn't be a pain. And with  "
+            code { "Theme" }
+            ", it isn't. From system-based switching to full control, or even total chaos with 10 custom themes, Theme has your back. It's lightweight, declarative, and built for WASM apps."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋" }
         }
     }
 }

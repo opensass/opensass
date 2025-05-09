@@ -37,6 +37,58 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <!-- Static Pages -->
+  <url>
+    <loc>https://opensass.org/about</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/contact</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/donate</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/soulchain.pdf</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Admin Pages -->
+  <url>
+    <loc>https://opensass.org/admin</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/admin/login</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://opensass.org/blogs</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://opensass.org/blogs/tripper-v001-release</loc>
@@ -60,17 +112,94 @@
   </url>
 
   <url>
-    <loc>https://opensass.org/about</loc>
+    <loc>https://opensass.org/blogs/announcing-opensass</loc>
     <lastmod>2025-04-03</lastmod>
-    <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://opensass.org/contact</loc>
+    <loc>https://opensass.org/blogs/beyond-typescript</loc>
     <lastmod>2025-04-03</lastmod>
-    <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/rust-is-god-101</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/opensass-vs-shadcn</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/image-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/image-rs-vs-next-js-image</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/table-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/tanstack-table-vs-table-rs</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/navbar-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/sidebar-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/keep-using-aws</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/skeleton-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/theme-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
 </urlset>
