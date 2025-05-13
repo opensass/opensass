@@ -42,6 +42,8 @@ pub enum BookRoute {
     SkeletonRsRelease {},
     #[route("/theme-release")]
     ThemeRelease {},
+    #[route("/slider-rs-release")]
+    SliderRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -68,6 +70,7 @@ impl BookRoute {
             BookRoute::KeepUsingAws {} => use_mdbook::mdbook_shared::PageId(13usize),
             BookRoute::SkeletonRsRelease {} => use_mdbook::mdbook_shared::PageId(14usize),
             BookRoute::ThemeRelease {} => use_mdbook::mdbook_shared::PageId(15usize),
+            BookRoute::SliderRsRelease {} => use_mdbook::mdbook_shared::PageId(16usize),
         }
     }
 }
@@ -1342,6 +1345,77 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::ThemeRelease {},
             ::use_mdbook::mdbook_shared::PageId(15usize),
         );
+        pages
+            .push((
+                16usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| blog |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4"
+                            .to_string(),
+                        url: BookRoute::SliderRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎉 Why Slider RS Exists".to_string(),
+                                id: "🎉-why-slider-rs-exists".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧰 What Can Slider RS Do?".to_string(),
+                                id: "🧰-what-can-slider-rs-do?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Getting Started".to_string(),
+                                id: "🚀-getting-started".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "1. Add Slider RS to Your Project".to_string(),
+                                id: "1.-add-slider-rs-to-your-project".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "2. Import the Slider Component".to_string(),
+                                id: "2.-import-the-slider-component".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "3. Use It In Your App".to_string(),
+                                id: "3.-use-it-in-your-app".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 But Wait, There's More".to_string(),
+                                id: "🎨-but-wait,-there's-more".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🦀 Ferris Approved, Open SASS Blessed"
+                                    .to_string(),
+                                id: "🦀-ferris-approved,-open-sass-blessed".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💬 Join the Party".to_string(),
+                                id: "💬-join-the-party".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Final Thoughts".to_string(),
+                                id: "🚀-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(16usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::SliderRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(16usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1489,6 +1563,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::ThemeRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![16u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| blog |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4"
+                            .to_string(),
+                        location: Some(BookRoute::SliderRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![17u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -7071,6 +7154,262 @@ pub fn ThemeRelease() -> dioxus::prelude::Element {
             "Theming shouldn't be a pain. And with  "
             code { "Theme" }
             ", it isn't. From system-based switching to full control, or even total chaos with 10 custom themes, Theme has your back. It's lightweight, declarative, and built for WASM apps."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+                "."
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn SliderRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hey Rustacean 👋!" }
+        }
+        p { "You know what's surprisingly hard to get right? A good slider component." }
+        p {
+            "Sure, you can slap together a "
+            a { href: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range",
+                code { "<input type=\"range\">" }
+            }
+            " and call it a day, but once you start wanting "
+            strong { "custom styling" }
+            ", "
+            strong { "accessibility" }
+            ", "
+            strong { "double-thumb range selectors" }
+            ", and "
+            em { "gasp" }
+            " actual usability... well, things get messy."
+        }
+        p {
+            "That's why we're beyond excited (and mildly sleep-deprived) to announce the release of "
+            strong {
+                a { href: "https://crates.io/crates/slider-rs", "Slider RS" }
+            }
+            ": an open-source, fully customizable slider component for your favorite Rust & WASM frameworks like "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            "."
+        }
+        p {
+            "It's slick. It's precise. It's accessible. And yes, "
+            strong { "Ferris the Crab" }
+            " personally approves 🦀."
+        }
+        p {
+            img {
+                src: "https://github.com/user-attachments/assets/9a2511a7-f626-4c8c-bc3d-7d01e20b6d45",
+                alt: "dababy do be vibin",
+                title: "",
+            }
+        }
+        h2 { id: "-why-slider-rs-exists",
+            a { href: "#-why-slider-rs-exists", class: "header", "🎉 Why Slider RS Exists" }
+        }
+        p {
+            "Modern web apps need sliders that don't suck. Periodt. From fancy dashboards to media scrubbers and range filters, every app deserves a component that:"
+        }
+        p { "✅ Looks good (without writing a CSS thesis)." }
+        p {
+            "Slider RS gives you "
+            strong { "fine-grained control" }
+            " over styling, behaviors, and accessibility, all while staying efficient, reactive, and smooth. And yes, it even has "
+            strong { "tooltips" }
+            " for people who like their sliders with a touch of extra flair."
+        }
+        h2 { id: "-what-can-slider-rs-do",
+            a { href: "#-what-can-slider-rs-do", class: "header", "🧰 What Can Slider RS Do?" }
+        }
+        p { "Let's break it down. Slider RS comes packed with features like:" }
+        ul {
+            li {
+                strong { "🎚\u{fe0f} Single & Range Sliders" }
+                ": One thumb? Two thumbs? Your choice."
+            }
+            li {
+                strong { "🎨 Fully Customizable Styling" }
+                ": Classes, inline styles, custom thumb content, icon slots, tweak it till it's yours."
+            }
+            li {
+                strong { "🦽 Accessibility First" }
+                ": ARIA attributes, keyboard navigation, focus management, it's all baked in."
+            }
+            li {
+                strong { "⚡ Reactive & Efficient" }
+                ": Optimized rendering with prop diffing."
+            }
+            li {
+                strong { "🔢 Advanced Goodies" }
+                ": Tick marks, tooltips, step indicators, horizontal & vertical orientation, you name it."
+            }
+            li {
+                strong { "🖱\u{fe0f} Smooth UX" }
+                ": Drag ranges, fine-tune with keyboard, hover for tooltips, smooth as butter."
+            }
+        }
+        p {
+            "Basically, it's the slider component you always "
+            em { "wished" }
+            " you had, now in Rust-flavored WASM form."
+        }
+        h2 { id: "-getting-started",
+            a { href: "#-getting-started", class: "header", "🚀 Getting Started" }
+        }
+        p { "Here's how to get started with Yew:" }
+        h3 { id: "1-add-slider-rs-to-your-project",
+            a { href: "#1-add-slider-rs-to-your-project", class: "header",
+                "1. Add Slider RS to Your Project"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add slider</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "2-import-the-slider-component",
+            a { href: "#2-import-the-slider-component", class: "header",
+                "2. Import the Slider Component"
+            }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">slider_rs::yew::Slider;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">slider_rs::Orientation;</span></pre>\n" }
+        h3 { id: "3-use-it-in-your-app",
+            a { href: "#3-use-it-in-your-app", class: "header", "3. Use It In Your App" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> value </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">use_state</span><span style=\"color:#f8f8f2;\">(|| </span><span style=\"color:#ff80f4;\">50.0</span><span style=\"color:#f8f8f2;\">);\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slider\n</span><span style=\"color:#f8f8f2;\">            min</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">0.0</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">            max</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">100.0</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">            step</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">1.0</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">            value</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">value)}}\n</span><span style=\"color:#f8f8f2;\">            on_change</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Callback::from(|</span><span style=\"font-style:italic;color:#fd971f;\">val</span><span style=\"color:#f8f8f2;\">| log::info</span><span style=\"color:#f92672;\">!</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;Slider changed to: {{}}&quot;</span><span style=\"color:#f8f8f2;\">, val))}}\n</span><span style=\"color:#f8f8f2;\">            orientation</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Orientation::Horizontal}}\n</span><span style=\"color:#f8f8f2;\">            show_value</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">            show_steps</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "And boom, you've got a fully functional, accessible slider in your Rust app." }
+        p {
+            "Even "
+            strong { "Ferris" }
+            " gave it a test drive (and you know how picky he is about UX)."
+        }
+        h2 { id: "-but-wait-theres-more",
+            a { href: "#-but-wait-theres-more", class: "header", "🎨 But Wait, There's More" }
+        }
+        p {
+            "Want to customize everything? Good news, you can. Slider RS comes with a rich set of props to tweak appearance and behavior to your heart's content:"
+        }
+        table {
+            thead {
+                th { "✅ What You Can Do" }
+                th { "📝 How It Works" }
+            }
+            tr {
+                th { "Single or Range Mode" }
+                th {
+                    code { "double={{true}}" }
+                    " for range selectors"
+                }
+            }
+            tr {
+                th { "Control Size & Color" }
+                th {
+                    "Use "
+                    code { "size" }
+                    " and "
+                    code { "color" }
+                    " props"
+                }
+            }
+            tr {
+                th { "Custom Icons & Thumbs" }
+                th {
+                    "Slots like "
+                    code { "icon_start" }
+                    ", "
+                    code { "icon_end" }
+                    ", "
+                    code { "custom_thumb_html" }
+                    ""
+                }
+            }
+            tr {
+                th { "Full Styling Control" }
+                th { "Classes & inline styles for every part" }
+            }
+            tr {
+                th { "Show Values, Steps & Tooltips" }
+                th {
+                    code { "show_value" }
+                    ", "
+                    code { "show_steps" }
+                    ", "
+                    code { "show_tooltip" }
+                    ""
+                }
+            }
+            tr {
+                th { "Accessible by Default" }
+                th { "ARIA labels, keyboard nav, focus events" }
+            }
+            tr {
+                th { "Reactive Callbacks" }
+                th {
+                    code { "on_change" }
+                    ", "
+                    code { "on_change_range" }
+                    ", "
+                    code { "on_focus" }
+                    ", "
+                    code { "on_blur" }
+                    ""
+                }
+            }
+        }
+        p { "It's like a Swiss Army knife, but for sliders. And it won't poke you in the pocket." }
+        h2 { id: "-ferris-approved-open-sass-blessed",
+            a { href: "#-ferris-approved-open-sass-blessed", class: "header",
+                "🦀 Ferris Approved, Open SASS Blessed"
+            }
+        }
+        p {
+            "We built Slider RS because "
+            strong { "Rust+WASM developers deserve better components" }
+            ". It's open-source, MIT-licensed, and ready to be your new favorite UI friend. Whether you're building dashboards, music players, data visualizations, or just a very fancy volume knob, Slider RS has your back."
+        }
+        blockquote {
+            p {
+                "Ferris himself said:"
+                em { "\"This slider is smoother than a freshly compiled release build.\"" }
+            }
+        }
+        h2 { id: "-join-the-party",
+            a { href: "#-join-the-party", class: "header", "💬 Join the Party" }
+        }
+        p { "Got ideas? Found a bug? Want to show off your slick Slider RS-powered app?" }
+        blockquote {
+            p {
+                "Come hang out with us on "
+                a { href: "https://discord.gg/b5JbvHW5nv", "Discord" }
+                "."
+            }
+        }
+        p { "We're a friendly bunch of Rustaceans, building cool things for the web." }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "🚀 Final Thoughts" }
+        }
+        p {
+            "If you're building Rust-based web apps, "
+            strong { "Slider RS" }
+            " is the slider component you didn't know you needed, but now you do. It's precise. It's pretty. It's accessible. And it's yours."
         }
         blockquote {
             p {
