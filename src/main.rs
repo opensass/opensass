@@ -15,6 +15,12 @@ fn main() {
 
     #[cfg(feature = "web")]
     {
+        let config = dioxus_web::Config::new().hydrate(true);
+        LaunchBuilder::new().with_cfg(config).launch(App);
+    }
+
+    #[cfg(not(feature = "web"))]
+    {
         LaunchBuilder::new()
             .with_cfg(server_only! {
                 let mut cfg = ServeConfig::builder();

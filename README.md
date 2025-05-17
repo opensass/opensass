@@ -9,8 +9,6 @@
 
 [![Open SASS Discord](https://dcbadge.limes.pink/api/server/b5JbvHW5nv)](https://discord.gg/b5JbvHW5nv)
 
-<video src="https://github.com/user-attachments/assets/b376b575-69e9-4a67-a6ac-ad5104a9e3aa"></video>
-
 </div>
 
 ## 🛠️ Pre-requisites:
@@ -44,7 +42,7 @@
 1. Run The Client.
 
    ```sh
-   dx serve
+   dx serve --port 3000
    ```
 
 Navigate to http://localhost:3000 to explore the landing page.
