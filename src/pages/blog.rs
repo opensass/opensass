@@ -28,7 +28,7 @@ pub fn Blog() -> Element {
             return false;
         }
 
-        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
         let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
             return false;
         };
@@ -37,7 +37,7 @@ pub fn Blog() -> Element {
     });
     if let Some(route) = blog_post {
         let raw_title = &route.page().title;
-        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
         let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
             return Ok(Default::default());
         };
@@ -83,7 +83,7 @@ pub fn Blog() -> Element {
                                 span { class: "font-semibold text-lg", "Mahmoud Harmouch" }
                                 span {
                                     class: "text-gray-400 text-sm",
-                                    "{post.3} · 2 min read"
+                                    "{post.3}"
                                 }
                             }
                         }

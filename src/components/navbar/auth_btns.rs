@@ -22,9 +22,9 @@ pub fn AuthButtons(props: AuthButtonsProps) -> Element {
                 "Join"
             }
             Link {
-                to: "/donate",
+                to: "/kit",
                 class: "bg-black text-white px-5 py-2 text-lg hover:bg-gray-900",
-                "Donate"
+                "Explore"
             }
         }
     }

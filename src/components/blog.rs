@@ -61,7 +61,7 @@ fn CategoriesList(cat: Signal<Option<String>>) -> Element {
             continue;
         }
 
-        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
         let [_, _, category, ..] = items.as_slice() else {
             continue;
         };
@@ -90,7 +90,7 @@ fn BlogHomePostItem(route: BlogRoute, cat: Signal<Option<String>>) -> Element {
         return rsx! {};
     }
 
-    let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+    let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
     let [_, title, category, slug, date, description, img, ..] = items.as_slice() else {
         panic!("Invalid post structure:");
     };
