@@ -24,6 +24,9 @@ pub struct BlogCardProps {
     pub created_at: String,
     pub category: String,
     pub slug: String,
+    pub facebook: String,
+    pub x: String,
+    pub linkedin: String,
 }
 
 #[component]
@@ -74,7 +77,7 @@ pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
 
                 div {
                     class: "text-gray-500 text-xs mt-2",
-                    "{props.created_at} · {format_time} min read"
+                    "{props.created_at}"
                 }
             }
         }
@@ -129,12 +132,13 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                 div {
                     class: "flex justify-between items-center text-gray-500 text-sm",
                     span {
-                        "{props.created_at} · {format_time} min read"
+                        "{props.created_at}"
                     }
                     div {
                         class: "flex gap-2",
                         a {
-                            href: "#",
+                            href: props.facebook,
+                            target: "_blank",
                             class: "text-gray-500 hover:text-white transition duration-200",
                             i {
                                 width: 30,
@@ -143,7 +147,8 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                             }
                         }
                         a {
-                            href: "#",
+                            href: props.x,
+                            target: "_blank",
                             class: "text-gray-500 hover:text-white transition duration-200",
                             i {
                                 width: 30,
@@ -152,7 +157,8 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                             }
                         }
                         a {
-                            href: "#",
+                            href: props.linkedin,
+                            target: "_blank",
                             class: "text-gray-500 hover:text-white transition duration-200",
                             i {
                                 width: 30,

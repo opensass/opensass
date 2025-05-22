@@ -42,7 +42,7 @@ pub fn Blogs() -> Element {
             continue;
         }
 
-        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
         let [_, title, _, slug, _, _, img, ..] = items.as_slice() else {
             continue;
         };
@@ -198,7 +198,7 @@ fn CategoriesList(cat: Signal<Option<String>>, page: Signal<u64>) -> Element {
             continue;
         }
 
-        let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
+        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
         let [_, _, category, ..] = items.as_slice() else {
             continue;
         };
@@ -251,8 +251,8 @@ fn BlogPostItem(route: BlogRoute) -> Element {
         return rsx! {};
     }
 
-    let items = raw_title.splitn(8, " |---| ").collect::<Vec<_>>();
-    let [_, title, category, slug, date, description, img, ..] = items.as_slice() else {
+    let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
+    let [_, title, category, slug, date, description, img, facebook, x, linkedin] = items.as_slice() else {
         panic!("Invalid post structure:");
     };
 
@@ -265,6 +265,9 @@ fn BlogPostItem(route: BlogRoute) -> Element {
             created_at: date,
             category: category,
             slug: slug,
+            facebook: facebook,
+            x: x,
+            linkedin: linkedin,
         }
     }
 }

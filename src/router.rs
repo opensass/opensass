@@ -13,6 +13,7 @@ use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
 use crate::pages::soulchain::SoulChain;
 use crate::pages::tripper::Tripper;
+use crate::pages::kit::Kit;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -76,6 +77,8 @@ pub enum Route {
     NanoOG {},
     #[route("/eldflow")]
     ELDFlow {},
+    #[route("/kit")]
+    Kit {},
     #[route("/soulchain.pdf")]
     SoulChain {},
     // #[layout(Blog)]

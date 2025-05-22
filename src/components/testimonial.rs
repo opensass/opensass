@@ -79,9 +79,15 @@ pub fn Testimonial() -> Element {
                 subtitle: "Discover how Open Sass has transformed the way developers connect and create, through the voices of our vibrant community."
             }
             div { class: "flex items-center space-x-2",
-                button { onclick: move |_| go_left(), "⬅️" }
+                button {
+                    onclick: move |_| go_left(),
+                    i { class: "fas fa-chevron-left" }
+                }
                 TestimonialCard { testimonial: testimonials[current_index()].clone() }
-                button { onclick: move |_| go_right(), "➡️" }
+                button {
+                    onclick: move |_| go_right(),
+                    i { class: "fas fa-chevron-right" }
+                }
             }
         }
     }

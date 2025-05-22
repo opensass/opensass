@@ -60,6 +60,13 @@
   </url>
 
   <url>
+    <loc>https://opensass.org/kit</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
     <loc>https://opensass.org/soulchain.pdf</loc>
     <lastmod>2025-04-03</lastmod>
     <priority>0.4</priority>

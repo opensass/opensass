@@ -28,7 +28,7 @@ pub fn Roadmap() -> Element {
                 "Develop compatibility tools to help Yew developers transition projects to Open SASS",
                 "Add community-driven examples and tutorials for Yew",
             ],
-            status: RoadmapStatus::Inactive,
+            status: RoadmapStatus::Active,
         },
         RoadmapItem {
             date: "2025 Q3",
