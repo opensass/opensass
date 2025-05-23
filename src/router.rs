@@ -8,12 +8,12 @@ use crate::pages::blogs::Blogs;
 use crate::pages::donate::Donate;
 use crate::pages::eldflow::ELDFlow;
 use crate::pages::home::Home;
+use crate::pages::kit::Kit;
 use crate::pages::login::Login;
 use crate::pages::nanoog::NanoOG;
 use crate::pages::register::Register;
 use crate::pages::soulchain::SoulChain;
 use crate::pages::tripper::Tripper;
-use crate::pages::kit::Kit;
 use dioxus::prelude::*;
 
 #[derive(Clone, Routable, Debug, PartialEq, serde::Serialize, serde::Deserialize)]

@@ -252,7 +252,9 @@ fn BlogPostItem(route: BlogRoute) -> Element {
     }
 
     let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
-    let [_, title, category, slug, date, description, img, facebook, x, linkedin] = items.as_slice() else {
+    let [_, title, category, slug, date, description, img, facebook, x, linkedin] =
+        items.as_slice()
+    else {
         panic!("Invalid post structure:");
     };
 

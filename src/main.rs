@@ -5,81 +5,65 @@ use dioxus_logger::tracing;
 use dotenv::dotenv;
 use open_sass::router::Route;
 
+#[cfg(feature = "server")]
+use {
+    axum::http::header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE},
+    axum::http::Method,
+    axum::{Extension, Router},
+    open_sass::db::get_client,
+    std::sync::Arc,
+    tower_http::cors::{Any, CorsLayer},
+};
+
+#[cfg(not(feature = "web"))]
+#[derive(Clone)]
+pub struct AppState {
+    client: mongodb::Client,
+}
+
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 
+#[cfg(feature = "web")]
 fn main() {
     dotenv().ok();
     dioxus_logger::init(tracing::Level::INFO).expect("failed to init logger");
-    tracing::info!("starting app");
+    tracing::info!("starting client");
+    dioxus::launch(App);
+}
 
-    #[cfg(feature = "web")]
-    {
-        let config = dioxus_web::Config::new().hydrate(true);
-        LaunchBuilder::new().with_cfg(config).launch(App);
-    }
+#[cfg(not(feature = "web"))]
+#[tokio::main]
+async fn main() {
+    dotenv().ok();
+    dioxus_logger::init(tracing::Level::INFO).expect("failed to init logger");
+    tracing::info!("starting server");
 
-    #[cfg(not(feature = "web"))]
-    {
-        LaunchBuilder::new()
-            .with_cfg(server_only! {
-                let mut cfg = ServeConfig::builder();
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 3000));
+    let client = get_client().await;
 
-                if !cfg!(debug_assertions) {
-                    cfg = cfg.incremental(
-                        IncrementalRendererConfig::new()
-                            .static_dir(static_dir())
-                            .clear_cache(false)
-                    );
-                }
+    let state = Arc::new(AppState {
+        client: client.clone(),
+    });
 
-                cfg.build().expect("Unable to build ServeConfig")
-            })
-            .launch(App);
-    }
+    let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods([Method::GET, Method::POST, Method::PATCH, Method::DELETE])
+        .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE]);
 
-    #[cfg(feature = "server")]
-    {
-        use axum::http::header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE};
-        use axum::http::Method;
-        use axum::{Extension, Router};
-        use open_sass::db::get_client;
-        use std::sync::Arc;
-        use tower_http::cors::{Any, CorsLayer};
-
-        #[derive(Clone)]
-        #[allow(dead_code)]
-        pub struct AppState {
-            client: mongodb::Client,
-        }
-
-        tokio::runtime::Runtime::new()
-            .unwrap()
-            .block_on(async move {
-                let client = get_client().await;
-
-                let state = Arc::new(AppState {
-                    client: client.clone(),
-                });
-
-                let cors = CorsLayer::new()
-                    .allow_origin(Any)
-                    .allow_methods([Method::GET, Method::POST, Method::PATCH, Method::DELETE])
-                    .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE]);
-
-                let app = Router::new()
-                    .layer(cors)
-                    .layer(Extension(state))
-                    .serve_dioxus_application(ServeConfig::new().unwrap(), App);
-
-                let addr = std::net::SocketAddr::from(([0, 0, 0, 0], 3000));
-                let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-
-                axum::serve(listener, app.into_make_service())
-                    .await
-                    .unwrap();
-            });
-    }
+    let router = axum::Router::new()
+        .layer(cors)
+        .layer(Extension(state))
+        .serve_dioxus_application(
+            ServeConfig::builder()
+                .incremental(IncrementalRendererConfig::new().static_dir("static"))
+                .build()
+                .unwrap(),
+            App,
+        )
+        .into_make_service();
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    axum::serve(listener, router).await.unwrap();
 }
 
 fn App() -> Element {

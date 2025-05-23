@@ -36,7 +36,7 @@
 1. SSG The Blogs.
 
    ```sh
-   PORT=3000 dx build --ssg
+   IP=0.0.0.0 PORT=3000 dx bundle --fullstack --ssg --release
    ```
 
 1. Run The Client.
