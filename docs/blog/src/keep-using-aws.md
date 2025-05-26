@@ -26,7 +26,7 @@ Reusing success isn't a flaw, it's **strategic acceleration**.
 
 The post says most early-stage projects fail due to lack of users, not bad infrastructure. But that's not always true.
 
-In reality, **most promising projects die from a lack of marketing and financial support**. As a solo founder currently building a competitive open source project, I can tell you firsthand: the only reason it's still alive is because the community likes it. Not because of my infrastructure. But if tomorrow it catches fire on Hacker News, I know AWS will keep it alive **without migration, without panic, and without sysadmin duty**.
+In reality, **most promising projects die from a lack of marketing and financial support**. As a solo founder currently building an open source project, I can tell you firsthand: the only reason it's still alive is because the community likes it. Not because of my infrastructure. But if tomorrow it catches fire on Hacker News, I know AWS will keep it alive **without migration, without panic, and without sysadmin duty**.
 
 And let's be real, **bad infrastructure won't get you users, but it will lose them fast**. Downtime, slow loading, broken auth, insecure APIs, these will kill user trust before your next commit. AWS lets you **ship confidently**, even with zero staff and zero budget.
 
