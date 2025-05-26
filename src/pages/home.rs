@@ -26,7 +26,7 @@ pub fn Home() -> Element {
             visible.set(scroll_position > top_offset);
         });
 
-        (move || drop(listener))()
+        drop(listener)
     });
 
     let scroll_to_top = move |_| async move {

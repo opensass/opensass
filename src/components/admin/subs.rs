@@ -6,7 +6,7 @@ use dioxus::prelude::*;
 pub fn Subscriptions() -> Element {
     let subs = SUBSCRIBERS.read();
 
-    let _resource = use_server_future(|| async move { fetch_and_store_subs().await })?().unwrap();
+    use_server_future(|| async move { fetch_and_store_subs().await })?().unwrap();
 
     rsx! {
         table { class: "min-w-full bg-white text-center",

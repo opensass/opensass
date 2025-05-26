@@ -12,7 +12,6 @@ use crate::components::hero::title::HeroTitle;
 use crate::components::hero::trust::TrustBox;
 use crate::components::navbar::auth_btns::AuthButtons;
 
-use crate::router::Route;
 use dioxus::prelude::*;
 
 #[component]

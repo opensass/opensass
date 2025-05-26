@@ -1,7 +1,6 @@
 use crate::blog::router_blog::BookRoute as BlogRoute;
 use crate::pages::blogs::ArrowRight;
 use crate::router::Route;
-use chrono::prelude::*;
 use dioxus::prelude::*;
 
 #[derive(Props, Clone, PartialEq, Debug)]
@@ -31,9 +30,6 @@ pub struct BlogCardProps {
 
 #[component]
 pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
-    let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
-    let format_time = format!("{:.2}", read_time);
-
     rsx! {
         div {
             class: "flex flex-col border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105",
@@ -86,9 +82,6 @@ pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
 
 #[component]
 pub fn BlogCard(props: BlogCardProps) -> Element {
-    let read_time = (props.desc.len() as f64 / 7000.0).max(1.0);
-    let format_time = format!("{:.2}", read_time);
-
     rsx! {
         div {
             class: "flex flex-col md:flex-row gap-4 p-6 bg-gray-900 border border-gray-700 rounded-lg hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105",

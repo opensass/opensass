@@ -1,4 +1,5 @@
 #![allow(non_snake_case)]
+#![allow(unused)]
 
 use dioxus::prelude::*;
 use dioxus_logger::tracing;
@@ -84,14 +85,14 @@ fn App() -> Element {
         // Open Graph Meta Tags
         document::Meta { property: "og:title", content: seo_data.seo_social_title.clone() },
         document::Meta { property: "og:description", content: seo_data.seo_meta_description.clone() },
-        document::Meta { property: "og:image", content: seo_data.seo_image.clone() },
+        document::Meta { property: "og:image", content: seo_data.seo_image },
         document::Meta { property: "og:url", content: seo_data.seo_url.clone() },
 
         // X Card Meta Tags
         document::Meta { name: "twitter:card", content: "summary_large_image" },
         document::Meta { name: "twitter:title", content: seo_data.seo_social_title.clone() },
         document::Meta { name: "twitter:description", content: seo_data.seo_meta_description.clone() },
-        document::Meta { name: "twitter:image", content: seo_data.seo_image.clone() },
+        document::Meta { name: "twitter:image", content: seo_data.seo_image },
         document::Meta { name: "twitter:url", content: seo_data.seo_url.clone() },
 
         document::Title { "Open SASS" }

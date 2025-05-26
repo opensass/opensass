@@ -10,7 +10,7 @@ fn make_docs(version: &str) {
     let mdbook_dir = PathBuf::from("docs").join(version);
     let out_dir = current_dir().unwrap().join("src/blog");
     let mut out = generate_router_build_script(mdbook_dir);
-    out.push_str("\n");
+    out.push('\n');
     out.push_str("use dioxus::prelude::*;\n");
     out.push_str("use crate::components::blog::code::CodeBlock;\n");
     let version_flattened = version.replace(".", "");

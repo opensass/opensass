@@ -2,20 +2,19 @@ use crate::server::post::controller::{create_comment, get_comments};
 use dioxus::prelude::*;
 
 #[component]
-pub fn CommentsSection(post_id: String) -> Element {
-    let mut comments = use_signal(|| vec![]);
+pub fn CommentsSection(post_id: Signal<String>) -> Element {
+    let mut comments = use_signal(Vec::new);
     let mut username = use_signal(|| "".to_string());
     let mut user_email = use_signal(|| "".to_string());
     let mut pic = use_signal(|| "".to_string());
     let mut content = use_signal(|| "".to_string());
     let mut error_message = use_signal(|| Some("asffsa".to_string()));
     let mut success_message = use_signal(|| None::<String>);
-    let post_id = use_signal(|| post_id);
 
-    let _resource = use_server_future(move || async move {
+    use_server_future(move || async move {
         match get_comments(post_id()).await {
             Ok(fetched_comments) => comments.set(fetched_comments),
-            Err(_) => eprintln!("Failed to fetch comments."),
+            Err(_) => comments.set(Vec::new()),
         }
     })?()
     .unwrap();
@@ -89,7 +88,7 @@ pub fn CommentsSection(post_id: String) -> Element {
             }
 
             div { class: "space-y-4",
-                for comment in comments.iter() {
+                for comment in comments() {
                     div { class: "p-4 rounded shadow flex",
                         img {
                             class: "w-10 h-10 rounded-full mr-4",

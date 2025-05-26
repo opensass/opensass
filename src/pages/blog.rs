@@ -3,10 +3,6 @@ use crate::components::blog::header::BlogHeader;
 use crate::components::comments::CommentsSection;
 use crate::components::footer::Footer;
 use crate::router::Route;
-use crate::server::auth::model::User;
-use crate::server::post::controller::get_single_post;
-use crate::server::post::request::GetSinglePostRequest;
-use crate::server::post::response::GetPostResponse;
 use dioxus::prelude::*;
 
 #[component]
@@ -14,48 +10,60 @@ pub fn Blog() -> Element {
     let path: Route = use_route();
     let slug_from_url: String = path
         .to_string()
-        .rsplitn(2, '/')
+        .rsplit('/')
         .next()
         .unwrap_or("")
         .to_string();
     let mut blog_info = use_signal(|| None::<(String, String, String, String, String, String)>);
-    let mut post_id = use_signal(|| Some(1));
+    let mut post_id = use_signal(String::new);
 
-    let blog_post = BlogRoute::static_routes().into_iter().rev().find(|route| {
-        let raw_title = &route.page().title;
+    let mut blog_post = use_signal(|| None::<BlogRoute>);
 
-        if raw_title.contains("[draft]") {
-            return false;
-        }
+    use_effect(move || {
+        let post = BlogRoute::static_routes()
+            .into_iter()
+            .rev()
+            .find(|route| {
+                let raw_title = &route.page().title;
+                if raw_title.contains("[draft]") {
+                    return false;
+                }
 
-        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
-        let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
-            return false;
-        };
+                let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
+                let [_id, _title, _category, slug, ..] = items.as_slice() else {
+                    return false;
+                };
 
-        slug == &slug_from_url
+                slug == &slug_from_url
+            });
+
+        blog_post.set(post);
     });
-    if let Some(route) = blog_post {
-        let raw_title = &route.page().title;
-        let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
-        let [id, title, category, slug, date, description, img, ..] = items.as_slice() else {
-            return Ok(Default::default());
-        };
 
-        blog_info.set(Some((
-            title.to_string(),
-            category.to_string(),
-            slug.to_string(),
-            date.to_string(),
-            description.to_string(),
-            img.to_string(),
-        )));
-        if let Ok(parsed_id) = id.parse::<i32>() {
-            post_id.set(Some(parsed_id));
+    use_effect(move || {
+        if let Some(route) = blog_post() {
+            let raw_title = &route.page().title;
+            let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
+
+            if let [id, title, category, slug, date, description, img, ..] = items.as_slice() {
+                blog_info.set(Some((
+                    title.to_string(),
+                    category.to_string(),
+                    slug.to_string(),
+                    date.to_string(),
+                    description.to_string(),
+                    img.to_string(),
+                )));
+                post_id.set(id.to_string());
+            } else {
+                blog_info.set(None);
+                post_id.set(String::new());
+            }
+        } else {
+            blog_info.set(None);
+            post_id.set(String::new());
         }
-    } else {
-        blog_info.set(None);
-    }
+    });
 
     rsx! {
         div {
@@ -105,9 +113,7 @@ pub fn Blog() -> Element {
                     } else {
                         p { class: "text-gray-400 italic text-center", "Loading post content..." }
                     }
-                    if let Some(post_id) = post_id() {
-                        CommentsSection { post_id: post_id }
-                    }
+                    CommentsSection { post_id: post_id }
                 }
             }
             Footer {}

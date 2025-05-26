@@ -86,9 +86,9 @@ pub async fn login_user(
     // Verify the password
     let parsed_hash = PasswordHash::new(&user.password)
         .map_err(|_| ServerFnError::new("Password verification error"))?;
-    if !Argon2::default()
+    if Argon2::default()
         .verify_password(body.password.as_bytes(), &parsed_hash)
-        .is_ok()
+        .is_err()
     {
         return Err(ServerFnError::new("Invalid email or password"));
     }
@@ -110,7 +110,7 @@ pub async fn login_user(
 
     let cookie = Cookie::build(("token", token.to_owned()))
         .path("/")
-        .max_age(time::Duration::hours(1).into())
+        .max_age(time::Duration::hours(1))
         .same_site(SameSite::Lax)
         .http_only(true);
 

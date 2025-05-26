@@ -5,7 +5,6 @@ pub(crate) mod header;
 use crate::blog::router_blog::BookRoute as BlogRoute;
 use crate::components::blog::card::BlogHomeCard;
 use crate::components::common::header::Header;
-use crate::components::common::server::fetch_and_store_posts;
 use std::collections::HashSet;
 
 use dioxus::prelude::*;
