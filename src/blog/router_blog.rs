@@ -48,6 +48,8 @@ pub enum BookRoute {
     OpensassKit {},
     #[route("/hacking-dioxus")]
     HackingDioxus {},
+    #[route("/browser-rs-release")]
+    BrowserRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -77,6 +79,7 @@ impl BookRoute {
             BookRoute::SliderRsRelease {} => use_mdbook::mdbook_shared::PageId(16usize),
             BookRoute::OpensassKit {} => use_mdbook::mdbook_shared::PageId(17usize),
             BookRoute::HackingDioxus {} => use_mdbook::mdbook_shared::PageId(18usize),
+            BookRoute::BrowserRsRelease {} => use_mdbook::mdbook_shared::PageId(19usize),
         }
     }
 }
@@ -1560,6 +1563,81 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::HackingDioxus {},
             ::use_mdbook::mdbook_shared::PageId(18usize),
         );
+        pages
+            .push((
+                19usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/browser-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/browser-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/browser-rs-release"
+                            .to_string(),
+                        url: BookRoute::BrowserRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌐 What Is Browser RS?".to_string(),
+                                id: "🌐-what-is-browser-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚀 Why You'll Love Browser RS".to_string(),
+                                id: "🚀-why-you'll-love-browser-rs".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔥 Getting Started with Yew".to_string(),
+                                id: "🔥-getting-started-with-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Add the Crate".to_string(),
+                                id: "add-the-crate".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Import the Component".to_string(),
+                                id: "import-the-component".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Wrap Your Content".to_string(),
+                                id: "wrap-your-content".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧩 Features That Matter".to_string(),
+                                id: "🧩-features-that-matter".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 Styled to Match".to_string(),
+                                id: "🎨-styled-to-match".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎛\u{fe0f} Full Control via Props".to_string(),
+                                id: "🎛\u{fe0f}-full-control-via-props".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🛠\u{fe0f} Real-World Use Cases".to_string(),
+                                id: "🛠\u{fe0f}-real-world-use-cases".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💬 Final Thoughts".to_string(),
+                                id: "💬-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(19usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::BrowserRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(19usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1734,6 +1812,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::HackingDioxus {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![19u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/browser-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/browser-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/browser-rs-release"
+                            .to_string(),
+                        location: Some(BookRoute::BrowserRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![20u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -8253,6 +8340,354 @@ pub fn HackingDioxus() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time, keep building, but build responsibly 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn BrowserRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "If you've ever tried building a polished, production-ready WASM UI in "
+            strong { "Rust" }
+            ", you know the drill: getting your app to "
+            em { "feel" }
+            " native often involves duct tape, a prayer to the compiler gods, and a suspicious amount of copy-pasted CSS. And when it comes to wrapping content in a clean, browser-like frame? Forget it, until now."
+        }
+        p {
+            "That's why we're excited to announce "
+            a { href: "https://crates.io/crates/browser-rs",
+                strong { "Browser RS" }
+            }
+            ", the "
+            strong { "drop-in browser frame component" }
+            " built natively for Rust. It's sleek, it's accessible, it's got style for days, and yes, it even plays nice with Tailwind. Whether you're embedding an iframe, a widget, or just want your app to look like it belongs inside a miniature Chrome tab, "
+            strong { "Browser RS" }
+            " delivers "
+            strong { "maximum polish with minimum fuss" }
+            "."
+        }
+        p {
+            "Let's dive in and see why Browser RS is the browser "
+            em { "inside" }
+            " your browser you didn't know you needed."
+        }
+        p {
+            img {
+                src: "https://media.tenor.com/dW17uHQlonMAAAAi/dance-anime.gif",
+                alt: "bro do be vibin",
+                title: "",
+            }
+        }
+        h2 { id: "-what-is-browser-rs",
+            a { href: "#-what-is-browser-rs", class: "header", "🌐 What Is Browser RS?" }
+        }
+        p {
+            strong { "Browser RS" }
+            " is a "
+            strong { "fully customizable browser-frame component" }
+            " built specifically for "
+            strong { "WASM Frameworks" }
+            ", Rust's powerhouse frontend frameworks. It lets you "
+            strong { "wrap any HTML content" }
+            " inside a mock browser UI, complete with a header bar, address field, window controls, and optional custom buttons, all while giving you fine-grained control over styling, behavior, and accessibility. Basically, it's like giving your content a tuxedo and sending it to prom."
+        }
+        h2 { id: "-why-youll-love-browser-rs",
+            a { href: "#-why-youll-love-browser-rs", class: "header",
+                "🚀 Why You'll Love Browser RS"
+            }
+        }
+        p {
+            "Not all browser frames are created equal. Some are rigid. Others are pure CSS gimmicks. But Browser RS? It's got "
+            strong {
+                "substance "
+                em { "and" }
+                " style"
+            }
+            ". Here's what sets it apart:"
+        }
+        ul {
+            li {
+                strong { "Plug-and-Play Simplicity" }
+                ": Add it to your project in seconds. No dark magic or manual wiring required."
+            }
+            li {
+                strong { "Full Control" }
+                ": Customize "
+                em { "everything" }
+                ", from the close button to the ARIA labels."
+            }
+            li {
+                strong { "Event-Driven" }
+                ": Hook into user actions like close, maximize, and minimize. It's like window management, but without the OS."
+            }
+            li {
+                strong { "Accessible by Default" }
+                ": Screen reader support, keyboard nav, ARIA labels, your app's users (and auditors) will thank you."
+            }
+            li {
+                strong { "Dark Mode Friendly" }
+                ": Browser RS fits in with your Tailwind-based design system, including that moody, stylish dark mode."
+            }
+        }
+        p { "Even Ferris the crab gave it claws up 🦀👍." }
+        h2 { id: "-getting-started-with-yew",
+            a { href: "#-getting-started-with-yew", class: "header",
+                "🔥 Getting Started with Yew"
+            }
+        }
+        p {
+            "If you're already in the Yew ecosystem, integrating "
+            strong { "Browser RS" }
+            " is smoother than a fresh "
+            code { "cargo build" }
+            "."
+        }
+        h3 { id: "add-the-crate",
+            a { href: "#add-the-crate", class: "header", "Add the Crate" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add browser</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "import-the-component",
+            a { href: "#import-the-component", class: "header", "Import the Component" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">browser_rs::yew::BrowserFrame;</span></pre>\n" }
+        h3 { id: "wrap-your-content",
+            a { href: "#wrap-your-content", class: "header", "Wrap Your Content" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> on_close </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">Callback::from(|_| log::info</span><span style=\"color:#f92672;\">!</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ffee99;\">&quot;Closed like it&#39;s 2003 and your mom needs the phone line&quot;</span><span style=\"color:#f8f8f2;\">));\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">BrowserFrame url</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;https://opensass.org&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()}} on_close</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{on_close}}</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{ </span><span style=\"color:#ffee99;\">&quot;Here&#39;s some magical Yew-powered content.&quot; </span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">BrowserFrame</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        h2 { id: "-features-that-matter",
+            a { href: "#-features-that-matter", class: "header", "🧩 Features That Matter" }
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Why It's Awesome" }
+            }
+            tr {
+                th {
+                    code { "url" }
+                    " & "
+                    code { "placeholder" }
+                    ""
+                }
+                th {
+                    "Looks real, works seamlessly, no "
+                    code { "<iframe>" }
+                    " nightmares needed"
+                }
+            }
+            tr {
+                th {
+                    code { "on_close" }
+                    " / "
+                    code { "on_minimize" }
+                    " / "
+                    code { "on_maximize" }
+                    ""
+                }
+                th { "Build dynamic, responsive UIs like a pro" }
+            }
+            tr {
+                th {
+                    code { "custom_buttons" }
+                    ""
+                }
+                th { "Add fun buttons, even a \"Launch Ferris\" rocket icon 🚀🦀" }
+            }
+            tr {
+                th {
+                    code { "class" }
+                    ", "
+                    code { "style" }
+                    ""
+                }
+                th { "Tailor every pixel to your liking" }
+            }
+            tr {
+                th { "ARIA & keyboard support" }
+                th { "Accessible by default, no extra effort required" }
+            }
+            tr {
+                th { "Size & Variant" }
+                th { "Choose from small to full screen, minimal to rich" }
+            }
+        }
+        p {
+            "And let's not forget: it "
+            strong { "works everywhere" }
+            ". Editors, sandboxes, dashboards, iframes, whatever you're building, it makes it look like it belongs on a browser within a browser, which is "
+            em { "almost" }
+            " as cool as Inception."
+        }
+        h2 { id: "-styled-to-match",
+            a { href: "#-styled-to-match", class: "header", "🎨 Styled to Match" }
+        }
+        p {
+            "Want that clean, modern look without writing a single line of CSS? Just pass in your Tailwind classes:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">BrowserFrame\n</span><span style=\"color:#f8f8f2;\">    url</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;https://opensass.org&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()}}\n</span><span style=\"color:#f8f8f2;\">    class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;rounded-xl shadow-xl&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    input_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;bg-gray-200 text-gray-900&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    container_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;flex-1 mx-4&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{ </span><span style=\"color:#ffee99;\">&quot;Styled browser frame!&quot; </span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">BrowserFrame</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p { "Your designers will think you've leveled up overnight." }
+        h2 { id: "-full-control-via-props",
+            a { href: "#-full-control-via-props", class: "header",
+                "🎛\u{fe0f} Full Control via Props"
+            }
+        }
+        p {
+            "Browser RS comes with "
+            strong { "a buffet of props" }
+            ", you can style, control, and wire up everything:"
+        }
+        ul {
+            li {
+                code { "url" }
+                ", "
+                code { "placeholder" }
+                ", "
+                code { "read_only" }
+            }
+            li {
+                code { "show_controls" }
+                ", "
+                code { "show_address_bar" }
+            }
+            li {
+                code { "on_url_change" }
+                ", "
+                code { "on_close" }
+                ", "
+                code { "on_minimize" }
+                ", "
+                code { "on_maximize" }
+            }
+            li {
+                code { "custom_buttons" }
+            }
+            li {
+                "Styling: "
+                code { "class" }
+                ", "
+                code { "style" }
+                ", "
+                code { "container_class" }
+                ", "
+                code { "input_class" }
+            }
+            li {
+                "Accessibility: "
+                code { "aria_label" }
+                ", "
+                code { "aria_describedby" }
+            }
+            li {
+                "Visual size & variant controls: "
+                code { "size" }
+                ", "
+                code { "variant" }
+            }
+            li {
+                "Full control of internal buttons: "
+                code { "close_*" }
+                ", "
+                code { "maximize_*" }
+                ", "
+                code { "share_*" }
+                ", etc."
+            }
+        }
+        p {
+            "If you want "
+            em { "boring" }
+            ", you've come to the wrong crate."
+        }
+        h2 { id: "-real-world-use-cases",
+            a { href: "#-real-world-use-cases", class: "header",
+                "🛠\u{fe0f} Real-World Use Cases"
+            }
+        }
+        p {
+            "Here's where "
+            strong { "Browser RS" }
+            " really shines:"
+        }
+        ul {
+            li {
+                strong { "Interactive Demos" }
+                ": Want to showcase your app with embedded code or tools? Wrap it in a "
+                code { "BrowserFrame" }
+                "."
+            }
+            li {
+                strong { "Developer Tools" }
+                ": Give your in-app dev tools a visual shell."
+            }
+            li {
+                strong { "Mini-browser Widgets" }
+                ": Use it for previews, sandboxed environments, or even static content."
+            }
+            li {
+                strong { "Figma-like Interfaces" }
+                ": Great for app builders and drag-n-drop UIs."
+            }
+        }
+        p {
+            "And yes, you can make it look like Safari, Firefox, or even Netscape Navigator (if you're "
+            em { "that" }
+            " nostalgic)."
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💬 Final Thoughts" }
+        }
+        p {
+            "If you're serious about building delightful web apps with "
+            strong { "Yew" }
+            " and "
+            strong { "WASM" }
+            ", Browser RS is a no-brainer."
+        }
+        ul {
+            li {
+                p { "✅ It makes your app look polished without extra design work." }
+            }
+            li {
+                p { "✅ It provides real interactivity through events and dynamic props." }
+            }
+            li {
+                p { "✅ It keeps your app accessible, responsive, and customizable." }
+            }
+            li {
+                p {
+                    "✅ It's built by Rust devs, "
+                    em { "for" }
+                    " Rust devs."
+                }
+            }
+        }
+        p {
+            "Ferris didn't have a browser frame when Rust was born, but if he did, "
+            strong { "he'd use this one" }
+            ", and probably paint it red 🦀."
+        }
+        blockquote {
+            p {
+                "At Open SASS, we're working tirelessly on making Rust web development extremely easy for everyone."
+            }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
         }
     }
 }
