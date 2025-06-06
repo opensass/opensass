@@ -50,6 +50,8 @@ pub enum BookRoute {
     HackingDioxus {},
     #[route("/browser-rs-release")]
     BrowserRsRelease {},
+    #[route("/hero-release")]
+    HeroRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -80,6 +82,7 @@ impl BookRoute {
             BookRoute::OpensassKit {} => use_mdbook::mdbook_shared::PageId(17usize),
             BookRoute::HackingDioxus {} => use_mdbook::mdbook_shared::PageId(18usize),
             BookRoute::BrowserRsRelease {} => use_mdbook::mdbook_shared::PageId(19usize),
+            BookRoute::HeroRelease {} => use_mdbook::mdbook_shared::PageId(20usize),
         }
     }
 }
@@ -640,7 +643,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 7usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| blog |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
+                        title: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
                             .to_string(),
                         url: BookRoute::ImageRsRelease {},
                         segments: vec![],
@@ -792,7 +795,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 9usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| blog |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
+                        title: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
                             .to_string(),
                         url: BookRoute::TableRsRelease {},
                         segments: vec![],
@@ -949,7 +952,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 11usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| blog |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
+                        title: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
                             .to_string(),
                         url: BookRoute::NavbarRelease {},
                         segments: vec![],
@@ -1054,7 +1057,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 12usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| blog |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
+                        title: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
                             .to_string(),
                         url: BookRoute::SidebarRelease {},
                         segments: vec![],
@@ -1189,7 +1192,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 14usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| blog |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
+                        title: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
                             .to_string(),
                         url: BookRoute::SkeletonRsRelease {},
                         segments: vec![],
@@ -1284,7 +1287,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 15usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 16 |---| 🎨 Infinite Theming with Theme |---| blog |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
+                        title: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
                             .to_string(),
                         url: BookRoute::ThemeRelease {},
                         segments: vec![],
@@ -1359,7 +1362,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 16usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| blog |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
+                        title: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
                             .to_string(),
                         url: BookRoute::SliderRsRelease {},
                         segments: vec![],
@@ -1430,7 +1433,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 17usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| blog |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
+                        title: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
                             .to_string(),
                         url: BookRoute::OpensassKit {},
                         segments: vec![],
@@ -1638,6 +1641,76 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::BrowserRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(19usize),
         );
+        pages
+            .push((
+                20usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hero-release"
+                            .to_string(),
+                        url: BookRoute::HeroRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Hero?".to_string(),
+                                id: "what-is-hero?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Why Hero?".to_string(),
+                                id: "why-hero?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Getting Started with Yew".to_string(),
+                                id: "getting-started-with-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Add the Crate".to_string(),
+                                id: "add-the-crate".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Import the Hero You Need".to_string(),
+                                id: "import-the-hero-you-need".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Basic Example".to_string(),
+                                id: "basic-example".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Tailwind Friendly".to_string(),
+                                id: "tailwind-friendly".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Full Control via Props".to_string(),
+                                id: "full-control-via-props".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Feature Recap".to_string(),
+                                id: "feature-recap".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(20usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::HeroRelease {},
+            ::use_mdbook::mdbook_shared::PageId(20usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1707,7 +1780,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| blog |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
+                        name: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
                             .to_string(),
                         location: Some(BookRoute::ImageRsRelease {}),
                         number: Some(
@@ -1725,7 +1798,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| blog |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
+                        name: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
                             .to_string(),
                         location: Some(BookRoute::TableRsRelease {}),
                         number: Some(
@@ -1744,7 +1817,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| blog |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
+                        name: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
                             .to_string(),
                         location: Some(BookRoute::NavbarRelease {}),
                         number: Some(
@@ -1753,7 +1826,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| blog |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
+                        name: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
                             .to_string(),
                         location: Some(BookRoute::SidebarRelease {}),
                         number: Some(
@@ -1771,7 +1844,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| blog |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
+                        name: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
                             .to_string(),
                         location: Some(BookRoute::SkeletonRsRelease {}),
                         number: Some(
@@ -1780,7 +1853,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 16 |---| 🎨 Infinite Theming with Theme |---| blog |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
+                        name: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
                             .to_string(),
                         location: Some(BookRoute::ThemeRelease {}),
                         number: Some(
@@ -1789,7 +1862,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| blog |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
+                        name: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
                             .to_string(),
                         location: Some(BookRoute::SliderRsRelease {}),
                         number: Some(
@@ -1798,7 +1871,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| blog |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
+                        name: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
                             .to_string(),
                         location: Some(BookRoute::OpensassKit {}),
                         number: Some(
@@ -1821,6 +1894,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::BrowserRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![20u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hero-release"
+                            .to_string(),
+                        location: Some(BookRoute::HeroRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![21u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -7722,7 +7804,7 @@ pub fn OpensassKit() -> dioxus::prelude::Element {
             strong { "centralized home for open, reusable, modular Open SASS style components" }
             ", handcrafted for modern web apps, and especially for our beloved WASM world. Think of it as the "
             strong { "Wikipedia of Open SASS UI components" }
-            ", except you don't need to donate $5 every time you scroll."
+            "."
         }
         p { "We're talking framework-agnostic, no-bloat, plug-and-play components that work with:" }
         ul {
@@ -8673,6 +8755,269 @@ pub fn BrowserRsRelease() -> dioxus::prelude::Element {
             "Ferris didn't have a browser frame when Rust was born, but if he did, "
             strong { "he'd use this one" }
             ", and probably paint it red 🦀."
+        }
+        blockquote {
+            p {
+                "At Open SASS, we're working tirelessly on making Rust web development extremely easy for everyone."
+            }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn HeroRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "If you've ever tried building a stunning landing page in Rust with a WASM frontend framework like "
+            strong { "Yew" }
+            ", "
+            strong { "Leptos" }
+            ", or "
+            strong { "Dioxus" }
+            ", you've probably run into the same issue: your \"hero section\" looks more like a background NPC."
+        }
+        p {
+            "You want that perfect first impression, bold headline, snappy call-to-action, beautiful image layout, but you don't want to fight the layout engine or hard-code 47 utility classes every time."
+        }
+        p {
+            "That's why we're excited to announce "
+            a { href: "https://crates.io/crates/hero",
+                strong { "Hero" }
+            }
+            ", the "
+            em { "zero-to-hero" }
+            " crate for building powerful, customizable hero sections in Rust's favorite WASM UI frameworks."
+        }
+        p {
+            "And yes, Ferris the crab gave it a big claw-five 🦀✋ because this crate is "
+            em { "shell-shockingly" }
+            " good."
+        }
+        p {
+            img {
+                src: "https://c.tenor.com/wqe1eEp7Bb0AAAAC/tenor.gif",
+                alt: "high five",
+                title: "",
+            }
+        }
+        h2 { id: "what-is-hero",
+            a { href: "#what-is-hero", class: "header", "What Is Hero?" }
+        }
+        p {
+            strong { "Hero" }
+            " is a battle-tested collection of "
+            strong { "drop-in hero section components" }
+            " designed to work seamlessly with Yew, Leptos, and Dioxus. From launching a landing page to showcasing a new product or giving your Rust app the glow-up it missed in the '90s, "
+            code { "hero" }
+            " is here to back you up. It's lightweight, unopinionated, accessible, responsive by default, and "
+            em { "ridiculously easy to customize" }
+            ". Think of it as your frontend starter spell, just a few lines of code, and boom: instant wow factor."
+        }
+        h2 { id: "why-hero",
+            a { href: "#why-hero", class: "header", "Why Hero?" }
+        }
+        p { "Let's break it down like Ferris breakdancing at a RustConf afterparty:" }
+        ul {
+            li {
+                p {
+                    strong { "Responsive by Default" }
+                    " Mobile-first layouts without even trying. It just works."
+                }
+            }
+            li {
+                p {
+                    strong { "Totally Customizable" }
+                    ": Want Tailwind? Inline styles? Class overrides? No problem, you do you."
+                }
+            }
+            li {
+                p {
+                    strong { "Pluggable Components" }
+                    ": Drop in custom headings, buttons, images, even other components like it's Lego."
+                }
+            }
+            li {
+                p {
+                    strong { "Theme-agnostic" }
+                    ": No hardcoded styles here. Light theme? Dark theme? Custom gradients and funky fonts? Hero doesn't judge."
+                }
+            }
+            li {
+                p {
+                    strong { "Framework Agnostic" }
+                    ": Works out-of-the-box with "
+                    strong { "Yew" }
+                    ", "
+                    strong { "Leptos" }
+                    ", and "
+                    strong { "Dioxus" }
+                    ", plus anything else brave enough to touch the WASM void."
+                }
+            }
+        }
+        h2 { id: "getting-started-with-yew",
+            a { href: "#getting-started-with-yew", class: "header", "Getting Started with Yew" }
+        }
+        h3 { id: "add-the-crate",
+            a { href: "#add-the-crate", class: "header", "Add the Crate" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add hero </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "import-the-hero-you-need",
+            a { href: "#import-the-hero-you-need", class: "header", "Import the Hero You Need" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">hero::yew::hero1::Hero </span><span style=\"color:#f92672;\">as</span><span style=\"color:#f8f8f2;\"> Hero1;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">hero::yew::hero2::Hero </span><span style=\"color:#f92672;\">as</span><span style=\"color:#f8f8f2;\"> Hero2;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">hero::yew::hero4::Hero </span><span style=\"color:#f92672;\">as</span><span style=\"color:#f8f8f2;\"> Hero3;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">hero::yew::hero3::Hero </span><span style=\"color:#f92672;\">as</span><span style=\"color:#f8f8f2;\"> Hero4;</span></pre>\n" }
+        h3 { id: "basic-example",
+            a { href: "#basic-example", class: "header", "Basic Example" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">hero::yew::hero1::Hero;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Hero\n</span><span style=\"color:#f8f8f2;\">            heading</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Build Fast in Rust&quot;\n</span><span style=\"color:#f8f8f2;\">            description</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Drop-in hero sections for Yew, Leptos, and Dioxus.&quot;\n</span><span style=\"color:#f8f8f2;\">            title_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;font-size: 3rem; font-weight: bold; color: #4F46E5;&quot;\n</span><span style=\"color:#f8f8f2;\">            description_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;font-size: 1.25rem; color: #6B7280;&quot;\n</span><span style=\"color:#f8f8f2;\">            cta_style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; border-radius: 0.5rem;&quot;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Congrats, you just went from \"blank screen\" to \"production-ready landing page\" in under 10 lines of Rust."
+        }
+        h2 { id: "tailwind-friendly",
+            a { href: "#tailwind-friendly", class: "header", "Tailwind Friendly" }
+        }
+        p {
+            "Prefer class-based styling?  "
+            code { "hero" }
+            " doesn't mind."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Hero\n</span><span style=\"color:#f8f8f2;\">    heading</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Launch Ultra-Fast Apps&quot;\n</span><span style=\"color:#f8f8f2;\">    description</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Style your hero section with Tailwind, inline styles, or any CSS framework.&quot;\n</span><span style=\"color:#f8f8f2;\">    container_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;max-w-6xl mx-auto px-4 py-24&quot;\n</span><span style=\"color:#f8f8f2;\">    title_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;text-5xl font-extrabold text-center text-white&quot;\n</span><span style=\"color:#f8f8f2;\">    description_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;mt-4 text-xl text-center text-gray-300&quot;\n</span><span style=\"color:#f8f8f2;\">    cta_class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;mt-6 bg-white text-black px-6 py-3 rounded-full shadow-lg hover:bg-gray-100&quot;\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p {
+            "Mix and match styles, props, and components like you're playing modded Minecraft, except instead of creepers, you're battling CSS bugs."
+        }
+        h2 { id: "full-control-via-props",
+            a { href: "#full-control-via-props", class: "header", "Full Control via Props" }
+        }
+        p {
+            "Each  "
+            code { "Hero" }
+            " component exposes a smorgasbord of props for maximum flexibility:"
+        }
+        ul {
+            li {
+                strong { "Content Props" }
+                ": "
+                code { "heading" }
+                ", "
+                code { "description" }
+                ", "
+                code { "cta" }
+                ", "
+                code { "tabs" }
+                ", etc."
+            }
+            li {
+                strong { "Styling Props" }
+                ": "
+                code { "title_style" }
+                ", "
+                code { "cta_style" }
+                ", "
+                code { "container_style" }
+            }
+            li {
+                strong { "Class Props" }
+                ": "
+                code { "container_class" }
+                ", "
+                code { "title_class" }
+                ", etc."
+            }
+            li {
+                strong { "Accessibility Props" }
+                ": "
+                code { "aria_label" }
+                ", "
+                code { "heading_tag" }
+                ", "
+                code { "role" }
+            }
+        }
+        p {
+            "Want a  "
+            code { "div" }
+            "? You got it. Want it to be an  "
+            code { "h2" }
+            " with ARIA support? Easy."
+        }
+        h2 { id: "feature-recap",
+            a { href: "#feature-recap", class: "header", "Feature Recap" }
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Why You'll Love It" }
+            }
+            tr {
+                th { "4 layout variants" }
+                th { "Variety without complexity" }
+            }
+            tr {
+                th { "Full theming support" }
+                th { "Dark mode, light mode, even cyberpunk" }
+            }
+            tr {
+                th { "Works in Yew/Leptos/Dioxus" }
+                th { "Build wherever Ferris dares to roam" }
+            }
+            tr {
+                th { "Easy integration" }
+                th { "No config files, no head-scratching" }
+            }
+            tr {
+                th { "Custom components support" }
+                th { "Drop in tabs, buttons, or an actual Ferris GIF" }
+            }
+        }
+        p { "Speaking of which, Ferris says \"this hero section slaps\"." }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "Hero isn't just another frontend wrapper, it's "
+            strong { "your first impression, delivered in idiomatic Rust" }
+            "."
+        }
+        ul {
+            li {
+                p { "✅ Works with your stack." }
+            }
+            li {
+                p { "✅ Respects your styling choices." }
+            }
+            li {
+                p { "✅ Looks great on every device." }
+            }
+            li {
+                p { "✅ Comes with four layout variants and infinite potential." }
+            }
+        }
+        p {
+            "Ferris didn't "
+            em { "choose" }
+            " to be the face of Rust. But if he had a website, we're pretty sure he'd use "
+            code { "hero" }
+            " to put his best claw forward."
+        }
+        p {
+            strong { "Go be the hero your frontend deserves." }
         }
         blockquote {
             p {

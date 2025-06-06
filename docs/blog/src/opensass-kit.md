@@ -12,7 +12,7 @@ That's exactly why we built **[Open SASS Kit](https://github.com/opensass/kit)**
 
 ## 🧰 What Is It?
 
-**Open SASS Kit** is not just a toolkit. It's not just a component library. It's not even just a CLI. It's the **centralized home for open, reusable, modular Open SASS style components**, handcrafted for modern web apps, and especially for our beloved WASM world. Think of it as the **Wikipedia of Open SASS UI components**, except you don't need to donate $5 every time you scroll.
+**Open SASS Kit** is not just a toolkit. It's not just a component library. It's not even just a CLI. It's the **centralized home for open, reusable, modular Open SASS style components**, handcrafted for modern web apps, and especially for our beloved WASM world. Think of it as the **Wikipedia of Open SASS UI components**.
 
 We're talking framework-agnostic, no-bloat, plug-and-play components that work with:
 
