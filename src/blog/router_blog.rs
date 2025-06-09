@@ -52,6 +52,8 @@ pub enum BookRoute {
     BrowserRsRelease {},
     #[route("/hero-release")]
     HeroRelease {},
+    #[route("/pride-rs-release")]
+    PrideRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -83,6 +85,7 @@ impl BookRoute {
             BookRoute::HackingDioxus {} => use_mdbook::mdbook_shared::PageId(18usize),
             BookRoute::BrowserRsRelease {} => use_mdbook::mdbook_shared::PageId(19usize),
             BookRoute::HeroRelease {} => use_mdbook::mdbook_shared::PageId(20usize),
+            BookRoute::PrideRsRelease {} => use_mdbook::mdbook_shared::PageId(21usize),
         }
     }
 }
@@ -1711,6 +1714,88 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::HeroRelease {},
             ::use_mdbook::mdbook_shared::PageId(20usize),
         );
+        pages
+            .push((
+                21usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-release"
+                            .to_string(),
+                        url: BookRoute::PrideRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🏳\u{fe0f}\u{200d}🌈 What Is Pride RS?"
+                                    .to_string(),
+                                id: "🏳\u{fe0f}\u{200d}🌈-what-is-pride-rs?"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Under the Hood".to_string(),
+                                id: "⚙\u{fe0f}-under-the-hood".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Flag Sizes".to_string(),
+                                id: "flag-sizes".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Direction (Layout)".to_string(),
+                                id: "direction-(layout)".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Style Everything".to_string(),
+                                id: "style-everything".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧰 Getting Started with Yew".to_string(),
+                                id: "🧰-getting-started-with-yew".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Step 1: Add the Crate".to_string(),
+                                id: "step-1:-add-the-crate".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Step 2: Use the Component".to_string(),
+                                id: "step-2:-use-the-component".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧑\u{200d}🎨 Real Use Cases".to_string(),
+                                id: "🧑\u{200d}🎨-real-use-cases".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🛠\u{fe0f} What's Next?".to_string(),
+                                id: "🛠\u{fe0f}-what's-next?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧑\u{200d}⚖\u{fe0f} For Judges".to_string(),
+                                id: "🧑\u{200d}⚖\u{fe0f}-for-judges".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💬 Final Thoughts".to_string(),
+                                id: "💬-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(21usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::PrideRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(21usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1903,6 +1988,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::HeroRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![21u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-release"
+                            .to_string(),
+                        location: Some(BookRoute::PrideRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![22u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -9033,6 +9127,255 @@ pub fn HeroRelease() -> dioxus::prelude::Element {
         }
         blockquote {
             p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn PrideRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "So I came across the "
+            a { href: "https://dev.to/challenges/frontend-2025-06-04",
+                strong { "Frontend Challenge: June Celebrations (CSS Art)" }
+            }
+            " on "
+            a { href: "https://dev.to", "dev.to" }
+            ", and I thought: "
+            em {
+                "\"Hey, what if I build a handy dandy crate for our gay friends that they can slap onto their rusty websites?\""
+            }
+            " This way, I learn a bit more about CSS, make something useful, and give Ferris the crab 🦀 a chance to finally come out of the shell."
+        }
+        p {
+            "And so, "
+            strong { "Pride RS" }
+            " was born."
+        }
+        h2 { id: "-what-is-pride-rs",
+            a { href: "#-what-is-pride-rs", class: "header",
+                "🏳\u{fe0f}\u{200d}🌈 What Is Pride RS?"
+            }
+        }
+        p {
+            strong { "Pride RS" }
+            " is a drop-in, customizable rusty component for rendering LGBTQ+ pride flags directly in your Rust frontend. From celebrating Pride Month, to adding some rainbow love to your app, or just want a vertical NonBinary flag for reasons between you and your browser, "
+            strong { "Pride RS" }
+            " makes it extremely easy."
+        }
+        p {
+            "Flags are rendered using "
+            a { href: "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction",
+                code { "flex-direction" }
+            }
+            ", composed of CSS-powered color stripes that flex in all the right directions: "
+            strong { "horizontally" }
+            " or "
+            strong { "vertically" }
+            ". No SVGs. No dependencies on assets. Just pure HTML and CSS, generated at runtime."
+        }
+        p { "And yes, Ferris is now canonically queer. You're welcome 🦀🏳\u{fe0f}\u{200d}🌈." }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c5d9zu5u9igr5aal5vy2.webp",
+                alt: "queer ferris",
+                title: "",
+            }
+        }
+        h2 { id: "-under-the-hood",
+            a { href: "#-under-the-hood", class: "header", "⚙\u{fe0f} Under the Hood" }
+        }
+        p {
+            "Each flag is defined in a build-time-generated hashmap using the magic of "
+            a { href: "https://docs.rs/phf",
+                code { "phf" }
+            }
+            ", which means "
+            strong { "zero runtime overhead" }
+            ", and fast constant lookups. The following is how one of the configurations looks:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">static </span><span style=\"color:#ff80f4;\">FLAG_CONFIGURATIONS</span><span style=\"color:#f8f8f2;\">: phf::Map&lt;</span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">, FlagConfig&gt; </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">phf_map! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;Rainbow&quot; </span><span style=\"color:#f92672;\">=&gt;</span><span style=\"color:#f8f8f2;\"> FlagConfig {{\n</span><span style=\"color:#f8f8f2;\">        colors: </span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">[</span><span style=\"color:#ffee99;\">&quot;#e40303&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#ff8c00&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#ffed00&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#008018&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#0066ff&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#732982&quot;</span><span style=\"color:#f8f8f2;\">],\n</span><span style=\"color:#f8f8f2;\">        direction: Direction::Horizontal,\n</span><span style=\"color:#f8f8f2;\">        name: </span><span style=\"color:#ffee99;\">&quot;Pride Rainbow Flag&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        description: </span><span style=\"color:#ffee99;\">&quot;The original rainbow pride flag representing LGBTQ+ community&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    }},\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;Transgender&quot; </span><span style=\"color:#f92672;\">=&gt;</span><span style=\"color:#f8f8f2;\"> FlagConfig {{\n</span><span style=\"color:#f8f8f2;\">        colors: </span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">[</span><span style=\"color:#ffee99;\">&quot;#5bcffa&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#f5abb9&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#ffffff&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#f5abb9&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;#5bcffa&quot;</span><span style=\"color:#f8f8f2;\">],\n</span><span style=\"color:#f8f8f2;\">        direction: Direction::Horizontal,\n</span><span style=\"color:#f8f8f2;\">        name: </span><span style=\"color:#ffee99;\">&quot;Transgender Flag&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        description: </span><span style=\"color:#ffee99;\">&quot;Flag representing transgender community with light blue, pink, and white stripes&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    }},\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#8c8c8c;\">// ... more flags!\n</span><span style=\"color:#f8f8f2;\">}};</span></pre>\n",
+        }
+        p {
+            "Each flag can be rendered either "
+            strong { "horizontally" }
+            " ("
+            code { "flex-direction: column" }
+            ") or "
+            strong { "vertically" }
+            " ("
+            code { "flex-direction: row" }
+            "). You control the direction, size, and style directly via props."
+        }
+        p {
+            "We've got a solid collection of flags (sourced from "
+            a { href: "https://en.wikipedia.org/wiki/Pride_flag", "Wikipedia" }
+            " with love and hex codes):"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[derive(\n</span><span style=\"color:#f8f8f2;\">    EnumString, EnumIter, AsRefStr, Display, Debug, Eq, PartialEq, Hash, Clone, Copy, Default,\n</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Type {{\n</span><span style=\"color:#f8f8f2;\">    #[default]\n</span><span style=\"color:#f8f8f2;\">    Rainbow,\n</span><span style=\"color:#f8f8f2;\">    Transgender,\n</span><span style=\"color:#f8f8f2;\">    Bisexual,\n</span><span style=\"color:#f8f8f2;\">    Lesbian,\n</span><span style=\"color:#f8f8f2;\">    Pansexual,\n</span><span style=\"color:#f8f8f2;\">    Asexual,\n</span><span style=\"color:#f8f8f2;\">    NonBinary,\n</span><span style=\"color:#f8f8f2;\">    Aromantic,\n</span><span style=\"color:#f8f8f2;\">    Demisexual,\n</span><span style=\"color:#f8f8f2;\">    Genderfluid,\n</span><span style=\"color:#f8f8f2;\">    Agender,\n</span><span style=\"color:#f8f8f2;\">    Polysexual,\n</span><span style=\"color:#f8f8f2;\">    Omnisexual,\n</span><span style=\"color:#f8f8f2;\">    Demiromantic,\n</span><span style=\"color:#f8f8f2;\">    Graysexual,\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Got a flag not listed? PRs welcome. Future updates will support more "
+            strong { "complex shapes" }
+            " too: think chevrons, triangles. Geometry is gay now."
+        }
+        p { "You can tweak everything:" }
+        h3 { id: "flag-sizes",
+            a { href: "#flag-sizes", class: "header", "Flag Sizes" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[derive(Debug, Clone, PartialEq, Default)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Size {{\n</span><span style=\"color:#f8f8f2;\">    Small,\n</span><span style=\"color:#f8f8f2;\">    #[default]\n</span><span style=\"color:#f8f8f2;\">    Medium,\n</span><span style=\"color:#f8f8f2;\">    Large,\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        h3 { id: "direction-layout",
+            a { href: "#direction-layout", class: "header", "Direction (Layout)" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[derive(EnumString, EnumIter, AsRefStr, Display, Debug, Clone, Copy, Default, PartialEq)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Direction {{\n</span><span style=\"color:#f8f8f2;\">    #[default]\n</span><span style=\"color:#f8f8f2;\">    Horizontal,\n</span><span style=\"color:#f8f8f2;\">    Vertical,\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        h3 { id: "style-everything",
+            a { href: "#style-everything", class: "header", "Style Everything" }
+        }
+        p {
+            "The  "
+            code { "Flag" }
+            " and  "
+            code { "FlagSection" }
+            " components give you full control over:"
+        }
+        ul {
+            li { "Stripe styling" }
+            li { "Container layout" }
+            li { "ARIA accessibility" }
+            li { "Tooltip behavior" }
+            li { "Custom CSS classes" }
+        }
+        p {
+            "Everything is built with "
+            strong { "accessibility-first" }
+            " principles: screen-reader labels, keyboard operability, and polite announcements for empty sections."
+        }
+        h2 { id: "-getting-started-with-yew",
+            a { href: "#-getting-started-with-yew", class: "header",
+                "🧰 Getting Started with Yew"
+            }
+        }
+        p {
+            "If you're already cozy with "
+            strong { "Yew" }
+            ", using Pride RS is pretty straightforward, i mean gayforward ;-):"
+        }
+        h3 { id: "step-1-add-the-crate",
+            a { href: "#step-1-add-the-crate", class: "header", "Step 1: Add the Crate" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add pride</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        h3 { id: "step-2-use-the-component",
+            a { href: "#step-2-use-the-component", class: "header", "Step 2: Use the Component" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">pride_rs::yew::{{FlagSection, Flag}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">pride_rs::{{Size, Type}};\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(App)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">app</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Flag r</span><span style=\"color:#f92672;\">#</span><span style=\"font-style:italic;color:#66d9ef;\">type</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Type::Bisexual}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Flag size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Size::Large}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">FlagSection\n</span><span style=\"color:#f8f8f2;\">                title</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Pride Flags&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">()}}\n</span><span style=\"color:#f8f8f2;\">                flags</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{vec![Type::Rainbow, Type::Transgender, Type::NonBinary]}}\n</span><span style=\"color:#f8f8f2;\">                id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;pride&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "That's it. You're rendering flags like a boss." }
+        h2 { id: "-real-use-cases",
+            a { href: "#-real-use-cases", class: "header", "🧑\u{200d}🎨 Real Use Cases" }
+        }
+        ul {
+            li {
+                "🎉 "
+                strong { "Celebrate Pride Month (e.g. This Dev Challenge)" }
+                " without hand-rolling rainbow divs."
+            }
+            li {
+                "🧪 "
+                strong { "Build inclusive UI demos" }
+                " for Rust-based component libraries."
+            }
+            li {
+                "📚 "
+                strong { "Educate with pride" }
+                ": show flag tooltips and screen-reader descriptions."
+            }
+            li {
+                "🏳\u{fe0f}\u{200d}⚧\u{fe0f} "
+                strong { "Trans visibility?" }
+                " Add the Transgender flag to your footer."
+            }
+        }
+        p { "Want a whole grid of flags grouped under a section title?" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">FlagSection\n</span><span style=\"color:#f8f8f2;\">    title</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Non-Cis Energy&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    flags</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{vec![Type::Agender, Type::Genderfluid, Type::Transgender]}}\n</span><span style=\"color:#f8f8f2;\">    id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;non-cis&quot;\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n" }
+        p { "Yes, even your flag containers can slay." }
+        p {
+            "Just imagine Ferris the crab walking across a NonBinary flag, wearing a tiny hat and waving a trans-colored claw. That's the vibe we're channeling."
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Rust + CSS + Queer joy = Pride RS 🏳\u{fe0f}\u{200d}🌈🦀</span></pre>\n" }
+        h2 { id: "-whats-next",
+            a { href: "#-whats-next", class: "header", "🛠\u{fe0f} What's Next?" }
+        }
+        ul {
+            li { "🌀 More complex flags (with shapes!)" }
+            li { "🌍 International pride flags" }
+            li { "🧩 SSR compatibility (if that's your thing)" }
+        }
+        h2 { id: "-for-judges",
+            a { href: "#-for-judges", class: "header", "🧑\u{200d}⚖\u{fe0f} For Judges" }
+        }
+        p {
+            "If you'd like to test this project locally, you can do so using either "
+            a { href: "http://github.com/opensass/pride-rs/tree/main/examples/dioxus",
+                strong { "Dioxus" }
+            }
+            " or "
+            a { href: "https://github.com/opensass/pride-rs/tree/main/examples/yew",
+                strong { "Yew" }
+            }
+            ". Please refer to the README files for detailed instructions on how to run it locally."
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💬 Final Thoughts" }
+        }
+        p {
+            "If you're building a Rust-based web UI and want to include a splash of "
+            strong { "queer pride" }
+            ", accessibility, and joy, "
+            strong { "Pride RS" }
+            " is your new best friend."
+        }
+        ul {
+            li {
+                p { "✅ Built with Rust" }
+            }
+            li {
+                p { "✅ Powered by CSS flex" }
+            }
+            li {
+                p { "✅ Fully accessible" }
+            }
+            li {
+                p { "✅ Entirely customizable" }
+            }
+            li {
+                p { "✅ Backed by Ferris's rainbow crab energy" }
+            }
+        }
+        blockquote {
+            p { "Add it. Ship it. Celebrate it 🏳\u{fe0f}\u{200d}🌈🦀." }
+        }
+        p {
+            "And hey, if you made it this far, consider "
+            a { href: "https://discord.gg/b5JbvHW5nv", "joining the Open SASS Discord" }
+            ". We've got a dedicated channel for the queer rusty web, one div at a time."
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8a7r5iibqyvsz4pf1tql.png",
+                alt: "discord",
+                title: "",
+            }
+        }
+        p {
+            "Till next time: "
+            em { "Keep Rustin', keep Pride'n" }
+            " 💖"
         }
     }
 }
