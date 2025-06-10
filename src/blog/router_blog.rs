@@ -54,6 +54,8 @@ pub enum BookRoute {
     HeroRelease {},
     #[route("/pride-rs-release")]
     PrideRsRelease {},
+    #[route("/pride-hero-release")]
+    PrideHeroRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -86,6 +88,7 @@ impl BookRoute {
             BookRoute::BrowserRsRelease {} => use_mdbook::mdbook_shared::PageId(19usize),
             BookRoute::HeroRelease {} => use_mdbook::mdbook_shared::PageId(20usize),
             BookRoute::PrideRsRelease {} => use_mdbook::mdbook_shared::PageId(21usize),
+            BookRoute::PrideHeroRelease {} => use_mdbook::mdbook_shared::PageId(22usize),
         }
     }
 }
@@ -1796,6 +1799,66 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::PrideRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(21usize),
         );
+        pages
+            .push((
+                22usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-hero-release"
+                            .to_string(),
+                        url: BookRoute::PrideHeroRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is ".to_string(),
+                                id: "what-is".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Demo".to_string(),
+                                id: "demo".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Why This Exists".to_string(),
+                                id: "why-this-exists".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Canon Update".to_string(),
+                                id: "canon-update".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Future Ideas".to_string(),
+                                id: "future-ideas".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Community Love".to_string(),
+                                id: "community-love".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "For Judges".to_string(),
+                                id: "for-judges".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(22usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::PrideHeroRelease {},
+            ::use_mdbook::mdbook_shared::PageId(22usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -1997,6 +2060,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::PrideRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![22u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-hero-release"
+                            .to_string(),
+                        location: Some(BookRoute::PrideHeroRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![23u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -9364,6 +9436,226 @@ pub fn PrideRsRelease() -> dioxus::prelude::Element {
             "And hey, if you made it this far, consider "
             a { href: "https://discord.gg/b5JbvHW5nv", "joining the Open SASS Discord" }
             ". We've got a dedicated channel for the queer rusty web, one div at a time."
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8a7r5iibqyvsz4pf1tql.png",
+                alt: "discord",
+                title: "",
+            }
+        }
+        p {
+            "Till next time: "
+            em { "Keep Rustin', keep Pride'n" }
+            " 💖"
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn PrideHeroRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Hello 👋!" }
+        }
+        p {
+            "So, yesterday, I released "
+            a { href: "https://github.com/opensass/pride-rs",
+                code { "pride-rs" }
+            }
+            " to allow Rustaceans to easily add pride flags to their landing pages. But then I thought, \"Hmm. This is nice, but it's not nearly gay "
+            em { "enough." }
+            "\" There was no theatrical entrance, no bright attractiveness, no Ferris the crab doing a dance move on a Progress Pride flag."
+        }
+        p {
+            "So obviously, I needed to take things to the "
+            em { "next level" }
+            "."
+        }
+        p {
+            "I should push it to the absolute extreme. I needed to put flags somewhere big, bold, fabulous, and meaningful. Naturally, I used "
+            a { href: "https://github.com/opensass/hero",
+                strong { "hero" }
+            }
+            " crate: a package for making hero sections in WASM: and decided it was time to inject it with unapologetic queer energy."
+        }
+        p {
+            "Thus, the "
+            strong {
+                code { "pride" }
+            }
+            " component was born."
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hz3hzfxdxtm5p6ie8na9.webp",
+                alt: "drinking rust",
+                title: "",
+            }
+        }
+        h2 { id: "what-is",
+            a { href: "#what-is", class: "header", "What Is " }
+            code { "pride" }
+        }
+        p {
+            "Think of  "
+            code { "pride" }
+            " as the drag queen cousin of the classic hero section: big text, big flags, big feels."
+        }
+        p {
+            "It's a "
+            em { "hero landing page component" }
+            ", built with the same modularity and power of "
+            code { "hero" }
+            ", but now capable of screaming \"🏳\u{fe0f}\u{200d}🌈 Gay Rights!\" on page load. It's designed for events, queer community shout-outs, or just asserting your gender in the HTML."
+        }
+        p { "You can now build pages like:" }
+        ul {
+            li { "\"Hey trans Rust devs, meet up at 5PM for iced coffee and WASM talk!\"" }
+            li { "\"Lesbian Rustaceans Unite: Queer systems programming social.\"" }
+            li { "\"Ferris the crab is nonbinary now. Come to our journal night.\"" }
+        }
+        h2 { id: "demo",
+            a { href: "#demo", class: "header", "Demo" }
+        }
+        p {
+            "Here's what the  "
+            code { "pride" }
+            " landing page look like using Yew:"
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2h7rdsw83semx2zlhmuv.gif",
+                alt: "Demo 1",
+                title: "",
+            }
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bdtvyvwq5wt2rlvxtkn8.gif",
+                alt: "Demo 2",
+                title: "",
+            }
+        }
+        p {
+            "That's it. You now have a stunning, queer-coded hero section greeting your users like a warm hug and a sparkle bomb."
+        }
+        h2 { id: "why-this-exists",
+            a { href: "#why-this-exists", class: "header", "Why This Exists" }
+        }
+        p {
+            "Let's be real: dev events, even Rust ones, can feel a little... cis-het-middle-aged-microservice-coded."
+        }
+        p { "And while we love robust type systems, sometimes what we really want is a space to say:" }
+        blockquote {
+            p {
+                "\"Hey, let's just hang out, talk open source, and also maybe be a little gay about it.\""
+            }
+        }
+        p { "This component is an invitation. A declaration. A banner saying:" }
+        blockquote {
+            p { "\"Queer Rust devs are here, and we brought snacks.\"" }
+        }
+        p {
+            "It helps organizers quickly build landing pages for events, meetups, game jams, mutual aid projects, journal nights, or \"let's write poetry in Rust\" circles."
+        }
+        h2 { id: "canon-update",
+            a { href: "#canon-update", class: "header", "Canon Update" }
+        }
+        p {
+            "Ferris the Crab? You mean "
+            em { "Fabulous" }
+            " Ferris? Yeah, Ferris is canonically queer. We've decided."
+        }
+        p { "They/them pronouns. Wears eyeliner. Possibly dating Clippy." }
+        p {
+            "In fact, we believe every flag in  "
+            code { "pride-rs" }
+            " is a little home Ferris can march across."
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hivupl6bxztiexnff64w.png",
+                alt: "dababy side eye",
+                title: "",
+            }
+        }
+        h2 { id: "future-ideas",
+            a { href: "#future-ideas", class: "header", "Future Ideas" }
+        }
+        p {
+            "Coming soon to  "
+            code { "pride" }
+            ":"
+        }
+        ul {
+            li { "Mobile responsiveness" }
+            li { "Document the Design and thought process" }
+            li { "Animated flag transitions" }
+            li { "Confetti drop on CTA click" }
+            li { "Server-side rendering support" }
+            li { "Ferris doing a little jig on hover" }
+        }
+        h2 { id: "community-love",
+            a { href: "#community-love", class: "header", "Community Love" }
+        }
+        p {
+            "Building queer-inclusive spaces in tech isn't just about HR policies, it's about what we ship. Even a single pride flag on a dev landing page can make someone feel seen."
+        }
+        p {
+            "Let's queer up the web one  "
+            code { "div" }
+            " at a time. In Rust. With  "
+            code { "hero" }
+            ". With Pride."
+        }
+        h2 { id: "for-judges",
+            a { href: "#for-judges", class: "header", "For Judges" }
+        }
+        p {
+            img {
+                src: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5izpe9uaqrzdmed7kiz5.jpg",
+                alt: "show me",
+                title: "",
+            }
+        }
+        p {
+            "If you'd like to test this project locally, you can do so using "
+            a { href: "https://github.com/opensass/hero/tree/main/examples/pride-hero",
+                strong { "Yew" }
+            }
+            ". Please refer to the "
+            a { href: "https://github.com/opensass/hero/blob/main/examples/pride-hero/README.md",
+                "README file"
+            }
+            " and "
+            a { href: "https://github.com/opensass/hero/blob/main/src/yew/pride.rs",
+                "the source code"
+            }
+            " for detailed instructions on how to run it locally."
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "If you're planning a queer-friendly event, building a Rust community initiative, or just want your site to slay, the  "
+            code { "pride" }
+            " component in  "
+            code { "hero" }
+            " has your back."
+        }
+        p {
+            "It's fast, accessible, and deeply, "
+            em { "flamboyantly" }
+            " Rust."
+        }
+        blockquote {
+            p { "Add it. Ship it. Celebrate it 🏳\u{fe0f}\u{200d}🌈🦀." }
+        }
+        p {
+            "P.S. Join us in the "
+            a { href: "https://discord.gg/b5JbvHW5nv", "Open SASS Discord" }
+            ": we have a queer rust web channel and it is exactly as lovely as you'd hope."
         }
         p {
             img {
