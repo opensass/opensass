@@ -56,6 +56,8 @@ pub enum BookRoute {
     PrideRsRelease {},
     #[route("/pride-hero-release")]
     PrideHeroRelease {},
+    #[route("/sushi-rs-release")]
+    SushiRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -89,6 +91,7 @@ impl BookRoute {
             BookRoute::HeroRelease {} => use_mdbook::mdbook_shared::PageId(20usize),
             BookRoute::PrideRsRelease {} => use_mdbook::mdbook_shared::PageId(21usize),
             BookRoute::PrideHeroRelease {} => use_mdbook::mdbook_shared::PageId(22usize),
+            BookRoute::SushiRsRelease {} => use_mdbook::mdbook_shared::PageId(23usize),
         }
     }
 }
@@ -1859,6 +1862,96 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::PrideHeroRelease {},
             ::use_mdbook::mdbook_shared::PageId(22usize),
         );
+        pages
+            .push((
+                23usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2025 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                            .to_string(),
+                        url: BookRoute::SushiRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🍣 Why Sushi, Specifically?".to_string(),
+                                id: "🍣-why-sushi,-specifically?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🍣 What Is Sushi RS?".to_string(),
+                                id: "🍣-what-is-sushi-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎯 The Challenge".to_string(),
+                                id: "🎯-the-challenge".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧬 Under the Hood".to_string(),
+                                id: "🧬-under-the-hood".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🍱 The Shapes".to_string(),
+                                id: "🍱-the-shapes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🐟 The Ingredients".to_string(),
+                                id: "🐟-the-ingredients".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Getting Started (Yew)".to_string(),
+                                id: "⚙\u{fe0f}-getting-started-(yew)".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🎨 Top-Edge Decorations".to_string(),
+                                id: "🎨-top-edge-decorations".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🖼\u{fe0f} SushiGallery".to_string(),
+                                id: "🖼\u{fe0f}-sushigallery".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧰 For the Dioxus People".to_string(),
+                                id: "🧰-for-the-dioxus-people".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🌱 For the Leptos Enjoyers".to_string(),
+                                id: "🌱-for-the-leptos-enjoyers".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🛠\u{fe0f} For Judges".to_string(),
+                                id: "🛠\u{fe0f}-for-judges".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💡 What's Next?".to_string(),
+                                id: "💡-what's-next?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💬 Final Thoughts".to_string(),
+                                id: "💬-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(23usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::SushiRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(23usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
@@ -2069,6 +2162,15 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::PrideHeroRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![23u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2025 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                            .to_string(),
+                        location: Some(BookRoute::SushiRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![24u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -9668,6 +9770,414 @@ pub fn PrideHeroRelease() -> dioxus::prelude::Element {
             "Till next time: "
             em { "Keep Rustin', keep Pride'n" }
             " 💖"
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn SushiRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome 👋!" }
+        }
+        p {
+            "So I came across the "
+            a { href: "https://dev.to/devteam/join-our-latest-frontend-challenge-comfort-food-edition-28a0",
+                strong { "Frontend Challenge: Comfort Food Edition" }
+            }
+            " on "
+            a { href: "https://dev.to", "dev.to" }
+            ", and I thought: "
+            em {
+                "\"Hey, what if I build a Rust crate that lets you render SVG sushi directly in your WASM frontend? How hard can it be?\""
+            }
+        }
+        p {
+            em { "(Famous last words. The borrow checker immediately disagreed.)" }
+        }
+        p {
+            img {
+                src: "https://preview.redd.it/i-just-need-to-finish-this-project-v0-tsxtxwf1q01b1.jpg?width=640&crop=smart&auto=webp&s=8d898d29a82af3fd38a0647ae56f5ac5aa43c8e1",
+                alt: "me starting this project",
+                title: "",
+            }
+        }
+        p {
+            "But spoiler: "
+            em { "we made it" }
+            ". And so, "
+            strong { "Sushi RS" }
+            " was born."
+        }
+        h2 { id: "-why-sushi-specifically",
+            a { href: "#-why-sushi-specifically", class: "header", "🍣 Why Sushi, Specifically?" }
+        }
+        p {
+            "Now, you might be wondering: "
+            em {
+                "\"Of all comfort foods: pizza, ramen, mac and cheese, a warm bowl of existential dread, why sushi?\""
+            }
+        }
+        p { "Fair question." }
+        p {
+            "The answer is personal, and a little dark, in the way that good sushi always has a little bit of wasabi hiding underneath."
+        }
+        p {
+            "I wrote a long-form post called "
+            a { href: "https://wiseai.dev/blogs/who-am-i",
+                strong { "Who Am I?" }
+            }
+            " that goes deep into my life, my mental health journey, and the concept of what I called "
+            strong { "sushicide 🍣" }
+            ", a metaphor I use for sushicidal ideation that I've carried for years. It's a real thing I struggle with. It's also my way of talking about it without the conversation immediately shutting down."
+        }
+        blockquote {
+            p {
+                "🚨 "
+                em {
+                    "\"Sushicide 🍣 is a serious problem that many among us struggle with. Software engineering is a heartless and lonely profession, and we should be more open about this topic so that we don't lose another innocent human soul.\""
+                }
+            }
+        }
+        p {
+            "So when the challenge said "
+            strong { "\"comfort food\"" }
+            ", I didn't just reach for sushi because it's delicious. I reached for it because it "
+            em { "means" }
+            " something to me, wrapped up in layers, held together at the seams, sometimes a little raw in the middle."
+        }
+        p {
+            "Building "
+            strong { "Sushi RS" }
+            " was, in a deeply weird developer-brain kind of way, a form of therapy. Instead of drowning in the darkness, I made the darkness into something beautiful, accessible, and open-source. I rendered it in SVG. I wrapped it in nori. I gave it ARIA labels so screen readers could describe it."
+        }
+        p {
+            em { "If that's not turning pain into art, I don't know what is." }
+        }
+        p {
+            img {
+                src: "https://c.tenor.com/MYZgsN2TDJAAAAAC/tenor.gif",
+                alt: "this is fine",
+                title: "",
+            }
+        }
+        p {
+            "If you're going through something heavy right now, I see you. Go read "
+            a { href: "https://wiseai.dev/blogs/who-am-i", "that post" }
+            ". And then come back here, because we're about to have fun with Rust."
+        }
+        h2 { id: "-what-is-sushi-rs",
+            a { href: "#-what-is-sushi-rs", class: "header", "🍣 What Is Sushi RS?" }
+        }
+        p {
+            strong { "Sushi RS" }
+            " is a cross-framework SVG sushi rendering component library for Rust + WASM frontends. It supports "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            " out of the box, and lets you render beautifully detailed, fully accessible sushi SVGs with a single component."
+        }
+        p {
+            "Yes, we said "
+            em { "beautifully detailed" }
+            ". Salmon gradients. Nori weave patterns. Red caviar rim decorations. Rice grain textures. This is not a placeholder circle with a fish emoji slapped on it."
+        }
+        p {
+            img {
+                src: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDA0OHhuOTd3Ym92Z25jYWdiejJzcXN0dmt5Z244bzA1eXFqbXRzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzlX9khlRIev1E2Y/giphy.gif",
+                alt: "gordon ramsay approves",
+                title: "",
+            }
+        }
+        h2 { id: "-the-challenge",
+            a { href: "#-the-challenge", class: "header", "🎯 The Challenge" }
+        }
+        p {
+            "The dev.to "
+            a { href: "https://dev.to/devteam/join-our-latest-frontend-challenge-comfort-food-edition-28a0",
+                strong { "Comfort Food Challenge" }
+            }
+            " asked us to build something related to comfort food. We could have built a pizza component. Or a burger one. Or just flexboxed some taco emojis and called it a day."
+        }
+        p {
+            "Instead, we chose "
+            em { "sushi" }
+            "."
+        }
+        p {
+            "Because nothing says \"comfort\" like watching the Rust borrow checker scream at you for 3 hours while you try to interpolate SVG hex colors inside a  "
+            code { "format!()" }
+            " macro."
+        }
+        blockquote {
+            p {
+                em { "Fun fact" }
+                ": you can't put "
+                code { "#3a6a20" }
+                " (nori green) inside a "
+                code { "r#\"...\"#" }
+                " raw string literal, because "
+                code { "\"#" }
+                " terminates the raw string. So our entire SVG rendering engine uses "
+                strong { "single-quote string templates" }
+                " with a "
+                code { ".replace('\\'', '\"')" }
+                " pass at the end. Comfort food? Yes. Comfortable code? "
+                em { "Debatable." }
+            }
+        }
+        p {
+            img {
+                src: "https://c.tenor.com/tOoW-TVnlhUAAAAC/tenor.gif",
+                alt: "typing furiously",
+                title: "",
+            }
+        }
+        h2 { id: "-under-the-hood",
+            a { href: "#-under-the-hood", class: "header", "🧬 Under the Hood" }
+        }
+        p {
+            "The core idea is a "
+            strong { "framework-agnostic SVG string engine" }
+            " living in "
+            code { "src/svg.rs" }
+            ". Each shape renderer returns a plain "
+            code { "String" }
+            " of SVG markup, which every framework embeds via its \"inner HTML\" escape hatch:"
+        }
+        table {
+            thead {
+                th { "Framework" }
+                th { "Escape hatch" }
+            }
+            tr {
+                th { "Yew" }
+                th {
+                    code { "Html::from_html_unchecked(...)" }
+                    ""
+                }
+            }
+            tr {
+                th { "Dioxus" }
+                th {
+                    code { "dangerous_inner_html: \"{{svg}}\"" }
+                    ""
+                }
+            }
+            tr {
+                th { "Leptos" }
+                th {
+                    code { "inner_html={{svg}}" }
+                    ""
+                }
+            }
+        }
+        p {
+            "The word "
+            strong { "\"dangerous\"" }
+            " is right there in the Dioxus API name and we used it anyway. No fear."
+        }
+        p {
+            "Here's how the shared  "
+            code { "SushiData" }
+            " struct that drives it all looks:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">struct </span><span style=\"color:#f8f8f2;\">SushiData {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">id: String,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">name: String,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">shape: SushiShape,      </span><span style=\"color:#8c8c8c;\">// Circular, Square, Triangular, Oval\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">state: SushiState,      </span><span style=\"color:#8c8c8c;\">// Rolled or Exploded 💥\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">view: SushiView,        </span><span style=\"color:#8c8c8c;\">// Top (bird&#39;s-eye) or Front (isometric)\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">ingredients: Vec&lt;Ingredient&gt;,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">outer_sheet: SushiOuterSheet,  </span><span style=\"color:#8c8c8c;\">// nori color + thickness\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">size: SushiSize,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">rice_color: Option&lt;String&gt;,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">top_edge: Option&lt;TopEdgeDecoration&gt;,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">description: Option&lt;String&gt;,\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Write once. Render everywhere. The Rust dream. 🦀" }
+        h2 { id: "-the-shapes",
+            a { href: "#-the-shapes", class: "header", "🍱 The Shapes" }
+        }
+        p { "Because one sushi shape would never be enough:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">SushiShape {{\n</span><span style=\"color:#f8f8f2;\">    Circular,    </span><span style=\"color:#8c8c8c;\">// 🟤 Classic maki roll\n</span><span style=\"color:#f8f8f2;\">    Square,      </span><span style=\"color:#8c8c8c;\">// 🟫 Tamago / oshi-style\n</span><span style=\"color:#f8f8f2;\">    Triangular,  </span><span style=\"color:#8c8c8c;\">// 🔺 Onigiri vibes\n</span><span style=\"color:#f8f8f2;\">    Oval,        </span><span style=\"color:#8c8c8c;\">// 🥚 Nigiri hand-pressed\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p { "And because we're overachievers who clearly have no regard for weekends:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">SushiView {{\n</span><span style=\"color:#f8f8f2;\">    Top,    </span><span style=\"color:#8c8c8c;\">// 🐦\u{200d}⬛ Bird&#39;s-eye: you&#39;re looking DOWN at the roll\n</span><span style=\"color:#f8f8f2;\">    Front,  </span><span style=\"color:#8c8c8c;\">// 👀 Isometric: you&#39;re eyeballing the cross-section\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p { "And when a roll just wants to be free:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">SushiState {{\n</span><span style=\"color:#f8f8f2;\">    Rolled,    </span><span style=\"color:#8c8c8c;\">// 🍣 Perfectly assembled\n</span><span style=\"color:#f8f8f2;\">    Exploded,  </span><span style=\"color:#8c8c8c;\">// 💥 Deconstructed (every ingredient side-by-side)\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p {
+            code { "SushiState::Exploded" }
+            " ignores shape and view entirely and renders all layers laid out next to each other like a crime scene forensics exhibit. Very artsy."
+        }
+        p {
+            img {
+                src: "https://i.giphy.com/2rqEdFfkMzXmo.webp",
+                alt: "explosion gif",
+                title: "",
+            }
+        }
+        h2 { id: "-the-ingredients",
+            a { href: "#-the-ingredients", class: "header", "🐟 The Ingredients" }
+        }
+        p { "Twelve ingredients, each with SVG gradients that actually look like the real thing:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Ingredient {{\n</span><span style=\"color:#f8f8f2;\">    Salmon,      </span><span style=\"color:#8c8c8c;\">// 🐟 Pinkish-orange gradient\n</span><span style=\"color:#f8f8f2;\">    Tuna,        </span><span style=\"color:#8c8c8c;\">// 🐠 Deep red\n</span><span style=\"color:#f8f8f2;\">    Avocado,     </span><span style=\"color:#8c8c8c;\">// 🥑 Green gradient\n</span><span style=\"color:#f8f8f2;\">    Egg,         </span><span style=\"color:#8c8c8c;\">// 🥚 Yellow-gold (Tamago)\n</span><span style=\"color:#f8f8f2;\">    RedCaviar,   </span><span style=\"color:#8c8c8c;\">// 🔴 Tiny red circles rendered individually\n</span><span style=\"color:#f8f8f2;\">    BlackCaviar, </span><span style=\"color:#8c8c8c;\">// ⚫ Same but dark and fancy\n</span><span style=\"color:#f8f8f2;\">    Cucumber,    </span><span style=\"color:#8c8c8c;\">// 🥒 Fresh green\n</span><span style=\"color:#f8f8f2;\">    Crab,        </span><span style=\"color:#8c8c8c;\">// 🦀 Coral + white layers\n</span><span style=\"color:#f8f8f2;\">    Shrimp,      </span><span style=\"color:#8c8c8c;\">// 🍤 Coral crescent\n</span><span style=\"color:#f8f8f2;\">    Mango,       </span><span style=\"color:#8c8c8c;\">// 🥭 Warm orange tropical\n</span><span style=\"color:#f8f8f2;\">    CreamCheese, </span><span style=\"color:#8c8c8c;\">// 🧀 Creamy white (Philadelphia roll represent)\n</span><span style=\"color:#f8f8f2;\">    Wasabi,      </span><span style=\"color:#8c8c8c;\">// 🌿 That sharp green that regrets you immediately\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Multiple ingredients? They get rendered as "
+            strong { "equal pie-slice arcs" }
+            " with individual "
+            code { "<title>" }
+            " elements for screen readers. Accessible sushi. Because we believe in inclusive dining."
+        }
+        h2 { id: "-getting-started-yew",
+            a { href: "#-getting-started-yew", class: "header", "⚙\u{fe0f} Getting Started (Yew)" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo add sushi</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew</span></pre>\n" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        p {
+            strong { "That's it." }
+            " You now have a fully accessible SVG salmon maki roll rendered by the fastest systems language on the planet. Ferris the crab has never been more culinarily accomplished. 🦀🍣"
+        }
+        h2 { id: "-top-edge-decorations",
+            a { href: "#-top-edge-decorations", class: "header", "🎨 Top-Edge Decorations" }
+        }
+        p { "Rolls can have rim decorations:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">TopEdgeType {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    RedCaviar,   </span><span style=\"color:#8c8c8c;\">// 🔴 Ring of tiny red roe dots\n</span><span style=\"color:#f8f8f2;\">    BlackCaviar, </span><span style=\"color:#8c8c8c;\">// ⚫ Dark premium roe ring\n</span><span style=\"color:#f8f8f2;\">    Sesame,      </span><span style=\"color:#8c8c8c;\">// ✳\u{fe0f}  Sesame seeds scattered on top\n</span><span style=\"color:#f8f8f2;\">    Herbs,       </span><span style=\"color:#8c8c8c;\">// 🌿 Herb speckles\n</span><span style=\"color:#f8f8f2;\">    Tobiko,      </span><span style=\"color:#8c8c8c;\">// 🟠 Bright orange flying fish roe\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "You can even set a custom color for the herb speckles. Yes, we went that far." }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        p {
+            "The fact that  "
+            code { "rice_color" }
+            " caused a type inference ambiguity with Yew's prop system because of  "
+            code { "Option<_>: IntoPropValue<Option<String>>" }
+            " having two possible implementations is both hilarious and deeply unhinged. We fixed it. Don't worry about it. 😇"
+        }
+        h2 { id: "-sushigallery",
+            a { href: "#-sushigallery", class: "header", "🖼\u{fe0f} SushiGallery" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">sushi_rs::yew::SushiGallery;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">sushi_rs::common::default_sushi_gallery;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">html! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">SushiGallery items</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#66d9ef;\">default_sushi_gallery</span><span style=\"color:#f8f8f2;\">()}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p {
+            "One function call. Twelve sushi rolls. A whole ikebana-level arrangement on your screen. The  "
+            code { "default_sushi_gallery()" }
+            " function returns a  "
+            code { "Vec<SushiData>" }
+            " with pre-built sushi configurations so you can drop an entire sushi restaurant into your WASM app with one line of Rust."
+        }
+        p { "Michelin star pending. 🌟" }
+        h2 { id: "-for-the-dioxus-people",
+            a { href: "#-for-the-dioxus-people", class: "header", "🧰 For the Dioxus People" }
+        }
+        p { "We see you. RSX syntax incoming:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">rsx! {{\n</span><span style=\"color:#f8f8f2;\">    Sushi {{\n</span><span style=\"color:#f8f8f2;\">        id: </span><span style=\"color:#ffee99;\">&quot;tuna-nigiri&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        name: </span><span style=\"color:#ffee99;\">&quot;Tuna Nigiri&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        shape: SushiShape::Oval,\n</span><span style=\"color:#f8f8f2;\">        ingredients: vec![Ingredient::Tuna],\n</span><span style=\"color:#f8f8f2;\">        outer_sheet: SushiOuterSheet {{\n</span><span style=\"color:#f8f8f2;\">            color: </span><span style=\"color:#ffee99;\">&quot;transparent&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">to_string</span><span style=\"color:#f8f8f2;\">(),\n</span><span style=\"color:#f8f8f2;\">            thickness: </span><span style=\"color:#ff80f4;\">0.0</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">        }},\n</span><span style=\"color:#f8f8f2;\">        size: SushiSize {{ width: </span><span style=\"color:#ff80f4;\">150.0</span><span style=\"color:#f8f8f2;\">, height: </span><span style=\"color:#ff80f4;\">100.0 </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            code { "dangerous_inner_html" }
+            " has been used. Fingers crossed. Tests pass."
+        }
+        h2 { id: "-for-the-leptos-enjoyers",
+            a { href: "#-for-the-leptos-enjoyers", class: "header", "🌱 For the Leptos Enjoyers" }
+        }
+        p {
+            "Leptos gets  "
+            code { "#[prop(into)]" }
+            " on  "
+            code { "id" }
+            " and  "
+            code { "name" }
+            " so you can pass string literals directly without  "
+            code { ".to_string()" }
+            " everywhere. You're welcome:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">view! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Sushi\n</span><span style=\"color:#f8f8f2;\">        id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;avocado-maki&quot;\n</span><span style=\"color:#f8f8f2;\">        name</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Avocado Maki&quot;\n</span><span style=\"color:#f8f8f2;\">        shape</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">SushiShape::Circular\n</span><span style=\"color:#f8f8f2;\">        ingredients</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">vec![Ingredient::Avocado]\n</span><span style=\"color:#f8f8f2;\">        outer_sheet</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">SushiOuterSheet {{ color: </span><span style=\"color:#ff80f4;\">NORI_COLOR</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">into</span><span style=\"color:#f8f8f2;\">(), thickness: </span><span style=\"color:#ff80f4;\">10.0 </span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">        size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">SushiSize {{ width: </span><span style=\"color:#ff80f4;\">140.0</span><span style=\"color:#f8f8f2;\">, height: </span><span style=\"color:#ff80f4;\">140.0 </span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Thin props API, zero drama. Just good wholesome sushi." }
+        h2 { id: "-for-judges",
+            a { href: "#-for-judges", class: "header", "🛠\u{fe0f} For Judges" }
+        }
+        p { "Want to try it locally? Each example folder has full instructions:" }
+        ul {
+            li {
+                a { href: "https://github.com/opensass/sushi-rs/tree/main/examples/yew",
+                    "Yew example"
+                }
+                ": run with "
+                code { "trunk serve --port 3000" }
+            }
+            li {
+                a { href: "https://github.com/opensass/sushi-rs/tree/main/examples/dioxus",
+                    "Dioxus example"
+                }
+                ": run with "
+                code { "dx serve --port 3000" }
+            }
+            li {
+                a { href: "https://github.com/opensass/sushi-rs/tree/main/examples/leptos",
+                    "Leptos example"
+                }
+                ": run with "
+                code { "trunk serve --port 3000" }
+            }
+        }
+        p {
+            "Each landing page shows a 3-column grid of 12 interactive example cards: rendered sushi on the bottom, raw source code on the top."
+        }
+        h2 { id: "-whats-next",
+            a { href: "#-whats-next", class: "header", "💡 What's Next?" }
+        }
+        ul {
+            li {
+                "🕹\u{fe0f} "
+                strong { "Interactive sushi builder" }
+                " with reactive props"
+            }
+            li {
+                "🌍 "
+                strong { "Sushi Gallery themes" }
+                " (dark plating, minimalist kaiseki)"
+            }
+            li {
+                "🏎\u{fe0f} "
+                strong { "WASM streaming rendering" }
+                " for galleries with 100+ pieces"
+            }
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💬 Final Thoughts" }
+        }
+        p {
+            "When the challenge said \"comfort food,\" we didn't build a recipe card. We built a "
+            strong { "multi-framework, fully accessible, SVG sushi rendering engine" }
+            " in Rust."
+        }
+        ul {
+            li { "✅ Built with Rust and zero JavaScript" }
+            li { "✅ Works in Yew, Dioxus, and Leptos" }
+            li {
+                "✅ 4 shapes × 2 views × 12 ingredients = "
+                em { "a lot" }
+                " of sushi"
+            }
+            li { "✅ ARIA labels on every roll so your screen reader knows it's salmon" }
+            li { "✅ Ferris the crab is now also a sushi chef 🦀🍣" }
+        }
+        blockquote {
+            p { "Add it. Ship it. Eat it (figuratively). 🍣" }
+        }
+        p {
+            "If you made it to the end of this post without getting hungry, you are built different, and we want you on our team. Come say hi on "
+            a { href: "https://discord.gg/b5JbvHW5nv", "Discord" }
+            " and star "
+            a { href: "https://github.com/opensass/sushi-rs", "the repo" }
+            ". We have sushi. (SVG sushi. But still.)"
+        }
+        p {
+            img {
+                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSV1ZX7WKTTNgRRdmcYhw5RDIfk0y2tUE4L5m9mlMczQ&s=10",
+                alt: "ferris smoking with the boys",
+                title: "",
+            }
+        }
+        p {
+            "Till next time: "
+            em { "Keep Rustin', keep rollin'" }
+            " 🦀🍣"
         }
     }
 }
