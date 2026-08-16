@@ -20,22 +20,19 @@ pub fn Blog() -> Element {
     let mut blog_post = use_signal(|| None::<BlogRoute>);
 
     use_effect(move || {
-        let post = BlogRoute::static_routes()
-            .into_iter()
-            .rev()
-            .find(|route| {
-                let raw_title = &route.page().title;
-                if raw_title.contains("[draft]") {
-                    return false;
-                }
+        let post = BlogRoute::static_routes().into_iter().rev().find(|route| {
+            let raw_title = &route.page().title;
+            if raw_title.contains("[draft]") {
+                return false;
+            }
 
-                let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
-                let [_id, _title, _category, slug, ..] = items.as_slice() else {
-                    return false;
-                };
+            let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
+            let [_id, _title, _category, slug, ..] = items.as_slice() else {
+                return false;
+            };
 
-                slug == &slug_from_url
-            });
+            slug == &slug_from_url
+        });
 
         blog_post.set(post);
     });

@@ -22,7 +22,7 @@
 1. Install [`Dioxus CLI`](https://dioxuslabs.com/learn/0.6/getting_started):
 
    ```sh
-   cargo install dioxus-cli
+   cargo binstall dioxus-cli@0.6.3
    ```
 
 ## 🚀 Building and Running
@@ -30,7 +30,7 @@
 1. Fork/Clone the GitHub repository.
 
    ```sh
-   git clone https://github.com/opensass/opensass
+   git clone https://github.com/opensass/landing
    ```
 
 1. SSG The Blogs.

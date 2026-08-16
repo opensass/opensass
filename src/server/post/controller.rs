@@ -27,9 +27,12 @@ pub async fn get_comments(post_id: String) -> Result<Vec<Comment>, ServerFnError
         .map_err(|_| ServerFnError::new("Error while processing comments"))?
         .into_iter()
         .filter(|comment| {
-            match (comment.post.trim().parse::<i32>(), post_id.trim().parse::<i32>()) {
-                (Ok(a), Ok(b)) => {a == b},
-                _err => {false},
+            match (
+                comment.post.trim().parse::<i32>(),
+                post_id.trim().parse::<i32>(),
+            ) {
+                (Ok(a), Ok(b)) => a == b,
+                _err => false,
             }
         })
         .collect();
