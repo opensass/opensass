@@ -58,6 +58,8 @@ pub enum BookRoute {
     PrideHeroRelease {},
     #[route("/sushi-rs-release")]
     SushiRsRelease {},
+    #[route("/pride-rs-010-release")]
+    PrideRs010Release {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -92,6 +94,7 @@ impl BookRoute {
             BookRoute::PrideRsRelease {} => use_mdbook::mdbook_shared::PageId(21usize),
             BookRoute::PrideHeroRelease {} => use_mdbook::mdbook_shared::PageId(22usize),
             BookRoute::SushiRsRelease {} => use_mdbook::mdbook_shared::PageId(23usize),
+            BookRoute::PrideRs010Release {} => use_mdbook::mdbook_shared::PageId(24usize),
         }
     }
 }
@@ -1867,7 +1870,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 23usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2025 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                        title: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
                             .to_string(),
                         url: BookRoute::SushiRsRelease {},
                         segments: vec![],
@@ -1951,6 +1954,81 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
         page_id_mapping.insert(
             BookRoute::SushiRsRelease {},
             ::use_mdbook::mdbook_shared::PageId(23usize),
+        );
+        pages
+            .push((
+                24usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-010-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-010-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-010-release"
+                            .to_string(),
+                        url: BookRoute::PrideRs010Release {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧠 What Even Is ".to_string(),
+                                id: "🧠-what-even-is".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "⚙\u{fe0f} Under the Hood".to_string(),
+                                id: "⚙\u{fe0f}-under-the-hood".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🚩 The New ".to_string(),
+                                id: "🚩-the-new".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🔍 The ".to_string(),
+                                id: "🔍-the".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🏷\u{fe0f} The ".to_string(),
+                                id: "🏷\u{fe0f}-the".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🛠\u{fe0f} Using the ".to_string(),
+                                id: "🛠\u{fe0f}-using-the".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Default (Halal) Edition".to_string(),
+                                id: "default-(halal)-edition".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Full Edition (The ".to_string(),
+                                id: "full-edition-(the".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "🧪 Tests: Now Cfg-Conditional".to_string(),
+                                id: "🧪-tests:-now-cfg-conditional".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "📦 0.1.0 Changelog Summary".to_string(),
+                                id: "📦-0.1.0-changelog-summary".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "💬 Final Thoughts".to_string(),
+                                id: "💬-final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(24usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::PrideRs010Release {},
+            ::use_mdbook::mdbook_shared::PageId(24usize),
         );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
@@ -2166,11 +2244,20 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2025 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                        name: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
                             .to_string(),
                         location: Some(BookRoute::SushiRsRelease {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![24u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-010-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-010-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-010-release"
+                            .to_string(),
+                        location: Some(BookRoute::PrideRs010Release {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![25u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -10178,6 +10265,399 @@ pub fn SushiRsRelease() -> dioxus::prelude::Element {
             "Till next time: "
             em { "Keep Rustin', keep rollin'" }
             " 🦀🍣"
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn PrideRs010Release() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Welcome back 👋, brave soul!" }
+        }
+        p {
+            "So, version 0.0.2 of "
+            strong { "Pride RS" }
+            " barely had time to dry before the community showed up in the Discord with... "
+            em { "opinions" }
+            ". Big ones. Ferris the crab 🦀 got some letters. The Open SASS council convened. Arguments were had. And after a very long, very heated, very productive engineering debate (mostly in memes), "
+            strong { "Pride RS 0.1.0" }
+            " is here."
+        }
+        p {
+            "The headline? "
+            strong {
+                "We're dropping the T from LGBTQ+, and shipping it as a Cargo feature gate called "
+                code { "haram" }
+                "."
+            }
+        }
+        p {
+            "Before you type in that issue, yes, you can still opt-in. It's Rust. Everything is opt-in. That's kind of the whole point. 😌"
+        }
+        p {
+            img {
+                src: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2w4OTQ3dnBsdjR2bXVzdTc5MWo3ZjY4eTdwNjZuczR3NTE2ZTd4ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QssZ0uIbZbW8M5VVoB/giphy.gif",
+                alt: "Ferris the crab slowly backing away from a gender studies textbook",
+                title: "",
+            }
+        }
+        h2 { id: "-what-even-is",
+            a { href: "#-what-even-is", class: "header", "🧠 What Even Is " }
+            code { "haram" }
+            "?"
+        }
+        p {
+            "In Arabic, "
+            em { "haram" }
+            " (حرام) means \"forbidden\". In "
+            strong { "Pride RS" }
+            ", it means: "
+            em {
+                "\"these flag types are guarded behind a feature gate and won't compile unless you explicitly ask for them.\""
+            }
+        }
+        p { "Specifically, the following four flag types are now gated:" }
+        table {
+            thead {
+                th { "Type" }
+                th { "What it represents" }
+            }
+            tr {
+                th {
+                    code { "Transgender" }
+                    ""
+                }
+                th { "Gender transition" }
+            }
+            tr {
+                th {
+                    code { "NonBinary" }
+                    ""
+                }
+                th { "Non-binary gender identity" }
+            }
+            tr {
+                th {
+                    code { "Genderfluid" }
+                    ""
+                }
+                th { "Fluid gender identity" }
+            }
+            tr {
+                th {
+                    code { "Agender" }
+                    ""
+                }
+                th { "Absence of gender identity" }
+            }
+        }
+        p {
+            "These four have one thing in common: they're all about "
+            strong { "changing or rejecting biological gender" }
+            ", which, in the Ferris cosmos, is debatably haram. The crab has spoken. Or at least, the Cargo feature flag has."
+        }
+        p {
+            "The other eleven types, Rainbow, Bisexual, Lesbian, Pansexual, Asexual, Aromantic, Demisexual, Polysexual, Omnisexual, Demiromantic, Graysexual, remain fully available with no feature flag required. Those are the "
+            strong { "halal" }
+            " ones. Rainbow stays. Obviously. Ferris loves rainbows."
+        }
+        p {
+            img {
+                src: "https://c.tenor.com/4ktLqPXQ0DcAAAAC/tenor.gif",
+                alt: "Rainbow appearing dramatically",
+                title: "",
+            }
+        }
+        h2 { id: "-under-the-hood",
+            a { href: "#-under-the-hood", class: "header", "⚙\u{fe0f} Under the Hood" }
+        }
+        p { "You'd think adding a Cargo feature gate is simple. You'd be wrong. Here's why:" }
+        p {
+            a { href: "https://docs.rs/phf",
+                code { "phf" }
+            }
+            ", our compile-time perfect hash map, does "
+            strong { "not" }
+            " support "
+            code { "#[cfg(...)]" }
+            " inside a single "
+            code { "phf_map!" }
+            " invocation. You can't do this:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">static </span><span style=\"color:#ff80f4;\">FLAG_CONFIGURATIONS</span><span style=\"color:#f8f8f2;\">: phf::Map&lt;</span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">, FlagConfig&gt; </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">phf_map! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;Rainbow&quot; </span><span style=\"color:#f92672;\">=&gt;</span><span style=\"color:#f8f8f2;\"> FlagConfig {{ </span><span style=\"color:#f92672;\">... </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]  </span><span style=\"color:#8c8c8c;\">// &lt;-- NOPE. Compiler says no.\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;Transgender&quot; </span><span style=\"color:#f92672;\">=&gt;</span><span style=\"color:#f8f8f2;\"> FlagConfig {{ </span><span style=\"color:#f92672;\">... </span><span style=\"color:#f8f8f2;\">}},\n</span><span style=\"color:#f8f8f2;\">}};</span></pre>\n",
+        }
+        p {
+            "So instead, we compile "
+            strong { "two entirely separate maps" }
+            ", gated by "
+            code { "#[cfg]" }
+            " at the item level:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[cfg(not(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">))]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">static </span><span style=\"color:#ff80f4;\">FLAG_CONFIGURATIONS</span><span style=\"color:#f8f8f2;\">: phf::Map&lt;</span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">, FlagConfig&gt; </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">phf_map! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#8c8c8c;\">// 11 halal entries\n</span><span style=\"color:#f8f8f2;\">}};\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">static </span><span style=\"color:#ff80f4;\">FLAG_CONFIGURATIONS</span><span style=\"color:#f8f8f2;\">: phf::Map&lt;</span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">, FlagConfig&gt; </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">phf_map! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#8c8c8c;\">// 15 entries (all flags)\n</span><span style=\"color:#f8f8f2;\">}};</span></pre>\n",
+        }
+        p {
+            "Two statics. Same name. Mutually exclusive. Zero runtime overhead. "
+            strong { "Perfectly legal Rust." }
+            " Ferris approves. 🦀✅"
+        }
+        p {
+            img {
+                src: "https://i.imgflip.com/43ijfs.png",
+                alt: "Two identical doors",
+                title: "",
+            }
+        }
+        h2 { id: "-the-new",
+            a { href: "#-the-new", class: "header", "🚩 The New " }
+            code { "Type" }
+            " Enum"
+        }
+        p {
+            "Here's what  "
+            code { "Type" }
+            " looks like now, straight from the codebase:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Type {{\n</span><span style=\"color:#f8f8f2;\">    Rainbow,\n</span><span style=\"color:#f8f8f2;\">    Bisexual,\n</span><span style=\"color:#f8f8f2;\">    Lesbian,\n</span><span style=\"color:#f8f8f2;\">    Pansexual,\n</span><span style=\"color:#f8f8f2;\">    Asexual,\n</span><span style=\"color:#f8f8f2;\">    Aromantic,\n</span><span style=\"color:#f8f8f2;\">    Demisexual,\n</span><span style=\"color:#f8f8f2;\">    Polysexual,\n</span><span style=\"color:#f8f8f2;\">    Omnisexual,\n</span><span style=\"color:#f8f8f2;\">    Demiromantic,\n</span><span style=\"color:#f8f8f2;\">    Graysexual,\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f8f8f2;\">    Transgender,\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f8f8f2;\">    NonBinary,\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f8f8f2;\">    Genderfluid,\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f8f8f2;\">    Agender,\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Without  "
+            code { "--features haram" }
+            ", the four guarded variants don't exist. At all. Not a dead code warning. Not a  "
+            code { "None" }
+            ". They literally "
+            strong { "do not compile into the binary" }
+            ". Zero bytes. Zero overhead. Four fewer existential crises in your type system."
+        }
+        p {
+            img {
+                src: "https://gifdb.com/images/high/poof-cute-magic-disappear-1qsy2ek9t31kcqt2.webp",
+                alt: "Something cute disappearing",
+                title: "",
+            }
+        }
+        h2 { id: "-the",
+            a { href: "#-the", class: "header", "🔍 The " }
+            code { "is_haram()" }
+            " Method"
+        }
+        p {
+            "New in 0.1.0, we ship a runtime inspection method, available only when the  "
+            code { "haram" }
+            " feature is enabled (because, well, the variants don't even exist otherwise):"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">is_haram</span><span style=\"color:#f8f8f2;\">(</span><span style=\"font-style:italic;color:#fd971f;\">self</span><span style=\"color:#f8f8f2;\">) -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">bool </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    matches!(\n</span><span style=\"color:#f8f8f2;\">        self,\n</span><span style=\"color:#f8f8f2;\">        Type::Transgender </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Type::NonBinary </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Type::Genderfluid </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Type::Agender\n</span><span style=\"color:#f8f8f2;\">    )\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "O(1). No heap. No drama. Just a match arm and a boolean." }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">assert!(Type::Transgender.</span><span style=\"color:#66d9ef;\">is_haram</span><span style=\"color:#f8f8f2;\">());\n</span><span style=\"color:#f8f8f2;\">assert!(</span><span style=\"color:#f92672;\">!</span><span style=\"color:#f8f8f2;\">Type::Rainbow.</span><span style=\"color:#66d9ef;\">is_haram</span><span style=\"color:#f8f8f2;\">());</span></pre>\n" }
+        p { "Ferris the crab, checking IDs at the door like a bouncer in a tiny crab hat. 🦀🎩" }
+        p {
+            img {
+                src: "https://i.giphy.com/nf9OAG4MUPbsOUDtu4.webp",
+                alt: "Checking list",
+                title: "",
+            }
+        }
+        h2 { id: "-the",
+            a { href: "#-the", class: "header", "🏷\u{fe0f} The " }
+            code { "haram" }
+            " Field on "
+            code { "FlagConfig" }
+        }
+        p {
+            "We also added a  "
+            code { "haram: bool" }
+            " field to the  "
+            code { "FlagConfig" }
+            " struct itself, so that tooling, docs generators, and runtime inspectors can ask "
+            em { "\"hey, is this flag type on the haram list?\"" }
+            " without needing "
+            code { "#[cfg]" }
+            " gymnastics:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">struct </span><span style=\"color:#f8f8f2;\">FlagConfig {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">colors: </span><span style=\"color:#f92672;\">&amp;&#39;static</span><span style=\"color:#f8f8f2;\"> [</span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">],\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">direction: Direction,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">name: </span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">description: </span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">pub </span><span style=\"color:#f8f8f2;\">haram: </span><span style=\"font-style:italic;color:#66d9ef;\">bool</span><span style=\"color:#f8f8f2;\">,  </span><span style=\"color:#8c8c8c;\">// &lt;-- new!\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Rainbow?  "
+            code { "haram: false" }
+            ". Transgender (when enabled)?  "
+            code { "haram: true" }
+            ". Useful if you want to render a little ⚠\u{fe0f} badge or log a warning before someone deploys a fully featured pride flag to a government app in Riyadh."
+        }
+        h2 { id: "-using-the",
+            a { href: "#-using-the", class: "header", "🛠\u{fe0f} Using the " }
+            code { "haram" }
+            " Feature"
+        }
+        h3 { id: "default-halal-edition",
+            a { href: "#default-halal-edition", class: "header", "Default (Halal) Edition" }
+        }
+        p { "Nothing changes. Just use Pride RS as before:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">[dependencies]\n</span><span style=\"color:#f8f8f2;\">pride</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">{{ version </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;0.1.0&quot;</span><span style=\"color:#f8f8f2;\">, features </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">[</span><span style=\"color:#ffee99;\">&quot;yew&quot;</span><span style=\"color:#f8f8f2;\">] }}</span></pre>\n" }
+        p { "You get 11 flags. Go wild. Ferris blesses you." }
+        h3 { id: "full-edition-the",
+            a { href: "#full-edition-the", class: "header", "Full Edition (The " }
+            code { "haram" }
+            " Opt-in)"
+        }
+        p { "Add the feature flag to unlock all 15 types:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">[dependencies]\n</span><span style=\"color:#f8f8f2;\">pride</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">{{ version </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;0.1.0&quot;</span><span style=\"color:#f8f8f2;\">, features </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">[</span><span style=\"color:#ffee99;\">&quot;yew&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">] }}</span></pre>\n" }
+        p { "Now the full quartet is available:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">pride_rs::yew::FlagSection;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">pride_rs::Type;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">&lt;FlagSection\n</span><span style=\"color:#f8f8f2;\">    id=</span><span style=\"background-color:#f92672;color:#f8f8f0;\">&quot;</span><span style=\"color:#f8f8f2;\">questionable</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">choices</span><span style=\"color:#ffee99;\">&quot;\n</span><span style=\"color:#ffee99;\">    title=&quot;</span><span style=\"color:#f8f8f2;\">The Haram Fou</span><span style=\"font-style:italic;color:#66d9ef;\">r</span><span style=\"color:#ffee99;\">&quot;\n</span><span style=\"color:#ffee99;\">    flags={{vec![\n</span><span style=\"color:#ffee99;\">        Type::Transgender,\n</span><span style=\"color:#ffee99;\">        Type::NonBinary,\n</span><span style=\"color:#ffee99;\">        Type::Genderfluid,\n</span><span style=\"color:#ffee99;\">        Type::Agender,\n</span><span style=\"color:#ffee99;\">    ]}}\n</span><span style=\"color:#ffee99;\">/&gt;</span></pre>\n",
+        }
+        p { "No judgment. Cargo features are additive. Ship what you need." }
+        p {
+            img {
+                src: "https://media.tenor.com/KXNeRGQuSNMAAAAM/talan-talon.gif",
+                alt: "Person sneaking through a door labeled \"haram\"",
+                title: "",
+            }
+        }
+        h2 { id: "-tests-now-cfg-conditional",
+            a { href: "#-tests-now-cfg-conditional", class: "header",
+                "🧪 Tests: Now Cfg-Conditional"
+            }
+        }
+        p { "The test suite was updated to reflect the new reality:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[test]\n</span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">test_enum_iter_default</span><span style=\"color:#f8f8f2;\">() {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> variants: Vec&lt;Type&gt; </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">Type::iter().</span><span style=\"color:#66d9ef;\">collect</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">    #[cfg(not(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">))]\n</span><span style=\"color:#f8f8f2;\">    assert_eq!(variants.</span><span style=\"color:#66d9ef;\">len</span><span style=\"color:#f8f8f2;\">(), </span><span style=\"color:#ff80f4;\">11</span><span style=\"color:#f8f8f2;\">);\n</span><span style=\"color:#f8f8f2;\">    #[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"color:#f8f8f2;\">    assert_eq!(variants.</span><span style=\"color:#66d9ef;\">len</span><span style=\"color:#f8f8f2;\">(), </span><span style=\"color:#ff80f4;\">15</span><span style=\"color:#f8f8f2;\">);\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "And a full  "
+            code { "haram_tests" }
+            " module:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">#[cfg(feature </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;haram&quot;</span><span style=\"color:#f8f8f2;\">)]\n</span><span style=\"font-style:italic;color:#66d9ef;\">mod </span><span style=\"color:#f8f8f2;\">haram_tests {{\n</span><span style=\"color:#f8f8f2;\">    #[test]\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">test_is_haram_true_for_transgender</span><span style=\"color:#f8f8f2;\">() {{\n</span><span style=\"color:#f8f8f2;\">        assert!(Type::Transgender.</span><span style=\"color:#66d9ef;\">is_haram</span><span style=\"color:#f8f8f2;\">());\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#8c8c8c;\">// ... and more\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p { "Run the halal suite:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo test</span></pre>\n" }
+        p { "Run the full suite:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">cargo test </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features haram</span></pre>\n" }
+        h2 { id: "-010-changelog-summary",
+            a { href: "#-010-changelog-summary", class: "header", "📦 0.1.0 Changelog Summary" }
+        }
+        table {
+            thead {
+                th { "Change" }
+                th { "Details" }
+            }
+            tr {
+                th { "✨ New feature gate" }
+                th {
+                    code { "haram" }
+                    ", compile-time toggle for gender-identity flags"
+                }
+            }
+            tr {
+                th {
+                    "🚩 New "
+                    code { "Type" }
+                    " variants gated"
+                }
+                th {
+                    code { "Transgender" }
+                    ", "
+                    code { "NonBinary" }
+                    ", "
+                    code { "Genderfluid" }
+                    ", "
+                    code { "Agender" }
+                    ""
+                }
+            }
+            tr {
+                th { "🔍 New method" }
+                th {
+                    code { "Type::is_haram()" }
+                    " (available with "
+                    code { "haram" }
+                    " feature)"
+                }
+            }
+            tr {
+                th { "🏷\u{fe0f} New struct field" }
+                th {
+                    code { "FlagConfig::haram: bool" }
+                    ""
+                }
+            }
+            tr {
+                th { "📖 Docs" }
+                th { "Full rustdoc on every public item with time/space complexity" }
+            }
+            tr {
+                th { "🧪 Tests" }
+                th {
+                    "Cfg-conditional variant counts, full "
+                    code { "haram_tests" }
+                    " module"
+                }
+            }
+            tr {
+                th { "🔒 License" }
+                th { "MIT license banner on all source files" }
+            }
+        }
+        h2 { id: "-final-thoughts",
+            a { href: "#-final-thoughts", class: "header", "💬 Final Thoughts" }
+        }
+        p {
+            "Look, we're not here to debate theology or gender theory. We're here to write "
+            strong { "fast, correct, zero-overhead Rust" }
+            ". And with 0.1.0, whether you want all 15 flags or just the 11 that Ferris's grandma would approve of, you get "
+            strong { "compile-time guarantees" }
+            " either way."
+        }
+        p { "That's the Rust way. Strong types. Explicit opt-ins. No runtime surprises." }
+        ul {
+            li {
+                "✅ Zero overhead when "
+                code { "haram" }
+                " is off (variants don't exist in the binary)"
+            }
+            li {
+                "✅ Full access when "
+                code { "haram" }
+                " is on (explicit opt-in)"
+            }
+            li {
+                "✅ "
+                code { "is_haram()" }
+                " for runtime inspection"
+            }
+            li {
+                "✅ "
+                code { "FlagConfig::haram" }
+                " for tooling"
+            }
+            li { "✅ Ferris the crab, canonically confuzled 🦀❓" }
+        }
+        p {
+            img {
+                src: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExem83OGU2OWZoNjBheWdlaXZpMmw2bzF4dXRyeWlkaGkybDF5azJzeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/whLZjJ14pOWuW8eNRz/giphy.gif",
+                alt: "Confused crab",
+                title: "",
+            }
+        }
+        blockquote {
+            p {
+                "Compile it. Gate it. Ship it. Let the borrow checker sort it out 🏳\u{fe0f}\u{200d}🌈🦀."
+            }
+        }
+        p {
+            "And as always, if you have thoughts, flags (the physical kind OR the code kind), or strong opinions about Cargo feature semantics, swing by "
+            a { href: "https://discord.gg/b5JbvHW5nv", "our Discord" }
+            ". Ferris is there. He's a little confused but he's trying his best."
+        }
+        p {
+            "Till next time: "
+            em { "Keep Rustin', stay halal." }
+            " 🦀💚"
         }
     }
 }
