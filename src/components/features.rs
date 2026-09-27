@@ -4,6 +4,8 @@ pub(crate) mod item;
 use crate::components::common::header::Header;
 use crate::components::features::grid::Grid;
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[derive(Props, Clone, PartialEq)]
 struct Feature {
@@ -14,6 +16,8 @@ struct Feature {
 
 #[component]
 pub fn Features() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
     let features = vec![
         Feature {
             icon: rsx! {i {
@@ -72,7 +76,7 @@ pub fn Features() -> Element {
     ];
 
     rsx! {
-        section { id: "features", class: "bg-gray-100 py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center",
+        section { id: "features", class: if is_light { "bg-gray-100 py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center" } else { "py-28 px-16 md:px-4 font-roboto flex min-h-screen justify-center" }, style: if is_light { "" } else { "background: var(--bg-primary);" },
             div { class: "max-w-[1312px] mx-auto",
                 Header {
                     title: "Discover the Open SASS Community",

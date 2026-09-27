@@ -1,5 +1,4 @@
 use crate::blog::router_blog::BookRoute as BlogRoute;
-use crate::pages::blogs::ArrowRight;
 use crate::router::Route;
 use dioxus::prelude::*;
 
@@ -32,7 +31,7 @@ pub struct BlogCardProps {
 pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
     rsx! {
         div {
-            class: "flex flex-col border border-gray-300 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition transform hover:scale-105",
+            class: "flex flex-col border border-themed rounded-lg shadow-lg overflow-hidden bg-themed-card hover:shadow-xl transition transform hover:scale-105",
 
             if let Some(img_url) = &props.img {
                 img {
@@ -48,31 +47,31 @@ pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
                 class: "p-4 flex flex-col gap-2",
 
                 div {
-                    class: "text-xs font-semibold text-gray-600 uppercase",
+                    class: "text-xs font-semibold text-themed-secondary uppercase",
                     "{props.category}"
                 }
 
                 h2 {
-                    class: "text-lg font-bold text-gray-800",
+                    class: "text-lg font-bold text-themed-primary",
                     "{props.title}"
                 }
 
                 div {
                     class: "justify-between flex",
                     span {
-                        class: "text-gray-400",
+                        class: "text-themed-secondary",
                         "{props.desc.chars().take(30).collect::<String>()}...",
                     }
                     Link {
                         class: "text-blue-500 inline-flex items-center",
                         to: Route::BlogPost { child: props.route },
                         "Read more"
-                        ArrowRight {}
+                        i { class: "ml-2 text-sm fa-solid fa-arrow-right" }
                     }
                 }
 
                 div {
-                    class: "text-gray-500 text-xs mt-2",
+                    class: "text-themed-secondary text-xs mt-2",
                     "{props.created_at}"
                 }
             }
@@ -84,7 +83,7 @@ pub fn BlogHomeCard(props: BlogHomeCardProps) -> Element {
 pub fn BlogCard(props: BlogCardProps) -> Element {
     rsx! {
         div {
-            class: "flex flex-col md:flex-row gap-4 p-6 bg-gray-900 border border-gray-700 rounded-lg hover:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105",
+            class: "flex flex-col md:flex-row gap-4 p-6 bg-themed-card border border-themed rounded-lg hover:bg-themed-secondary shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105",
             if let Some(img_url) = &props.img {
                 div {
                     class: "w-full md:w-1/3 h-48 rounded-lg overflow-hidden",
@@ -101,29 +100,29 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                 class: "flex-1 flex flex-col justify-between gap-4",
 
                 div {
-                    class: "text-xs font-semibold text-white bg-gradient-to-r from-gray-600 to-gray-900 px-3 py-1 rounded-full shadow-md self-start mb-2 tracking-wide uppercase",
+                    class: "text-xs font-semibold text-themed-primary bg-themed-secondary px-3 py-1 rounded-full shadow-md self-start mb-2 tracking-wide uppercase",
                     "{props.category}"
                 }
 
                 h1 {
-                    class: "text-2xl font-bold text-white",
+                    class: "text-2xl font-bold text-themed-primary",
                     "{props.title}"
                 }
                 div {
                     class: "justify-between flex",
                     span {
-                        class: "text-gray-400",
+                        class: "text-themed-secondary",
                         "{props.desc.chars().take(70).collect::<String>()}...",
                     }
                     Link {
                         class: "text-indigo-500 inline-flex items-center",
                         to: Route::BlogPost { child: props.route },
                         "Read more"
-                        ArrowRight {}
+                        i { class: "ml-2 text-sm fa-solid fa-arrow-right" }
                     }
                 }
                 div {
-                    class: "flex justify-between items-center text-gray-500 text-sm",
+                    class: "flex justify-between items-center text-themed-secondary text-sm",
                     span {
                         "{props.created_at}"
                     }
@@ -132,7 +131,7 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                         a {
                             href: props.facebook,
                             target: "_blank",
-                            class: "text-gray-500 hover:text-white transition duration-200",
+                            class: "text-themed-secondary hover:text-themed-primary transition duration-200",
                             i {
                                 width: 30,
                                 height: 30,
@@ -142,7 +141,7 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                         a {
                             href: props.x,
                             target: "_blank",
-                            class: "text-gray-500 hover:text-white transition duration-200",
+                            class: "text-themed-secondary hover:text-themed-primary transition duration-200",
                             i {
                                 width: 30,
                                 height: 30,
@@ -152,7 +151,7 @@ pub fn BlogCard(props: BlogCardProps) -> Element {
                         a {
                             href: props.linkedin,
                             target: "_blank",
-                            class: "text-gray-500 hover:text-white transition duration-200",
+                            class: "text-themed-secondary hover:text-themed-primary transition duration-200",
                             i {
                                 width: 30,
                                 height: 30,

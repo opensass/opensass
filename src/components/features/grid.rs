@@ -14,7 +14,7 @@ pub fn Grid(props: FeatureGridProps) -> Element {
 
             for feature in &props.features {
                 div {
-                    class: "border border-black shadow-md p-6 rounded-lg bg-white cursor-pointer hover:bg-gray-100 hover:shadow-lg transition-all duration-300",
+                    class: "border border-themed shadow-md p-6 rounded-lg bg-themed-card cursor-pointer hover:bg-themed-secondary hover:shadow-lg transition-all duration-300",
 
                     FeatureItem {
                         icon: feature.icon.clone(),

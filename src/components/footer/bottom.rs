@@ -5,20 +5,43 @@ use dioxus::prelude::*;
 pub fn Bottom() -> Element {
     rsx! {
         div {
-            class: "border-t border-gray-700 mt-10 pt-6",
+            class: "border-t border-themed mt-10 pt-6",
             div {
-                class: "container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0",
+                class: "container mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-3 space-y-4 sm:space-y-0",
                 div {
-                    class: "text-sm text-gray-500",
-                    "© 2025. Designed by ",
+                    class: "text-sm text-themed-secondary",
+                    "© 2026. Designed by ",
                     a {
                         href: "https://github.com/opensass",
                         target: "_blank",
-                        class: "text-white hover:text-gray-400 transition-colors",
+                        class: "text-themed-primary hover:text-themed-secondary transition-colors",
                         "Open SASS"
                     }
                 },
-                SocialLinks {},
+                div {
+                    class: "flex items-center gap-4",
+                    a {
+                        href: "/blogs/privacy-policy",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        class: "text-xs font-['Lexend'] text-themed-secondary hover:text-themed-primary transition-colors duration-200",
+                        i { class: "fa-solid fa-shield-halved mr-1 text-xs" }
+                        "Privacy Policy"
+                    }
+                    span {
+                        class: "text-xs text-themed-secondary",
+                        "·"
+                    }
+                    a {
+                        href: "/blogs/terms-of-service",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        class: "text-xs font-['Lexend'] text-themed-secondary hover:text-themed-primary transition-colors duration-200",
+                        i { class: "fa-solid fa-file-contract mr-1 text-xs" }
+                        "Terms of Service"
+                    }
+                    SocialLinks {},
+                }
             }
         }
     }

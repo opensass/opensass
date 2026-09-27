@@ -1,5 +1,7 @@
 use crate::components::navbar::dropdown::Dropdown;
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[derive(PartialEq, Clone)]
 enum NavLink {
@@ -15,6 +17,13 @@ enum NavLink {
 
 #[component]
 pub fn NavLinks() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
+    let text_color = if is_light {
+        "text-gray-900"
+    } else {
+        "text-gray-100"
+    };
     let mut active_link = use_signal(|| NavLink::HomePage);
 
     let is_active = |link: &NavLink| {
@@ -41,7 +50,7 @@ pub fn NavLinks() -> Element {
             for (link, href, label) in nav_links {
                 Link {
                     to: href,
-                    class: format!("text-black text-lg hover:decoration-gray-500 {}", is_active(&link)),
+                    class: format!("text-lg hover:decoration-gray-500 {} {}", is_active(&link), text_color),
                     onclick: move |_| active_link.set(link.clone()),
                     "{label}"
                 }

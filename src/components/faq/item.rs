@@ -12,9 +12,9 @@ pub struct AccordionItemProps {
 pub fn AccordionItem(props: AccordionItemProps) -> Element {
     let display_class = if props.is_active { "block" } else { "hidden" };
     let title_class = if props.is_active {
-        "flex justify-between items-center py-4 px-5 bg-gray-600 text-white rounded-md cursor-pointer"
+        "flex justify-between items-center py-4 px-5 bg-themed-card border-themed border text-themed-primary rounded-md cursor-pointer"
     } else {
-        "flex justify-between items-center py-4 px-5 bg-gray-100 text-gray-700 rounded-md cursor-pointer hover:bg-gray-200"
+        "flex justify-between items-center py-4 px-5 bg-themed-secondary text-themed-primary rounded-md cursor-pointer hover:bg-themed-card"
     };
 
     rsx! {
@@ -28,7 +28,7 @@ pub fn AccordionItem(props: AccordionItemProps) -> Element {
                     "+"
                 }
             }
-            p { class: "mt-2 px-5 pb-4 text-gray-600 {display_class}", "{props.answer}" }
+            p { class: "mt-2 px-5 pb-4 text-themed-secondary {display_class}", "{props.answer}" }
         }
     }
 }

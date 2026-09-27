@@ -8,6 +8,44 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Landing Pages Sections -->
+  <url>
+    <loc>https://opensass.org/#features</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://opensass.org/#roadmap</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://opensass.org/#faq</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://opensass.org/#testimonial</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://opensass.org/#team</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://opensass.org/#blog</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
   <!-- Dynamic Pages -->
   <url>
     <loc>https://opensass.org/eldflow</loc>
@@ -48,20 +86,6 @@
   <url>
     <loc>https://opensass.org/contact</loc>
     <lastmod>2025-04-03</lastmod>
-    <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opensass.org/donate</loc>
-    <lastmod>2025-04-03</lastmod>
-    <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opensass.org/kit</loc>
-    <lastmod>2025-05-22</lastmod>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
@@ -204,6 +228,90 @@
 
   <url>
     <loc>https://opensass.org/blogs/theme-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/slider-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/opensass-kit</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/hacking-dioxus</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/browser-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/hero-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/pride-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/pride-hero-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/sushi-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/pride-rs-010-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/avatar-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/badge-rs-release</loc>
+    <lastmod>2025-04-03</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://opensass.org/blogs/card-rs-release</loc>
     <lastmod>2025-04-03</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>

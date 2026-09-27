@@ -1,6 +1,5 @@
 pub(crate) mod admin;
 pub(crate) mod blog;
-pub(crate) mod comments;
 pub(crate) mod common;
 pub(crate) mod faq;
 pub(crate) mod features;
