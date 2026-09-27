@@ -14,12 +14,12 @@ In Arabic, _haram_ (حرام) means "forbidden". In **Pride RS**, it means: _"th
 
 Specifically, the following four flag types are now gated:
 
-| Type | What it represents |
-|---|---|
-| `Transgender` | Gender transition |
-| `NonBinary` | Non-binary gender identity |
-| `Genderfluid` | Fluid gender identity |
-| `Agender` | Absence of gender identity |
+| Type          | What it represents         |
+| ------------- | -------------------------- |
+| `Transgender` | Gender transition          |
+| `NonBinary`   | Non-binary gender identity |
+| `Genderfluid` | Fluid gender identity      |
+| `Agender`     | Absence of gender identity |
 
 These four have one thing in common: they're all about **changing or rejecting biological gender**, which, in the Ferris cosmos, is debatably haram. The crab has spoken. Or at least, the Cargo feature flag has.
 
@@ -222,15 +222,15 @@ cargo test --features haram
 
 ## 📦 0.1.0 Changelog Summary
 
-| Change | Details |
-|---|---|
-| ✨ New feature gate | `haram`, compile-time toggle for gender-identity flags |
-| 🚩 New `Type` variants gated | `Transgender`, `NonBinary`, `Genderfluid`, `Agender` |
-| 🔍 New method | `Type::is_haram()` (available with `haram` feature) |
-| 🏷️ New struct field | `FlagConfig::haram: bool` |
-| 📖 Docs | Full rustdoc on every public item with time/space complexity |
-| 🧪 Tests | Cfg-conditional variant counts, full `haram_tests` module |
-| 🔒 License | MIT license banner on all source files |
+| Change                       | Details                                                      |
+| ---------------------------- | ------------------------------------------------------------ |
+| ✨ New feature gate          | `haram`, compile-time toggle for gender-identity flags       |
+| 🚩 New `Type` variants gated | `Transgender`, `NonBinary`, `Genderfluid`, `Agender`         |
+| 🔍 New method                | `Type::is_haram()` (available with `haram` feature)          |
+| 🏷️ New struct field          | `FlagConfig::haram: bool`                                    |
+| 📖 Docs                      | Full rustdoc on every public item with time/space complexity |
+| 🧪 Tests                     | Cfg-conditional variant counts, full `haram_tests` module    |
+| 🔒 License                   | MIT license banner on all source files                       |
 
 ## 💬 Final Thoughts
 

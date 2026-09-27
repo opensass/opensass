@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+
 Sitemap: https://opensass.org/assets/sitemap.xml

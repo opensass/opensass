@@ -67,8 +67,6 @@ pub enum Route {
     #[route("/admin")]
     AdminPanel {},
     // #[end_guard]
-    #[route("/donate")]
-    Donate {},
     #[route("/aibook")]
     AIBook {},
     #[route("/tripper")]
@@ -77,8 +75,6 @@ pub enum Route {
     NanoOG {},
     #[route("/eldflow")]
     ELDFlow {},
-    #[route("/kit")]
-    Kit {},
     #[route("/soulchain.pdf")]
     SoulChain {},
     // #[layout(Blog)]
@@ -95,9 +91,20 @@ pub enum Route {
 #[component]
 fn PageNotFound(route: Vec<String>) -> Element {
     rsx! {
-        h1 { "Page not found" }
-        p { "We are terribly sorry, but the page you requested doesn't exist." }
-        pre { color: "red", "log:\nattemped to navigate to: {route:?}" }
+        div {
+            class: "min-h-screen bg-black flex flex-col items-center justify-center font-sans",
+            div {
+                class: "flex flex-col items-center text-center max-w-md px-4",
+                i { class: "fa-solid fa-triangle-exclamation text-[#facc15] text-5xl mb-6" } // text-yellow-400
+                h1 { class: "text-white text-3xl md:text-4xl font-bold mb-4", "404 - Page not found" }
+                p { class: "text-gray-400 text-sm md:text-base mb-8", "We are terribly sorry, but the page you requested doesn't exist." }
+                Link {
+                    to: Route::Home {},
+                    class: "bg-[#16a34a] hover:bg-[#15803d] text-white font-semibold py-2 px-6 rounded-md transition-colors", // bg-green-600
+                    "← Back to Home"
+                }
+            }
+        }
     }
 }
 #[component]

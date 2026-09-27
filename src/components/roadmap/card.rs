@@ -23,12 +23,12 @@ pub fn RoadmapItemCard(roadmap_item: RoadmapItem) -> Element {
             VerticalLine { status: roadmap_item.status },
             StatusDot {},
             div {
-                class: format!("flex-none p-4 rounded-lg shadow-lg border-2 {}", match roadmap_item.status {
-                    RoadmapStatus::Active => "text-black border-black",
-                    RoadmapStatus::Inactive => "text-gray-400 border-gray-300",
+                class: format!("flex-none p-4 rounded-lg shadow-lg border-2 bg-themed-card {}", match roadmap_item.status {
+                    RoadmapStatus::Active => "text-themed-primary border-themed",
+                    RoadmapStatus::Inactive => "text-themed-secondary border-themed",
                 }),
                 div {
-                    class: "text-left",
+                    class: "text-left text-themed-primary",
                     h6 { class: "text-lg font-semibold", "{roadmap_item.date}" }
                     ul {
                         class: "text-sm list-disc list-inside space-y-1",

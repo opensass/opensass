@@ -8,9 +8,13 @@ use crate::components::roadmap::card::RoadmapItem;
 use crate::components::roadmap::card::RoadmapStatus;
 use crate::components::roadmap::section::RoadmapSection;
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[component]
 pub fn Roadmap() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
     let roadmap_data = vec![
         RoadmapItem {
             date: "2025 Q1",
@@ -37,13 +41,23 @@ pub fn Roadmap() -> Element {
                 "Integrate optimized Leptos components and templates for Open SASS",
                 "Enhance documentation to cover multi-framework project",
             ],
-            status: RoadmapStatus::Inactive,
+            status: RoadmapStatus::Active,
+        },
+        RoadmapItem {
+            date: "2026 Q4",
+            items: vec![
+                "Make Open SASS kit components complete",
+                "Create ready to deploy templates for Open SASS",
+                "Enhance documentation to cover multi-framework project",
+            ],
+            status: RoadmapStatus::Active,
         },
     ];
 
     rsx! {
         section {
             class: "flex flex-col items-center justify-center min-h-screen space-x-4 mt-10", id: "roadmap",
+            style: if is_light { "background: #ffffff;" } else { "background: var(--bg-primary);" },
             div { class: "container mx-auto",
                 Header {
                     title: "Our Roadmap Ahead",

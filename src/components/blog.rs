@@ -16,7 +16,7 @@ pub fn Blog() -> Element {
     rsx! {
         section {
             id: "blog",
-            class: "flex flex-col items-center p-4 bg-white min-h-screen justify-center",
+            class: "flex flex-col items-center p-4 bg-themed-primary min-h-screen justify-center",
             Header {
                 title: "Latest Insights",
                 subtitle: "Explore our latest posts, expert tips, and updates on everything Open SASS."
@@ -26,7 +26,7 @@ pub fn Blog() -> Element {
 
                 button {
                     class: format!("px-4 py-2 rounded-lg {}",
-                        if cat().is_none() { "bg-black text-white" } else { "bg-gray-200 text-black" }),
+                        if cat().is_none() { "bg-themed-card text-themed-primary border border-themed" } else { "bg-themed-secondary text-themed-secondary border border-themed" }),
                     onclick: move |_| cat.set(None),
                     "All"
                 }
@@ -35,13 +35,21 @@ pub fn Blog() -> Element {
 
             div {
                 class: "mb-8 grid grid-cols-1 md:grid-cols-3 gap-6",
-                for route in BlogRoute::static_routes().into_iter().rev().take(3) {
+                for route in BlogRoute::static_routes().into_iter().rev().filter(|r| {
+                    let title = &r.page().title;
+                    if title.contains("[draft]") {
+                        return false;
+                    }
+                    let clean = title.replace(" |---| |---| ", " |---|  |---| ").replace(" |---| |---| ", " |---|  |---| ");
+                    let items = clean.splitn(11, " |---| ").collect::<Vec<_>>();
+                    items.get(2).map(|c| c.trim()) != Some("legal")
+                }).take(3) {
                     BlogHomePostItem { route, cat }
                 }
             }
             Link {
                 to: "/blogs",
-                class: "px-4 py-2 rounded-lg bg-gray-200 text-black hover:text-white hover:bg-black",
+                class: "px-4 py-2 rounded-lg bg-themed-secondary text-themed-primary hover:bg-themed-card transition-colors border border-themed",
                 "Go To Blog"
             }
         }
@@ -65,6 +73,10 @@ fn CategoriesList(cat: Signal<Option<String>>) -> Element {
             continue;
         };
 
+        if *category == "legal" {
+            continue;
+        }
+
         let category = category.to_string();
 
         if unique_categories.insert(category.clone()) {
@@ -75,7 +87,7 @@ fn CategoriesList(cat: Signal<Option<String>>) -> Element {
     rsx! { for item in category_items {
     button {
         class: format!("px-4 py-2 rounded-lg {}",
-            if Some(item.clone()) == cat() { "bg-black text-white" } else { "bg-gray-200 text-black" }),
+            if Some(item.clone()) == cat() { "bg-themed-card text-themed-primary border border-themed" } else { "bg-themed-secondary text-themed-secondary border border-themed" }),
         onclick: move |_| cat.set(Some(item.clone())),
         "{item}"
     } } }
@@ -89,10 +101,21 @@ fn BlogHomePostItem(route: BlogRoute, cat: Signal<Option<String>>) -> Element {
         return rsx! {};
     }
 
-    let items = raw_title.splitn(11, " |---| ").collect::<Vec<_>>();
-    let [_, title, category, slug, date, description, img, ..] = items.as_slice() else {
-        panic!("Invalid post structure:");
-    };
+    let clean_title = raw_title
+        .replace(" |---| |---| ", " |---|  |---| ")
+        .replace(" |---| |---| ", " |---|  |---| ");
+    let items = clean_title.splitn(11, " |---| ").collect::<Vec<_>>();
+
+    let title = items.get(1).unwrap_or(&"").trim().to_string();
+    let category = items.get(2).unwrap_or(&"").trim().to_string();
+    let slug = items.get(3).unwrap_or(&"").trim().to_string();
+    let date = items.get(4).unwrap_or(&"").trim().to_string();
+    let description = items.get(5).unwrap_or(&"").trim().to_string();
+    let img = items.get(6).unwrap_or(&"").trim().to_string();
+
+    if category == "legal" {
+        return rsx! {};
+    }
 
     if Some(category.to_string()) == cat() {
         return rsx! {

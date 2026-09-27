@@ -3,9 +3,23 @@ pub(crate) mod card;
 use crate::components::project::card::Project;
 use crate::components::project::card::ProjectCard;
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[component]
 pub fn Projects() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
+    let title_color = if is_light {
+        "text-gray-800"
+    } else {
+        "text-white"
+    };
+    let subtitle_color = if is_light {
+        "text-gray-500"
+    } else {
+        "text-gray-400"
+    };
     let projects = vec![
         Project {
             title: "ELDFLOW: Effortless ELD Logging & AI Insights",
@@ -38,13 +52,13 @@ pub fn Projects() -> Element {
     ];
 
     rsx! {
-        section { id: "projects", class: "bg-white py-16 flex items-center justify-center min-h-screen",
+        section { id: "projects", class: if is_light { "bg-white py-16 flex items-center justify-center min-h-screen" } else { "py-16 flex items-center justify-center min-h-screen" }, style: if is_light { "" } else { "background: var(--bg-primary);" },
             div { class: "container mx-auto px-4",
                 div { class: "flex flex-col items-center",
                     div { class: "w-full mb-12",
                         div { class: "text-center", "data-aos": "fade-up", "data-aos-duration": "800",
-                            h2 { class: "text-5xl font-bold text-gray-800 mb-4 tracking-wide", "Our Innovative Projects" }
-                            p { class: "text-gray-500 text-lg", "Explore a selection of our projects, each crafted to push boundaries and deliver value." }
+                            h2 { class: format!("text-5xl font-bold mb-4 tracking-wide {}", title_color), "Our Innovative Projects" }
+                            p { class: format!("text-lg {}", subtitle_color), "Explore a selection of our projects, each crafted to push boundaries and deliver value." }
                         }
                     }
                     div { class: "w-full",

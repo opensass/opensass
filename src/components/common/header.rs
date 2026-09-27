@@ -10,10 +10,10 @@ pub struct HeaderProps {
 pub fn Header(props: HeaderProps) -> Element {
     rsx! {
         div { class: "max-w-[600px] mb-20 justify-center text-center",
-            h2 { class: "text-gray-800 text-4xl md:text-5xl font-bold text-black leading-tight mt-4 mb-6",
+            h2 { class: "text-themed-primary text-4xl md:text-5xl font-bold leading-tight mt-4 mb-6",
                 "{props.title}"
             }
-            p { class: "text-gray-500 text-lg text-black leading-relaxed mb-8",
+            p { class: "text-themed-secondary text-lg leading-relaxed mb-8",
                 "{props.subtitle}"
             }
         }

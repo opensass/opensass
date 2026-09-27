@@ -1,0 +1,57 @@
+# Open SASS Community
+
+> Open SASS gives you everything you need to create, deploy, and scale full-stack applications using Rust and WebAssembly. Developer-friendly tools, production-ready out of the box.
+
+Open SASS is an open-source community and platform for Rust and WebAssembly developers. We provide tools, templates, and resources that enable developers to build full-stack applications with SASS (Software As a Secure Service) architecture using the power of Rust and WASM.
+
+## About
+
+- Website: [https://opensass.org](https://opensass.org)
+- Blog index: [https://opensass.org/blogs](https://opensass.org/blogs)
+- Sitemap: [https://opensass.org/assets/sitemap.xml](https://opensass.org/assets/sitemap.xml)
+- Contact: oss@opensass.org
+- GitHub: [https://github.com/opensass](https://github.com/opensass)
+
+## Key Features
+
+- Seamless Integration with WASM Frameworks
+- Extensive Template Library
+- Customizable Components
+- Community-Driven Development
+- Comprehensive Documentation
+- Collaborative Tools for Teams
+
+## Blog Posts
+
+- [Announcing Open SASS](https://opensass.org/blogs/announcing-opensass)
+- [Introducing X-AI](https://opensass.org/blogs/introducing-x-ai)
+- [AIBook v0.0.2 Release](https://opensass.org/blogs/aibook-v002-release)
+- [Tripper v0.0.1 Release](https://opensass.org/blogs/tripper-v001-release)
+- [Beyond TypeScript](https://opensass.org/blogs/beyond-typescript)
+- [Rust Is God 101](https://opensass.org/blogs/rust-is-god-101)
+- [Open SASS vs Shadcn](https://opensass.org/blogs/opensass-vs-shadcn)
+- [Image RS Release](https://opensass.org/blogs/image-rs-release)
+- [Image RS vs Next JS Image](https://opensass.org/blogs/image-rs-vs-next-js-image)
+- [Table RS Release](https://opensass.org/blogs/table-rs-release)
+- [Tanstack Table vs Table RS](https://opensass.org/blogs/tanstack-table-vs-table-rs)
+- [Navbar Release](https://opensass.org/blogs/navbar-release)
+- [Sidebar Release](https://opensass.org/blogs/sidebar-release)
+- [Keep Using AWS](https://opensass.org/blogs/keep-using-aws)
+- [Skeleton RS Release](https://opensass.org/blogs/skeleton-rs-release)
+- [Theme Release](https://opensass.org/blogs/theme-release)
+- [Slider RS Release](https://opensass.org/blogs/slider-rs-release)
+- [Open SASS Kit](https://opensass.org/blogs/opensass-kit)
+- [Hacking Dioxus](https://opensass.org/blogs/hacking-dioxus)
+- [Browser RS Release](https://opensass.org/blogs/browser-rs-release)
+- [Hero Release](https://opensass.org/blogs/hero-release)
+- [Pride RS Release](https://opensass.org/blogs/pride-rs-release)
+- [Pride Hero Release](https://opensass.org/blogs/pride-hero-release)
+- [Sushi RS Release](https://opensass.org/blogs/sushi-rs-release)
+- [Pride RS 0.1.0 Release](https://opensass.org/blogs/pride-rs-010-release)
+- [Avatar RS Release](https://opensass.org/blogs/avatar-rs-release)
+- [Badge RS Release](https://opensass.org/blogs/badge-rs-release)
+- [Card RS Release](https://opensass.org/blogs/card-rs-release)
+
+## License
+
+© 2026 Open SASS Community. All content and code are licensed under the MIT License unless otherwise noted.

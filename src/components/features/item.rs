@@ -12,8 +12,8 @@ pub fn FeatureItem(props: ItemProps) -> Element {
     rsx! {
         div { class: "flex flex-col gap-6",
             div { class: "w-12 h-12", {props.icon} }
-            h3 { class: "text-2xl font-bold leading-snug text-black", "{props.title}" }
-            p { class: "text-lg text-black leading-relaxed", "{props.description}" }
+            h3 { class: "text-2xl font-bold leading-snug text-themed-primary", "{props.title}" }
+            p { class: "text-lg text-themed-secondary leading-relaxed", "{props.description}" }
         }
     }
 }

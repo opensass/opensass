@@ -60,6 +60,16 @@ pub enum BookRoute {
     SushiRsRelease {},
     #[route("/pride-rs-010-release")]
     PrideRs010Release {},
+    #[route("/avatar-rs-release")]
+    AvatarRsRelease {},
+    #[route("/badge-rs-release")]
+    BadgeRsRelease {},
+    #[route("/card-rs-release")]
+    CardRsRelease {},
+    #[route("/terms-of-service")]
+    TermsOfService {},
+    #[route("/privacy-policy")]
+    PrivacyPolicy {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -95,6 +105,11 @@ impl BookRoute {
             BookRoute::PrideHeroRelease {} => use_mdbook::mdbook_shared::PageId(22usize),
             BookRoute::SushiRsRelease {} => use_mdbook::mdbook_shared::PageId(23usize),
             BookRoute::PrideRs010Release {} => use_mdbook::mdbook_shared::PageId(24usize),
+            BookRoute::AvatarRsRelease {} => use_mdbook::mdbook_shared::PageId(25usize),
+            BookRoute::BadgeRsRelease {} => use_mdbook::mdbook_shared::PageId(26usize),
+            BookRoute::CardRsRelease {} => use_mdbook::mdbook_shared::PageId(27usize),
+            BookRoute::TermsOfService {} => use_mdbook::mdbook_shared::PageId(28usize),
+            BookRoute::PrivacyPolicy {} => use_mdbook::mdbook_shared::PageId(29usize),
         }
     }
 }
@@ -112,7 +127,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 0usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/announcing-opensass |---| https://x.com/intent/post?url=https://opensass.org/blogs/announcing-opensass |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/announcing-opensass"
+                        title: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/announcing-opensass.md"
                             .to_string(),
                         url: BookRoute::AnnouncingOpensass {},
                         segments: vec![],
@@ -162,7 +177,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 1usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/introducing-x-ai |---| https://x.com/intent/post?url=https://opensass.org/blogs/introducing-x-ai |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/introducing-x-ai"
+                        title: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/introducing-x-ai.md"
                             .to_string(),
                         url: BookRoute::IntroducingXAi {},
                         segments: vec![],
@@ -227,7 +242,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 2usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/aibook-v002-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/aibook-v002-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/aibook-v002-release"
+                        title: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/aibook-v002-release.md"
                             .to_string(),
                         url: BookRoute::AibookV002Release {},
                         segments: vec![],
@@ -279,7 +294,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 3usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/tripper-v001-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/tripper-v001-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/tripper-v001-release"
+                        title: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/tripper-v001-release.md"
                             .to_string(),
                         url: BookRoute::TripperV001Release {},
                         segments: vec![],
@@ -331,7 +346,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 4usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/beyond-typescript |---| https://x.com/intent/post?url=https://opensass.org/blogs/beyond-typescript |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/beyond-typescript"
+                        title: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://dev.to/wiseai/beyond-typescript-i4i |---| https://github.com/opensass/landing/blob/main/docs/blog/src/beyond-typescript.md"
                             .to_string(),
                         url: BookRoute::BeyondTypescript {},
                         segments: vec![],
@@ -445,7 +460,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 5usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 6 |---| Biblically Accurate Rust 😇 |---| blog |---| rust-is-god-101 |---| Apr 22 2025 |---| Rust is the biblically accurate programming language; Fast, safe, and blessed with memory safety. |---| https://github.com/user-attachments/assets/a9fc3f6f-8ad3-40b9-92c8-233efa64acc0 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/rust-is-god-101 |---| https://x.com/intent/post?url=https://opensass.org/blogs/rust-is-god-101 |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/rust-is-god-101"
+                        title: " 6 |---| Biblically Accurate Rust 😇 |---| blog |---| rust-is-god-101 |---| Apr 22 2025 |---| Rust is the biblically accurate programming language; Fast, safe, and blessed with memory safety. |---| https://github.com/user-attachments/assets/a9fc3f6f-8ad3-40b9-92c8-233efa64acc0 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/rust-is-god-101.md"
                             .to_string(),
                         url: BookRoute::RustIsGod101 {},
                         segments: vec![],
@@ -615,7 +630,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 6usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-vs-shadcn |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-vs-shadcn |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-vs-shadcn"
+                        title: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0 |---| https://dev.to/wiseai/open-sass-vs-shadcn-ui-4oc0 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/opensass-vs-shadcn.md"
                             .to_string(),
                         url: BookRoute::OpensassVsShadcn {},
                         segments: vec![],
@@ -655,7 +670,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 7usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
+                        title: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/image-rs-next-gen-wasm-image-component-4g2e |---| https://github.com/opensass/landing/blob/main/docs/blog/src/image-rs-release.md"
                             .to_string(),
                         url: BookRoute::ImageRsRelease {},
                         segments: vec![],
@@ -710,7 +725,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 8usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-vs-next-js-image |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-vs-next-js-image |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-vs-next-js-image"
+                        title: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1 |---| https://dev.to/wiseai/image-rs-vs-nextjs-image-c6k |---| https://github.com/opensass/landing/blob/main/docs/blog/src/image-rs-vs-next-js-image.md"
                             .to_string(),
                         url: BookRoute::ImageRsVsNextJsImage {},
                         segments: vec![],
@@ -807,7 +822,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 9usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
+                        title: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/table-rs-advanced-wasmy-table-component-4ela |---| https://github.com/opensass/landing/blob/main/docs/blog/src/table-rs-release.md"
                             .to_string(),
                         url: BookRoute::TableRsRelease {},
                         segments: vec![],
@@ -889,7 +904,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 10usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/tanstack-table-vs-table-rs |---| https://x.com/intent/post?url=https://opensass.org/blogs/tanstack-table-vs-table-rs |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/tanstack-table-vs-table-rs"
+                        title: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da |---| https://dev.to/wiseai/table-rs-why-wasm-outperforms-js-at-scale-23d5 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/tanstack-table-vs-table-rs.md"
                             .to_string(),
                         url: BookRoute::TanstackTableVsTableRs {
                         },
@@ -964,7 +979,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 11usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
+                        title: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://dev.to/wiseai/navbar-a-deliciously-simple-wasmy-navbar-component-5gmk |---| https://github.com/opensass/landing/blob/main/docs/blog/src/navbar-release.md"
                             .to_string(),
                         url: BookRoute::NavbarRelease {},
                         segments: vec![],
@@ -1069,7 +1084,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 12usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
+                        title: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://dev.to/wiseai/sidebar-the-composable-wasmy-sidebar-59fk |---| https://github.com/opensass/landing/blob/main/docs/blog/src/sidebar-release.md"
                             .to_string(),
                         url: BookRoute::SidebarRelease {},
                         segments: vec![],
@@ -1136,7 +1151,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 13usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/keep-using-aws |---| https://x.com/intent/post?url=https://opensass.org/blogs/keep-using-aws |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/keep-using-aws"
+                        title: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/keep-using-aws.md"
                             .to_string(),
                         url: BookRoute::KeepUsingAws {},
                         segments: vec![],
@@ -1204,7 +1219,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 14usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
+                        title: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://dev.to/wiseai/seamless-loading-with-skeleton-rs-4o5c |---| https://github.com/opensass/landing/blob/main/docs/blog/src/skeleton-rs-release.md"
                             .to_string(),
                         url: BookRoute::SkeletonRsRelease {},
                         segments: vec![],
@@ -1299,7 +1314,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 15usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
+                        title: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://dev.to/wiseai/infinite-theming-with-theme-47hp |---| https://github.com/opensass/landing/blob/main/docs/blog/src/theme-release.md"
                             .to_string(),
                         url: BookRoute::ThemeRelease {},
                         segments: vec![],
@@ -1374,7 +1389,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 16usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
+                        title: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://dev.to/wiseai/precision-sliders-with-slider-rs-lm8 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/slider-rs-release.md"
                             .to_string(),
                         url: BookRoute::SliderRsRelease {},
                         segments: vec![],
@@ -1445,7 +1460,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 17usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
+                        title: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://dev.to/wiseai/open-sass-kit-the-universal-ui-toolkit-5326 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/opensass-kit.md"
                             .to_string(),
                         url: BookRoute::OpensassKit {},
                         segments: vec![],
@@ -1505,7 +1520,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 18usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 19 |---| 👨🏻\u{200d}💻 Hacking Dioxus: How Vibe Coding Is Destroying Software Engineering |---| blog |---| hacking-dioxus |---| May 26 2025 |---| A critical reflection on security flaws found in the Dioxus UI framework. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jw39u3jm6nq5mu2qlre2.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hacking-dioxus |---| https://x.com/intent/post?url=https://opensass.org/blogs/hacking-dioxus |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hacking-dioxus"
+                        title: " 19 |---| 👨🏻\u{200d}💻 Hacking Dioxus: How Vibe Coding Is Destroying Software Engineering |---| blog |---| hacking-dioxus |---| May 26 2025 |---| A critical reflection on security flaws found in the Dioxus UI framework. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jw39u3jm6nq5mu2qlre2.png |---| https://dev.to/wiseai/hacking-dioxus-how-vibe-coding-is-destroying-software-engineering-3ggm |---| https://github.com/opensass/landing/blob/main/docs/blog/src/hacking-dioxus.md"
                             .to_string(),
                         url: BookRoute::HackingDioxus {},
                         segments: vec![],
@@ -1583,7 +1598,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 19usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/browser-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/browser-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/browser-rs-release"
+                        title: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://dev.to/wiseai/browser-rs-a-wasmy-browser-frame-component-4ida |---| https://github.com/opensass/landing/blob/main/docs/blog/src/browser-rs-release.md"
                             .to_string(),
                         url: BookRoute::BrowserRsRelease {},
                         segments: vec![],
@@ -1658,7 +1673,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 20usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hero-release"
+                        title: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://dev.to/wiseai/hero-wasm-ready-hero-section-components-16h2 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/hero-release.md"
                             .to_string(),
                         url: BookRoute::HeroRelease {},
                         segments: vec![],
@@ -1728,7 +1743,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 21usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-release"
+                        title: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://dev.to/wiseai/pride-rs-lgbtq-flag-component-for-rust-frontends-1e60 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-rs-release.md"
                             .to_string(),
                         url: BookRoute::PrideRsRelease {},
                         segments: vec![],
@@ -1810,7 +1825,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 22usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-hero-release"
+                        title: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://dev.to/wiseai/pride-hero-lgbtq-landing-page-for-wasm-frameworks-4kl5 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-hero-release.md"
                             .to_string(),
                         url: BookRoute::PrideHeroRelease {},
                         segments: vec![],
@@ -1870,7 +1885,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 23usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                        title: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/sushi-rs-svg-sushi-components-for-rust-frontends-2n1o |---| https://github.com/opensass/landing/blob/main/docs/blog/src/sushi-rs-release.md"
                             .to_string(),
                         url: BookRoute::SushiRsRelease {},
                         segments: vec![],
@@ -1960,7 +1975,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 24usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-010-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-010-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-010-release"
+                        title: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://dev.to/wiseai/pride-rs-010-dropping-the-t-from-lgbtq-mark-it-as-haram-1508 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-rs-010-release.md"
                             .to_string(),
                         url: BookRoute::PrideRs010Release {},
                         segments: vec![],
@@ -2030,13 +2045,412 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
             BookRoute::PrideRs010Release {},
             ::use_mdbook::mdbook_shared::PageId(24usize),
         );
+        pages
+            .push((
+                25usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::AvatarRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Avatar RS?".to_string(),
+                                id: "what-is-avatar-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Stack Under the Hood".to_string(),
+                                id: "the-stack-under-the-hood".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Core Components".to_string(),
+                                id: "core-components".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The container. Wraps ".to_string(),
+                                id: "the-container.-wraps".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Text initials, an icon, or anything you want rendered when the image hasn't loaded yet (or doesn't exist at all). Supports a "
+                                    .to_string(),
+                                id: "text-initials,-an-icon,-or-anything-you-want-rendered-when-the-image-hasn't-loaded-yet-(or-doesn't-exist-at-all).-supports-a"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Stack multiple avatars with automatic overlap, configurable max count, and an overflow badge showing how many more there are."
+                                    .to_string(),
+                                id: "stack-multiple-avatars-with-automatic-overlap,-configurable-max-count,-and-an-overflow-badge-showing-how-many-more-there-are."
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The ".to_string(),
+                                id: "the".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Framework Parity".to_string(),
+                                id: "framework-parity".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Soft Refresh & The Browser Cache Fix".to_string(),
+                                id: "soft-refresh-&-the-browser-cache-fix".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Colors, Variants, Sizes".to_string(),
+                                id: "colors,-variants,-sizes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accessibility".to_string(),
+                                id: "accessibility".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What We Didn't Do".to_string(),
+                                id: "what-we-didn't-do".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(25usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::AvatarRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(25usize),
+        );
+        pages
+            .push((
+                26usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::BadgeRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Badge RS?".to_string(),
+                                id: "what-is-badge-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Core Components".to_string(),
+                                id: "the-core-components".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The positioning wrapper. Drop it around any element and it becomes a badge target. Uses "
+                                    .to_string(),
+                                id: "the-positioning-wrapper.-drop-it-around-any-element-and-it-becomes-a-badge-target.-uses"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The actual indicator. Pass children and you get a labeled badge with text inside. Skip children and you get a compact do, no extra prop needed, just don't put anything inside."
+                                    .to_string(),
+                                id: "the-actual-indicator.-pass-children-and-you-get-a-labeled-badge-with-text-inside.-skip-children-and-you-get-a-compact-do,-no-extra-prop-needed,-just-don't-put-anything-inside."
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "A thin ".to_string(),
+                                id: "a-thin".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Colors, Variants, Sizes".to_string(),
+                                id: "colors,-variants,-sizes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Positioning Bug Nobody Talks About".to_string(),
+                                id: "the-positioning-bug-nobody-talks-about".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Framework Parity".to_string(),
+                                id: "framework-parity".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accessibility".to_string(),
+                                id: "accessibility".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Dot Mode vs Count Mode".to_string(),
+                                id: "dot-mode-vs-count-mode".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Status Indicators".to_string(),
+                                id: "status-indicators".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What We Didn't Do".to_string(),
+                                id: "what-we-didn't-do".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(26usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::BadgeRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(26usize),
+        );
+        pages
+            .push((
+                27usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::CardRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Card RS?".to_string(),
+                                id: "what-is-card-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Composable Anatomy".to_string(),
+                                id: "the-composable-anatomy".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Shell: ".to_string(),
+                                id: "the-shell:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Skeleton: Headers, Content, & Footers"
+                                    .to_string(),
+                                id: "the-skeleton:-headers,-content,-&-footers".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Variants and Prominence".to_string(),
+                                id: "variants-and-prominence".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Framework Parity".to_string(),
+                                id: "framework-parity".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accessibility Built-In".to_string(),
+                                id: "accessibility-built-in".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Customization".to_string(),
+                                id: "customization".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(27usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::CardRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(27usize),
+        );
+        pages
+            .push((
+                28usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 29 |---| Terms of Service |---| legal |---| terms-of-service |---| Sep 27 2026 |---| Terms of Service for opensass.org. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/terms-of-service.md"
+                            .to_string(),
+                        url: BookRoute::TermsOfService {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Terms of Service".to_string(),
+                                id: "terms-of-service".to_string(),
+                                level: 1usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Acceptance of Terms".to_string(),
+                                id: "acceptance-of-terms".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What This Service Provides".to_string(),
+                                id: "what-this-service-provides".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What This Service Does Not Provide".to_string(),
+                                id: "what-this-service-does-not-provide".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Content License".to_string(),
+                                id: "content-license".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "AI-Assisted Content".to_string(),
+                                id: "ai-assisted-content".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Open Source Code".to_string(),
+                                id: "open-source-code".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accuracy and Liability".to_string(),
+                                id: "accuracy-and-liability".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "External Links".to_string(),
+                                id: "external-links".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Governing Law".to_string(),
+                                id: "governing-law".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Changes".to_string(),
+                                id: "changes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Contact".to_string(),
+                                id: "contact".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(28usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::TermsOfService {},
+            ::use_mdbook::mdbook_shared::PageId(28usize),
+        );
+        pages
+            .push((
+                29usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 30 |---| Privacy Policy |---| legal |---| privacy-policy |---| Sep 27 2026 |---| Privacy Policy for opensass.org. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/privacy-policy.md"
+                            .to_string(),
+                        url: BookRoute::PrivacyPolicy {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Privacy Policy".to_string(),
+                                id: "privacy-policy".to_string(),
+                                level: 1usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Who We Are".to_string(),
+                                id: "who-we-are".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Data We Collect".to_string(),
+                                id: "what-data-we-collect".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Cookies".to_string(),
+                                id: "cookies".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Third-Party Links".to_string(),
+                                id: "third-party-links".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Content Attribution".to_string(),
+                                id: "content-attribution".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Changes to This Policy".to_string(),
+                                id: "changes-to-this-policy".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Contact".to_string(),
+                                id: "contact".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(29usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::PrivacyPolicy {},
+            ::use_mdbook::mdbook_shared::PageId(29usize),
+        );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
                 title: Some("Summary".to_string()),
                 prefix_chapters: vec![],
                 numbered_chapters: vec![
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/announcing-opensass |---| https://x.com/intent/post?url=https://opensass.org/blogs/announcing-opensass |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/announcing-opensass"
+                        name: " 1 |---| Announcing Open SASS 🚀 |---| announcement |---| announcing-opensass |---| Nov 10 2024 |---| Welcome to Open SASS. Your open-source platform for building the future of SaaS with Rust and Wasm. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/announcing-opensass.md"
                             .to_string(),
                         location: Some(BookRoute::AnnouncingOpensass {}),
                         number: Some(
@@ -2045,7 +2459,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/introducing-x-ai |---| https://x.com/intent/post?url=https://opensass.org/blogs/introducing-x-ai |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/introducing-x-ai"
+                        name: " 2 |---| ✨ Introducing X-AI |---| announcement |---| introducing-x-ai |---| Nov 18 2024 |---| Today, we are excited to announce the release of 𝕏-AI, your gateway to the X-AI API in Rust. |---| https://github.com/user-attachments/assets/e18b9fc2-7b7d-4125-86fe-c1b91fdb0f93 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/introducing-x-ai.md"
                             .to_string(),
                         location: Some(BookRoute::IntroducingXAi {}),
                         number: Some(
@@ -2054,7 +2468,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/aibook-v002-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/aibook-v002-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/aibook-v002-release"
+                        name: " 3 |---| 💡 AIBook v0.0.2 Release |---| announcement |---| aibook-v002-release |---| Nov 22 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/ec4e080f-37af-4e62-af40-f0bb92d28bff |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/aibook-v002-release.md"
                             .to_string(),
                         location: Some(BookRoute::AibookV002Release {}),
                         number: Some(
@@ -2063,7 +2477,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/tripper-v001-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/tripper-v001-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/tripper-v001-release"
+                        name: " 4 |---| Introducing Tripper ✈\u{fe0f} |---| announcement |---| tripper-v001-release |---| Nov 28 2024 |---| Welcome back to our blog! We are excited to announce the release of aibook. |---| https://github.com/user-attachments/assets/d18cb450-f4c7-4455-a9c2-b0f165889487 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/tripper-v001-release.md"
                             .to_string(),
                         location: Some(BookRoute::TripperV001Release {}),
                         number: Some(
@@ -2072,7 +2486,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/beyond-typescript |---| https://x.com/intent/post?url=https://opensass.org/blogs/beyond-typescript |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/beyond-typescript"
+                        name: " 5 |---| Beyond TypeScript |---| blog |---| beyond-typescript |---| Apr 20 2025 |---| Hey devs, and anyone still dealing with a 900MB node_modules folder. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| https://dev.to/wiseai/beyond-typescript-i4i |---| https://github.com/opensass/landing/blob/main/docs/blog/src/beyond-typescript.md"
                             .to_string(),
                         location: Some(BookRoute::BeyondTypescript {}),
                         number: Some(
@@ -2081,7 +2495,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 6 |---| Biblically Accurate Rust 😇 |---| blog |---| rust-is-god-101 |---| Apr 22 2025 |---| Rust is the biblically accurate programming language; Fast, safe, and blessed with memory safety. |---| https://github.com/user-attachments/assets/a9fc3f6f-8ad3-40b9-92c8-233efa64acc0 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/rust-is-god-101 |---| https://x.com/intent/post?url=https://opensass.org/blogs/rust-is-god-101 |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/rust-is-god-101"
+                        name: " 6 |---| Biblically Accurate Rust 😇 |---| blog |---| rust-is-god-101 |---| Apr 22 2025 |---| Rust is the biblically accurate programming language; Fast, safe, and blessed with memory safety. |---| https://github.com/user-attachments/assets/a9fc3f6f-8ad3-40b9-92c8-233efa64acc0 |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/rust-is-god-101.md"
                             .to_string(),
                         location: Some(BookRoute::RustIsGod101 {}),
                         number: Some(
@@ -2090,7 +2504,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-vs-shadcn |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-vs-shadcn |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-vs-shadcn"
+                        name: " 7 |---| Open SASS vs ShadCN UI ⚔\u{fe0f} |---| blog |---| opensass-vs-shadcn |---| Apr 23 2025 |---| Open SASS obliterates ShadCN UI with framework-agnostic components, blazing performance, and unmatched versatility. |---| https://github.com/user-attachments/assets/5e2bf427-0401-4cf6-9c72-d9bffb445ee0 |---| https://dev.to/wiseai/open-sass-vs-shadcn-ui-4oc0 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/opensass-vs-shadcn.md"
                             .to_string(),
                         location: Some(BookRoute::OpensassVsShadcn {}),
                         number: Some(
@@ -2099,7 +2513,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-release"
+                        name: " 8 |---| Image RS: Next-Gen WASM Image Component 🚀 |---| announcement |---| image-rs-release |---| Apr 26 2025 |---| Image RS launches as the ultimate image solution for Yew, Dioxus, and Leptos apps with smart lazy loading, responsive layouts, accessibility, and incredible flexibility. |---| https://raw.githubusercontent.com/opensass/image-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/image-rs-next-gen-wasm-image-component-4g2e |---| https://github.com/opensass/landing/blob/main/docs/blog/src/image-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::ImageRsRelease {}),
                         number: Some(
@@ -2108,7 +2522,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/image-rs-vs-next-js-image |---| https://x.com/intent/post?url=https://opensass.org/blogs/image-rs-vs-next-js-image |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/image-rs-vs-next-js-image"
+                        name: " 9 |---| Image RS vs Next.js Image 🔥 |---| blog |---| image-rs-vs-next-js-image |---| Apr 27 2025 |---| A deep comparison proving why Yew Image RS outperforms Next.js Image with native WASM speed, fine-grained DOM control, better memory usage, and smoother performance at scale. |---| https://github.com/user-attachments/assets/9fa9ff50-32ea-4369-a263-0bb8c32197c1 |---| https://dev.to/wiseai/image-rs-vs-nextjs-image-c6k |---| https://github.com/opensass/landing/blob/main/docs/blog/src/image-rs-vs-next-js-image.md"
                             .to_string(),
                         location: Some(BookRoute::ImageRsVsNextJsImage {}),
                         number: Some(
@@ -2117,7 +2531,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/table-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/table-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/table-rs-release"
+                        name: " 10 |---| Table RS: Advanced Wasmy Table Component 📊 |---| announcement |---| table-rs-release |---| Apr 29 2025 |---| Table RS delivers a fully-featured, accessible, and customizable table component for Wasm apps with built-in search, sorting, pagination, and styling control. |---| https://raw.githubusercontent.com/opensass/table-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/table-rs-advanced-wasmy-table-component-4ela |---| https://github.com/opensass/landing/blob/main/docs/blog/src/table-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::TableRsRelease {}),
                         number: Some(
@@ -2126,7 +2540,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/tanstack-table-vs-table-rs |---| https://x.com/intent/post?url=https://opensass.org/blogs/tanstack-table-vs-table-rs |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/tanstack-table-vs-table-rs"
+                        name: " 11 |---| Table RS: Why WASM Outperforms JS at Scale 📈 |---| blog |---| tanstack-table-vs-table-rs |---| Apr 29 2025 |---| A deep-dive benchmark comparing TanStack Table (React) vs Table RS (Yew + WASM). |---| https://github.com/user-attachments/assets/2cd8279a-9d9d-4f75-bf13-b61fbbb130da |---| https://dev.to/wiseai/table-rs-why-wasm-outperforms-js-at-scale-23d5 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/tanstack-table-vs-table-rs.md"
                             .to_string(),
                         location: Some(BookRoute::TanstackTableVsTableRs {
                         }),
@@ -2136,7 +2550,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/navbar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/navbar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/navbar-release"
+                        name: " 12 |---| 🍔 Navbar: A Deliciously Simple Wasmy Navbar Component |---| announcement |---| navbar-release |---| May 01 2025 |---| A hands-on guide to adding a feature-rich, fully customizable Navbar component to your WASM app. |---| https://github.com/user-attachments/assets/1fa1e562-8861-4dd9-99af-060c768a23a7 |---| https://dev.to/wiseai/navbar-a-deliciously-simple-wasmy-navbar-component-5gmk |---| https://github.com/opensass/landing/blob/main/docs/blog/src/navbar-release.md"
                             .to_string(),
                         location: Some(BookRoute::NavbarRelease {}),
                         number: Some(
@@ -2145,7 +2559,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sidebar-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sidebar-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sidebar-release"
+                        name: " 13 |---| 🗃\u{fe0f} Sidebar: The Composable Wasmy Sidebar |---| announcement |---| sidebar-release |---| May 02 2025 |---| A deep dive into Sidebar: a modular, fully styleable sidebar component for Yew, Dioxus, and Leptos. |---| https://github.com/user-attachments/assets/60adb866-9821-4efc-a274-46eecfd48f48 |---| https://dev.to/wiseai/sidebar-the-composable-wasmy-sidebar-59fk |---| https://github.com/opensass/landing/blob/main/docs/blog/src/sidebar-release.md"
                             .to_string(),
                         location: Some(BookRoute::SidebarRelease {}),
                         number: Some(
@@ -2154,7 +2568,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/keep-using-aws |---| https://x.com/intent/post?url=https://opensass.org/blogs/keep-using-aws |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/keep-using-aws"
+                        name: " 14 |---| ☁\u{fe0f} Keep Using AWS as Usual |---| blog |---| keep-using-aws |---| May 04 2025 |---| A no-BS, defense of AWS and why Rust should be your default stack language. |---| https://github.com/user-attachments/assets/e9b7f007-4337-4881-9d5f-ea42c98a567a |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/keep-using-aws.md"
                             .to_string(),
                         location: Some(BookRoute::KeepUsingAws {}),
                         number: Some(
@@ -2163,7 +2577,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/skeleton-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/skeleton-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/skeleton-rs-release"
+                        name: " 15 |---| 🦴 Seamless Loading with Skeleton RS |---| announcement |---| skeleton-rs-release |---| May 06 2025 |---| A next-gen, zero-clutter skeleton loader for Rust WASM apps. |---| https://github.com/user-attachments/assets/eea87d4d-58a9-4a95-b8f3-57a600c1840b |---| https://dev.to/wiseai/seamless-loading-with-skeleton-rs-4o5c |---| https://github.com/opensass/landing/blob/main/docs/blog/src/skeleton-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::SkeletonRsRelease {}),
                         number: Some(
@@ -2172,7 +2586,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/theme-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/theme-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/theme-release"
+                        name: " 16 |---| 🎨 Infinite Theming with Theme |---| announcement |---| theme-release |---| May 09 2025 |---| A powerful theme manager for Rust + WASM apps with full system support and custom themes. |---| https://github.com/user-attachments/assets/bafca6ab-045b-48cf-bba5-f0f385b3bc3c |---| https://dev.to/wiseai/infinite-theming-with-theme-47hp |---| https://github.com/opensass/landing/blob/main/docs/blog/src/theme-release.md"
                             .to_string(),
                         location: Some(BookRoute::ThemeRelease {}),
                         number: Some(
@@ -2181,7 +2595,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/slider-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/slider-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/slider-rs-release"
+                        name: " 17 |---| 🎚\u{fe0f} Precision Sliders with Slider RS |---| announcement |---| slider-rs-release |---| May 13 2025 |---| A highly customizable, accessible slider component for Rust + WASM apps with single & range support. |---| https://github.com/user-attachments/assets/77d554ca-09cd-4b36-99bf-e08f9154dab4 |---| https://dev.to/wiseai/precision-sliders-with-slider-rs-lm8 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/slider-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::SliderRsRelease {}),
                         number: Some(
@@ -2190,7 +2604,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/opensass-kit |---| https://x.com/intent/post?url=https://opensass.org/blogs/opensass-kit |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/opensass-kit"
+                        name: " 18 |---| 🧰 Open SASS Kit: The Universal UI Toolkit |---| announcement |---| opensass-kit |---| May 22 2025 |---| A centralized, CSS-framework-agnostic component hub for building fast, modular Rust + WASM web apps with CLI-powered scaffolding. |---| https://github.com/user-attachments/assets/11fd714b-498b-4673-b659-ce19ab095492 |---| https://dev.to/wiseai/open-sass-kit-the-universal-ui-toolkit-5326 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/opensass-kit.md"
                             .to_string(),
                         location: Some(BookRoute::OpensassKit {}),
                         number: Some(
@@ -2199,7 +2613,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 19 |---| 👨🏻\u{200d}💻 Hacking Dioxus: How Vibe Coding Is Destroying Software Engineering |---| blog |---| hacking-dioxus |---| May 26 2025 |---| A critical reflection on security flaws found in the Dioxus UI framework. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jw39u3jm6nq5mu2qlre2.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hacking-dioxus |---| https://x.com/intent/post?url=https://opensass.org/blogs/hacking-dioxus |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hacking-dioxus"
+                        name: " 19 |---| 👨🏻\u{200d}💻 Hacking Dioxus: How Vibe Coding Is Destroying Software Engineering |---| blog |---| hacking-dioxus |---| May 26 2025 |---| A critical reflection on security flaws found in the Dioxus UI framework. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jw39u3jm6nq5mu2qlre2.png |---| https://dev.to/wiseai/hacking-dioxus-how-vibe-coding-is-destroying-software-engineering-3ggm |---| https://github.com/opensass/landing/blob/main/docs/blog/src/hacking-dioxus.md"
                             .to_string(),
                         location: Some(BookRoute::HackingDioxus {}),
                         number: Some(
@@ -2208,7 +2622,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/browser-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/browser-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/browser-rs-release"
+                        name: " 20 |---| 🧭 Browser RS: A Wasmy Browser Frame Component |---| announcement |---| browser-rs-release |---| June 1 2025 |---| A highly customizable browser frame component. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ooyaxds6u8srabzky3y.png |---| https://dev.to/wiseai/browser-rs-a-wasmy-browser-frame-component-4ida |---| https://github.com/opensass/landing/blob/main/docs/blog/src/browser-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::BrowserRsRelease {}),
                         number: Some(
@@ -2217,7 +2631,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/hero-release"
+                        name: " 21 |---| 🦸 Hero: A WASM-Ready Hero Section Component |---| announcement |---| hero-release |---| June 6 2025 |---| A fully customizable hero section component for Yew, Leptos, and Dioxus. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/im1r51obcsp1lc1xvwsv.png |---| https://dev.to/wiseai/hero-wasm-ready-hero-section-components-16h2 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/hero-release.md"
                             .to_string(),
                         location: Some(BookRoute::HeroRelease {}),
                         number: Some(
@@ -2226,7 +2640,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-release"
+                        name: " 22 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS: LGBTQ+ Flag Component for Rust Frontends |---| announcement |---| pride-rs-release |---| June 9 2025 |---| A customizable and accessible pride flag component for rusty apps, with built-in LGBTQ+ flag definitions and flexible layouts. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykytq28vzedk9t5bvm76.png |---| https://dev.to/wiseai/pride-rs-lgbtq-flag-component-for-rust-frontends-1e60 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::PrideRsRelease {}),
                         number: Some(
@@ -2235,7 +2649,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-hero-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-hero-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-hero-release"
+                        name: " 23 |---| 🏳\u{fe0f}\u{200d}⚧\u{fe0f} Pride Hero: LGBTQ+ Landing Page for WASM Frameworks |---| announcement |---| pride-hero-release |---| June 10 2025 |---| A customizable and accessible LGBTQ+ Landing Page component for rusty apps, powered by pride rs. |---| https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xnhf4zbiu8azolmpc5wo.png |---| https://dev.to/wiseai/pride-hero-lgbtq-landing-page-for-wasm-frameworks-4kl5 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-hero-release.md"
                             .to_string(),
                         location: Some(BookRoute::PrideHeroRelease {}),
                         number: Some(
@@ -2244,7 +2658,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/sushi-rs-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/sushi-rs-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/sushi-rs-release"
+                        name: " 24 |---| 🍣 Sushi RS: SVG Sushi Components for Rust Frontends |---| announcement |---| sushi-rs-release |---| Aug 16 2026 |---| A cross-framework SVG sushi rendering library for Yew, Dioxus, and Leptos. Circular, square, triangular, oval sushi with 12 ingredients, top-edge decorations, and exploded views. |---| https://raw.githubusercontent.com/opensass/sushi-rs/refs/heads/main/assets/logo.webp |---| https://dev.to/wiseai/sushi-rs-svg-sushi-components-for-rust-frontends-2n1o |---| https://github.com/opensass/landing/blob/main/docs/blog/src/sushi-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::SushiRsRelease {}),
                         number: Some(
@@ -2253,11 +2667,56 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://www.facebook.com/sharer/sharer.php?u=https://opensass.org/blogs/pride-rs-010-release |---| https://x.com/intent/post?url=https://opensass.org/blogs/pride-rs-010-release |---| https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://opensass.org/blogs/pride-rs-010-release"
+                        name: " 25 |---| 🏳\u{fe0f}\u{200d}🌈 Pride RS 0.1.0: Dropping the T from LGBTQ+ & Mark It as Haram |---| announcement |---| pride-rs-010-release |---| Aug 29 2026 |---| Pride RS 0.1.0 introduces the haram feature gate: a compile-time toggle that excludes gender-identity flag types from the binary by default, with full opt-in support. |---| https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/pride-rs-010-thumbnail.webp |---| https://dev.to/wiseai/pride-rs-010-dropping-the-t-from-lgbtq-mark-it-as-haram-1508 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/pride-rs-010-release.md"
                             .to_string(),
                         location: Some(BookRoute::PrideRs010Release {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![25u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::AvatarRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![26u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::BadgeRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![27u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::CardRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![28u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 29 |---| Terms of Service |---| legal |---| terms-of-service |---| Sep 27 2026 |---| Terms of Service for opensass.org. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/terms-of-service.md"
+                            .to_string(),
+                        location: Some(BookRoute::TermsOfService {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![29u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 30 |---| Privacy Policy |---| legal |---| privacy-policy |---| Sep 27 2026 |---| Privacy Policy for opensass.org. |---| https://github.com/user-attachments/assets/1f17ac99-d2c3-42fe-9d93-f84a5f5678fa |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/privacy-policy.md"
+                            .to_string(),
+                        location: Some(BookRoute::PrivacyPolicy {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![30u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -10658,6 +11117,1209 @@ pub fn PrideRs010Release() -> dioxus::prelude::Element {
             "Till next time: "
             em { "Keep Rustin', stay halal." }
             " 🦀💚"
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn AvatarRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Bien le bonjour 👋!" }
+        }
+        p {
+            "Every WASM app eventually needs an avatar. Profile pictures, user cards, comment threads, they're everywhere. And every time, developers end up rolling the same  "
+            code { "<img>" }
+            " tag with some fallback logic, hardcoded border-radius, and a prayer that the CDN doesn't return a 404."
+        }
+        p {
+            "That stops today. We're shipping "
+            a { href: "https://github.com/opensass/avatar",
+                strong { "Avatar RS" }
+            }
+            "."
+        }
+        h2 { id: "what-is-avatar-rs",
+            a { href: "#what-is-avatar-rs", class: "header", "What Is Avatar RS?" }
+        }
+        p {
+            strong { "Avatar RS" }
+            " is a fully-featured avatar component for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". It handles image loading, fallback text/icons, overflow groups, color themes, size variants, accessible markup, the whole thing. Built on top of "
+            a { href: "https://github.com/opensass/image-rs",
+                strong { "Image RS" }
+            }
+            ", which means you get smart lazy loading, blur-up placeholders, and responsive layouts for free."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-1.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "one does not simply roll their own avatar component",
+                title: "",
+            }
+        }
+        p {
+            "Think of it as the avatar component you'd build if you had infinite time and zero deadlines. We had neither, but here we are anyway."
+        }
+        h2 { id: "the-stack-under-the-hood",
+            a { href: "#the-stack-under-the-hood", class: "header", "The Stack Under the Hood" }
+        }
+        p {
+            strong { "Avatar RS" }
+            " wraps "
+            strong { "Image RS" }
+            ", our WASM-native image primitive, for the actual "
+            code { "<img>" }
+            " element. This is not a trivial detail."
+        }
+        p {
+            "Image RS uses "
+            a { href: "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+                "Intersection Observer API"
+            }
+            " for lazy loading, supports "
+            code { "srcset" }
+            "/"
+            code { "sizes" }
+            " for responsive images, and fires clean "
+            code { "on_load" }
+            " / "
+            code { "on_error" }
+            " callbacks. All of that comes for free inside every "
+            code { "Image" }
+            " you render. The avatar layer only adds "
+            strong { "context management" }
+            " and "
+            strong { "state coordination" }
+            " on top."
+        }
+        h2 { id: "core-components",
+            a { href: "#core-components", class: "header", "Core Components" }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Avatar" }
+        }
+        p {
+            "The container. Wraps  "
+            code { "Image" }
+            " and  "
+            code { "Fallback" }
+            ", provides the shared loading context, and inherits size/color/variant from a surrounding  "
+            code { "Group" }
+            " if present."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">avatar::yew::{{Avatar, Image, Fallback}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">avatar::Color;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(MyProfile)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">my_profile</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Avatar aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Ferris Prophet&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image\n</span><span style=\"color:#f8f8f2;\">                src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://i.pravatar.cc/300&quot;\n</span><span style=\"color:#f8f8f2;\">                alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Ferris Prophet&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Accent)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;JD&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Avatar</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "The fallback shows while the image loads, hides once it lands." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Fallback" }
+        }
+        p {
+            "Text initials, an icon, or anything you want rendered when the image hasn't loaded yet (or doesn't exist at all). Supports a  "
+            code { "delay_ms" }
+            " prop to intentionally delay reveal, useful when your image usually loads fast and you don't want the fallback to flash briefly then disappear."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Fallback shows immediately:\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Success)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;MH&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Fallback waits 200ms before appearing (prevents flicker on fast connections):\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback delay_ms</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">200</span><span style=\"color:#f8f8f2;\">}} color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Accent)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;JD&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p { "Small prop, big UX difference." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Group" }
+        }
+        p {
+            "Stack multiple avatars with automatic overlap, configurable max count, and an overflow badge showing how many more there are."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">avatar::yew::{{Avatar, Group, Count, Image, Fallback}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">avatar::{{Color, Size, Variant}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(TeamStack)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">team_stack</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Group\n</span><span style=\"color:#f8f8f2;\">            size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Size::Lg}}\n</span><span style=\"color:#f8f8f2;\">            max</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ff80f4;\">3</span><span style=\"color:#f8f8f2;\">)}}\n</span><span style=\"color:#f8f8f2;\">            total</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f8f8f2;\">)}}\n</span><span style=\"color:#f8f8f2;\">            aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Project team&quot;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Avatar aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 1&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://i.pravatar.cc/150?u=m1&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 1&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Accent)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;M1&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Avatar</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Avatar aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 2&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://i.pravatar.cc/150?u=m2&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 2&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Success)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;M2&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Avatar</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Avatar aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 3&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Image src</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;https://i.pravatar.cc/150?u=m3&quot;</span><span style=\"color:#f8f8f2;\"> alt</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Member 3&quot; </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Fallback color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Warning)}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;M3&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Fallback</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Avatar</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Count\n</span><span style=\"color:#f8f8f2;\">                color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Color::Danger)}}\n</span><span style=\"color:#f8f8f2;\">                variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"font-style:italic;color:#66d9ef;\">Some</span><span style=\"color:#f8f8f2;\">(Variant::Soft)}}\n</span><span style=\"color:#f8f8f2;\">                aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;3 more members&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Group</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Pass  "
+            code { "max={{Some(3)}}" }
+            " and  "
+            code { "total={{Some(6)}}" }
+            ", and  "
+            code { "Count" }
+            " automatically shows  "
+            code { "+3" }
+            ". The math is done for you. The CSS overlap is done for you. You just write components."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-2.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "math lady",
+                title: "",
+            }
+        }
+        h2 { id: "the",
+            a { href: "#the", class: "header", "The " }
+            code { "overflow_count" }
+            " Context"
+        }
+        p { "This is the part that required actual thought." }
+        p {
+            code { "Group" }
+            " computes  "
+            code { "overflow_count = total - max" }
+            " and pushes it into context.  "
+            code { "Count" }
+            " reads it from context when its own  "
+            code { "count" }
+            " prop is zero (the default). This means the badge doesn't need to know anything explicit, it just reads the group state."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// In Group:\n</span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> overflow_count </span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\"> total.</span><span style=\"color:#66d9ef;\">saturating_sub</span><span style=\"color:#f8f8f2;\">(max);\n</span><span style=\"color:#f8f8f2;\">ctx_provider.</span><span style=\"color:#66d9ef;\">provide</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">GroupContext {{ overflow_count, </span><span style=\"color:#f92672;\">.. </span><span style=\"color:#f8f8f2;\">}});\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// In Count:\n</span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> effective_count </span><span style=\"color:#f92672;\">= if</span><span style=\"color:#f8f8f2;\"> count </span><span style=\"color:#f92672;\">== </span><span style=\"color:#ff80f4;\">0 </span><span style=\"color:#f8f8f2;\">{{ ctx_overflow }} </span><span style=\"color:#f92672;\">else </span><span style=\"color:#f8f8f2;\">{{ count }};\n</span><span style=\"color:#8c8c8c;\">// Renders: &quot;+{{effective_count}}&quot;</span></pre>\n",
+        }
+        p { "One source of truth." }
+        h2 { id: "framework-parity",
+            a { href: "#framework-parity", class: "header", "Framework Parity" }
+        }
+        p { "All three frameworks ship the same API surface:" }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Yew" }
+                th { "Dioxus" }
+                th { "Leptos" }
+            }
+            tr {
+                th {
+                    code { "Avatar" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Image" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Fallback" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Group" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Count" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "total" }
+                    " + "
+                    code { "max" }
+                    " overflow"
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Context propagation" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "delay_ms" }
+                    " on fallback"
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Image RS integration" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+        }
+        p {
+            "The Dioxus and Leptos implementation uses  "
+            code { "use_context_provider" }
+            " /  "
+            code { "use_context" }
+            " idioms native to each framework, but the behavior is identical. If you've used it in Yew, you already know how to use it in Leptos."
+        }
+        h2 { id: "soft-refresh--the-browser-cache-fix",
+            a { href: "#soft-refresh--the-browser-cache-fix", class: "header",
+                "Soft Refresh & The Browser Cache Fix"
+            }
+        }
+        p {
+            "Here's one that caught us off guard. In Yew, images rendered via  "
+            code { "Image" }
+            " would sometimes fail to appear after a soft page refresh. Hard refresh? Fine. Soft? Gone."
+        }
+        p {
+            "The culprit: when a browser serves an image from cache, the  "
+            code { "load" }
+            " event fires "
+            em { "before" }
+            " Yew has had a chance to attach the listener. The effect sees a \"loading\" state, the image is already done, and the component never flips to \"loaded\"."
+        }
+        p {
+            "The fix was straightforward once we knew what to look for. We inject a  "
+            code { "node_ref" }
+            " into the underlying  "
+            code { "<img>" }
+            " element and check  "
+            code { "img.complete" }
+            " on mount:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#66d9ef;\">use_effect_with</span><span style=\"color:#f8f8f2;\">(props.src, </span><span style=\"color:#f92672;\">move |</span><span style=\"color:#f8f8f2;\">src</span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">if !</span><span style=\"color:#f8f8f2;\">src.</span><span style=\"color:#66d9ef;\">is_empty</span><span style=\"color:#f8f8f2;\">() {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> already_loaded </span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\"> node_ref\n</span><span style=\"color:#f8f8f2;\">            .cast::&lt;web_sys::HtmlImageElement&gt;()\n</span><span style=\"color:#f8f8f2;\">            .</span><span style=\"color:#66d9ef;\">map</span><span style=\"color:#f8f8f2;\">(|</span><span style=\"font-style:italic;color:#fd971f;\">img</span><span style=\"color:#f8f8f2;\">| img.</span><span style=\"color:#66d9ef;\">complete</span><span style=\"color:#f8f8f2;\">())\n</span><span style=\"color:#f8f8f2;\">            .</span><span style=\"color:#66d9ef;\">unwrap_or</span><span style=\"color:#f8f8f2;\">(</span><span style=\"color:#ff80f4;\">false</span><span style=\"color:#f8f8f2;\">);\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">if</span><span style=\"color:#f8f8f2;\"> already_loaded {{\n</span><span style=\"color:#f8f8f2;\">            status.</span><span style=\"color:#66d9ef;\">set</span><span style=\"color:#f8f8f2;\">(ImageLoadingStatus::Loaded);\n</span><span style=\"color:#f8f8f2;\">        }} </span><span style=\"color:#f92672;\">else </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">            status.</span><span style=\"color:#66d9ef;\">set</span><span style=\"color:#f8f8f2;\">(ImageLoadingStatus::Loading);\n</span><span style=\"color:#f8f8f2;\">        }}\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">|| </span><span style=\"color:#f8f8f2;\">()\n</span><span style=\"color:#f8f8f2;\">}});</span></pre>\n",
+        }
+        p {
+            "This required adding  "
+            code { "web-sys" }
+            " with the  "
+            code { "HtmlImageElement" }
+            " feature to the  "
+            code { "yew" }
+            " feature gate in  "
+            code { "Cargo.toml" }
+            ". A small addition, but it closes a genuinely annoying browser quirk."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-6.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "it works on my machine",
+                title: "",
+            }
+        }
+        p {
+            "Dioxus and Leptos did not have this issue, their reactive systems handle DOM updates differently and don't suffer from this ordering problem."
+        }
+        h2 { id: "colors-variants-sizes",
+            a { href: "#colors-variants-sizes", class: "header", "Colors, Variants, Sizes" }
+        }
+        p {
+            "Everything inherits downward through context. Set defaults at the group level, override them per-avatar if needed."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Colors\n</span><span style=\"color:#f8f8f2;\">Color::Default </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Accent </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Success </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Warning </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Danger </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Custom(</span><span style=\"color:#ffee99;\">&quot;...&quot;</span><span style=\"color:#f8f8f2;\">)\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Variants\n</span><span style=\"color:#f8f8f2;\">Variant::Default  </span><span style=\"color:#8c8c8c;\">// solid fill\n</span><span style=\"color:#f8f8f2;\">Variant::Soft     </span><span style=\"color:#8c8c8c;\">// muted, lower-contrast\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Sizes\n</span><span style=\"color:#f8f8f2;\">Size::Xs </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Sm </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Md </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Lg </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Xl </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Xxl </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Custom(</span><span style=\"color:#ffee99;\">&quot;...&quot;</span><span style=\"color:#f8f8f2;\">)</span></pre>\n",
+        }
+        p {
+            code { "Color::Custom(\"...\")" }
+            " and  "
+            code { "Size::Custom(\"...\")" }
+            " accept raw CSS strings, so if your design system uses  "
+            code { "hsl(270 60% 50%)" }
+            " or  "
+            code { "3.5rem" }
+            ", those work too."
+        }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add avatar </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add avatar </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add avatar </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        p { "That's it. The styling is computed inline from the prop values." }
+        h2 { id: "accessibility",
+            a { href: "#accessibility", class: "header", "Accessibility" }
+        }
+        p { "Every component exposes its ARIA props explicitly:" }
+        ul {
+            li {
+                code { "Avatar" }
+                " renders "
+                code { "role=\"img\"" }
+                " with a required "
+                code { "aria_label" }
+                "."
+            }
+            li {
+                code { "Image" }
+                " manages "
+                code { "aria-hidden" }
+                " based on loading state."
+            }
+            li {
+                code { "Fallback" }
+                " is hidden from assistive tech once the image loads."
+            }
+            li {
+                code { "Group" }
+                " gets an "
+                code { "aria_label" }
+                " for the whole group."
+            }
+            li {
+                code { "Count" }
+                " gets its own "
+                code { "aria_label" }
+                " (defaults to "
+                code { "\"Additional members\"" }
+                ")."
+            }
+        }
+        p {
+            "Screen readers get a consistent, clear picture regardless of whether images loaded or not."
+        }
+        h2 { id: "what-we-didnt-do",
+            a { href: "#what-we-didnt-do", class: "header", "What We Didn't Do" }
+        }
+        p {
+            "No auto-injection of count badges. No magic child-slicing that differs between frameworks. No runtime diffing of the children list to figure out how many to show. These patterns break in different ways across Yew, Dioxus, and Leptos, and they make the component harder to reason about."
+        }
+        p {
+            "Instead: "
+            strong {
+                "explicit "
+                code { "total" }
+                " and "
+                code { "max" }
+                " props"
+            }
+            ", "
+            strong {
+                "explicit "
+                code { "Count" }
+                " placement"
+            }
+            ", "
+            strong { "one context object" }
+            " that everything reads from. It's a little more to type. It's a lot easier to debug."
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            strong { "Avatar RS" }
+            " is exactly what it says on the tin: a production-ready avatar component for WASM apps."
+        }
+        p {
+            "It's backed by Image RS, which means you get all the image loading sophistication without reinventing it. The overflow logic is explicit and predictable. Framework parity is real, not aspirational."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn BadgeRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Je vous salue 👋!" }
+        }
+        p {
+            "Every WASM app eventually needs a badge. The little red circle on your notification bell. The green dot on the corner of an avatar. The \"99+\" that taunts you every morning from the inbox icon. They're everywhere, and somehow everyone is still hand-rolling them."
+        }
+        p {
+            "That stops today. We're shipping "
+            a { href: "https://github.com/opensass/badges-rs",
+                strong { "Badge RS" }
+            }
+            "."
+        }
+        h2 { id: "what-is-badge-rs",
+            a { href: "#what-is-badge-rs", class: "header", "What Is Badge RS?" }
+        }
+        p {
+            strong { "Badge RS" }
+            " is a production-ready badge component for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". Notification counters, status dots, overflow labels, the whole catalogue. It handles positioning, sizing, color theming, dot mode, accessible markup, and even knows the difference between a circle and a rectangle."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-3.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "one does not simply center a badge on a circular avatar",
+                title: "",
+            }
+        }
+        p {
+            "If you've ever opened your browser devtools at 11pm trying to figure out why a badge is floating 4px off the corner of an avatar instead of sitting flush on the arc, Badge RS is the component you wish had existed."
+        }
+        h2 { id: "the-core-components",
+            a { href: "#the-core-components", class: "header", "The Core Components" }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Anchor" }
+        }
+        p {
+            "The positioning wrapper. Drop it around any element and it becomes a badge target. Uses  "
+            code { "position: relative; display: inline-flex;" }
+            " so it doesn't break your layout, doesn't eat your accessibility tree, and doesn't require you to memorize any CSS tricks."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">badges_rs::yew::{{Badge, Anchor}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">badges_rs::{{Color, Shape}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(NotificationBell)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">notification_bell</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Anchor</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">span aria</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Inbox, 5 unread messages&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;📬&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">span</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge\n</span><span style=\"color:#f8f8f2;\">                color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Danger}}\n</span><span style=\"color:#f8f8f2;\">                shape</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Shape::Circle}}\n</span><span style=\"color:#f8f8f2;\">                aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;5 unread messages&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                {{</span><span style=\"color:#ffee99;\">&quot;5&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Anchor</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "That's it. The badge positions itself. You decide where." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Badge" }
+        }
+        p {
+            "The actual indicator. Pass children and you get a labeled badge with text inside. Skip children and you get a compact do, no extra prop needed, just don't put anything inside."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// A labeled count badge\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Danger}} size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Size::Sm}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;5 unread&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;5&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// A status dot, no children, no extra prop\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Success}} placement</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Placement::BottomRight}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Online&quot; </span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p { "Same component, two modes. The dot is not a separate component." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "BadgeLabel" }
+        }
+        p {
+            "A thin  "
+            code { "<span class=\"badge__label\">" }
+            " wrapper. Used automatically when you pass plain text to  "
+            code { "Badge" }
+            ". Expose it directly when you need extra CSS classes or styling on the label slot."
+        }
+        h2 { id: "colors-variants-sizes",
+            a { href: "#colors-variants-sizes", class: "header", "Colors, Variants, Sizes" }
+        }
+        p { "The full set of knobs is available:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Colors\n</span><span style=\"color:#f8f8f2;\">Color::Default </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Accent </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Success </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Warning </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Danger\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Variants (three visual styles)\n</span><span style=\"color:#f8f8f2;\">Variant::Primary    </span><span style=\"color:#8c8c8c;\">// solid fill\n</span><span style=\"color:#f8f8f2;\">Variant::Secondary  </span><span style=\"color:#8c8c8c;\">// outlined\n</span><span style=\"color:#f8f8f2;\">Variant::Soft       </span><span style=\"color:#8c8c8c;\">// muted, lower-contrast\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Sizes\n</span><span style=\"color:#f8f8f2;\">Size::Sm </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Md </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Lg\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Placement\n</span><span style=\"color:#f8f8f2;\">Placement::TopRight </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Placement::TopLeft </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Placement::BottomRight </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Placement::BottomLeft</span></pre>\n",
+        }
+        p {
+            "All combinations work. TopLeft is there for RTL layouts and anyone who likes to be contrarian about badge placement."
+        }
+        h2 { id: "the-positioning-bug-nobody-talks-about",
+            a {
+                href: "#the-positioning-bug-nobody-talks-about",
+                class: "header",
+                "The Positioning Bug Nobody Talks About"
+            }
+        }
+        p {
+            "Here's the subtle one.  "
+            code { "top: 0; right: 0" }
+            " with  "
+            code { "transform: translate(50%, -50%)" }
+            " centers a badge perfectly on the corner of a "
+            strong { "rectangle" }
+            ". That's fine for icon buttons, list items, or anything with a square bounding box."
+        }
+        p {
+            "For a "
+            strong { "circle" }
+            ", which is what every avatar in existence is, the story is different. A circle's actual edge at 45° sits inward from the bounding box corner. The geometric offset is exactly "
+            code { "1 - sin(45°)" }
+            ", which works out to roughly "
+            strong { "14.64%" }
+            " of the element's width and height."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-4.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "math lady",
+                title: "",
+            }
+        }
+        p {
+            "Most badge implementations ignore this. The badge floats slightly off the arc, nobody files a bug, and the designer quietly seethes."
+        }
+        p {
+            "Badge RS exposes a  "
+            code { "Shape" }
+            " enum to handle this explicitly:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Shape {{\n</span><span style=\"color:#f8f8f2;\">    Rectangle,  </span><span style=\"color:#8c8c8c;\">// top: 0; right: 0, standard bounding box corner\n</span><span style=\"color:#f8f8f2;\">    Circle,     </span><span style=\"color:#8c8c8c;\">// top: 14.64%; right: 14.64%, sits on the arc\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// On a circular avatar, badge sits flush on the arc:\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Danger}} shape</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Shape::Circle}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;3&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;3&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// On a square icon button, badge sits on the bounding box corner:\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Accent}} shape</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Shape::Rectangle}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;New&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;New&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p {
+            "The math is not magic. It's just trigonometry that nobody wanted to look up at 11pm. We looked it up for you."
+        }
+        h2 { id: "framework-parity",
+            a { href: "#framework-parity", class: "header", "Framework Parity" }
+        }
+        p { "All three frameworks ship the same API surface:" }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Yew" }
+                th { "Dioxus" }
+                th { "Leptos" }
+            }
+            tr {
+                th {
+                    code { "Anchor" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Badge" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "BadgeLabel" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Shape::Circle" }
+                    " offset"
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Dot mode (no children)" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "All placements" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "All variants" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "ARIA attributes" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+        }
+        p {
+            "If you've used it in Yew, you already know how to use it in Dioxus and Leptos. The prop names don't even change."
+        }
+        h2 { id: "accessibility",
+            a { href: "#accessibility", class: "header", "Accessibility" }
+        }
+        p { "Accessible badges are an afterthought in most libraries. In Badge RS they're mandatory." }
+        ul {
+            li {
+                code { "Badge" }
+                " renders with "
+                code { "role=\"status\"" }
+                " and a required "
+                code { "aria_label" }
+                ". Screen readers announce the content without the user having to navigate to it."
+            }
+            li {
+                code { "aria-atomic=\"true\"" }
+                " ensures the full label is re-read when the count updates. A badge that goes from \"3\" to \"4\" reads \"4 unread messages\", not just \"4\"."
+            }
+            li {
+                code { "Anchor" }
+                " renders as a "
+                code { "<span>" }
+                " with no ARIA role, because it's structural glue and should be invisible to assistive technology."
+            }
+            li {
+                "The WCAG guidance on badges is straightforward: "
+                strong { "label the element that owns the badge, not just the badge itself" }
+                ". We mention this in the docs and the examples follow it throughout."
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// The accessible way, the host element&#39;s label includes the count\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">span aria</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Inbox, 5 unread messages&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;📬&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">span</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;5 unread messages&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;5&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p {
+            "The badge label and the host's aria-label should tell the same story from different angles."
+        }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add badges</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add badges</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add badges</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        p { "No CSS framework required. Styles are computed inline from the prop values." }
+        h2 { id: "dot-mode-vs-count-mode",
+            a { href: "#dot-mode-vs-count-mode", class: "header", "Dot Mode vs Count Mode" }
+        }
+        p {
+            "One component, two modes, no separate component for each. This matters because it keeps your import surface small and your mental model consistent."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Count mode, children present\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Danger}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;5 messages&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;5&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Badge</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Dot mode, no children, badge renders as a small filled circle\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Success}} placement</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Placement::BottomRight}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Online&quot; </span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p {
+            "The dot is a first-class mode with its own size calculations.  "
+            code { "Size::Sm" }
+            " in dot mode renders a 6×6px dot. In count mode, it renders a 16×16px pill. The size label refers to the visual weight, not a fixed pixel value."
+        }
+        h2 { id: "status-indicators",
+            a { href: "#status-indicators", class: "header", "Status Indicators" }
+        }
+        p { "The placement prop combined with dot mode covers the most common avatar status pattern:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">badges_rs::leptos::{{Badge, Anchor}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">badges_rs::{{Color, Placement, Shape}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">leptos::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[component]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">UserAvatar</span><span style=\"color:#f8f8f2;\">() -&gt; impl IntoView {{\n</span><span style=\"color:#f8f8f2;\">    view! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Anchor</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">span\n</span><span style=\"color:#f8f8f2;\">                style</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;/* your avatar CSS */&quot;\n</span><span style=\"color:#f8f8f2;\">                aria</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Jane Doe, online&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#ffee99;\">&quot;JD&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">span</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Badge\n</span><span style=\"color:#f8f8f2;\">                color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">Color::Success\n</span><span style=\"color:#f8f8f2;\">                shape</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">Shape::Circle\n</span><span style=\"color:#f8f8f2;\">                placement</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">Placement::BottomRight\n</span><span style=\"color:#f8f8f2;\">                aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Online&quot;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Anchor</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Green dot, bottom-right, perfectly on the arc. That's the whole pattern." }
+        p {
+            img {
+                src: asset!("assets/images/meme-7.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "it works, deploy it",
+                title: "",
+            }
+        }
+        h2 { id: "what-we-didnt-do",
+            a { href: "#what-we-didnt-do", class: "header", "What We Didn't Do" }
+        }
+        p {
+            "No magic threshold that auto-truncates to \"99+\". That's application logic, not component logic. We show whatever you pass in. If you want  "
+            code { "count.min(99).to_string()" }
+            " or  "
+            code { "\"99+\"" }
+            ", that's two lines in your own code."
+        }
+        p {
+            "No auto-detection of the parent element's shape. That would require measuring the DOM at runtime, which is expensive. Instead: explicit  "
+            code { "shape" }
+            " prop. You know your own design system. Tell us."
+        }
+        p {
+            "No CSS injection. No global stylesheet to import. No BEM class naming conventions to memorize. The styles live on the element."
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            strong { "Badge RS" }
+            " is compact by design. Three components, one enum, one positioning decision that most libraries get wrong."
+        }
+        p {
+            "The  "
+            code { "Shape" }
+            " prop is the detail worth remembering. If you're putting badges on circular avatars and they look slightly off, that's the fix. Try  "
+            code { "Shape::Circle" }
+            " and stop adjusting pixel offsets in your component stylesheets."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn CardRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Salut tout le monde 👋!" }
+        }
+        p {
+            "If there is one layout component that has been re-implemented more times than the  "
+            code { "<button>" }
+            ", it's the Card. Think about it. Every widget, every dashboard panel, every pricing tier, every shiny glowing glassmorphism element you've ever seen is, deep down, a card."
+        }
+        p {
+            "Instead of writing  "
+            code { "div class=\"p-6 border rounded-xl shadow-lg bg-white\"" }
+            " for the 5000th time, we decided to solve cards natively for WASM."
+        }
+        p {
+            "Today, we're shipping "
+            a { href: "https://github.com/opensass/card-rs",
+                strong { "Card RS" }
+            }
+            "."
+        }
+        h2 { id: "what-is-card-rs",
+            a { href: "#what-is-card-rs", class: "header", "What Is Card RS?" }
+        }
+        p {
+            strong { "Card RS" }
+            " is an extremely customizable, production-ready, accessible Card component for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". We've extracted all the tedious BEM boilerplate, flexbox wrangling, and ARIA attributes out of your templates, giving you a clean, composable API for building solid UI surfaces."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-5.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "Oprah",
+                title: "",
+            }
+        }
+        p {
+            "Cards shouldn't be monoliths. If you just need a surface,  "
+            code { "<Card>" }
+            " works perfectly alone. If you need standard anatomical parts, stick  "
+            code { "<Header>" }
+            ",  "
+            code { "<Title>" }
+            ",  "
+            code { "<Content>" }
+            ", and  "
+            code { "<Footer>" }
+            " in there."
+        }
+        h2 { id: "the-composable-anatomy",
+            a { href: "#the-composable-anatomy", class: "header", "The Composable Anatomy" }
+        }
+        p {
+            "The problem with most UI library cards is that they force you into a specific layout. Card RS doesn't mandate structure; it provides logical boundaries."
+        }
+        h3 { id: "the-shell",
+            a { href: "#the-shell", class: "header", "The Shell: " }
+            code { "Card" }
+        }
+        p {
+            "The parent wrapper. It renders a clean HTML5  "
+            code { "<article>" }
+            " (or whatever ARIA role you need) with our default elevated styling."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">card_rs::yew::Card;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">card_rs::Variant;\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(MyWidget)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">widget</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Card variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Default}} aria_labelledby</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;widget-title&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#8c8c8c;\">// the world is yours in here\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Card</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        h3 { id: "the-skeleton-headers-content--footers",
+            a {
+                href: "#the-skeleton-headers-content--footers",
+                class: "header",
+                "The Skeleton: Headers, Content, & Footers"
+            }
+        }
+        p { "Don't want to write inline styles for gaps and flex-columns? Neither do we." }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Card aria_labelledby</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;c-title&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Title id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;c-title&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Card Title&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Title</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Description</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;The description lives here.&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Description</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Content</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Any content fits neatly in the main body area.&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">p</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Content</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Footer</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">button aria</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Confirm&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Confirm&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">button</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Footer</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Card</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p {
+            "The header stacks title and description with precise spacing. The footer handles your action bars. Everything just snaps into place like LEGOs."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-8.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "A perfectly aligned card component",
+                title: "",
+            }
+        }
+        h2 { id: "variants-and-prominence",
+            a { href: "#variants-and-prominence", class: "header", "Variants and Prominence" }
+        }
+        p {
+            "Not all cards are created equal. You need visual hierarchy. We provide a  "
+            code { "Variant" }
+            " matrix that affects the surface depth and contrast without rewriting class strings."
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">Variant {{\n</span><span style=\"color:#f8f8f2;\">    Transparent,  </span><span style=\"color:#8c8c8c;\">// No background, merges with the canvas\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">Default</span><span style=\"color:#f8f8f2;\">,      </span><span style=\"color:#8c8c8c;\">// Standard surface layer\n</span><span style=\"color:#f8f8f2;\">    Secondary,    </span><span style=\"color:#8c8c8c;\">// Elevated and highlighted\n</span><span style=\"color:#f8f8f2;\">    Tertiary,     </span><span style=\"color:#8c8c8c;\">// Premium prominence (perfect for selected items)\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p {
+            "Building an interactive pricing selector? Wrap your iterations in a  "
+            code { "<Card variant={{if selected {{ Variant::Secondary }} else {{ Variant::Default }}}}>" }
+            " and your hierarchy logic is done."
+        }
+        h2 { id: "framework-parity",
+            a { href: "#framework-parity", class: "header", "Framework Parity" }
+        }
+        p {
+            "Like everything we build, "
+            strong { "Card RS" }
+            " provides identical API surfaces and behavioral guarantees across all three rusty frontends:"
+        }
+        table {
+            thead {
+                th { "Feature" }
+                th { "Yew" }
+                th { "Dioxus" }
+                th { "Leptos" }
+            }
+            tr {
+                th {
+                    code { "Card" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Header" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Title" }
+                    " & "
+                    code { "Description" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th {
+                    code { "Content" }
+                    " & "
+                    code { "Footer" }
+                    ""
+                }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Variant Matrix" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Accessible ARIA bindings" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+            tr {
+                th { "Role overrides" }
+                th { "✅" }
+                th { "✅" }
+                th { "✅" }
+            }
+        }
+        p {
+            "If you know how to build a card in Leptos, you can build a card in Dioxus. The props are the same. The BEM classes are the same. The logic is identical."
+        }
+        h2 { id: "accessibility-built-in",
+            a { href: "#accessibility-built-in", class: "header", "Accessibility Built-In" }
+        }
+        p {
+            "Accessible surfaces are often completely ignored by developers until an audit fails. "
+            strong { "Card RS" }
+            " is designed strictly around WCAG guidelines."
+        }
+        ol {
+            li {
+                code { "Card" }
+                " renders with "
+                code { "role=\"article\"" }
+                " by default."
+            }
+            li {
+                "We enforce "
+                code { "aria_labelledby" }
+                " to tie structural landmarks to the "
+                code { "Title" }
+                " ID."
+            }
+            li {
+                "If you want a non-interactive surface, just override it with "
+                code { "role=\"note\"" }
+                " or "
+                code { "role=\"region\"" }
+                "."
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Accessible structural linking:\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Card aria_labelledby</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;promo-heading&quot;</span><span style=\"color:#f8f8f2;\"> role</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;region&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Title id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;promo-heading&quot;</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Special Offer!&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Title</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Card</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p { "With one prop, screen readers will now announce \"Region: Special Offer!\" properly." }
+        h2 { id: "customization",
+            a { href: "#customization", class: "header", "Customization" }
+        }
+        p {
+            "We aren't trapping you in our aesthetic. Want a weird horizontally-aligned flex-row card with a gradient background? Just use the  "
+            code { "style" }
+            " prop. Card RS accepts your CSS strings eagerly."
+        }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        p { "Stop copying and pasting giant Tailwind HTML blobs. Do this instead:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add card</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add card</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add card</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "The web is made of cards. Taking the time to unify how we create, structure, and render them across Wasm frameworks means we can stop fighting with padding and flexbox alignment, and get back to building real features."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn TermsOfService() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        h1 { id: "terms-of-service",
+            a { href: "#terms-of-service", class: "header", "Terms of Service" }
+        }
+        p {
+            strong { "Last updated: September 27, 2026" }
+        }
+        h2 { id: "acceptance-of-terms",
+            a { href: "#acceptance-of-terms", class: "header", "Acceptance of Terms" }
+        }
+        p {
+            "By accessing  "
+            code { "opensass.org" }
+            " (the \"Blog\"), you agree to these Terms of Service. If you do not agree, please stop reading, though we'd prefer you stayed, because the content is quite good."
+        }
+        h2 { id: "what-this-service-provides",
+            a { href: "#what-this-service-provides", class: "header", "What This Service Provides" }
+        }
+        p { "This Blog provides:" }
+        ul {
+            li { "Technical writing on Rust, Typescript, open-source software, and related topics" }
+            li { "Open-source project announcements and documentation" }
+            li {
+                "Opinions and analysis on technology and the future, written by humans (sometimes with AI assistance)"
+            }
+        }
+        h2 { id: "what-this-service-does-not-provide",
+            a { href: "#what-this-service-does-not-provide", class: "header",
+                "What This Service Does Not Provide"
+            }
+        }
+        ul {
+            li { "Legal advice" }
+            li { "Financial advice" }
+            li { "Medical advice" }
+            li { "Predictions about GPU prices" }
+            li {
+                "Guarantees that any benchmark numbers will apply to your specific hardware configuration"
+            }
+        }
+        h2 { id: "content-license",
+            a { href: "#content-license", class: "header", "Content License" }
+        }
+        p {
+            "All original written content on this Blog is the intellectual property of Mahmoud Harmouch unless otherwise stated. You are welcome to:"
+        }
+        ul {
+            li { "Share links to posts" }
+            li { "Quote excerpts with attribution" }
+            li { "Reproduce content with explicit written permission" }
+        }
+        p {
+            "You may "
+            strong { "not" }
+            " reproduce entire posts without permission, sell content, or claim it as your own."
+        }
+        h2 { id: "ai-assisted-content",
+            a { href: "#ai-assisted-content", class: "header", "AI-Assisted Content" }
+        }
+        p {
+            "Some posts on this Blog are written with assistance from AI language models (Claude, Gemini, GPT, or similar). All AI-assisted posts are labeled as such. The core ideas, analysis, and conclusions in every post are human-authored."
+        }
+        h2 { id: "open-source-code",
+            a { href: "#open-source-code", class: "header", "Open Source Code" }
+        }
+        p {
+            "Code snippets published on this Blog follow the MIT license unless otherwise specified. The linked open-source repositories have their own licenses, check the repository  "
+            code { "LICENSE" }
+            " file."
+        }
+        h2 { id: "accuracy-and-liability",
+            a { href: "#accuracy-and-liability", class: "header", "Accuracy and Liability" }
+        }
+        p { "We make reasonable efforts to ensure all technical information is accurate. However:" }
+        ul {
+            li { "Benchmarks are environment-specific. Your numbers will vary." }
+            li { "Software APIs change. Information may be out of date." }
+            li { "We accept no liability for any damage resulting from following advice in this Blog." }
+        }
+        p { "Always test in a safe environment before applying anything to production." }
+        h2 { id: "external-links",
+            a { href: "#external-links", class: "header", "External Links" }
+        }
+        p {
+            "Links to external services (GitHub, crates.io, dev.to, etc.) are provided for convenience. We are not responsible for the content or availability of those sites."
+        }
+        h2 { id: "governing-law",
+            a { href: "#governing-law", class: "header", "Governing Law" }
+        }
+        p {
+            "These terms are governed by the laws applicable in the author's jurisdiction, to the extent permitted."
+        }
+        h2 { id: "changes",
+            a { href: "#changes", class: "header", "Changes" }
+        }
+        p {
+            "We may update these terms. The \"last updated\" date reflects the most recent revision. Continued use of the Blog constitutes acceptance of any changes."
+        }
+        h2 { id: "contact",
+            a { href: "#contact", class: "header", "Contact" }
+        }
+        p {
+            "For any questions or legal inquiries: "
+            strong { "oss@opensass.org" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn PrivacyPolicy() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        h1 { id: "privacy-policy",
+            a { href: "#privacy-policy", class: "header", "Privacy Policy" }
+        }
+        p {
+            strong { "Last updated: September 27, 2026" }
+        }
+        h2 { id: "who-we-are",
+            a { href: "#who-we-are", class: "header", "Who We Are" }
+        }
+        p {
+            "This blog ( "
+            code { "opensass.org" }
+            ") is operated by Mahmoud Harmouch. We publish technical articles on Rust, open-source tooling, and related topics."
+        }
+        h2 { id: "what-data-we-collect",
+            a { href: "#what-data-we-collect", class: "header", "What Data We Collect" }
+        }
+        p {
+            strong { "We do not collect personal data directly." }
+            " This is a static-ish blog with no login, no comments, and no data entry forms."
+        }
+        p { "The following data may be collected by third-party systems:" }
+        ul {
+            li {
+                strong { "Hosting / CDN" }
+                ": Server logs may capture anonymized IP addresses and request metadata (user agent, page URL, timestamp) for performance and abuse protection purposes. These are not linked to individuals."
+            }
+            li {
+                strong { "Analytics" }
+                " (if enabled): We may use privacy-respecting, cookieless analytics tools to understand aggregate traffic patterns. No personally identifiable information is collected by these tools."
+            }
+        }
+        h2 { id: "cookies",
+            a { href: "#cookies", class: "header", "Cookies" }
+        }
+        p {
+            "This website does not use tracking cookies. A  "
+            code { "localStorage" }
+            " entry may be written to save your light/dark theme preference. This stays on your device and is never sent to any server."
+        }
+        h2 { id: "third-party-links",
+            a { href: "#third-party-links", class: "header", "Third-Party Links" }
+        }
+        p {
+            "This blog links to GitHub, crates.io, PyPI, npm, dev.to, and other external services. We are not responsible for the privacy practices of those platforms."
+        }
+        h2 { id: "content-attribution",
+            a { href: "#content-attribution", class: "header", "Content Attribution" }
+        }
+        p {
+            "This blog occasionally uses AI language models (such as Claude, Gemini, or GPT) to assist in drafting or reviewing content. Human authors are responsible for all published content; all facts are cross-checked."
+        }
+        h2 { id: "changes-to-this-policy",
+            a { href: "#changes-to-this-policy", class: "header", "Changes to This Policy" }
+        }
+        p {
+            "We may update this policy as the blog evolves. The \"last updated\" date at the top of this page reflects the most recent revision."
+        }
+        h2 { id: "contact",
+            a { href: "#contact", class: "header", "Contact" }
+        }
+        p {
+            "Questions? Concerns? Fan mail? Send them to: "
+            strong { "oss@opensass.org" }
         }
     }
 }

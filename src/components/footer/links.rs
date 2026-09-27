@@ -42,16 +42,6 @@ pub fn SocialLinks() -> Element {
     rsx! {
         ul {
             class: "flex space-x-4",
-            SocialIcon { href: "https://www.linkedin.com/company/opensass", icon: rsx! {i {
-                width: 30,
-                height: 30,
-                class: "text-xl fa-brands fa-linkedin",
-            }} },
-            SocialIcon { href: "https://www.x.com/opensassorg", icon: rsx! {i {
-                width: 30,
-                height: 30,
-                class: "text-xl fa-brands fa-x-twitter",
-            }} },
             SocialIcon { href: "https://www.github.com/opensass", icon: rsx! {i {
                 width: 30,
                 height: 30,

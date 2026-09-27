@@ -5,6 +5,8 @@ pub(crate) mod rating;
 use crate::components::common::header::Header;
 use crate::components::testimonial::card::TestimonialCard;
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[derive(Props, Clone, PartialEq)]
 pub struct TestimonialData {
@@ -18,6 +20,8 @@ pub struct TestimonialData {
 
 #[component]
 pub fn Testimonial() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
     let testimonials = vec![
         TestimonialData {
             quote: "I thought writing software in Rust was hard until I found Open SASS. Now I can build apps faster than I can compile! Bravo!",
@@ -74,6 +78,7 @@ pub fn Testimonial() -> Element {
 
     rsx! {
         section { id: "testimonial", class: "flex flex-col items-center justify-center min-h-screen space-x-4 mt-10",
+            style: if is_light { "background: #ffffff;" } else { "background: var(--bg-primary);" },
             Header {
                 title: "What Our Users Are Saying",
                 subtitle: "Discover how Open Sass has transformed the way developers connect and create, through the voices of our vibrant community."

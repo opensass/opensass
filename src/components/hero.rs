@@ -13,12 +13,18 @@ use crate::components::hero::trust::TrustBox;
 use crate::components::navbar::auth_btns::AuthButtons;
 
 use dioxus::prelude::*;
+use theme::dioxus::use_theme;
+use theme::Theme;
 
 #[component]
 pub fn Hero() -> Element {
+    let theme_ctx = use_theme();
+    let is_light = matches!((theme_ctx.theme)(), Theme::Light);
+    let section_class = "min-h-screen bg-themed-primary px-6 py-28 md:py-32 flex justify-center flex-col md:flex-row items-center gap-12 w-full";
     rsx! {
         section {
-            class: "min-h-screen bg-white px-6 py-28 md:py-32 flex justify-center bg-[#e6e6e6] w-full flex flex-col md:flex-row items-center gap-12",
+            class: "{section_class}",
+            style: "",
 
             HeroImage {},
 
