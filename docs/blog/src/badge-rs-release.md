@@ -117,7 +117,7 @@ All three frameworks ship the same API surface:
 
 | Feature                | Yew | Dioxus | Leptos |
 | ---------------------- | --- | ------ | ------ |
-| `Anchor`          | ✅  | ✅     | ✅     |
+| `Anchor`               | ✅  | ✅     | ✅     |
 | `Badge`                | ✅  | ✅     | ✅     |
 | `BadgeLabel`           | ✅  | ✅     | ✅     |
 | `Shape::Circle` offset | ✅  | ✅     | ✅     |

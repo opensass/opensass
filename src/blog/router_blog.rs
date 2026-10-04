@@ -70,6 +70,12 @@ pub enum BookRoute {
     TermsOfService {},
     #[route("/privacy-policy")]
     PrivacyPolicy {},
+    #[route("/code-rs-release")]
+    CodeRsRelease {},
+    #[route("/form-rs-release")]
+    FormRsRelease {},
+    #[route("/otp-rs-release")]
+    OtpRsRelease {},
 }
 impl BookRoute {
     pub fn sections(&self) -> &'static [use_mdbook::mdbook_shared::Section] {
@@ -110,6 +116,9 @@ impl BookRoute {
             BookRoute::CardRsRelease {} => use_mdbook::mdbook_shared::PageId(27usize),
             BookRoute::TermsOfService {} => use_mdbook::mdbook_shared::PageId(28usize),
             BookRoute::PrivacyPolicy {} => use_mdbook::mdbook_shared::PageId(29usize),
+            BookRoute::CodeRsRelease {} => use_mdbook::mdbook_shared::PageId(30usize),
+            BookRoute::FormRsRelease {} => use_mdbook::mdbook_shared::PageId(31usize),
+            BookRoute::OtpRsRelease {} => use_mdbook::mdbook_shared::PageId(32usize),
         }
     }
 }
@@ -2050,7 +2059,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 25usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
+                        title: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| https://dev.to/wiseai/avatar-rs-very-efficient-avatar-components-for-wasm-frameworks-3lkn |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
                             .to_string(),
                         url: BookRoute::AvatarRsRelease {},
                         segments: vec![],
@@ -2144,7 +2153,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 26usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
+                        title: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| https://dev.to/wiseai/badge-rs-easy-to-use-badge-components-for-wasm-frameworks-4p3k |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
                             .to_string(),
                         url: BookRoute::BadgeRsRelease {},
                         segments: vec![],
@@ -2238,7 +2247,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                 27usize,
                 {
                     ::use_mdbook::mdbook_shared::Page {
-                        title: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
+                        title: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| https://dev.to/wiseai/card-rs-extremely-customizable-card-component-for-wasm-frameworks-1j0c |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
                             .to_string(),
                         url: BookRoute::CardRsRelease {},
                         segments: vec![],
@@ -2443,6 +2452,314 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
         page_id_mapping.insert(
             BookRoute::PrivacyPolicy {},
             ::use_mdbook::mdbook_shared::PageId(29usize),
+        );
+        pages
+            .push((
+                30usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 31 |---| 🖥\u{fe0f} Code RS: CDN-Free Syntax-Highlighted Code Components for WASM |---| announcement |---| code-rs-release |---| Oct 4 2026 |---| Code RS ships a fully-themed, accessible, composable code display component for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/coders/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/code-rs-cdn-free-syntax-highlighted-code-components-for-wasm-njc |---| https://github.com/opensass/landing/blob/main/docs/blog/src/code-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::CodeRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Code RS?".to_string(),
+                                id: "what-is-code-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Big Idea".to_string(),
+                                id: "the-big-idea".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Components".to_string(),
+                                id: "components".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The simplest unit. A ".to_string(),
+                                id: "the-simplest-unit.-a".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "// Leptos\nview! {\n    <Block\n        code=\"fn main() {\\n    println!(\\\"Hello!\\\");\\n}\"\n        language={Language::Rust}\n        theme={Theme::NightOwl}\n    >\n        <Header>\n            <Title>\"main.rs\"</Title>\n            <LanguageBadge />\n            <CopyTrigger />\n        </Header>\n        <Content />\n    </Block>\n}\n"
+                                    .to_string(),
+                                id: "//-leptos\nview!-{\n----<block\n--------code=\"fn-main()-{\\n----println!(\\\"hello!\\\");\\n}\"\n--------language={language::rust}\n--------theme={theme::nightowl}\n---->\n--------<header>\n------------<title>\"main.rs\"</title>\n------------<languagebadge-/>\n------------<copytrigger-/>\n--------</header>\n--------<content-/>\n----</block>\n}"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "8 Themes".to_string(),
+                                id: "8-themes".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Build Journey".to_string(),
+                                id: "the-build-journey".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Chapter 1: The Rust 2024 Edition".to_string(),
+                                id: "chapter-1:-the-rust-2024-edition".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Chapter 2: Dioxus RSX".to_string(),
+                                id: "chapter-2:-dioxus-rsx".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Chapter 3: The ".to_string(),
+                                id: "chapter-3:-the".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Chapter 4: Non-Exhaustive ".to_string(),
+                                id: "chapter-4:-non-exhaustive".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accessibility".to_string(),
+                                id: "accessibility".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(30usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::CodeRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(30usize),
+        );
+        pages
+            .push((
+                31usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 32 |---| 📋 Form RS: Production-Ready Form Components for WASM Frameworks |---| announcement |---| form-rs-release |---| Oct 4 2026 |---| Form RS ships a fully composable, WCAG 2.2 AA compliant form component library for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/form-rs/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/form-rs-production-ready-form-components-for-wasm-frameworks-4c03 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/form-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::FormRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Is Form RS?".to_string(),
+                                id: "what-is-form-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Seven Components".to_string(),
+                                id: "the-seven-components".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The outermost container. Wraps ".to_string(),
+                                id: "the-outermost-container.-wraps".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The context provider. Wraps a single field, distributes "
+                                    .to_string(),
+                                id: "the-context-provider.-wraps-a-single-field,-distributes"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Renders a ".to_string(),
+                                id: "renders-a".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "A ".to_string(),
+                                id: "a".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Groups related checkboxes or radio buttons in a "
+                                    .to_string(),
+                                id: "groups-related-checkboxes-or-radio-buttons-in-a"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Wraps a form control (checkbox, radio, switch) with its associated label text. Controls label placement ("
+                                    .to_string(),
+                                id: "wraps-a-form-control-(checkbox,-radio,-switch)-with-its-associated-label-text.-controls-label-placement-("
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "This is the one you'll use most. A drop-in composition of "
+                                    .to_string(),
+                                id: "this-is-the-one-you'll-use-most.-a-drop-in-composition-of"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Validation Architecture".to_string(),
+                                id: "validation-architecture".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Native HTML5 Validation".to_string(),
+                                id: "native-html5-validation".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "External/ARIA Validation".to_string(),
+                                id: "external/aria-validation".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Accessibility Built In".to_string(),
+                                id: "accessibility-built-in".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The ".to_string(),
+                                id: "the".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Variant, Color, and Size System".to_string(),
+                                id: "variant,-color,-and-size-system".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(31usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::FormRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(31usize),
+        );
+        pages
+            .push((
+                32usize,
+                {
+                    ::use_mdbook::mdbook_shared::Page {
+                        title: " 33 |---| 🔐 OTP RS: RFC-Compliant OTP Input Components for WASM Frameworks |---| announcement |---| otp-rs-release |---| Oct 4 2026 |---| OTP RS ships composable, animated, accessible One-Time Password input components for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/otprs/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/otp-rs-rfc-compliant-otp-input-components-for-wasm-frameworks-i45 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/otp-rs-release.md"
+                            .to_string(),
+                        url: BookRoute::OtpRsRelease {},
+                        segments: vec![],
+                        sections: vec![
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "What Even Is OTP RS?".to_string(),
+                                id: "what-even-is-otp-rs?".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Component Architecture".to_string(),
+                                id: "component-architecture".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Invisible Input Trick".to_string(),
+                                id: "the-invisible-input-trick".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Invisible Input That Wasn't Actually Invisible"
+                                    .to_string(),
+                                id: "the-invisible-input-that-wasn't-actually-invisible"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "The Compiler Is Your Enemy (And Also Your Best Friend)"
+                                    .to_string(),
+                                id: "the-compiler-is-your-enemy-(and-also-your-best-friend)"
+                                    .to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 1: Hook in a Macro".to_string(),
+                                id: "episode-1:-hook-in-a-macro".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 2: ".to_string(),
+                                id: "episode-2:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 3: The ".to_string(),
+                                id: "episode-3:-the".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 4: ".to_string(),
+                                id: "episode-4:".to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 5: The Inter-Group Focus Traversal Collision"
+                                    .to_string(),
+                                id: "episode-5:-the-inter-group-focus-traversal-collision"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Episode 6: The \"Sticky\" Backspace (vDOM vs Physical DOM)"
+                                    .to_string(),
+                                id: "episode-6:-the-\"sticky\"-backspace-(vdom-vs-physical-dom)"
+                                    .to_string(),
+                                level: 3usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Keyboard Navigation".to_string(),
+                                id: "keyboard-navigation".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "HOTP and TOTP Validation".to_string(),
+                                id: "hotp-and-totp-validation".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Quick Setup".to_string(),
+                                id: "quick-setup".to_string(),
+                                level: 2usize,
+                            },
+                            ::use_mdbook::mdbook_shared::Section {
+                                title: "Final Thoughts".to_string(),
+                                id: "final-thoughts".to_string(),
+                                level: 2usize,
+                            },
+                        ],
+                        raw: String::new(),
+                        id: ::use_mdbook::mdbook_shared::PageId(32usize),
+                    }
+                },
+            ));
+        page_id_mapping.insert(
+            BookRoute::OtpRsRelease {},
+            ::use_mdbook::mdbook_shared::PageId(32usize),
         );
         ::use_mdbook::mdbook_shared::MdBook {
             summary: ::use_mdbook::mdbook_shared::Summary {
@@ -2676,7 +2993,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
+                        name: " 26 |---| 🪪 Avatar RS: Very Efficient Avatar Components for WASM Frameworks |---| announcement |---| avatar-rs-release |---| Sep 27 2026 |---| Avatar RS delivers a fully-featured, accessible, and composable avatar component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_26.webp |---| https://dev.to/wiseai/avatar-rs-very-efficient-avatar-components-for-wasm-frameworks-3lkn |---| https://github.com/opensass/landing/blob/main/docs/blog/src/avatar-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::AvatarRsRelease {}),
                         number: Some(
@@ -2685,7 +3002,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
+                        name: " 27 |---| 🔴 Badge RS: Easy to Use Badge Components for WASM Frameworks |---| announcement |---| badge-rs-release |---| Sep 27 2026 |---| Badge RS delivers production-ready, WCAG-compliant badge components for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_27.webp |---| https://dev.to/wiseai/badge-rs-easy-to-use-badge-components-for-wasm-frameworks-4p3k |---| https://github.com/opensass/landing/blob/main/docs/blog/src/badge-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::BadgeRsRelease {}),
                         number: Some(
@@ -2694,7 +3011,7 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         nested_items: vec![],
                     }),
                     ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
-                        name: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
+                        name: " 28 |---| 🃏 Card RS: Extremely Customizable Card component for WASM frameworks |---| announcement |---| card-rs-release |---| Sep 27 2026 |---| Card RS delivers an extremely customizable, production-ready, accessible Card component for Yew, Dioxus, and Leptos. |---| assets/images/banner_post_28.webp |---| https://dev.to/wiseai/card-rs-extremely-customizable-card-component-for-wasm-frameworks-1j0c |---| https://github.com/opensass/landing/blob/main/docs/blog/src/card-rs-release.md"
                             .to_string(),
                         location: Some(BookRoute::CardRsRelease {}),
                         number: Some(
@@ -2717,6 +3034,33 @@ pub static LAZY_BOOK: use_mdbook::Lazy<use_mdbook::mdbook_shared::MdBook<BookRou
                         location: Some(BookRoute::PrivacyPolicy {}),
                         number: Some(
                             ::use_mdbook::mdbook_shared::SectionNumber(vec![30u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 31 |---| 🖥\u{fe0f} Code RS: CDN-Free Syntax-Highlighted Code Components for WASM |---| announcement |---| code-rs-release |---| Oct 4 2026 |---| Code RS ships a fully-themed, accessible, composable code display component for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/coders/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/code-rs-cdn-free-syntax-highlighted-code-components-for-wasm-njc |---| https://github.com/opensass/landing/blob/main/docs/blog/src/code-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::CodeRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![31u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 32 |---| 📋 Form RS: Production-Ready Form Components for WASM Frameworks |---| announcement |---| form-rs-release |---| Oct 4 2026 |---| Form RS ships a fully composable, WCAG 2.2 AA compliant form component library for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/form-rs/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/form-rs-production-ready-form-components-for-wasm-frameworks-4c03 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/form-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::FormRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![32u32]),
+                        ),
+                        nested_items: vec![],
+                    }),
+                    ::use_mdbook::mdbook_shared::SummaryItem::Link(::use_mdbook::mdbook_shared::Link {
+                        name: " 33 |---| 🔐 OTP RS: RFC-Compliant OTP Input Components for WASM Frameworks |---| announcement |---| otp-rs-release |---| Oct 4 2026 |---| OTP RS ships composable, animated, accessible One-Time Password input components for Yew, Dioxus, and Leptos. |---| https://raw.githubusercontent.com/opensass/otprs/refs/heads/main/assets/logo.png |---| https://dev.to/wiseai/otp-rs-rfc-compliant-otp-input-components-for-wasm-frameworks-i45 |---| https://github.com/opensass/landing/blob/main/docs/blog/src/otp-rs-release.md"
+                            .to_string(),
+                        location: Some(BookRoute::OtpRsRelease {}),
+                        number: Some(
+                            ::use_mdbook::mdbook_shared::SectionNumber(vec![33u32]),
                         ),
                         nested_items: vec![],
                     }),
@@ -12320,6 +12664,1388 @@ pub fn PrivacyPolicy() -> dioxus::prelude::Element {
         p {
             "Questions? Concerns? Fan mail? Send them to: "
             strong { "oss@opensass.org" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn CodeRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Privyet 👋!" }
+        }
+        p {
+            "You know that moment when you paste a  "
+            code { "<pre><code>" }
+            " block into your app and it looks like it was styled in 2003 by someone who had just discovered  "
+            code { "color: green" }
+            "? No theme. No copy button. No language badge. Just raw, uncolored text sitting in a box that someone called \"good enough\"?"
+        }
+        p {
+            "Yeah. We fixed that. Today we're shipping "
+            a { href: "https://github.com/opensass/coders",
+                strong { "Code RS" }
+            }
+            "."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-9.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "One does not simply",
+                title: "",
+            }
+        }
+        h2 { id: "what-is-code-rs",
+            a { href: "#what-is-code-rs", class: "header", "What Is Code RS?" }
+        }
+        p {
+            strong { "Code RS" }
+            " is a production-ready, fully-themed, accessible code display component for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". It does everything the ecosystem was missing:"
+        }
+        ul {
+            li {
+                strong {
+                    "Inline "
+                    code { "<Code>" }
+                }
+                ": colored, sized, variant-aware, with ARIA semantics."
+            }
+            li {
+                strong {
+                    code { "<Block>" }
+                }
+                ": a composable container with header, title, language badge, copy trigger, and scrollable content area."
+            }
+            li {
+                strong { "Pure-Rust syntax highlighting" }
+                ": zero CDN, zero JavaScript, compiles to clean WASM, 20+ languages."
+            }
+            li {
+                strong { "8 built-in themes" }
+                ": OneDark, Dracula, NightOwl, GitHub Dark/Light, Solarized, Monokai, Nord, all switchable via a single "
+                code { "theme" }
+                " prop."
+            }
+        }
+        p {
+            "No Prism.js. No highlight.js. No 10MB script tag loaded from a CDN you definitely trust completely. Just Rust, bytes, and inline  "
+            code { "style=" }
+            " spans."
+        }
+        h2 { id: "the-big-idea",
+            a { href: "#the-big-idea", class: "header", "The Big Idea" }
+        }
+        p {
+            "Here's the thing about syntax highlighting in WASM apps: every existing solution assumes JavaScript. Prism.js needs a DOM. highlight.js needs a runtime. Shiki needs Node. Tree-sitter is great, but it weighs as much as a sedan."
+        }
+        p { "So we wrote our own." }
+        p {
+            img {
+                src: asset!("assets/images/meme-10.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "Pure-Rust tokenizer, no biggie",
+                title: "",
+            }
+        }
+        p {
+            "The  "
+            code { "highlight_code(code, lang, theme)" }
+            " function in  "
+            code { "common.rs" }
+            " is a hand-rolled, char-by-char tokenizer that handles:"
+        }
+        ul {
+            li {
+                "Block comments ("
+                code { "/* */" }
+                "), single-line comments ("
+                code { "//" }
+                ", "
+                code { "#" }
+                ", "
+                code { "--" }
+                ")"
+            }
+            li { "Double/single-quoted strings and JS template literals" }
+            li {
+                "Hex and float number literals with suffixes ("
+                code { "0xFF" }
+                ", "
+                code { "1.0f32" }
+                ")"
+            }
+            li {
+                "Rust macros ("
+                code { "println!" }
+                ", "
+                code { "vec!" }
+                ")"
+            }
+            li {
+                "Python/CSS decorators ("
+                code { "@dataclass" }
+                ", "
+                code { "@media" }
+                ")"
+            }
+            li {
+                "HTML tag names ("
+                code { "<div>" }
+                ", "
+                code { "</span>" }
+                ")"
+            }
+            li {
+                "PascalCase → type, ALL_CAPS → constant, "
+                code { "ident(" }
+                " → function call"
+            }
+            li { "Language-specific keyword sets (Rust, Python, TypeScript, SQL, Bash, 16 more)" }
+        }
+        p {
+            "All token spans get "
+            strong {
+                "inline "
+                code { "style=" }
+                " attributes"
+            }
+            " from the chosen theme. No CSS classes. No external stylesheet. Just "
+            code { "<span style=\"color:#c678dd;font-weight:600\">fn</span>" }
+            ", and it works everywhere, including iframes and shadow DOM."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">coders::{{Language, Theme, highlight_code}};\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> html </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">highlight_code</span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#ffee99;\">&quot;fn main() {{</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">    println!(</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">Hello!</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">);</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">}}&quot;</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    Language::Rust,\n</span><span style=\"color:#f8f8f2;\">    Theme::Dracula,\n</span><span style=\"color:#f8f8f2;\">);\n</span><span style=\"color:#8c8c8c;\">// → &quot;&lt;span style=&quot;color:#ff79c6;font-weight:600&quot;&gt;fn&lt;/span&gt; ...&quot;</span></pre>\n",
+        }
+        h2 { id: "components",
+            a { href: "#components", class: "header", "Components" }
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Code" }
+        }
+        p {
+            "The simplest unit. A  "
+            code { "<code>" }
+            " element with color, variant, and size props."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Yew\n</span><span style=\"color:#f8f8f2;\">html! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Code color</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Color::Accent}} variant</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Variant::Subtle}} size</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Size::Sm}}</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        {{</span><span style=\"color:#ffee99;\">&quot;console.log(</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">Hello, world!</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">)&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Code</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "Variants work exactly as you'd expect from the rest of Open SASS Kit:  "
+            code { "Solid" }
+            ",  "
+            code { "Subtle" }
+            ",  "
+            code { "Outline" }
+            ",  "
+            code { "Surface" }
+            ",  "
+            code { "Plain" }
+            ". Colors are the full palette:  "
+            code { "Default" }
+            ",  "
+            code { "Red" }
+            ",  "
+            code { "Orange" }
+            ",  "
+            code { "Yellow" }
+            ",  "
+            code { "Green" }
+            ",  "
+            code { "Teal" }
+            ",  "
+            code { "Accent" }
+            ",  "
+            code { "Pink" }
+            ",  "
+            code { "Success" }
+            ",  "
+            code { "Warning" }
+            ",  "
+            code { "Danger" }
+            ", and  "
+            code { "Custom(\"your-inline-css\")" }
+            "."
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Block" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Leptos\n</span><span style=\"color:#f8f8f2;\">view! {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Block\n</span><span style=\"color:#f8f8f2;\">        code</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;fn main() {{</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">    println!(</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">Hello!</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">);</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">}}&quot;\n</span><span style=\"color:#f8f8f2;\">        language</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Language::Rust}}\n</span><span style=\"color:#f8f8f2;\">        theme</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Theme::NightOwl}}\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Title</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#ffee99;\">&quot;main.rs&quot;</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Title</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">LanguageBadge </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">CopyTrigger </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Header</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Content </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Block</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "The  "
+            code { "Block" }
+            " pushes a  "
+            code { "BlockContext" }
+            " containing  "
+            code { "code" }
+            ",  "
+            code { "language" }
+            ", and  "
+            code { "theme" }
+            " into a provider tree. All child components read from context.  "
+            code { "Content" }
+            " calls  "
+            code { "highlight_code" }
+            " and injects the result via  "
+            code { "inner_html" }
+            " /  "
+            code { "dangerous_inner_html" }
+            " /  "
+            code { "Html::from_html_unchecked" }
+            ", the framework-appropriate unsafe-but-correct escape hatch for pre-rendered HTML. No prop drilling. No callback chains. Just context."
+        }
+        h2 { id: "8-themes",
+            a { href: "#8-themes", class: "header", "8 Themes" }
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-11.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "Just right",
+                title: "",
+            }
+        }
+        table {
+            thead {
+                th { "Theme" }
+                th { "Background" }
+                th { "Vibe" }
+            }
+            tr {
+                th {
+                    code { "OneDark" }
+                    ""
+                }
+                th {
+                    code { "#1a1a2e" }
+                    ""
+                }
+                th { "The classic. Atom's gift to the world." }
+            }
+            tr {
+                th {
+                    code { "Dracula" }
+                    ""
+                }
+                th {
+                    code { "#282a36" }
+                    ""
+                }
+                th { "Halloween every day. Pink keywords." }
+            }
+            tr {
+                th {
+                    code { "NightOwl" }
+                    ""
+                }
+                th {
+                    code { "#011627" }
+                    ""
+                }
+                th { "Deep blue, warm salmon numbers." }
+            }
+            tr {
+                th {
+                    code { "GithubDark" }
+                    ""
+                }
+                th {
+                    code { "#0d1117" }
+                    ""
+                }
+                th { "Feels like GitHub, because it is." }
+            }
+            tr {
+                th {
+                    code { "GithubLight" }
+                    ""
+                }
+                th {
+                    code { "#ffffff" }
+                    ""
+                }
+                th { "For those who dare use light mode." }
+            }
+            tr {
+                th {
+                    code { "Solarized" }
+                    ""
+                }
+                th {
+                    code { "#002b36" }
+                    ""
+                }
+                th { "Ethan Schoonover's gift to the terminal." }
+            }
+            tr {
+                th {
+                    code { "Monokai" }
+                    ""
+                }
+                th {
+                    code { "#272822" }
+                    ""
+                }
+                th { "The Sublime Text nostalgia trip." }
+            }
+            tr {
+                th {
+                    code { "Nord" }
+                    ""
+                }
+                th {
+                    code { "#2e3440" }
+                    ""
+                }
+                th { "Arctic. Clean. Borderline peaceful." }
+            }
+        }
+        p {
+            "Switch themes at runtime by simply changing the  "
+            code { "theme" }
+            " prop. The  "
+            code { "ThemeColors" }
+            " struct drives inline style generation, every  "
+            code { "push_span()" }
+            " call pulls the exact CSS value from the active theme's fields."
+        }
+        p {
+            "Need your brand colors?  "
+            code { "Theme::Custom(ThemeColors {{ keyword: \"color:#ff0099;font-weight:600\", ... }})" }
+            " and you're done."
+        }
+        h2 { id: "the-build-journey",
+            a { href: "#the-build-journey", class: "header", "The Build Journey" }
+        }
+        p {
+            "We are not going to pretend this was a relaxing weekend project. Here is an honest accounting."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-12.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "Expectations vs Reality",
+                title: "",
+            }
+        }
+        h3 { id: "chapter-1-the-rust-2024-edition",
+            a { href: "#chapter-1-the-rust-2024-edition", class: "header",
+                "Chapter 1: The Rust 2024 Edition"
+            }
+        }
+        p {
+            "Rust Edition 2024 changed how string-like identifiers in macro positions are parsed. The  "
+            code { "yew::html!" }
+            " macro started rejecting class names like  "
+            code { "text-black" }
+            " and  "
+            code { "whitespace-pre" }
+            ", specifically the hyphen-adjacent tokens that look like prefix expressions."
+        }
+        p {
+            "The error:  "
+            code { "prefix 'black' is unknown" }
+            ". The fix: add a trailing space after the class name. Simple, but it wasted an embarrassing amount of time because the error message looks nothing like what it actually is."
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Before (breaks in Edition 2024):\n</span><span style=\"color:#f8f8f2;\">class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;flex text-black&quot;\n</span><span style=\"color:#8c8c8c;\">// After:\n</span><span style=\"color:#f8f8f2;\">class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;flex text-black &quot;  </span><span style=\"color:#8c8c8c;\">// ← single space, problem solved</span></pre>\n" }
+        h3 { id: "chapter-2-dioxus-rsx",
+            a { href: "#chapter-2-dioxus-rsx", class: "header", "Chapter 2: Dioxus RSX" }
+        }
+        p {
+            "The  "
+            code { "rsx!" }
+            " macro in Dioxus parses string prop values as format strings. So this:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">code: </span><span style=\"color:#ffee99;\">&quot;fn main() {{</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">    println!(</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">Hello!</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">);</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">}}&quot;</span></pre>\n" }
+        p {
+            "Explodes with  "
+            code { "Failed to parse formatted segment: Expected Ident or Exp" }
+            ". Because  "
+            code { "{{" }
+            " inside a string prop is format syntax to Dioxus, not a literal curly brace."
+        }
+        p {
+            "The fix: extract all code strings to  "
+            code { "const" }
+            ":"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">const </span><span style=\"color:#ff80f4;\">HELLO_WORLD</span><span style=\"color:#f8f8f2;\">: </span><span style=\"color:#f92672;\">&amp;</span><span style=\"font-style:italic;color:#66d9ef;\">str </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;fn main() {{</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">    println!(</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">Hello!</span><span style=\"color:#ff80f4;\">\\&quot;</span><span style=\"color:#ffee99;\">);</span><span style=\"color:#ff80f4;\">\\n</span><span style=\"color:#ffee99;\">}}&quot;</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">rsx! {{\n</span><span style=\"color:#f8f8f2;\">    Block {{ code: </span><span style=\"color:#ff80f4;\">HELLO_WORLD </span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "Unglamorous? Yes. But it compiles." }
+        h3 { id: "chapter-3-the",
+            a { href: "#chapter-3-the", class: "header", "Chapter 3: The " }
+            code { "dangerous_inner_html" }
+        }
+        p {
+            "In Dioxus,  "
+            code { "dangerous_inner_html" }
+            " takes ownership of a  "
+            code { "String" }
+            ". In Leptos,  "
+            code { "inner_html" }
+            " takes a  "
+            code { "&str" }
+            ". In Yew,  "
+            code { "Html::from_html_unchecked" }
+            " takes an  "
+            code { "AttrValue" }
+            ". Three frameworks, three signatures, three slightly different ways to inject a pre-rendered HTML string."
+        }
+        p {
+            "Each one worked fine once you knew the exact type expected. Getting there required reading the framework source, not the docs, because the docs had helpfully omitted the borrow semantics."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-13.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "Fine dababy",
+                title: "",
+            }
+        }
+        h3 { id: "chapter-4-non-exhaustive",
+            a { href: "#chapter-4-non-exhaustive", class: "header", "Chapter 4: Non-Exhaustive " }
+            code { "Variant::Custom" }
+        }
+        p {
+            "Adding  "
+            code { "Custom(&'static str)" }
+            " to the  "
+            code { "Variant" }
+            " enum immediately broke every match in all three  "
+            code { "Code" }
+            " component implementations. Expected. Annoying. The fix is the following:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">Variant::Custom(</span><span style=\"color:#f92672;\">_</span><span style=\"color:#f8f8f2;\">) </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#ffee99;\">&quot;&quot;</span><span style=\"color:#f8f8f2;\">,</span></pre>\n" }
+        p {
+            "But finding all three match sites across three files while also trying to fix four other things simultaneously is exactly the kind of thing that makes you wish Rust had  "
+            code { "#[non_exhaustive]" }
+            " as an opt-in marker you could flip during development."
+        }
+        h2 { id: "accessibility",
+            a { href: "#accessibility", class: "header", "Accessibility" }
+        }
+        p { "Code RS ships accessible markup out of the box:" }
+        ul {
+            li {
+                code { "Block" }
+                " renders as "
+                code { "<figure role=\"region\">" }
+                " with "
+                code { "aria-label" }
+                "."
+            }
+            li {
+                "The inner "
+                code { "<pre>" }
+                " gets "
+                code { "tabindex=\"0\"" }
+                " so keyboard users can scroll it."
+            }
+            li {
+                code { "CopyTrigger" }
+                " carries "
+                code { "aria-label=\"Copy code to clipboard\"" }
+                " and "
+                code { "aria-live" }
+                " region feedback via the copied label swap."
+            }
+            li {
+                code { "Code" }
+                " accepts "
+                code { "aria_label" }
+                " for use in contexts where "
+                code { "<code>" }
+                " alone doesn't carry enough meaning."
+            }
+            li {
+                code { "LanguageBadge" }
+                " reads the language from context and renders "
+                code { "aria-label=\"Language: rust\"" }
+                "."
+            }
+        }
+        p { "Screen readers don't need to guess what anything is." }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add coders </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add coders </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add coders </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        p {
+            "That's it. The syntax highlighting, theming, clipboard, and accessibility, all included. No config files. No CSS imports. No  "
+            code { "npm install @something/highlighter-peer-dependency" }
+            "."
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "Writing a CDN-free, pure-WASM syntax highlighter from scratch to ship alongside a composable code block component is not the most efficient path. But it's the correct one for this ecosystem."
+        }
+        p {
+            "The web has enough  "
+            code { "<script src=\"https://cdn.example.com/dep.min.js\">" }
+            " tags. Rust WASM doesn't need to inherit that habit."
+        }
+        p {
+            "Code RS compiles to WASM, highlights code inline, and ships 8 themes without a single network request beyond your app bundle. That's the promise."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn FormRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Salut 👋!" }
+        }
+        p {
+            "If there's one thing that unites frontend developers across every language, framework, and decade of web history, it's a deep, personal, somewhat traumatic relationship with HTML forms."
+        }
+        p {
+            "You know the drill. You write a  "
+            code { "<form>" }
+            ". You add an  "
+            code { "<input>" }
+            ". You add a  "
+            code { "<label>" }
+            ". You write the JavaScript to validate it on  "
+            code { "blur" }
+            ". You add a  "
+            code { "<p>" }
+            " for the error message. You wire up  "
+            code { "aria-describedby" }
+            " so screen readers can find the error. You set  "
+            code { "aria-invalid" }
+            " on the input. You set  "
+            code { "aria-required" }
+            ". You check  "
+            code { "event.preventDefault()" }
+            ". You realize you've been writing a custom form library for the last four hours. You consider leaving the industry."
+        }
+        p {
+            "That stops today. We're shipping "
+            a { href: "https://github.com/opensass/form-rs",
+                strong { "Form RS" }
+            }
+            "."
+        }
+        p {
+            img {
+                src: asset!("assets/images/chillin-ferris.gif"),
+                alt: "chillin ferris",
+                title: "",
+            }
+        }
+        h2 { id: "what-is-form-rs",
+            a { href: "#what-is-form-rs", class: "header", "What Is Form RS?" }
+        }
+        p {
+            strong { "Form RS" }
+            " is a fully composable, WCAG 2.2 AA compliant, production-ready form component library for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". It wraps "
+            a { href: "https://github.com/opensass/input-rs",
+                strong { "Input RS" }
+            }
+            " for the actual "
+            code { "<input>" }
+            " rendering, provides a complete context-driven architecture for validation state propagation, and ships seven discrete components that you can mix freely."
+        }
+        p {
+            "Think of it as the form library you would build yourself if you had time, patience, and hadn't already burned both writing  "
+            code { "<div class=\"form-group\">" }
+            " for the 8000th time."
+        }
+        h2 { id: "the-seven-components",
+            a { href: "#the-seven-components", class: "header", "The Seven Components" }
+        }
+        p { "Form RS ships a composable hierarchy, not a monolith." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Form" }
+        }
+        p {
+            "The outermost container. Wraps  "
+            code { "<form>" }
+            " with configurable  "
+            code { "method" }
+            ",  "
+            code { "action" }
+            ",  "
+            code { "enctype" }
+            ",  "
+            code { "autocomplete" }
+            ", ARIA labels, and submit/reset/invalid callbacks. There are two validation modes:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">ValidationBehavior::Native   </span><span style=\"color:#8c8c8c;\">// HTML5 + browser popups (default)\n</span><span style=\"color:#f8f8f2;\">ValidationBehavior::Aria     </span><span style=\"color:#8c8c8c;\">// Real-time ARIA errors, no popups, submit never blocked</span></pre>\n" }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Control" }
+        }
+        p {
+            "The context provider. Wraps a single field, distributes  "
+            code { "disabled" }
+            ",  "
+            code { "error" }
+            ",  "
+            code { "focused" }
+            ",  "
+            code { "required" }
+            ",  "
+            code { "variant" }
+            ",  "
+            code { "color" }
+            ", and  "
+            code { "size" }
+            " state to every child that reads  "
+            code { "FormControlContext" }
+            ". Your labels and helper text automatically inherit this state without prop drilling."
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Label" }
+        }
+        p {
+            "Renders a  "
+            code { "<label>" }
+            " that visually and semantically tracks the control's state. It goes red when there's an error. It glows when focused. It shows the required asterisk automatically. You don't have to think about any of this."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// In Yew:\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Label html_for</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;email&quot;</span><span style=\"color:#f8f8f2;\"> error</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}} focused</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">false</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    {{</span><span style=\"color:#ffee99;\">&quot;Email address&quot;</span><span style=\"color:#f8f8f2;\">}}\n</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Label</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Helper" }
+        }
+        p {
+            "A  "
+            code { "<p>" }
+            " element below the input. Changes color based on validation state:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Helper error</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Not a valid email.&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Helper</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Helper valid</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ffee99;\">&quot;Looks great!&quot;</span><span style=\"color:#f8f8f2;\">}}</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Helper</span><span style=\"color:#f92672;\">&gt;</span></pre>\n",
+        }
+        p { "Three states, zero class strings." }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Group" }
+        }
+        p {
+            "Groups related checkboxes or radio buttons in a  "
+            code { "<fieldset>" }
+            "-adjacent  "
+            code { "<div>" }
+            ". The  "
+            code { "row" }
+            " prop flips the layout from column to horizontal. The  "
+            code { "aria_label" }
+            " wires up a  "
+            code { "role=\"group\"" }
+            " for screen readers."
+        }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "ControlLabel" }
+        }
+        p {
+            "Wraps a form control (checkbox, radio, switch) with its associated label text. Controls label placement ( "
+            code { "End" }
+            ",  "
+            code { "Start" }
+            ",  "
+            code { "Top" }
+            ",  "
+            code { "Bottom" }
+            "), required asterisks, and disabled styling."
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n</pre>\n" }
+        h3 { id: "",
+            a { href: "#", class: "header", "" }
+            code { "Field" }
+        }
+        p {
+            "This is the one you'll use most. A drop-in composition of  "
+            code { "Control + Label + Input + Helper" }
+            " with reactive focus rings, error/valid ring states, ARIA attributes, and helper text management."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Field\n</span><span style=\"color:#f8f8f2;\">    id</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;email&quot;\n</span><span style=\"color:#f8f8f2;\">    label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Email address&quot;\n</span><span style=\"color:#f8f8f2;\">    r</span><span style=\"color:#f92672;\">#</span><span style=\"font-style:italic;color:#66d9ef;\">type</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;email&quot;\n</span><span style=\"color:#f8f8f2;\">    placeholder</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;ferris@opensass.org&quot;\n</span><span style=\"color:#f8f8f2;\">    helper_text</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Enter a valid email.&quot;\n</span><span style=\"color:#f8f8f2;\">    required</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">    full_width</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ff80f4;\">true\n</span><span style=\"color:#f8f8f2;\">    handle</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{email.</span><span style=\"color:#66d9ef;\">clone</span><span style=\"color:#f8f8f2;\">()}}\n</span><span style=\"color:#f8f8f2;\">    valid_handle</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{email_valid.</span><span style=\"color:#66d9ef;\">clone</span><span style=\"color:#f8f8f2;\">()}}\n</span><span style=\"color:#f8f8f2;\">    validate_function</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{Callback::from(validate_email)}}\n</span><span style=\"color:#f92672;\">/&gt;</span></pre>\n",
+        }
+        p { "One component. Fully wired. WCAG compliant. You're done." }
+        p {
+            img {
+                src: asset!("assets/images/meme-14.png", ImageAssetOptions::new().with_avif()),
+                alt: "it just works",
+                title: "",
+            }
+        }
+        h2 { id: "validation-architecture",
+            a { href: "#validation-architecture", class: "header", "Validation Architecture" }
+        }
+        p { "Form RS supports two distinct validation paradigms:" }
+        h3 { id: "native-html5-validation",
+            a { href: "#native-html5-validation", class: "header", "Native HTML5 Validation" }
+        }
+        p {
+            "Uses browser-native  "
+            code { "required" }
+            ",  "
+            code { "pattern" }
+            ",  "
+            code { "minlength" }
+            ",  "
+            code { "maxlength" }
+            ", and  "
+            code { "type=\"email\"" }
+            " constraints. The browser handles error messages. Form submission is blocked on invalid fields. This is the  "
+            code { "ValidationBehavior::Native" }
+            " default."
+        }
+        h3 { id: "externalaria-validation",
+            a { href: "#externalaria-validation", class: "header", "External/ARIA Validation" }
+        }
+        p {
+            "Pass a  "
+            code { "ValidationState" }
+            " explicitly, from a server response, a complex cross-field rule, or your own logic:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">ValidationState::None        </span><span style=\"color:#8c8c8c;\">// No judgment, untouched\n</span><span style=\"color:#f8f8f2;\">ValidationState::Valid       </span><span style=\"color:#8c8c8c;\">// Green ring, success helper text\n</span><span style=\"color:#f8f8f2;\">ValidationState::Invalid(msg)</span><span style=\"color:#8c8c8c;\">// Red ring, error helper text, aria-invalid=&quot;true&quot;</span></pre>\n" }
+        p {
+            "Server errors? Set  "
+            code { "validation_state={{ValidationState::Invalid(\"Email already in use.\".into())}}" }
+            " on the field. The error surfaces immediately. The ARIA is correct. Done."
+        }
+        h2 { id: "accessibility-built-in",
+            a { href: "#accessibility-built-in", class: "header", "Accessibility Built In" }
+        }
+        p { "This isn't \"we added aria-label\" accessibility. This is the real thing." }
+        ul {
+            li {
+                "Every "
+                code { "Field" }
+                " generates a unique "
+                code { "{{id}}-helper" }
+                " element ID and passes it as "
+                code { "aria-describedby" }
+                " on the underlying "
+                code { "<input>" }
+                "."
+            }
+            li {
+                code { "aria-required" }
+                " and "
+                code { "aria-invalid" }
+                " are set precisely based on prop + validation state, not just \"always true\"."
+            }
+            li {
+                code { "Helper" }
+                " renders with "
+                code { "role=\"alert\"" }
+                " when in error state, so screen reader users hear errors without tabbing to them."
+            }
+            li {
+                code { "Label" }
+                " is always linked to its input via "
+                code { "for" }
+                "/"
+                code { "html_for" }
+                ". No floating labels that break semantics."
+            }
+            li {
+                code { "Group" }
+                " propagates "
+                code { "role=\"group\"" }
+                " with "
+                code { "aria-label" }
+                " for checkbox/radio clusters."
+            }
+        }
+        p { "Audit-passing HTML forms. In Rust. Across three WASM frameworks." }
+        h2 { id: "the",
+            a { href: "#the", class: "header", "The " }
+            code { "ValidationState" }
+            " Pattern"
+        }
+        p { "This is the piece that makes server-side validation ergonomic:" }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">enum </span><span style=\"color:#f8f8f2;\">ValidationState {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">None</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    Valid,\n</span><span style=\"color:#f8f8f2;\">    Invalid(</span><span style=\"font-style:italic;color:#66d9ef;\">String</span><span style=\"color:#f8f8f2;\">),\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n" }
+        p {
+            "Pass  "
+            code { "None" }
+            " on a fresh field. Pass  "
+            code { "Valid" }
+            " once you've confirmed on the backend. Pass  "
+            code { "Invalid" }
+            " with your error message string when the server rejects it. The component does the rest."
+        }
+        h2 { id: "variant-color-and-size-system",
+            a { href: "#variant-color-and-size-system", class: "header",
+                "Variant, Color, and Size System"
+            }
+        }
+        p { "Form RS exposes a full semantic token system for the input appearance:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// Visual input style\n</span><span style=\"color:#f8f8f2;\">Variant::Outlined  </span><span style=\"color:#8c8c8c;\">// Default, bordered input box\n</span><span style=\"color:#f8f8f2;\">Variant::Filled    </span><span style=\"color:#8c8c8c;\">// Solid filled background\n</span><span style=\"color:#f8f8f2;\">Variant::Standard  </span><span style=\"color:#8c8c8c;\">// Bottom-border only\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Accent color (rings, labels, helper text)\n</span><span style=\"color:#f8f8f2;\">Color::Primary </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Secondary </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Error </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Info </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Success </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Color::Warning\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#8c8c8c;\">// Input density\n</span><span style=\"color:#f8f8f2;\">Size::Small </span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">Size::Medium</span></pre>\n",
+        }
+        p {
+            "Building a dense admin data-entry form?  "
+            code { "Size::Small" }
+            ". Consumer onboarding flow?  "
+            code { "Size::Medium" }
+            ". Dark theme with error highlights?  "
+            code { "Color::Error" }
+            ". The system handles the visual output; you just name the intent."
+        }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        p { "Stop writing raw HTML form boilerplate. Do this:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add form</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add form</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add form</span><span style=\"color:#f92672;\">-</span><span style=\"color:#f8f8f2;\">rs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "Forms are foundational. Every user interaction that matters, login, registration, checkout, profile editing, contact, search, flows through a form. Getting them right means getting ARIA right, validation right, focus state right, and error surfacing right. Every time. On every field."
+        }
+        p { "Form RS is the answer to \"who has time for all of that.\" We did. You don't have to." }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
+        }
+    }
+}
+#[component(no_case_check)]
+pub fn OtpRsRelease() -> dioxus::prelude::Element {
+    use dioxus::prelude::*;
+    rsx! {
+        blockquote {
+            p { "Nǐ hǎo 👋!" }
+        }
+        p {
+            "You've seen the textbox. You've typed the number. You've waited three seconds for the SMS that never came, checked your spam folder, clicked \"Resend\", typed the number again, and finally admitted to yourself that 2FA is simultaneously the most important and most annoying invention of the modern web."
+        }
+        p {
+            "Today, we make it marginally less annoying, at least on the Rust side. We're shipping "
+            a { href: "https://github.com/opensass/otprs",
+                strong { "OTP RS" }
+            }
+            "."
+        }
+        p {
+            img {
+                src: asset!("assets/images/ferris-do-be-vibin.gif"),
+                alt: "Ferris Do be vibin",
+                title: "",
+            }
+        }
+        h2 { id: "what-even-is-otp-rs",
+            a { href: "#what-even-is-otp-rs", class: "header", "What Even Is OTP RS?" }
+        }
+        p {
+            strong { "OTP RS" }
+            " is a composable, accessible, animated One-Time Password input component for "
+            strong { "Yew" }
+            ", "
+            strong { "Dioxus" }
+            ", and "
+            strong { "Leptos" }
+            ". It implements the full verifier flow: slot-by-slot input, keyboard navigation, active/filled/invalid/disabled states, animated caret blink, digit-entry pop animation, and "
+            a { href: "https://rfc-editor.org/info/rfc4226", "RFC 4226 (HOTP)" }
+            " + "
+            a { href: "https://www.rfc-editor.org/info/rfc6238", "RFC 6238 (TOTP)" }
+            " validation, all in Rust, all in WASM, all without touching a single line of JavaScript."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-15.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "one does not simply implement OTP",
+                title: "",
+            }
+        }
+        p {
+            "If you've ever tried to build a 6-box OTP input from scratch, you know the drill. It starts with \"just six inputs\". Two hours later you're debugging focus management, backspace propagation, keyboard event edge cases, browser autofill hijacking your state, and the invisible iOS number pad refusing to appear. That's the origin story of OTP RS."
+        }
+        h2 { id: "component-architecture",
+            a { href: "#component-architecture", class: "header", "Component Architecture" }
+        }
+        p {
+            "OTP RS follows the same composable anatomy as every other component in the Open SASS Kit. You compose what you need:"
+        }
+        ul {
+            li {
+                strong {
+                    code { "Otp" }
+                }
+                ": Root container. Owns the internal value state, focus coordination, and the RFC validation callbacks."
+            }
+            li {
+                strong {
+                    code { "Group" }
+                }
+                ": A visual cluster of slots (e.g., three digits, then a separator, then three more)."
+            }
+            li {
+                strong {
+                    code { "Slot" }
+                }
+                ": Individual slot. Renders a visible character display on top of an invisible overlay "
+                code { "<input>" }
+                "."
+            }
+            li {
+                strong {
+                    code { "Separator" }
+                }
+                ": The little dash in between groups."
+            }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">otprs::yew::{{Otp, Group, Separator, Slot}};\n</span><span style=\"color:#f92672;\">use </span><span style=\"color:#f8f8f2;\">yew::prelude::</span><span style=\"color:#f92672;\">*</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f8f8f2;\">#[function_component(VerificationInput)]\n</span><span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">verification_input</span><span style=\"color:#f8f8f2;\">() -&gt; Html {{\n</span><span style=\"color:#f8f8f2;\">    html! {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Otp max_length</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f8f8f2;\">}} aria_label</span><span style=\"color:#f92672;\">=</span><span style=\"color:#ffee99;\">&quot;Enter your OTP&quot;</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Group</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">0</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">1</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">2</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Group</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Separator </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Group</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">3</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">4</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">                </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">Slot index</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">{{</span><span style=\"color:#ff80f4;\">5</span><span style=\"color:#f8f8f2;\">}} </span><span style=\"color:#f92672;\">/&gt;\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Group</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">Otp</span><span style=\"color:#f92672;\">&gt;\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p {
+            "That's it. Focus management, digit propagation, state aggregation, and ARIA attributes are all handled. You just compose slots."
+        }
+        h2 { id: "the-invisible-input-trick",
+            a { href: "#the-invisible-input-trick", class: "header", "The Invisible Input Trick" }
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-16.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "What if I told you ma boy",
+                title: "",
+            }
+        }
+        p {
+            "Here's the most important design decision in all of OTP RS: "
+            strong {
+                "the "
+                code { "<input>" }
+                " element that receives keyboard events is completely invisible."
+            }
+        }
+        p {
+            "Each  "
+            code { "Slot" }
+            " renders two layers:"
+        }
+        ol {
+            li {
+                "An invisible "
+                code { "<input>" }
+                " (via "
+                code { "input-rs" }
+                " with "
+                code { "otp_mode=true" }
+                ") that is "
+                code { "position: absolute; inset: 0; opacity: 0" }
+                ". It captures all keyboard focus and input events."
+            }
+            li {
+                "A visible "
+                code { "<span>" }
+                " that displays the digit character and the blinking caret."
+            }
+        }
+        p {
+            "This separates the "
+            strong { "input mechanics" }
+            " from the "
+            strong { "visual presentation" }
+            ", giving us full control over the slot's look without fighting browser defaults for "
+            code { "<input>" }
+            " styling."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">┌─────────────────────┐\n</span><span style=\"color:#f8f8f2;\">│  Slot wrapper       │  ← position: relative; border; background; animation\n</span><span style=\"color:#f8f8f2;\">│  ┌───────────────┐  │\n</span><span style=\"color:#f8f8f2;\">│  │ </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">input</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">       │  │  ← absolute; opacity:</span><span style=\"color:#ff80f4;\">0</span><span style=\"color:#f8f8f2;\">; captures keyboard events\n</span><span style=\"color:#f8f8f2;\">│  └───────────────┘  │\n</span><span style=\"color:#f8f8f2;\">│  </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">span</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#ff80f4;\">3</span><span style=\"color:#f92672;\">&lt;/</span><span style=\"color:#f8f8f2;\">span</span><span style=\"color:#f92672;\">&gt;</span><span style=\"color:#f8f8f2;\">     │  ← visible character display\n</span><span style=\"color:#f8f8f2;\">│  </span><span style=\"color:#f92672;\">&lt;</span><span style=\"color:#f8f8f2;\">span class</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">caret</span><span style=\"color:#f92672;\">/&gt;</span><span style=\"color:#f8f8f2;\">│  ← blinking caret (when active </span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\"> empty)\n</span><span style=\"color:#f8f8f2;\">└─────────────────────┘</span></pre>\n",
+        }
+        h2 { id: "the-invisible-input-that-wasnt-actually-invisible",
+            a {
+                href: "#the-invisible-input-that-wasnt-actually-invisible",
+                class: "header",
+                "The Invisible Input That Wasn't Actually Invisible"
+            }
+        }
+        p { "Here's a fun bug that bit us early on, hard." }
+        p {
+            "The slot design described above only works if the CSS for the invisible input is applied as an "
+            strong {
+                "inline "
+                code { "style" }
+                " attribute"
+            }
+            ", not as a CSS "
+            code { "class" }
+            " attribute. The component originally passed the overlay CSS string to "
+            code { "input_class" }
+            ", a prop that sets the HTML "
+            code { "class=\"\"" }
+            " attribute."
+        }
+        p {
+            "Browsers don't style elements based on CSS property strings stuck in the class attribute. They look up class names in stylesheets. So what we got instead of an invisible overlay was a white rectangle aggressively covering the entire OTP component, like a censored emoji on live TV."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-17.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "that's not how this works",
+                title: "",
+            }
+        }
+        p {
+            "The fix was to add an  "
+            code { "input_style: &'static str" }
+            " prop to  "
+            code { "input-rs" }
+            " in all three framework implementations, and apply it as  "
+            code { "style=\"{{props.input_style}}\"" }
+            " on the bare otp_mode  "
+            code { "<input>" }
+            ". One line per framework. Six characters ( "
+            code { "_style" }
+            " vs  "
+            code { "_class" }
+            "). Three frameworks. Three PRs worth of suffering."
+        }
+        h2 { id: "the-compiler-is-your-enemy-and-also-your-best-friend",
+            a {
+                href: "#the-compiler-is-your-enemy-and-also-your-best-friend",
+                class: "header",
+                "The Compiler Is Your Enemy (And Also Your Best Friend)"
+            }
+        }
+        p { "Let us count the ways Rust fought us this time." }
+        h3 { id: "episode-1-hook-in-a-macro",
+            a { href: "#episode-1-hook-in-a-macro", class: "header", "Episode 1: Hook in a Macro" }
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">error[</span><span style=\"color:#ff80f4;\">E0277</span><span style=\"color:#f8f8f2;\">]: the </span><span style=\"font-style:italic;color:#66d9ef;\">trait </span><span style=\"color:#f8f8f2;\">bound `impl Hook&lt;Output = ...&gt;: IntoPropValue&lt;...&gt;` is not satisfied</span></pre>\n" }
+        p {
+            "We tried calling  "
+            code { "use_state(...)" }
+            " inside an  "
+            code { "html!" }
+            " macro attribute. Yew forbids calling hooks anywhere except directly inside function component bodies. The macro expands to a closure, and hook calls need to be at the top level. Extracting  "
+            code { "use_state" }
+            " calls to  "
+            code { "let" }
+            " bindings before  "
+            code { "html!" }
+            " fixed it."
+        }
+        h3 { id: "episode-2",
+            a { href: "#episode-2", class: "header", "Episode 2: " }
+            code { "Box::leak" }
+            " and the "
+            code { "&'static str" }
+            " Obligation"
+        }
+        p {
+            "Dioxus and Leptos's  "
+            code { "input-rs" }
+            " props require  "
+            code { "&'static str" }
+            ". But our slot-specific strings like  "
+            code { "\"Digit 3\"" }
+            " are computed at runtime. The only way to produce a  "
+            code { "&'static str" }
+            " from a runtime  "
+            code { "String" }
+            " without pulling in a string interner is to  "
+            code { "Box::leak" }
+            ":"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> label: </span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str </span><span style=\"color:#f92672;\">= </span><span style=\"font-style:italic;color:#66d9ef;\">Box</span><span style=\"color:#f8f8f2;\">::leak(\n</span><span style=\"color:#f8f8f2;\">    format!(</span><span style=\"color:#ffee99;\">&quot;Digit </span><span style=\"color:#ff80f4;\">{{}}</span><span style=\"color:#ffee99;\">&quot;</span><span style=\"color:#f8f8f2;\">, index </span><span style=\"color:#f92672;\">+ </span><span style=\"color:#ff80f4;\">1</span><span style=\"color:#f8f8f2;\">).</span><span style=\"color:#66d9ef;\">into_boxed_str</span><span style=\"color:#f8f8f2;\">()\n</span><span style=\"color:#f8f8f2;\">);</span></pre>\n" }
+        p {
+            "Yes, this leaks memory on every slot render. Each  "
+            code { "Slot" }
+            " render leaks "
+            code { "Signal<String>" }
+            " prop type in input-rs, which is a future PR. For now:  "
+            code { "Box::leak" }
+            " and move on."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-18.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "this is fine",
+                title: "",
+            }
+        }
+        h3 { id: "episode-3-the",
+            a { href: "#episode-3-the", class: "header", "Episode 3: The " }
+            code { "as" }
+            " Cast That Broke Leptos"
+        }
+        p {
+            "The Leptos  "
+            code { "view!" }
+            " macro cannot parse Rust cast expressions inline:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#8c8c8c;\">// This fails to parse inside view!:\n</span><span style=\"color:#f8f8f2;\">validate_function</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">(|_: </span><span style=\"font-style:italic;color:#fd971f;\">String</span><span style=\"color:#f8f8f2;\">| -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">bool </span><span style=\"color:#f8f8f2;\">{{ </span><span style=\"color:#ff80f4;\">true </span><span style=\"color:#f8f8f2;\">}}) </span><span style=\"color:#f92672;\">as </span><span style=\"font-style:italic;color:#66d9ef;\">fn</span><span style=\"color:#f8f8f2;\">(</span><span style=\"font-style:italic;color:#66d9ef;\">String</span><span style=\"color:#f8f8f2;\">) -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">bool</span></pre>\n" }
+        p {
+            "The macro sees the  "
+            code { "as" }
+            " keyword and gets confused about what's a prop name vs. a type expression. The fix: extract to a  "
+            code { "let" }
+            " binding "
+            strong { "before" }
+            " the "
+            code { "view!" }
+            " call:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> always_valid: </span><span style=\"font-style:italic;color:#66d9ef;\">fn</span><span style=\"color:#f8f8f2;\">(</span><span style=\"font-style:italic;color:#66d9ef;\">String</span><span style=\"color:#f8f8f2;\">) -&gt; </span><span style=\"font-style:italic;color:#66d9ef;\">bool </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">|_| </span><span style=\"color:#ff80f4;\">true</span><span style=\"color:#f8f8f2;\">;\n</span><span style=\"color:#8c8c8c;\">// then inside view!:\n</span><span style=\"color:#f8f8f2;\">validate_function</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">always_valid</span></pre>\n" }
+        p { "Three lines in, five compilation cycles later. We hope this saves you ten minutes." }
+        h3 { id: "episode-4",
+            a { href: "#episode-4", class: "header", "Episode 4: " }
+            code { "String" }
+            " vs "
+            code { "&str" }
+            " in Dioxus "
+            code { "rsx!" }
+        }
+        p {
+            "Dioxus's  "
+            code { "rsx!" }
+            " macro is strict about attribute types. When  "
+            code { "slot_class" }
+            " was a  "
+            code { "String" }
+            ", the macro would refuse:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f8f8f2;\">expected `</span><span style=\"color:#f92672;\">&amp;</span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">`, found `</span><span style=\"font-style:italic;color:#66d9ef;\">String</span><span style=\"color:#f8f8f2;\">`</span></pre>\n" }
+        p {
+            code { "format!(\"...\", ...)" }
+            " produces a  "
+            code { "String" }
+            ". Dioxus attributes want  "
+            code { "&str" }
+            ". The same  "
+            code { "Box::leak" }
+            " pattern solved this too:"
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> slot_class: </span><span style=\"color:#f92672;\">&amp;&#39;static </span><span style=\"font-style:italic;color:#66d9ef;\">str </span><span style=\"color:#f92672;\">= </span><span style=\"font-style:italic;color:#66d9ef;\">Box</span><span style=\"color:#f8f8f2;\">::leak(\n</span><span style=\"color:#f8f8f2;\">    format!(</span><span style=\"color:#ffee99;\">&quot;</span><span style=\"color:#ff80f4;\">{{}} {{}}</span><span style=\"color:#ffee99;\">&quot;</span><span style=\"color:#f8f8f2;\">, ctx.variant.</span><span style=\"color:#66d9ef;\">to_slot_class</span><span style=\"color:#f8f8f2;\">(), props.class).</span><span style=\"color:#66d9ef;\">into_boxed_str</span><span style=\"color:#f8f8f2;\">()\n</span><span style=\"color:#f8f8f2;\">);</span></pre>\n" }
+        h3 { id: "episode-5-the-inter-group-focus-traversal-collision",
+            a {
+                href: "#episode-5-the-inter-group-focus-traversal-collision",
+                class: "header",
+                "Episode 5: The Inter-Group Focus Traversal Collision"
+            }
+        }
+        p {
+            "Here is a fun brain teaser: what happens when you put "
+            em { "two" }
+            " OTP components on the exact same page, and you start typing in the second one?"
+            code { "otp-slot-0" }
+            ", "
+            code { "otp-slot-1" }
+            ", the moment you typed a character in the second instance, "
+            code { "document.getElementById(\"otp-slot-1\")" }
+            " would aggressively hijack focus and yank your cursor all the way back up to the "
+            em { "first" }
+            " OTP component on the page."
+        }
+        p {
+            "The fix? Prefixing every slot ID with a unique  "
+            code { "instance_id" }
+            " minted from a global atomic counter ( "
+            code { "OTP_INSTANCE_COUNTER.fetch_add(1, Ordering::Relaxed)" }
+            "). Now every widget lives in its own perfectly scoped focus namespace, free from neighborhood turf wars."
+        }
+        h3 { id: "episode-6-the-sticky-backspace-vdom-vs-physical-dom",
+            a {
+                href: "#episode-6-the-sticky-backspace-vdom-vs-physical-dom",
+                class: "header",
+                "Episode 6: The \"Sticky\" Backspace (vDOM vs Physical DOM)"
+            }
+        }
+        p {
+            "Across Leptos and Yew we noticed a bizarre issue: if you typed a character, erased it, and tried typing again, the  "
+            code { "<input>" }
+            " would refuse to update. Or if you filled the very last slot, the input component became \"sticky\" and refused to overwrite the final character."
+        }
+        p {
+            "The root cause was a classic Virtual DOM vs Physical DOM standoff. We were setting the internal state to  "
+            code { "\"\"" }
+            ", but frameworks optimize their renders. Leptos  "
+            code { "input-rs" }
+            " used a one-way, read-once initialization for  "
+            code { "value=handle.0.get()" }
+            ". Yew assumed the string was already empty and ignored the reconciliation. Because the physical HTML  "
+            code { "<input>" }
+            " wasn't being forcefully synchronized, the raw DOM held onto the sticky character and choked out any new keystrokes."
+        }
+        p {
+            "We had to bypass the frameworks entirely and manually flush the physical DOM element inside the keyboard event handlers using raw Web APIs ( "
+            code { "input_ref.cast::<web_sys::HtmlInputElement>().unwrap().set_value(\"\")" }
+            "). The lesson here? Sometimes the fastest way out of a reactive state desync is a direct, imperative smash to the physical DOM."
+        }
+        p {
+            img {
+                src: asset!("assets/images/meme-19.jpeg", ImageAssetOptions::new().with_avif()),
+                alt: "it keeps happening",
+                title: "",
+            }
+        }
+        h2 { id: "keyboard-navigation",
+            a { href: "#keyboard-navigation", class: "header", "Keyboard Navigation" }
+        }
+        p { "One of the more satisfying pieces: full keyboard navigation across slots." }
+        ul {
+            li {
+                strong { "Any character key" }
+                " → fills current slot, auto-advances focus to the next"
+            }
+            li {
+                strong {
+                    code { "Backspace" }
+                }
+                " → clears current slot; if already empty, goes to the previous slot"
+            }
+            li {
+                strong {
+                    code { "ArrowLeft" }
+                }
+                " → jumps to previous slot"
+            }
+            li {
+                strong {
+                    code { "ArrowRight" }
+                }
+                " → jumps to next slot"
+            }
+            li {
+                strong {
+                    code { "Tab" }
+                }
+                " → advances naturally (browser default, we don't intercept)"
+            }
+        }
+        p {
+            "All of this is handled in the  "
+            code { "on_slot_keydown" }
+            " callback in the parent  "
+            code { "Otp" }
+            " component, which uses  "
+            code { "NodeRef" }
+            " (Yew) or the equivalent signal-based refs (Dioxus/Leptos) to imperatively  "
+            code { ".focus()" }
+            " the target input."
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">if</span><span style=\"color:#f8f8f2;\"> key </span><span style=\"color:#f92672;\">== </span><span style=\"color:#ffee99;\">&quot;Backspace&quot; </span><span style=\"color:#f92672;\">&amp;&amp;</span><span style=\"color:#f8f8f2;\"> idx </span><span style=\"color:#f92672;\">&gt; </span><span style=\"color:#ff80f4;\">0 </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#8c8c8c;\">// slot is already empty, go back\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">if </span><span style=\"font-style:italic;color:#66d9ef;\">let Some</span><span style=\"color:#f8f8f2;\">(node) </span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\"> slot_refs.</span><span style=\"color:#66d9ef;\">get</span><span style=\"color:#f8f8f2;\">(idx </span><span style=\"color:#f92672;\">- </span><span style=\"color:#ff80f4;\">1</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"color:#f92672;\">if </span><span style=\"font-style:italic;color:#66d9ef;\">let Some</span><span style=\"color:#f8f8f2;\">(input) </span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\"> node.cast::&lt;HtmlInputElement&gt;() {{\n</span><span style=\"color:#f8f8f2;\">            </span><span style=\"font-style:italic;color:#66d9ef;\">let </span><span style=\"color:#f92672;\">_ =</span><span style=\"color:#f8f8f2;\"> input.</span><span style=\"color:#66d9ef;\">focus</span><span style=\"color:#f8f8f2;\">();\n</span><span style=\"color:#f8f8f2;\">        }}\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "No third-party focus-trap libraries. No jQuery. Pure DOM manipulation from Rust." }
+        h2 { id: "hotp-and-totp-validation",
+            a { href: "#hotp-and-totp-validation", class: "header", "HOTP and TOTP Validation" }
+        }
+        p {
+            "OTP RS ships RFC 4226 (HOTP) and RFC 6238 (TOTP) implementations using "
+            a { href: "https://crates.io/crates/totp-rs",
+                code { "totp-rs" }
+            }
+            ". The SHA-1 HMAC is hand-rolled using the standard iterative block compression algorithm:"
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">pub </span><span style=\"font-style:italic;color:#66d9ef;\">fn </span><span style=\"color:#a6e22e;\">validate_hotp</span><span style=\"color:#f8f8f2;\">(\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#fd971f;\">secret</span><span style=\"color:#f8f8f2;\">: </span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">[</span><span style=\"font-style:italic;color:#66d9ef;\">u8</span><span style=\"color:#f8f8f2;\">],\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#fd971f;\">counter</span><span style=\"color:#f8f8f2;\">: </span><span style=\"font-style:italic;color:#66d9ef;\">u64</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#fd971f;\">code</span><span style=\"color:#f8f8f2;\">: </span><span style=\"color:#f92672;\">&amp;</span><span style=\"font-style:italic;color:#66d9ef;\">str</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#fd971f;\">digits</span><span style=\"color:#f8f8f2;\">: </span><span style=\"font-style:italic;color:#66d9ef;\">u32</span><span style=\"color:#f8f8f2;\">,\n</span><span style=\"color:#f8f8f2;\">) -&gt; Result&lt;(), OtpValidationError&gt; {{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> expected </span><span style=\"color:#f92672;\">= </span><span style=\"color:#66d9ef;\">hotp</span><span style=\"color:#f8f8f2;\">(secret, counter, digits);\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">if</span><span style=\"color:#f8f8f2;\"> expected </span><span style=\"color:#f92672;\">==</span><span style=\"color:#f8f8f2;\"> code {{ </span><span style=\"font-style:italic;color:#66d9ef;\">Ok</span><span style=\"color:#f8f8f2;\">(()) }} </span><span style=\"color:#f92672;\">else </span><span style=\"color:#f8f8f2;\">{{ </span><span style=\"font-style:italic;color:#66d9ef;\">Err</span><span style=\"color:#f8f8f2;\">(OtpValidationError::HotpMismatch) }}\n</span><span style=\"color:#f8f8f2;\">}}</span></pre>\n",
+        }
+        p { "You can validate on complete:" }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"font-style:italic;color:#66d9ef;\">let</span><span style=\"color:#f8f8f2;\"> on_complete </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">Callback::from(</span><span style=\"color:#f92672;\">move |</span><span style=\"color:#f8f8f2;\">code: </span><span style=\"font-style:italic;color:#66d9ef;\">String</span><span style=\"color:#f92672;\">| </span><span style=\"color:#f8f8f2;\">{{\n</span><span style=\"color:#f8f8f2;\">    </span><span style=\"color:#f92672;\">match </span><span style=\"color:#66d9ef;\">validate_hotp</span><span style=\"color:#f8f8f2;\">(</span><span style=\"font-style:italic;color:#66d9ef;\">b</span><span style=\"color:#ffee99;\">&quot;your-secret&quot;</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#ff80f4;\">0</span><span style=\"color:#f8f8f2;\">, </span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">code, </span><span style=\"color:#ff80f4;\">6</span><span style=\"color:#f8f8f2;\">) {{\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"font-style:italic;color:#66d9ef;\">Ok</span><span style=\"color:#f8f8f2;\">(()) </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#f8f8f2;\">web_sys::console::log_1(</span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#ffee99;\">&quot;Valid!&quot;</span><span style=\"color:#f8f8f2;\">.</span><span style=\"color:#66d9ef;\">into</span><span style=\"color:#f8f8f2;\">()),\n</span><span style=\"color:#f8f8f2;\">        </span><span style=\"font-style:italic;color:#66d9ef;\">Err</span><span style=\"color:#f8f8f2;\">(e) </span><span style=\"color:#f92672;\">=&gt; </span><span style=\"color:#f8f8f2;\">web_sys::console::warn_1(</span><span style=\"color:#f92672;\">&amp;</span><span style=\"color:#f8f8f2;\">format!(</span><span style=\"color:#ffee99;\">&quot;</span><span style=\"color:#ff80f4;\">{{e:?}}</span><span style=\"color:#ffee99;\">&quot;</span><span style=\"color:#f8f8f2;\">).</span><span style=\"color:#66d9ef;\">into</span><span style=\"color:#f8f8f2;\">()),\n</span><span style=\"color:#f8f8f2;\">    }}\n</span><span style=\"color:#f8f8f2;\">}});</span></pre>\n",
+        }
+        p {
+            "The  "
+            code { "hotp()" }
+            " function also lets you generate the expected code if you need to display a hint in development. For the HOTP example in the landing page, the valid code for secret  "
+            code { "JBSWY3DPEHPK3PXP" }
+            " at counter 0 is computed at runtime via  "
+            code { "hotp(b\"JBSWY3DPEHPK3PXP\", 0, 6)" }
+            ", no hardcoding required."
+        }
+        h2 { id: "quick-setup",
+            a { href: "#quick-setup", class: "header", "Quick Setup" }
+        }
+        CodeBlock {
+            contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Yew\n</span><span style=\"color:#f8f8f2;\">cargo add otprs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">yew\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Dioxus\n</span><span style=\"color:#f8f8f2;\">cargo add otprs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">dio\n</span><span style=\"color:#f8f8f2;\">\n</span><span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Leptos\n</span><span style=\"color:#f8f8f2;\">cargo add otprs </span><span style=\"color:#f92672;\">--</span><span style=\"color:#f8f8f2;\">features</span><span style=\"color:#f92672;\">=</span><span style=\"color:#f8f8f2;\">lep</span></pre>\n",
+        }
+        CodeBlock { contents: "<pre style=\"background-color:#0d0d0d;\">\n<span style=\"color:#f92672;\">#</span><span style=\"color:#f8f8f2;\"> Cargo.toml\n</span><span style=\"color:#f8f8f2;\">otprs </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">{{ version </span><span style=\"color:#f92672;\">= </span><span style=\"color:#ffee99;\">&quot;0.1&quot;</span><span style=\"color:#f8f8f2;\">, features </span><span style=\"color:#f92672;\">= </span><span style=\"color:#f8f8f2;\">[</span><span style=\"color:#ffee99;\">&quot;yew&quot;</span><span style=\"color:#f8f8f2;\">] }}</span></pre>\n" }
+        p {
+            "The component ships its own CSS as inline styles computed from Rust. No separate stylesheet needed."
+        }
+        h2 { id: "final-thoughts",
+            a { href: "#final-thoughts", class: "header", "Final Thoughts" }
+        }
+        p {
+            "Building OTP RS was a journey through the exact kind of subtle, cross-framework, cross-layer complexity that makes Rust Web development both rewarding and sometimes deeply frustrating. We fought the compiler more than once, discovered ways that browser defaults quietly break invisible design patterns, and shipped a  "
+            code { "Box::leak" }
+            " we're not entirely proud of."
+        }
+        p {
+            "But the result is solid: a composable, keyboard-navigable, RFC-compliant OTP input component that works identically across Yew, Dioxus, and Leptos, with zero JavaScript and enough ARIA to satisfy a WCAG auditor."
+        }
+        p {
+            "The next time you're building a login flow in Rust WASM and you reach for a six-box code input, you don't have to write it from scratch anymore."
+        }
+        blockquote {
+            p {
+                strong { "We are Open SASS, babe!" }
+            }
+        }
+        blockquote {
+            p { "We're working tirelessly on making Rust web development extremely easy for everyone." }
+        }
+        blockquote {
+            p {
+                "If you made it this far, it would be nice if you could "
+                a { href: "https://discord.gg/b5JbvHW5nv", "join us on Discord" }
+                "."
+            }
+        }
+        blockquote {
+            p { "Till next time 👋!" }
         }
     }
 }
