@@ -79,15 +79,15 @@ Building an interactive pricing selector? Wrap your iterations in a `<Card varia
 
 Like everything we build, **Card RS** provides identical API surfaces and behavioral guarantees across all three rusty frontends:
 
-| Feature                         | Yew | Dioxus | Leptos |
-| ------------------------------- | --- | ------ | ------ |
-| `Card`                          | ✅  | ✅     | ✅     |
-| `Header`                    | ✅  | ✅     | ✅     |
-| `Title` & `Description` | ✅  | ✅     | ✅     |
-| `Content` & `Footer`    | ✅  | ✅     | ✅     |
-| Variant Matrix                  | ✅  | ✅     | ✅     |
-| Accessible ARIA bindings        | ✅  | ✅     | ✅     |
-| Role overrides                  | ✅  | ✅     | ✅     |
+| Feature                  | Yew | Dioxus | Leptos |
+| ------------------------ | --- | ------ | ------ |
+| `Card`                   | ✅  | ✅     | ✅     |
+| `Header`                 | ✅  | ✅     | ✅     |
+| `Title` & `Description`  | ✅  | ✅     | ✅     |
+| `Content` & `Footer`     | ✅  | ✅     | ✅     |
+| Variant Matrix           | ✅  | ✅     | ✅     |
+| Accessible ARIA bindings | ✅  | ✅     | ✅     |
+| Role overrides           | ✅  | ✅     | ✅     |
 
 If you know how to build a card in Leptos, you can build a card in Dioxus. The props are the same. The BEM classes are the same. The logic is identical.
 

@@ -128,10 +128,10 @@ All three frameworks ship the same API surface:
 | Feature                  | Yew | Dioxus | Leptos |
 | ------------------------ | --- | ------ | ------ |
 | `Avatar`                 | ✅  | ✅     | ✅     |
-| `Image`            | ✅  | ✅     | ✅     |
-| `Fallback`         | ✅  | ✅     | ✅     |
-| `Group`            | ✅  | ✅     | ✅     |
-| `Count`       | ✅  | ✅     | ✅     |
+| `Image`                  | ✅  | ✅     | ✅     |
+| `Fallback`               | ✅  | ✅     | ✅     |
+| `Group`                  | ✅  | ✅     | ✅     |
+| `Count`                  | ✅  | ✅     | ✅     |
 | `total` + `max` overflow | ✅  | ✅     | ✅     |
 | Context propagation      | ✅  | ✅     | ✅     |
 | `delay_ms` on fallback   | ✅  | ✅     | ✅     |
